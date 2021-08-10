@@ -1,18 +1,14 @@
-import random
-import time
-import math
 import pygame
 from Agent import Agent
 from Grid import Grid
-import trialastar
-from Make_map import matrix,buffer
-#import Make_map
+from AStar import Search
+from Make_map import Matrix,buffer
 pygame.init()
 
 screen = pygame.display.set_mode((1600, 1600))  # create screen
 running = True
 ### Title and Icon
-pygame.display.set_caption("Waah Bete")
+pygame.display.set_caption("Robot Simulator")
 
 #Ou
 target = pygame.image.load("dart.png")
@@ -23,10 +19,9 @@ Path=[]
 def add_agent(source,dest):
     Agents.append(Agent(source,dest,"robot-vacuum-cleaner.png","dart.png"))
     Index.append(0)
-    cAgent=trialastar.A_Star_Solver(source,dest)
-    cAgent.Solve()
-    #print(cAgent.cost)
-    Path.append(cAgent.path)
+    cAgent=Search(source,dest)
+    cAgent.AStar()
+    Path.append(cAgent.getPath())
     global Number_of_Agents
     Number_of_Agents+=1
 
@@ -64,9 +59,7 @@ while running:
         pygame.draw.polygon(screen, (255,0,0), points)
         i+=4
 
-    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(700, 210, 5, 690))
-    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(650, 199, 150, 5))
-    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(400, 175, 5, 200))
+  
     pygame.display.update()
 
 

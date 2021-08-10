@@ -1,13 +1,13 @@
 from queue import PriorityQueue
-import math
+
 from Grid import Grid
 from matplotlib import pyplot as plt
 import numpy as np
 from matplotlib import path
-import Make_map
+
 x=0
 direction_change_penalty=5
-from Make_map import matrix
+from Make_map import Matrix
 #Creating Base Class
 class State(object):
     def __init__(self, value, parent, start = 0, goal = 0):
@@ -45,8 +45,6 @@ class State_String(State):
  
     def GetDistance(self):
             dist = abs(self.value[0]-self.goal[0])+abs(self.value[1]-self.goal[1])
-            if dist==0:
-                print(self.cost, "cost")
             return dist
             
             # for i in range(len(self.goal)):
@@ -63,7 +61,7 @@ class State_String(State):
                 x=0
             #print(self.value, abs(self.value[0]-self.goal[0])+abs(self.value[1]-self.goal[1]),x)
             if not self.children:
-                if matrix.grid[self.value[0]-1][self.value[1]]==1:
+                if Matrix.grid[self.value[0]-1][self.value[1]]==1:
                     val=[self.value[0]-1,self.value[1]]
                     if self.parent!=0 and self.parent.direction!=0:
                         self.cost+=direction_change_penalty
@@ -74,7 +72,7 @@ class State_String(State):
                     if self.parent!=0 and self.parent.direction!=0:
                         self.cost-=direction_change_penalty
 
-                if matrix.grid[self.value[0]+1][self.value[1]]==1 :
+                if Matrix.grid[self.value[0]+1][self.value[1]]==1 :
                     val=[self.value[0]+1,self.value[1]]
                     if self.parent!=0 and self.parent.direction!=2:
                         self.cost+=direction_change_penalty
@@ -85,7 +83,7 @@ class State_String(State):
                     if self.parent!=0 and self.parent.direction!=2:
                         self.cost-=direction_change_penalty
 
-                if matrix.grid[self.value[0]][self.value[1]-1]==1 :
+                if Matrix.grid[self.value[0]][self.value[1]-1]==1 :
                     val=[self.value[0],self.value[1]-1]
                     if self.parent!=0 and self.parent.direction!=1:
                         self.cost+=direction_change_penalty
@@ -96,7 +94,7 @@ class State_String(State):
                     if self.parent!=0 and self.parent.direction!=1:
                         self.cost-=direction_change_penalty
 
-                if matrix.grid[self.value[0]][self.value[1]+1]==1 :
+                if Matrix.grid[self.value[0]][self.value[1]+1]==1 :
                     val=[self.value[0],self.value[1]+1]
                     if self.parent!=0 and self.parent.direction!=3:
                         self.cost+=direction_change_penalty
@@ -150,16 +148,16 @@ class A_Star_Solver:
         return self.path
  
 
-# matrix = Grid(1600, 1600)
-# matrix.build_roads() 
+# Matrix = Grid(1600, 1600)
+# Matrix.build_roads() 
 
 
 
 # for i in range(650,700):
-#     matrix.grid[i][199]=0
+#     Matrix.grid[i][199]=0
 #     pass
 # for i in range(175,375):
-#     matrix.grid[400][i]=0
+#     Matrix.grid[400][i]=0
 #     pass
 
 # Calling all the existing stuffs
