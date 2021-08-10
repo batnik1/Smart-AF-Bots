@@ -20,7 +20,9 @@ class Agent():
     def rotateto(self, angle):
         running = True
         clockwise = True
-        if (self.angle >= angle):
+        if self.angle==angle:
+            return
+        if (self.angle > angle):
             if (self.angle - angle < 360 - self.angle + angle):
                 clockwise = True
             else:

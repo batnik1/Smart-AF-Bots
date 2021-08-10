@@ -1,14 +1,17 @@
+import random
+import time
+import math
 import pygame
 from Agent import Agent
 from Grid import Grid
-from AStar import Search
-from Make_map import Matrix,buffer
+import Reala
+from Make_map import matrix,buffer,Display_height,Display_width
+#import Make_map
 pygame.init()
-
-screen = pygame.display.set_mode((1600, 1600))  # create screen
+screen = pygame.display.set_mode((Display_width, Display_height))  # create screen
 running = True
 ### Title and Icon
-pygame.display.set_caption("Robot Simulator")
+pygame.display.set_caption("Waah Bete")
 
 #Ou
 target = pygame.image.load("dart.png")
@@ -16,15 +19,22 @@ Number_of_Agents=0
 Agents=[]
 Index=[]
 Path=[]
+
 def add_agent(source,dest):
     Agents.append(Agent(source,dest,"robot-vacuum-cleaner.png","dart.png"))
     Index.append(0)
-    cAgent=Search(source,dest)
-    cAgent.AStar()
-    Path.append(cAgent.getPath())
+    cAgent=Reala.A_Star_Solver(source,dest)
+    done=cAgent.Solve()
+    reverse_path=[]
+    forward_path=[]
+    while done.parent!=0:
+        reverse_path.append(done.parent.state)
+        done=done.parent
+    for i in range(len(reverse_path)):
+        forward_path.append(reverse_path[len(reverse_path)-i-1])
+    Path.append(forward_path)
     global Number_of_Agents
     Number_of_Agents+=1
-
 
 add_agent([200,200],[800,800])
 add_agent([400,400],[600,600])
@@ -59,8 +69,7 @@ while running:
         pygame.draw.polygon(screen, (255,0,0), points)
         i+=4
 
-  
+    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(700, 210, 5, 690))
+    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(650, 199, 150, 5))
+    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(400, 175, 5, 200))
     pygame.display.update()
-
-
-

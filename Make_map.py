@@ -1,13 +1,18 @@
 import pygame
+#import trialastar
+import pygame_widgets as pw
+from pygame_widgets.button import Button
 pygame.init()
 from Grid import Grid
 screen = pygame.display.set_mode((1600, 1600))  # create screen
 running = True
 ### Title and Icon
-pygame.display.set_caption("Build Map")
+pygame.display.set_caption("Beti Pushpa")
 target = pygame.image.load("dart.png")
-Matrix = Grid(1600, 1600)
-Matrix.build_roads() 
+Display_height=1600
+Display_width=1600
+matrix = Grid(Display_width, Display_height)
+matrix.build_roads() 
 
 font = pygame.font.Font('freesansbold.ttf', 13)
 
@@ -81,6 +86,12 @@ while running:
       pygame.draw.line(screen,(255,0,0),cbuffer[j],cbuffer[j+1])
       j+=1
     
+
+    # elif selected==3:
+    #     pygame.draw.line(screen,(255,0,0),buffer[-1],buffer[-2])
+    # elif selected==4:
+    #     pygame.draw.line(screen,(255,0,0),buffer[-1],buffer[-2])
+    #     pygame.draw.line(screen,(255,0,0),buffer[-2],buffer[-3])
    
     i=0
     while i+3<len(buffer):
@@ -93,4 +104,4 @@ while running:
     screen.blit(text,(0,80))
     pygame.display.update()
 
-Grid.build_obstacles(Matrix,buffer)
+Grid.build_obstacles(matrix,buffer)
