@@ -7,8 +7,8 @@ import colors
 pygame.init()
 import time
 # n,m=input().split()   Take input from User
-n = 10   # height
-m = 7   # width
+n = 5   # height
+m = 5   # width
 
 display_height = 120*m+160
 display_width = 120*n+160
@@ -17,6 +17,19 @@ racks_width = 120*n+160
 
 screen = pygame.display.set_mode((display_height, display_width))  # create screen
 running = True
+
+numofrack={}
+def num_racks(n,m):
+    for i in range(n):
+        for j in range(m):
+            for l in range(5):
+                numofrack[str((i,j,0,l))]=(120*i+90,120*j+105+20*l)
+                numofrack[str((i,j,1,l))]=(25+numofrack[str((i,j,0,0))][0],l*20+numofrack[str((i,j,0,0))][1])
+                for k in range(2,5):
+                    numofrack[str((i,j,k,l))]=((k-1)*20+numofrack[str((i,j,1,0))][0],numofrack[str((i,j,1,l))][1])
+
+num_racks(n,m)
+print(numofrack[str((0,0,1,1))])
 
 
 def make_rect(x, y):
@@ -41,8 +54,8 @@ def waste3(x, y, dir):
 
 counter = pygame.image.load("human.png")
 
-start = [500, 80]
-goal1 = [80, 500]
+start = numofrack[str((0,0,1,1))]
+goal1 = numofrack[str((2,2,1,4))]
 Agent1 = Agent(start, goal1)
 
 
@@ -144,17 +157,13 @@ flag = 0
 waste1(n, m)
 waste2(n,m)
 
-# cAgent=Search(start,goal1)
-# cAgent.AStarModif()
-# Path=cAgent.getPath()
-
 cAgent=Search(start,goal1)
 cAgent.AStarModif()
 Path=cAgent.getPath()
 
 i=0
 while running:
-    #time.sleep(0.02)
+    time.sleep(0.02)
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
