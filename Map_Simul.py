@@ -7,11 +7,11 @@ import colors
 pygame.init()
 import time
 # n,m=input().split()   Take input from User
-n = 5   # height
-m = 5   # width
+n = 10   # height
+m = 7   # width
 
-display_height = 1000
-display_width = 1000
+display_height = 120*m+160
+display_width = 120*n+160
 racks_height = 120*m+160
 racks_width = 120*n+160
 
@@ -41,8 +41,8 @@ def waste3(x, y, dir):
 
 counter = pygame.image.load("human.png")
 
-start = [90, 500]
-goal1 = [500, 80]
+start = [500, 80]
+goal1 = [80, 500]
 Agent1 = Agent(start, goal1)
 
 
@@ -144,15 +144,17 @@ flag = 0
 waste1(n, m)
 waste2(n,m)
 
+# cAgent=Search(start,goal1)
+# cAgent.AStarModif()
+# Path=cAgent.getPath()
+
 cAgent=Search(start,goal1)
 cAgent.AStarModif()
 Path=cAgent.getPath()
 
-for i in range(1,2,1):
-    print(i,"waah")
 i=0
 while running:
-    time.sleep(0.1)
+    #time.sleep(0.02)
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
@@ -170,4 +172,4 @@ while running:
     pygame.draw.circle(screen, colors.LIGHTBLUE1,(Agent1.playerX, Agent1.playerY), 2)
     pygame.display.update()
 
-print(Matrix.grid[81][80])
+#print(Matrix.grid[81][80])

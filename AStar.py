@@ -11,7 +11,7 @@ dx4=[(-1,0),(0,-1),(1,0),(0,1)]
 INF=int(1e12)
 dir=[(-1,-1),(0,-1),(0,1),(1,0),(-1,0)]
 
-N=1000
+N=2000
 Matrix = Grid(N, N)
 class Search():
    
@@ -33,10 +33,10 @@ class Search():
                 break
             #print(cState[0],cState[1],Matrix.grid[cState[0]][cState[1]],"bete")
             for i in range(1,len(Matrix.grid[cState[0]][cState[1]]),1):
-                d=Matrix.grid[cState[0]][cState[1]][i]
-                print(d)
-                nextX=dir[d][0]+cState[0]
-                nextY=dir[d][1]+cState[1]
+                de=Matrix.grid[cState[0]][cState[1]][i]
+                #print(d)
+                nextX=dir[de][0]+cState[0]
+                nextY=dir[de][1]+cState[1]
                 if nextX>=0 and nextY>=0 and nextX<Matrix.height and nextY<Matrix.width:
                     if self.dist[nextX][nextY]> d+ManhattanDistance([nextX,nextY],self.dest)+1:
                         self.dist[nextX][nextY]=d+ManhattanDistance([nextX,nextY],self.dest)+1
@@ -83,9 +83,10 @@ class Search():
             print("Not Possible")
             return []
         else:
+            print("krish",self.prev[self.dest[0]][self.dest[1]])
             res=[self.dest]
             cur=self.dest
-            while self.prev[cur[0]][cur[1]]!=[-1,-1]:
+            while self.prev[cur[0]][cur[1]]!=self.source:
                 res.append(self.prev[cur[0]][cur[1]])
                 cur=self.prev[cur[0]][cur[1]]
             res.reverse()
