@@ -1,9 +1,11 @@
 import pygame
 from Agent007 import Agent
 from Grid import Grid
+import AStar
 from AStar import Search,Matrix
 import colors
 pygame.init()
+import time
 # n,m=input().split()   Take input from User
 n = 5   # height
 m = 5   # width
@@ -13,8 +15,7 @@ display_width = 1000
 racks_height = 120*m+160
 racks_width = 120*n+160
 
-screen = pygame.display.set_mode(
-    (display_height, display_width))  # create screen
+screen = pygame.display.set_mode((display_height, display_width))  # create screen
 running = True
 
 
@@ -40,15 +41,13 @@ def waste3(x, y, dir):
 
 counter = pygame.image.load("human.png")
 
-start = [81, 80]
-goal1 = [82, 80]
+start = [90, 500]
+goal1 = [500, 80]
 Agent1 = Agent(start, goal1)
 
 
-# Applying A Star Here
-cAgent=Search(start,goal1)
-cAgent.AStarModif()
-Path=cAgent.getPath()
+#Applying A Star Here
+
 
 # n - Height m - Cols
 def build_racks(n, m):
@@ -109,7 +108,6 @@ direction["left"] = 4
 #  Grid[x][y]=empty list ho
 
 def add_edge(X, Y, dir):
-    # print(X,X[0],X[1])
     if X[0] == Y[0]:
         for i in range(X[1], Y[1]+1, 1):
             Matrix.grid[X[0]][i].append(dir)
@@ -146,8 +144,15 @@ flag = 0
 waste1(n, m)
 waste2(n,m)
 
+cAgent=Search(start,goal1)
+cAgent.AStarModif()
+Path=cAgent.getPath()
+
+for i in range(1,2,1):
+    print(i,"waah")
 i=0
 while running:
+    time.sleep(0.1)
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
@@ -165,6 +170,4 @@ while running:
     pygame.draw.circle(screen, colors.LIGHTBLUE1,(Agent1.playerX, Agent1.playerY), 2)
     pygame.display.update()
 
-
-
-print(Matrix.grid[start[0]][start[1]])
+print(Matrix.grid[81][80])

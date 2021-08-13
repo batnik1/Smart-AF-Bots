@@ -11,7 +11,7 @@ dx4=[(-1,0),(0,-1),(1,0),(0,1)]
 INF=int(1e12)
 dir=[(-1,-1),(0,-1),(0,1),(1,0),(-1,0)]
 
-N=2000
+N=1000
 Matrix = Grid(N, N)
 class Search():
    
@@ -31,11 +31,12 @@ class Search():
                 continue
             if cState==self.dest:
                 break
-            
+            #print(cState[0],cState[1],Matrix.grid[cState[0]][cState[1]],"bete")
             for i in range(1,len(Matrix.grid[cState[0]][cState[1]]),1):
                 d=Matrix.grid[cState[0]][cState[1]][i]
-                nextX=dir[d[0]]+cState[0]
-                nextY=dir[d[1]]+cState[1]
+                print(d)
+                nextX=dir[d][0]+cState[0]
+                nextY=dir[d][1]+cState[1]
                 if nextX>=0 and nextY>=0 and nextX<Matrix.height and nextY<Matrix.width:
                     if self.dist[nextX][nextY]> d+ManhattanDistance([nextX,nextY],self.dest)+1:
                         self.dist[nextX][nextY]=d+ManhattanDistance([nextX,nextY],self.dest)+1
