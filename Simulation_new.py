@@ -54,7 +54,6 @@ while running:
     
     i=0
     while i+3<len(buffer):
-        #print(buffer[i],buffer[i+1],buffer[i+2],buffer[i+3])
         points = [buffer[i], buffer[i+1],buffer[i+2],buffer[i+3]]
         pygame.draw.polygon(screen, (255,0,0), points)
         i+=4

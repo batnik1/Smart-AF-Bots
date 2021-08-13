@@ -3,14 +3,16 @@ import math ,heapq
 import queue
 import collections
 from Grid import Grid
-from Make_map import Matrix
+
 def ManhattanDistance(start,end):
-        return abs(start[0]-end[0])+abs(start[1]-end[1])
+    return abs(start[0]-end[0])+abs(start[1]-end[1])
 
 dx4=[(-1,0),(0,-1),(1,0),(0,1)]
 INF=int(1e12)
+dir=[(-1,-1),(0,-1),(0,1),(1,0),(-1,0)]
 
-N=1600
+N=2000
+Matrix = Grid(N, N)
 class Search():
    
     def __init__(self,source,destination):
@@ -19,6 +21,26 @@ class Search():
         self.dest=destination
         self.dist=[[INF for i in range(N)] for j in range(N)]
         self.prev=[[[-1,-1] for i in range(N)] for j in range(N)]
+    
+    def AStarModif(self):
+        heapq.heappush(self.heap,(ManhattanDistance(self.source,self.dest),self.source))   # Cost,x,y   
+        self.dist[self.source[0]][self.source[1]]= ManhattanDistance(self.source,self.dest)
+        while len(self.heap)>0:
+            (d,cState)=heapq.heappop(self.heap)
+            if d >self.dist[cState[0]][cState[1]]:
+                continue
+            if cState==self.dest:
+                break
+            
+            for i in range(1,len(Matrix.grid[cState[0]][cState[1]]),1):
+                d=Matrix.grid[cState[0]][cState[1]][i]
+                nextX=dir[d[0]]+cState[0]
+                nextY=dir[d[1]]+cState[1]
+                if nextX>=0 and nextY>=0 and nextX<Matrix.height and nextY<Matrix.width:
+                    if self.dist[nextX][nextY]> d+ManhattanDistance([nextX,nextY],self.dest)+1:
+                        self.dist[nextX][nextY]=d+ManhattanDistance([nextX,nextY],self.dest)+1
+                        self.prev[nextX][nextY]=cState
+                        heapq.heappush(self.heap,(self.dist[nextX][nextY],[nextX,nextY]))
     
     def AStar(self):
         heapq.heappush(self.heap,(ManhattanDistance(self.source,self.dest),self.source))   # Cost,x,y   

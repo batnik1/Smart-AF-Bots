@@ -8,7 +8,7 @@ class Grid():
         self.width = width
         self.height = height
         rows, cols = (height, width)
-        self.grid = [[0 for i in range(cols)] for j in range(rows)]
+        self.grid = [[[0] for i in range(cols)] for j in range(rows)]
 
     def build_roads(self):
         pass
