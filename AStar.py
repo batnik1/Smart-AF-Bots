@@ -66,7 +66,7 @@ class Search():
     
     # def getPrev
     
-    def BFS(self,rev=True):
+    def BFS(self,rev=False):
         queue = collections.deque([self.source])
         self.dist[self.source[0]][self.source[1]]=0
         while queue: 

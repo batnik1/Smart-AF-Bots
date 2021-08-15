@@ -7,11 +7,11 @@ import colors
 
 import time
 # n,m=input().split()   Take input from User
-n = 5   # height
-m = 5   # width
+n = 4   # height
+m = 4   # width
 
-display_height = 120*m+160
-display_width = 120*n+160
+display_height = 120*m+300
+display_width = 120*n+300
 racks_height = 120*m+160
 racks_width = 120*n+160
 
@@ -28,10 +28,13 @@ def num_racks(n,m):
 num_racks(n,m)
 print(numofrack[str((0,0,1,1))])
 
-
-
+numofhcounter={}
+def num_hcounter(n,m):
+    for i in range(2):
+        for j in range(m):
+            numofhcounter[str((i,j))]=(90+120*j+i*(80), i*(120*(n+1)-40)+45)
+num_hcounter(n,m)
 pygame.display.set_caption("Amazon Warehouse")
-
 
 def waste3(x, y, dir):
     if x:
@@ -98,12 +101,25 @@ def marking_line(x,y):
     add_edge((x-10,y+35),(x+100,y+35),direction["left"])
     add_edge((x-10,y+75),(x+100,y+75),direction["left"])
 
+def marking_queue_line(n,m):
+    x=90
+    for i in range(m):
+        add_edge((x, 10), (x, 80),direction["down"])
+        add_edge((x+80,10),(x+80,80),direction["up"])
+        add_edge((x, 10), (x+80,10),direction["left"])
+        x+=120
+    x=90
+    for i in range(m):
+        add_edge((x, 120*(n+1)-30), (x, 40+120*(n+1)),direction["down"])
+        add_edge((x+80, 120*(n+1)-30), (x+80, 40+120*(n+1)),direction["up"])
+        add_edge((x, 40+120*(n+1)), (x+80,40+120*(n+1)),direction["right"])
+        x+=120
 
 j = 0
 flag = 0
 waste1(n, m)
 waste2(n,m)
-
+marking_queue_line(n,m)
 # for i in range(n):
 #     for j in range(
 # sources
