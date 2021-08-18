@@ -1,17 +1,16 @@
 import math
-import pygame
+import random
+import colors
+#  1 toh yeh truck wale aur varna yeh counter
+
+
 class Agent():
-
-    def __init__(self, Destination, Target):
-        self.playerX = Destination[0]
-        self.playerY = Destination[1]
-        self.goalX = Target[0]
-        self.goalY = Target[1]
-
-  
-    def move(self, Target):
-        self.playerX=Target[0]
-        self.playerY=Target[1]
-        
-
-  
+    def __init__(self, type,n,m):
+        self.position = (0, 0)
+        self.Wait = True
+        self.type = type
+        self.Index = 0
+        self.Path = []
+        self.CurRack = str((random.randint(0,n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
+        self.color = colors.YELLOW1
+        self.size = 2

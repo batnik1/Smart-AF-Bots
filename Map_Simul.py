@@ -15,6 +15,18 @@ display_width = 120*n+300
 racks_height = 120*m+160
 racks_width = 120*n+160
 
+rack_availaible={}
+def rack_availaible_fn():
+    for i in range(n):
+        for j in range(m):
+            for k in range(5):
+                for l in range(5):
+                    rack_availaible[str((i,j,k,l))]=1
+
+rack_availaible_fn()
+print(rack_availaible[str((3,1,1,1))])
+
+
 numofrack={}
 def num_racks(n,m):
     for i in range(n):
@@ -42,10 +54,6 @@ def waste3(x, y, dir):
     elif y:
         add_edge((80, y), (racks_height-70, y),dir)
 
-
-
-
-#Applying A Star Here
 
 
 
@@ -114,6 +122,12 @@ def marking_queue_line(n,m):
         add_edge((x+80, 120*(n+1)-30), (x+80, 40+120*(n+1)),direction["up"])
         add_edge((x, 40+120*(n+1)), (x+80,40+120*(n+1)),direction["right"])
         x+=120
+
+def marking_station_line(n,m):
+    add_edge((80, 80), (30, 80),direction["left"])
+    add_edge((80, (n//2+n%2)*100), ((30, (n//2+n%2)*100)),direction["right"])
+    add_edge((30, (n//2+n%2)*100), ((30, 80)),direction["down"])
+    pass
 
 j = 0
 flag = 0
