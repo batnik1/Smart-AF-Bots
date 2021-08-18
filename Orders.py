@@ -43,23 +43,25 @@ def random_order():
   racks_to_send=collections.deque()
   for document in collection.find():
     quantity=document["quantity"]
-    order_quantity=random.randint(0,1)
+    order_quantity=random.randint(0,quantity)
+    order_quantity=1
     collection.update_one({"type":document["type"]},{"$inc":{"quantity":-1*order_quantity}})
     i=0
-    while order_quantity!=0 and i < len(document["shelves"]):
+    while order_quantity!=0:
       if document["shelves"][i]["quantity"] > order_quantity:
         collection.update_one({"type":document["type"],"shelves.shelf":document["shelves"][i]["shelf"]},{"$inc":{"shelves.$.quantity":-1*order_quantity}})      
+        racks_to_send.append((document["shelves"][i]["shelf"],(document["type"],order_quantity)))
         order_quantity=0
       else:
-        collection.update_one({"type":document["type"]},{"$pull":{"shelves":{"shelf":document["shelves"][i]["shelf"], "quantity":document["shelves"][i]["quantity"]}}})
         order_quantity-=document["shelves"][i]["quantity"] 
-      racks_to_send.append(document["shelves"][i]["shelf"])
+        collection.update_one({"type":document["type"]},{"$pull":{"shelves":{"shelf":document["shelves"][i]["shelf"], "quantity":document["shelves"][i]["quantity"]}}})
+        racks_to_send.append((document["shelves"][i]["shelf"],(document["type"],document["shelves"][i]["quantity"])))
       i+=1
   return racks_to_send
 
 
 
-for i in range(10):
+for i in range(100):
   type=random.randint(0,1)
   quantity=random.randint(1,3)
   shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))

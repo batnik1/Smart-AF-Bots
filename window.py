@@ -120,7 +120,7 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 1
+Number_of_Agents = 10
 Agents = []
 for i in range(Number_of_Agents):
     nAgent=Agent(0,n,m)
@@ -149,11 +149,11 @@ def compare(item1, item2):
 def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
-        if agent.Wait == 1 and mindis>ManhattanDistance(rack_pos, agent.position):
+        if agent.Wait == True and mindis>ManhattanDistance(rack_pos, agent.position):
             mindis=ManhattanDistance(rack_pos, agent.position)
 
     for agent in Agents:
-        if agent.Wait==1:
+        if agent.Wait==True:
             if mindis==ManhattanDistance(rack_pos, agent.position):
                 return agent
 
@@ -163,9 +163,10 @@ orders=collections.deque()
 loading_truck = 0
 loading_truck_boxes = 10
 key=0;
+coloring=[]
 while running:
     time.sleep(0.02)
-    key+=1
+    print(key)
     if loading_truck == 1:
         for agent in Number_of_Agents:
             if loading_truck_boxes == 0:
@@ -177,38 +178,46 @@ while running:
             agent.size = 4
             agent.Index = len(agent.Path)
             loading_truck_boxes -= 1
-    if key%200==0:
+    if key%100==0:
         new_orders=random_order()
         while new_orders:
-            orders.append(new_orders.popleft())
+            orders.append(new_orders[0])
+            new_orders.popleft()
+            
     
     iteratations=len(orders)
+    print(iteratations)
     while iteratations>=1:
         iteratations-=1
         rack_pos = orders.popleft()
-        if rack_availaible[rack_pos]!=1:
+        if rack_availaible[rack_pos[0]]!=1:
             orders.append(rack_pos)
             continue
-        rack_pos_location=numofrack[rack_pos]
+        rack_pos_location=numofrack[rack_pos[0]]
         agent = get_Agent(rack_pos_location)
         if agent == -1:
+            orders.append(rack_pos)
             break
+        
         nAgent = Search(agent.position,rack_pos_location)
-        nAgent.BFS(True)
+        nAgent.AStar()
         a = nAgent.getPath()
         nCounter = random.randint(0, 2*m-1)
         b = Reverse_Counter[nCounter].getBFSPath(rack_pos_location)
         c = Counter[nCounter].getBFSPath(rack_pos_location)
         b.reverse()
-        agent.Path = a+b+c
+        agent.Path =a+b+c
         agent.Path.reverse()
         agent.Index = len(agent.Path)
         agent.Wait = False
         agent.color = colors.LIGHTBLUE1
         agent.size = 4
+        print("delivering ", rack_pos[1])
+        pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
+        coloring.append(rack_pos_location)
         #delivered.insert_one()
         
-    
+  
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
@@ -232,6 +241,10 @@ while running:
             agent.color = colors.YELLOW1
             agent.size = 2
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+    key+=1
+    for colo in range(len(coloring)):
+         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0]+5,coloring[colo][1]-5, 10, 10))
+
     pygame.display.update()
 
  # for agent in range(20):
