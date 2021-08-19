@@ -43,8 +43,8 @@ def random_order():
   racks_to_send=collections.deque()
   for document in collection.find():
     quantity=document["quantity"]
-    order_quantity=random.randint(0,quantity)
-    order_quantity=1
+    order_quantity=random.randint(0,3)
+    #order_quantity=1
     collection.update_one({"type":document["type"]},{"$inc":{"quantity":-1*order_quantity}})
     i=0
     while order_quantity!=0:
@@ -61,8 +61,8 @@ def random_order():
 
 
 
-for i in range(100):
-  type=random.randint(0,1)
+for i in range(1000):
+  type=random.randint(0,10)
   quantity=random.randint(1,3)
   shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
   if collection.find_one({"type":type}):

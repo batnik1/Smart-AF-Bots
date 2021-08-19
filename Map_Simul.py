@@ -24,7 +24,7 @@ def rack_availaible_fn():
                     rack_availaible[str((i,j,k,l))]=1
 
 rack_availaible_fn()
-print(rack_availaible[str((3,1,1,1))])
+#print(rack_availaible[str((3,1,1,1))])
 
 
 numofrack={}

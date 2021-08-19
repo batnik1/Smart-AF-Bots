@@ -8,6 +8,7 @@ import collections
 pygame.init()
 screen = pygame.display.set_mode(
     (display_height, display_width))  # create screen
+import time
 
 
 def ManhattanDistance(start, end):
@@ -162,11 +163,11 @@ def get_Agent(rack_pos):
 orders=collections.deque()
 loading_truck = 0
 loading_truck_boxes = 10
-key=0;
+key=0
 coloring=[]
 while running:
     time.sleep(0.02)
-    print(key)
+    #print(key)
     if loading_truck == 1:
         for agent in Number_of_Agents:
             if loading_truck_boxes == 0:
@@ -186,7 +187,6 @@ while running:
             
     
     iteratations=len(orders)
-    print(iteratations)
     while iteratations>=1:
         iteratations-=1
         rack_pos = orders.popleft()
@@ -199,9 +199,12 @@ while running:
             orders.append(rack_pos)
             break
         
+        start1=time.perf_counter()
         nAgent = Search(agent.position,rack_pos_location)
-        nAgent.AStar()
+        nAgent.BFS()
         a = nAgent.getPath()
+        start2=time.perf_counter()
+        #print("outer one",start2-start1)
         nCounter = random.randint(0, 2*m-1)
         b = Reverse_Counter[nCounter].getBFSPath(rack_pos_location)
         c = Counter[nCounter].getBFSPath(rack_pos_location)
@@ -212,9 +215,13 @@ while running:
         agent.Wait = False
         agent.color = colors.LIGHTBLUE1
         agent.size = 4
-        print("delivering ", rack_pos[1])
+        print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
-        coloring.append(rack_pos_location)
+        
+        if rack_pos[0][7]=="0":
+            coloring.append((rack_pos_location,10))
+        else:
+            coloring.append((rack_pos_location,5))
         #delivered.insert_one()
         
   
@@ -243,7 +250,7 @@ while running:
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     key+=1
     for colo in range(len(coloring)):
-         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0]+5,coloring[colo][1]-5, 10, 10))
+         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
 
     pygame.display.update()
 

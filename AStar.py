@@ -4,29 +4,41 @@ import heapq
 import queue
 import collections
 from Grid import Grid
-
+import time
 
 def ManhattanDistance(start, end):
     return abs(start[0]-end[0])+abs(start[1]-end[1])
 
 
 dx4 = [(-1, 0), (0, -1), (1, 0), (0, 1)]
-INF = int(1e12)
+INF = int(100000)
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
-N = 1600
+
+N = 1000
+
+diss = [[INF for i in range(N)] for j in range(N)]
+press = [[[-1, -1] for i in range(N)] for j in range(N)]
+
+
+
 Matrix = Grid(N, N)
 
 
-class Search():
+class Search(): 
 
     def __init__(self, source, destination):
         self.heap = []
         self.source = source
         self.dest = destination
-        self.dist = [[INF for i in range(N)] for j in range(N)]
-        self.prev = [[[-1, -1] for i in range(N)] for j in range(N)]
+        start=time.perf_counter()
+        self.dist=[x[:] for x in diss]
+        self.prev=[x[:] for x in press]
+        # self.dist = [[INF for i in range(N)] for j in range(N)]
+        # self.prev = [[[-1, -1] for i in range(N)] for j in range(N)]
+        end=time.perf_counter()
+        #print(end-start)
 
     def AStarModif(self, sources):
         for k in range(0, len(sources)):
