@@ -121,7 +121,7 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 10
+Number_of_Agents = 1
 Agents = []
 for i in range(Number_of_Agents):
     nAgent=Agent(0,n,m)
@@ -179,7 +179,7 @@ while running:
             agent.size = 4
             agent.Index = len(agent.Path)
             loading_truck_boxes -= 1
-    if key%100==0:
+    if key==0:
         new_orders=random_order()
         while new_orders:
             orders.append(new_orders[0])
