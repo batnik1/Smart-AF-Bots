@@ -6,17 +6,16 @@ import gc
 gc.disable()
 Counter = []
 Reverse_Counter = []
+print('Pre-Calculating Paths.....')
 for j in range(2*m):
     cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
     cAgent.BFS(True)
     Reverse_Counter.append(cAgent)
-    print("a")
+    
     cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
     cAgent.BFS()
     Counter.append(cAgent)
-    print("b")
-    print(j)
-
+print('Pre-Computation Done')
 Reverse_Station = []
 Station = []
 station_counter = (30, 80+(n//2+n % 2)*50)

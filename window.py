@@ -9,6 +9,8 @@ pygame.init()
 screen = pygame.display.set_mode(
     (display_height, display_width))  # create screen
 import time
+import logging
+
 
 
 def ManhattanDistance(start, end):
@@ -121,7 +123,7 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 10
+Number_of_Agents = 2
 Agents = []
 for i in range(Number_of_Agents):
     nAgent=Agent(0,n,m)
@@ -153,83 +155,126 @@ def get_Agent(rack_pos):
         if agent.Wait == True and mindis>ManhattanDistance(rack_pos, agent.position):
             mindis=ManhattanDistance(rack_pos, agent.position)
 
-    for agent in Agents:
-        if agent.Wait==True:
-            if mindis==ManhattanDistance(rack_pos, agent.position):
-                return agent
-
+    for i in range(len(Agents)):
+        if Agents[i].Wait==True:
+            if mindis==ManhattanDistance(rack_pos, Agents[i].position):
+                return i
     return -1
     
-orders=collections.deque()
+def pause():
+    paused=True
+    while paused:
+        pass
+
+#Creating Log File
+logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
+logger=logging.getLogger()
+logger.setLevel(logging.DEBUG)
+orders=[]
 loading_truck = 0
 loading_truck_boxes = 10
 key=0
 coloring=[]
+paused=False
 while running:
     time.sleep(0.02)
-    #print(key)
-    if loading_truck == 1:
-        for agent in Number_of_Agents:
-            if loading_truck_boxes == 0:
-                loading_truck = 0
+    # if loading_truck == 1:
+    #     for agent in Number_of_Agents:
+    #         if loading_truck_boxes == 0:
+    #             loading_truck = 0
+    #             break
+    #         agent.Path = write_path(agent.position)
+    #         agent.Wait = False
+    #         agent.color = colors.LIGHTBLUE1
+    #         agent.size = 4
+    #         agent.Index = len(agent.Path)
+    #         loading_truck_boxes -= 1
+    if key%500==0:
+        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+        if new_orders!="Nothing":
+            orders.append(new_orders)   # To mantain FCFC Order
+    
+    iteratations=len(orders)
+    finished=[]
+    for i in range(len(orders)):
+        iteratations-=1
+        list_racks = orders[i][0]
+        hCounter=orders[i][1]
+        order_id=orders[i][2]
+        count=0
+        finished_racks=[]
+        for rack in list_racks:    
+            if rack_available[rack]!=1:
+                continue
+
+            rack_location=numofrack[rack]
+            ind = get_Agent(rack_location)
+            if ind == -1:
                 break
-            agent.Path = write_path(agent.position)
+            rack_available[rack]=1
+            agent=Agents[ind]
+            logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
+            agent.ind=ind
+            bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
+            nAgent = Search(agent.position,rack_location)
+            nAgent.BFS()
+            
+            count+=1
+            finished_racks.append(rack)
+            
+            a = nAgent.getPath()                                 # Agent's Position to Desired Rack 
+            b = Reverse_Counter[hCounter].getBFSPath(rack_location)     # From that Rack to Counter
+            c = Counter[hCounter].getBFSPath(rack_location)
+            b.reverse()
+
+            agent.Path =a+[[-7,-7]]+b+[[-14,-14]]+c+[[-21,-21]]
+            agent.Path.reverse()
+            agent.Index = len(agent.Path)
             agent.Wait = False
             agent.color = colors.LIGHTBLUE1
             agent.size = 4
-            agent.Index = len(agent.Path)
-            loading_truck_boxes -= 1
-    if key%100==0:
-        new_orders=random_order()
-        while new_orders:
-            orders.append(new_orders[0])
-            new_orders.popleft()
-            
+            agent.order_id=order_id
+            agent.items_carrying=list_racks[rack]
+            agent.CurRack=rack
+            # print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
+            # pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
+            if rack[7]=="0":
+                coloring.append((numofrack[rack],10,agent))
+            else:
+                coloring.append((numofrack[rack],5,agent))
+        for rack in finished_racks:
+            orders[i][0].pop(rack)
+        if len(orders[i][0])==0:
+            finished.append(i)      
+              
     
-    iteratations=len(orders)
-    while iteratations>=1:
-        iteratations-=1
-        rack_pos = orders.popleft()
-        if rack_availaible[rack_pos[0]]!=1:
-            orders.append(rack_pos)
-            continue
-        rack_pos_location=numofrack[rack_pos[0]]
-        agent = get_Agent(rack_pos_location)
-        if agent == -1:
-            orders.append(rack_pos)
-            break
-        
-        start1=time.perf_counter()
-        nAgent = Search(agent.position,rack_pos_location)
-        nAgent.BFS()
-        a = nAgent.getPath()
-        start2=time.perf_counter()
-        #print("outer one",start2-start1)
-        nCounter = random.randint(0, 2*m-1)
-        b = Reverse_Counter[nCounter].getBFSPath(rack_pos_location)
-        c = Counter[nCounter].getBFSPath(rack_pos_location)
-        b.reverse()
-        agent.Path =a+b+c
-        agent.Path.reverse()
-        agent.Index = len(agent.Path)
-        agent.Wait = False
-        agent.color = colors.LIGHTBLUE1
-        agent.size = 4
-        print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
-        pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
-        
-        if rack_pos[0][7]=="0":
-            coloring.append((rack_pos_location,10))
-        else:
-            coloring.append((rack_pos_location,5))
-        #delivered.insert_one()
-        
-  
+    for ind in finished:
+        orders.remove(orders[ind])
+    finished.clear()
+
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
             running = False
-            break
+            quit()
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_SPACE:
+                if paused:
+                    paused=False
+                else:
+                    paused=True
+                    break
+    
+    while paused:
+        events = pygame.event.get()
+        for event in events:
+            if event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_SPACE:
+                    if paused:
+                        paused=False
+                    else:
+                        paused=True
+                        break
     screen.fill((0, 0, 0))
     build_racks(n, m)
     draw_line(n, m)
@@ -238,45 +283,49 @@ while running:
     build_station_lines()
     build_counter_lines()
     for agent in Agents:
+        if agent.Index==2:                      # Coloring Racks 
+            remove=[]
+            for colo in range(len(coloring)):
+                if coloring[colo][0]==agent.CurRack:
+                    remove.append(coloring[colo])
+            for i in remove:
+                coloring.remove(i)
         agent.Index -= 1
         if agent.Index >= 0:
-            agent.position = (
-                agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+            if agent.Path[agent.Index]==[-7,-7]:
+                agent.Index -= 1
+                logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
+            elif agent.Path[agent.Index]==[-14,-14]:
+                logger.info('Bot '+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
+                doc=order_db.find_one({"_id":agent.order_id})
+                quantity=doc["ordered_quantity"]
+                progress=doc["order_progress"]
+                total_items_carrying=0
+                for items in agent.items_carrying:
+                    total_items_carrying+=items[1]
+                order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
+                agent.Index -= 1
+            elif agent.Path[agent.Index]==[-21,-21]:
+                logger.info('Bot '+str(agent.ind)+': Back at my Rack Now')
+                agent.Index -= 1
+            else: 
+                agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
             agent.Path = []
+            rack_available[agent.CurRack]=0
+            bot_db.delete_one({"_id":agent.ind})
             agent.Wait = True
             agent.color = colors.YELLOW1
             agent.size = 2
+            remove=[]
+            for colo in range(len(coloring)):
+                if coloring[colo][2]==agent:
+                    remove.append(coloring[colo])
+            for i in remove:
+                coloring.remove(i)
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     key+=1
     for colo in range(len(coloring)):
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
 
     pygame.display.update()
-
- # for agent in range(20):
-    #     if waiting_state[agent]==0:
-    #         if flag_location[agent]==1:
-    #             collection.update_one({"_id":agent_counter[agent]},{"$inc":{"score": 1}})
-    #             #time.sleep(2)
-    #             v1=random.randint(0,n-1)
-    #             v2=random.randint(0,m-1)
-    #             v3=random.randint(0,4)
-    #             v4=random.randint(0,4)
-    #             voo[agent]=(v1,v2,v3,v4)
-    #             print(agent," agent path now from human counter ",agent_counter[agent],"to rack (",v1,v2,v3,v4,")")
-    #             Path[agent]= Counter[agent_counter[agent]].getBFSPath(numofrack[str((v1,v2,v3,v4))])
-    #             Path[agent].reverse()
-    #             Index[agent]=len(Path[agent])
-    #             color_agent[agent]=colors.LIGHTBLUE1
-    #             size_agent[agent]=2
-    #             flag_location[agent]=0
-    #         else:
-    #             #time.sleep(2)
-    #             agent_counter[agent]=random.randint(0,2*m-1)
-    #             print(agent," agent path now from rack (",voo[agent][0],voo[agent][1],voo[agent][2],voo[agent][3],") to human counter ",agent_counter[agent])
-    #             Path[agent]= Reverse_Counter[agent_counter[agent]].getBFSPath(numofrack[str((voo[agent][0],voo[agent][1],voo[agent][2],voo[agent][3]))])
-    #             Index[agent]=len(Path[agent])
-    #             color_agent[agent]=colors.RED1
-    #             size_agent[agent]=4
-    #             flag_location[agent]=1

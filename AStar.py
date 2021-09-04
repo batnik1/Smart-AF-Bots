@@ -82,9 +82,8 @@ class Search():
                 nextX = x+cState[0]
                 nextY = y+cState[1]
                 if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width and Matrix.grid[nextX][nextY] == 1:
-                    if self.dist[nextX][nextY] > d+ManhattanDistance([nextX, nextY], self.dest)+1:
-                        self.dist[nextX][nextY] = d + \
-                            ManhattanDistance([nextX, nextY], self.dest)+1
+                    if self.dist[nextX][nextY]-ManhattanDistance([nextX, nextY], self.dest) > d-ManhattanDistance([cState[0], cState[1]], self.dest)+1:
+                        self.dist[nextX][nextY] = d -ManhattanDistance([cState[0], cState[1]], self.dest)+ ManhattanDistance([nextX, nextY], self.dest)+1
                         self.prev[nextX][nextY] = cState
                         heapq.heappush(
                             self.heap, (self.dist[nextX][nextY], [nextX, nextY]))

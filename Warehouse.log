@@ -1,0 +1,14 @@
+2021-09-04 22:19:51,364 Bot 1 is assigned to go to Rack (2, 2, 4, 1)
+2021-09-04 22:19:51,490 Bot 0 is assigned to go to Rack (2, 2, 0, 0)
+2021-09-04 22:19:59,229 Bot 1: Reached the Desired Rack
+2021-09-04 22:20:02,240 Bot 0: Reached the Desired Rack
+2021-09-04 22:20:11,525 Bot 1: Reached the Human Counter with items [[1, 2]]
+2021-09-04 22:20:17,178 Bot 0: Reached the Human Counter with items [[2, 2], [5, 2]]
+2021-09-04 22:20:22,684 Bot 1: Back at my Rack Now
+2021-09-04 22:20:22,713 Bot 1 is assigned to go to Rack (2, 0, 1, 2)
+2021-09-04 22:20:29,456 Bot 0: Back at my Rack Now
+2021-09-04 22:20:31,964 Bot 1: Reached the Desired Rack
+2021-09-04 22:20:34,271 Bot 0 is assigned to go to Rack (0, 3, 4, 3)
+2021-09-04 22:20:43,684 Bot 0: Reached the Desired Rack
+2021-09-04 22:20:44,531 Bot 1: Reached the Human Counter with items [[0, 3]]
+2021-09-04 22:21:08,163 Bot 1: Back at my Rack Now
