@@ -161,6 +161,10 @@ def get_Agent(rack_pos):
                 return i
     return -1
     
+def pause():
+    paused=True
+    while paused:
+        pass
 
 #Creating Log File
 logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
@@ -171,6 +175,7 @@ loading_truck = 0
 loading_truck_boxes = 10
 key=0
 coloring=[]
+paused=False
 while running:
     time.sleep(0.02)
     # if loading_truck == 1:
@@ -186,8 +191,9 @@ while running:
     #         loading_truck_boxes -= 1
     if key%500==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-        orders.append(new_orders)   # To mantain FCFC Order
-            
+        if new_orders!="Nothing":
+            orders.append(new_orders)   # To mantain FCFC Order
+    
     iteratations=len(orders)
     finished=[]
     for i in range(len(orders)):
@@ -198,13 +204,14 @@ while running:
         count=0
         finished_racks=[]
         for rack in list_racks:    
-            if rack_availaible[rack]!=1:
+            if rack_available[rack]!=1:
                 continue
-            
+
             rack_location=numofrack[rack]
             ind = get_Agent(rack_location)
             if ind == -1:
                 break
+            rack_available[rack]=1
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
@@ -228,6 +235,7 @@ while running:
             agent.size = 4
             agent.order_id=order_id
             agent.items_carrying=list_racks[rack]
+            agent.CurRack=rack
             # print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
             # pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
             if rack[7]=="0":
@@ -248,7 +256,28 @@ while running:
     for event in events:
         if event.type == pygame.QUIT:
             running = False
-            break
+            quit()
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_SPACE:
+                if paused:
+                    paused=False
+                else:
+                    paused=True
+                    break
+    
+    while paused:
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                running = False
+                quit()
+            if event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_SPACE:
+                    if paused:
+                        paused=False
+                    else:
+                        paused=True
+                        break
     screen.fill((0, 0, 0))
     build_racks(n, m)
     draw_line(n, m)
@@ -286,6 +315,7 @@ while running:
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
             agent.Path = []
+            rack_available[agent.CurRack]=0
             bot_db.delete_one({"_id":agent.ind})
             agent.Wait = True
             agent.color = colors.YELLOW1

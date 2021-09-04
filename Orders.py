@@ -100,6 +100,8 @@ def gen_a_order():
   order_id=str(uuid.uuid1())
   order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
   print('New Order is Placed with Order ID:',order_id,'which consists of',order)
+  if len(order)==0:
+    return "Nothing"
   return (racks,human_counter,order_id)  
 
 

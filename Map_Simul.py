@@ -15,15 +15,15 @@ display_width = 120*n+300
 racks_height = 120*m+160
 racks_width = 120*n+160
 
-rack_availaible={}
-def rack_availaible_fn():
+rack_available={}
+def rack_available_fn():
     for i in range(n):
         for j in range(m):
             for k in range(5):
                 for l in range(5):
-                    rack_availaible[str((i,j,k,l))]=1
+                    rack_available[str((i,j,k,l))]=1
 
-rack_availaible_fn()
+rack_available_fn()
 #print(rack_availaible[str((3,1,1,1))])
 
 
