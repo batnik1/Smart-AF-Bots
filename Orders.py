@@ -14,11 +14,11 @@ Call_Truck():
         d=rand_quantity()
 
 """
-
+import uuid
 import re
 import time
 import collections
-# from Map_Simul import *
+from Map_Simul import *
 import random
 import numpy as np
 from numpy.random.mtrand import rand
@@ -31,39 +31,21 @@ import pymongo
 from pymongo import MongoClient
 connection=MongoClient('localhost',27017)
 
+item_types_in_db=[]
+
 db=connection['amazon']
 collection=db["big_database"]
 delivered=db["delivered"]
 order_db=db["order_db"]
+bot_db=db["bot_db"]
 #rack_collection=db["rack_shelf"]
 
 order_db.drop()
 collection.drop()
+bot_db.drop()
 
-
-type_of_items=2
-max_order_limit=4
-
-
-def random_order():
-  racks_to_send=collections.deque()
-  for document in collection.find():
-    quantity=document["quantity"]
-    order_quantity=1
-    collection.update_one({"type":document["type"]},{"$inc":{"quantity":-1*order_quantity}})
-    i=0
-    while order_quantity!=0:
-      if document["shelves"][i]["quantity"] > order_quantity:
-        collection.update_one({"type":document["type"],"shelves.shelf":document["shelves"][i]["shelf"]},{"$inc":{"shelves.$.quantity":-1*order_quantity}})      
-        racks_to_send.append((document["shelves"][i]["shelf"],(document["type"],order_quantity)))
-        order_quantity=0
-      else:
-        order_quantity-=document["shelves"][i]["quantity"] 
-        collection.update_one({"type":document["type"]},{"$pull":{"shelves":{"shelf":document["shelves"][i]["shelf"], "quantity":document["shelves"][i]["quantity"]}}})
-        racks_to_send.append((document["shelves"][i]["shelf"],(document["type"],document["shelves"][i]["quantity"])))
-      i+=1
-  return racks_to_send
-
+type_of_items=5
+max_order_limit=5
 
 def assign_rack(orders):
   racks_dict={}
@@ -79,8 +61,6 @@ def assign_rack(orders):
           lst.append([quant,shelf])
         lst.sort(reverse=True)
         for j in range(len(lst)):
-          if lst[j][0]==0:
-            print('Repeat')
           if lst[j][0]>target:
             collection.update_one({"type":order[0],"shelves.shelf":lst[j][1]},{"$inc":{"shelves.$.quantity":-1*target}})  
             if lst[j][1] in racks_dict:
@@ -103,32 +83,33 @@ def assign_rack(orders):
   return racks_dict
 
 def gen_a_order(): 
+  global item_types_in_db
   num_types_ordered=random.randint(1,3)
-
   order=[]
   sum=0  
-  flg=0
-  while flg==0:
-    types_chosen=random.sample(range(0,type_of_items),min(num_types_ordered,type_of_items))
-    for type in types_chosen:
-      if collection.find_one({"type":type}):
-        flg=1
-        quant=collection.find_one({"type":type})["quantity"]
-        order.append([type,random.randint(1,min(max_order_limit,quant))])
-        sum+=order[-1][1]
+  types_chosen=random.sample(item_types_in_db,min(num_types_ordered,len(item_types_in_db)))
+  for type in types_chosen:
+    if collection.find_one({"type":type}):
+      quant=collection.find_one({"type":type})["quantity"]
+      order.append([type,random.randint(1,min(max_order_limit,quant))])
+      sum+=order[-1][1]
       
   racks=assign_rack(order)
-  print(racks,order,sep='\t')
-  order_db.insert_one({"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks})  
-  return racks
+  
+  human_counter= random.randint(0,2*m-1)
+  order_id=str(uuid.uuid1())
+  order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
+  print('New Order is Placed with Order ID:',order_id,'which consists of',order)
+  return (racks,human_counter,order_id)  
 
 
 def add_items(count):
+  global item_types_in_db
   for _ in range(count):
     type=random.randint(0,type_of_items)
+    item_types_in_db.append(type)
     quantity=random.randint(1,3)
     shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
-    shelf=str((1,1,1,1))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
       if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
@@ -137,8 +118,7 @@ def add_items(count):
         collection.update_one({"type":type},{"$push":{"shelves":{"shelf":shelf, "quantity":quantity}}}) 
     else:
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
-
+  return item_types_in_db
 
 add_items(100)
-gen_a_order()
 #print(racks)
