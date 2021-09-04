@@ -79,7 +79,7 @@ def assign_rack(orders):
             break
     if collection.find_one({"type":order[0]})["quantity"]==0:
       collection.delete_one({"type":order[0]})
-      # print(100)
+
   return racks_dict
 
 def gen_a_order(): 

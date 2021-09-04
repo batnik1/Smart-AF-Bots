@@ -9,6 +9,8 @@ pygame.init()
 screen = pygame.display.set_mode(
     (display_height, display_width))  # create screen
 import time
+import logging
+
 
 
 def ManhattanDistance(start, end):
@@ -121,7 +123,7 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 3
+Number_of_Agents = 2
 Agents = []
 for i in range(Number_of_Agents):
     nAgent=Agent(0,n,m)
@@ -159,6 +161,11 @@ def get_Agent(rack_pos):
                 return i
     return -1
     
+
+#Creating Log File
+logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
+logger=logging.getLogger()
+logger.setLevel(logging.DEBUG)
 orders=[]
 loading_truck = 0
 loading_truck_boxes = 10
@@ -199,7 +206,7 @@ while running:
             if ind == -1:
                 break
             agent=Agents[ind]
-            print('Agent No',ind,"is assigned to go to Rack",rack)
+            logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
             bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
             nAgent = Search(agent.position,rack_location)
@@ -223,11 +230,10 @@ while running:
             agent.items_carrying=list_racks[rack]
             # print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
             # pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
-            # if rack[0][7]=="0":
-            #     coloring.append((rack,10))
-            # else:
-            #     coloring.append((rack,5))
-            # delivered.insert_one()
+            if rack[7]=="0":
+                coloring.append((numofrack[rack],10,agent))
+            else:
+                coloring.append((numofrack[rack],5,agent))
         for rack in finished_racks:
             orders[i][0].pop(rack)
         if len(orders[i][0])==0:
@@ -262,10 +268,9 @@ while running:
         if agent.Index >= 0:
             if agent.Path[agent.Index]==[-7,-7]:
                 agent.Index -= 1
-                print('Bot',agent.ind ,'Reached the Desired Rack')
+                logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
             elif agent.Path[agent.Index]==[-14,-14]:
-                print('Bot',agent.ind,'Reached the Human Counter')
-                print(agent.items_carrying, "Items delievered")
+                logger.info('Bot '+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
                 doc=order_db.find_one({"_id":agent.order_id})
                 quantity=doc["ordered_quantity"]
                 progress=doc["order_progress"]
@@ -275,7 +280,7 @@ while running:
                 order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
                 agent.Index -= 1
             elif agent.Path[agent.Index]==[-21,-21]:
-                print('Order Finished ,back at my rack')
+                logger.info('Bot '+str(agent.ind)+': Back at my Rack Now')
                 agent.Index -= 1
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
@@ -285,12 +290,15 @@ while running:
             agent.Wait = True
             agent.color = colors.YELLOW1
             agent.size = 2
+            remove=[]
+            for colo in range(len(coloring)):
+                if coloring[colo][2]==agent:
+                    remove.append(coloring[colo])
+            for i in remove:
+                coloring.remove(i)
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     key+=1
     for colo in range(len(coloring)):
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
 
     pygame.display.update()
-
-
-    #  (0,0)(1,1)(2,2)(-7,-7)(3,3)
