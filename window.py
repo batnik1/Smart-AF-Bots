@@ -194,10 +194,14 @@ while running:
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFC Order
     
-    iteratations=len(orders)
     finished=[]
+    for i in range(4):
+        for j in range(4):
+            for k in range(5):
+                for l in range(5):
+                    if rack_available[str((i,j,k,l))]!=1:
+                        print('Rack Not Available',str((i,j,k,l)))
     for i in range(len(orders)):
-        iteratations-=1
         list_racks = orders[i][0]
         hCounter=orders[i][1]
         order_id=orders[i][2]
@@ -205,6 +209,7 @@ while running:
         finished_racks=[]
         for rack in list_racks:    
             if rack_available[rack]!=1:
+                print('Skipped (not aval)',rack)
                 continue
 
             rack_location=numofrack[rack]
@@ -236,17 +241,19 @@ while running:
             agent.order_id=order_id
             agent.items_carrying=list_racks[rack]
             agent.CurRack=rack
-            # print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
-            # pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
+        
             if rack[7]=="0":
                 coloring.append((numofrack[rack],10,agent))
             else:
                 coloring.append((numofrack[rack],5,agent))
+        
         for rack in finished_racks:
             orders[i][0].pop(rack)
         if len(orders[i][0])==0:
             finished.append(i)      
               
+    
+    
     
     for ind in finished:
         orders.remove(orders[ind])
