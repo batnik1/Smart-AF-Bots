@@ -7,7 +7,7 @@ from Orders import *
 import collections
 pygame.init()
 screen = pygame.display.set_mode(
-    (display_height, display_width))  # create screen
+    (display_width, display_height))  # create screen
 import time
 import logging
 
@@ -19,12 +19,22 @@ def ManhattanDistance(start, end):
 
 agent_color = colors.LIGHTBLUE1
 
+def make_sorting_area():
+    pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,racks_width//2,racks_height//2),3)
+
 def conveyor():
-    pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width-20, 0))
-    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (racks_width-20, racks_height+10),)
+    pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width, 0))
+    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (racks_width, racks_height+10),width=2)
+    x=130
+    for i in range(m):
+        pygame.draw.line(screen, colors.GREEN, (x, 0), (x, 15),width=10)
+        pygame.draw.line(screen, colors.GREEN, (x, racks_height+10), (x,racks_height-5 ),width=10)
+        x+=120
     
-    pygame.draw.line(screen, colors.GREEN, (130, 0), (130, 15),width=10)
-    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (130,racks_height-5 ),width=10)
+    pygame.draw.line(screen, colors.GREEN, (racks_width, 0), (racks_width, racks_height+10),width=2)
+    
+    
+
 
 def make_rect(x, y):
     pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(x, y, 10, 10))
@@ -32,9 +42,9 @@ def make_rect(x, y):
 
 def make_line(x, y, color):
     if x:
-        pygame.draw.line(screen, color, (x, 80), (x, racks_width-70))
+        pygame.draw.line(screen, color, (x, 80), (x, racks_height-70))
     elif y:
-        pygame.draw.line(screen, color, (80, y), (racks_height-70, y))
+        pygame.draw.line(screen, color, (80, y), (racks_width-70, y))
 
 # n - Height m - Cols
 
@@ -195,7 +205,7 @@ while running:
     #         agent.size = 4
     #         agent.Index = len(agent.Path)
     #         loading_truck_boxes -= 1
-    if key%500==0:
+    if key%300==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFC Order
@@ -293,6 +303,7 @@ while running:
     build_station_lines()
     build_counter_lines()
     conveyor()
+    make_sorting_area()
     for agent in Agents:
         if agent.Index==2:                      # Coloring Racks 
             remove=[]

@@ -1,8 +1,84 @@
-2021-09-05 20:00:01,779 Bot 0 is assigned to go to Rack (3, 3, 1, 4)
-2021-09-05 20:00:01,900 Bot 1 is assigned to go to Rack (1, 1, 1, 4)
-2021-09-05 20:00:02,664 Bot 1: Reached the Desired Rack
-2021-09-05 20:00:03,128 Bot 0: Reached the Desired Rack
-2021-09-05 20:00:04,111 Bot 1: Reached the Human Counter with items [[2, 1]]
-2021-09-05 20:00:04,627 Bot 0: Reached the Human Counter with items [[1, 1]]
-2021-09-05 20:00:05,525 Bot 1: Back at my Rack Now
-2021-09-05 20:00:05,527 Bot 1 is assigned to go to Rack (1, 3, 0, 2)
+2021-09-06 00:43:07,053 Bot 1 is assigned to go to Rack (2, 3, 1, 3)
+2021-09-06 00:43:07,259 Bot 0 is assigned to go to Rack (1, 1, 3, 3)
+2021-09-06 00:43:08,636 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:09,688 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:10,867 Bot 0: Reached the Human Counter with items [[1, 5]]
+2021-09-06 00:43:11,227 Bot 1: Reached the Human Counter with items [[3, 2]]
+2021-09-06 00:43:12,358 Bot 1: Back at my Rack Now
+2021-09-06 00:43:12,360 Bot 1 is assigned to go to Rack (3, 3, 0, 4)
+2021-09-06 00:43:12,757 Bot 0: Back at my Rack Now
+2021-09-06 00:43:12,760 Bot 0 is assigned to go to Rack (1, 2, 0, 3)
+2021-09-06 00:43:13,510 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:13,841 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:15,261 Bot 0: Reached the Human Counter with items [[1, 3]]
+2021-09-06 00:43:15,349 Bot 1: Reached the Human Counter with items [[2, 5]]
+2021-09-06 00:43:17,289 Bot 0: Back at my Rack Now
+2021-09-06 00:43:17,293 Bot 0 is assigned to go to Rack (1, 1, 3, 0)
+2021-09-06 00:43:17,790 Bot 1: Back at my Rack Now
+2021-09-06 00:43:17,793 Bot 1 is assigned to go to Rack (1, 0, 1, 0)
+2021-09-06 00:43:18,845 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:20,306 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:20,882 Bot 0: Reached the Human Counter with items [[5, 1]]
+2021-09-06 00:43:22,440 Bot 1: Reached the Human Counter with items [[4, 1]]
+2021-09-06 00:43:22,532 Bot 0: Back at my Rack Now
+2021-09-06 00:43:22,536 Bot 0 is assigned to go to Rack (1, 1, 3, 0)
+2021-09-06 00:43:22,570 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:24,341 Bot 1: Back at my Rack Now
+2021-09-06 00:43:24,344 Bot 1 is assigned to go to Rack (1, 2, 3, 4)
+2021-09-06 00:43:24,691 Bot 0: Reached the Human Counter with items [[5, 5]]
+2021-09-06 00:43:25,974 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:26,063 Bot 0: Back at my Rack Now
+2021-09-06 00:43:26,066 Bot 0 is assigned to go to Rack (3, 1, 3, 2)
+2021-09-06 00:43:27,543 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:28,532 Bot 1: Reached the Human Counter with items [[3, 5]]
+2021-09-06 00:43:29,213 Bot 0: Reached the Human Counter with items [[0, 3]]
+2021-09-06 00:43:30,176 Bot 0: Back at my Rack Now
+2021-09-06 00:43:30,178 Bot 0 is assigned to go to Rack (3, 1, 3, 4)
+2021-09-06 00:43:30,619 Bot 1: Back at my Rack Now
+2021-09-06 00:43:30,622 Bot 1 is assigned to go to Rack (2, 1, 3, 3)
+2021-09-06 00:43:30,829 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:31,626 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:34,443 Bot 0: Reached the Human Counter with items [[1, 2]]
+2021-09-06 00:43:34,837 Bot 1: Reached the Human Counter with items [[4, 1]]
+2021-09-06 00:43:37,455 Bot 1: Back at my Rack Now
+2021-09-06 00:43:37,458 Bot 1 is assigned to go to Rack (1, 2, 0, 2)
+2021-09-06 00:43:37,670 Bot 0: Back at my Rack Now
+2021-09-06 00:43:37,673 Bot 0 is assigned to go to Rack (3, 3, 1, 0)
+2021-09-06 00:43:39,050 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:39,212 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:42,526 Bot 1: Reached the Human Counter with items [[3, 3]]
+2021-09-06 00:43:43,029 Bot 0: Reached the Human Counter with items [[5, 1]]
+2021-09-06 00:43:44,504 Bot 1: Back at my Rack Now
+2021-09-06 00:43:44,508 Bot 1 is assigned to go to Rack (1, 0, 0, 1)
+2021-09-06 00:43:46,109 Bot 0: Back at my Rack Now
+2021-09-06 00:43:46,112 Bot 0 is assigned to go to Rack (1, 0, 1, 0)
+2021-09-06 00:43:46,602 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:48,787 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:49,737 Bot 1: Reached the Human Counter with items [[3, 2]]
+2021-09-06 00:43:50,214 Bot 0: Reached the Human Counter with items [[4, 3]]
+2021-09-06 00:43:50,579 Bot 0: Back at my Rack Now
+2021-09-06 00:43:50,582 Bot 0 is assigned to go to Rack (2, 0, 2, 2)
+2021-09-06 00:43:51,732 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:53,562 Bot 1: Back at my Rack Now
+2021-09-06 00:43:53,569 Bot 1 is assigned to go to Rack (3, 1, 0, 4)
+2021-09-06 00:43:55,577 Bot 0: Reached the Human Counter with items [[2, 4]]
+2021-09-06 00:43:56,275 Bot 1: Reached the Desired Rack
+2021-09-06 00:43:56,782 Bot 0: Back at my Rack Now
+2021-09-06 00:43:56,786 Bot 0 is assigned to go to Rack (1, 1, 3, 3)
+2021-09-06 00:43:57,994 Bot 0: Reached the Desired Rack
+2021-09-06 00:43:59,734 Bot 1: Reached the Human Counter with items [[5, 5]]
+2021-09-06 00:44:00,878 Bot 0: Reached the Human Counter with items [[1, 1]]
+2021-09-06 00:44:01,965 Bot 1: Back at my Rack Now
+2021-09-06 00:44:01,969 Bot 1 is assigned to go to Rack (0, 2, 3, 1)
+2021-09-06 00:44:02,851 Bot 0: Back at my Rack Now
+2021-09-06 00:44:02,855 Bot 0 is assigned to go to Rack (0, 0, 0, 3)
+2021-09-06 00:44:03,863 Bot 1: Reached the Desired Rack
+2021-09-06 00:44:04,551 Bot 0: Reached the Desired Rack
+2021-09-06 00:44:06,671 Bot 1: Reached the Human Counter with items [[2, 2]]
+2021-09-06 00:44:07,069 Bot 0: Reached the Human Counter with items [[3, 1]]
+2021-09-06 00:44:08,852 Bot 0: Back at my Rack Now
+2021-09-06 00:44:08,854 Bot 0 is assigned to go to Rack (0, 2, 1, 3)
+2021-09-06 00:44:09,103 Bot 1: Back at my Rack Now
+2021-09-06 00:44:09,105 Bot 1 is assigned to go to Rack (2, 1, 3, 3)
+2021-09-06 00:44:10,239 Bot 0: Reached the Desired Rack
+2021-09-06 00:44:10,368 Bot 1: Reached the Desired Rack
