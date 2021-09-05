@@ -177,7 +177,7 @@ key=0
 coloring=[]
 paused=False
 while running:
-    time.sleep(0.02)
+    #time.sleep(0.02)
     # if loading_truck == 1:
     #     for agent in Number_of_Agents:
     #         if loading_truck_boxes == 0:
