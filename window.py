@@ -195,12 +195,6 @@ while running:
             orders.append(new_orders)   # To mantain FCFC Order
     
     finished=[]
-    for i in range(4):
-        for j in range(4):
-            for k in range(5):
-                for l in range(5):
-                    if rack_available[str((i,j,k,l))]!=1:
-                        print('Rack Not Available',str((i,j,k,l)))
     for i in range(len(orders)):
         list_racks = orders[i][0]
         hCounter=orders[i][1]
@@ -209,7 +203,7 @@ while running:
         finished_racks=[]
         for rack in list_racks:    
             if rack_available[rack]!=1:
-                print('Skipped (not aval)',rack)
+                # print('Skipped (not aval)',rack)
                 continue
 
             rack_location=numofrack[rack]

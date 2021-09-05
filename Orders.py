@@ -102,10 +102,10 @@ def gen_a_order():
   racks=assign_rack(order)
   
   human_counter= random.randint(0,2*m-1)
-  order_id=str(uuid.uuid1())
+  order_id=str(uuid.uuid4())
   if len(order)==0:
     return "Nothing"
-  print('New Order is Placed with Order ID:',order_id,'which consists of',order,'with id',order_id)
+  print('New Order is Placed with Order ID:',order_id,'which consists of',order)
   print("Racks are",racks)
   order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
   return (racks,human_counter,order_id)  
