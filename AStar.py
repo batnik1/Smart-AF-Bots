@@ -115,7 +115,7 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            print("Not Possible")
+            #print("Not Possible")
             return []
         else:
             res = [self.dest]
@@ -129,7 +129,7 @@ class Search():
 
     def getBFSPath(self, destiny):
         if self.prev[destiny[0]][destiny[1]] == [-1, -1]:
-            print("Not Possible")
+            #print("Not Possible")
             return []
         else:
             res = [destiny]

@@ -19,6 +19,12 @@ def ManhattanDistance(start, end):
 
 agent_color = colors.LIGHTBLUE1
 
+def conveyor():
+    pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width-20, 0))
+    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (racks_width-20, racks_height+10),)
+    
+    pygame.draw.line(screen, colors.GREEN, (130, 0), (130, 15),width=10)
+    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (130,racks_height-5 ),width=10)
 
 def make_rect(x, y):
     pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(x, y, 10, 10))
@@ -286,6 +292,7 @@ while running:
     build_station_zone()
     build_station_lines()
     build_counter_lines()
+    conveyor()
     for agent in Agents:
         if agent.Index==2:                      # Coloring Racks 
             remove=[]
