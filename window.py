@@ -194,10 +194,8 @@ while running:
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFC Order
     
-    iteratations=len(orders)
     finished=[]
     for i in range(len(orders)):
-        iteratations-=1
         list_racks = orders[i][0]
         hCounter=orders[i][1]
         order_id=orders[i][2]
@@ -211,7 +209,7 @@ while running:
             ind = get_Agent(rack_location)
             if ind == -1:
                 break
-            rack_available[rack]=1
+            rack_available[rack]=0
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
@@ -236,17 +234,19 @@ while running:
             agent.order_id=order_id
             agent.items_carrying=list_racks[rack]
             agent.CurRack=rack
-            # print("delivering item type ", rack_pos[1][0]," of quantity ",rack_pos[1][1]," from ",rack_pos[0])
-            # pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(rack_pos_location[0]+5,rack_pos_location[1]-5, 10, 10))
+        
             if rack[7]=="0":
                 coloring.append((numofrack[rack],10,agent))
             else:
                 coloring.append((numofrack[rack],5,agent))
+        
         for rack in finished_racks:
             orders[i][0].pop(rack)
         if len(orders[i][0])==0:
             finished.append(i)      
               
+    
+    
     
     for ind in finished:
         orders.remove(orders[ind])
@@ -315,7 +315,7 @@ while running:
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
             agent.Path = []
-            rack_available[agent.CurRack]=0
+            rack_available[agent.CurRack]=1
             bot_db.delete_one({"_id":agent.ind})
             agent.Wait = True
             agent.color = colors.YELLOW1
