@@ -31,7 +31,7 @@ import pymongo
 from pymongo import MongoClient
 connection=MongoClient('localhost',27017)
 
-item_types_in_db=[]
+item_types_in_db=set()
 
 db=connection['amazon']
 collection=db["big_database"]
@@ -92,17 +92,22 @@ def gen_a_order():
   for type in types_chosen:
     if collection.find_one({"type":type}):
       quant=collection.find_one({"type":type})["quantity"]
-      order.append([type,random.randint(1,min(max_order_limit,quant))])
+      low=1
+      high=min(max_order_limit,quant)
+      if low>high:
+        continue
+      order.append([type,random.randint(low,high)])
       sum+=order[-1][1]
       
   racks=assign_rack(order)
   
   human_counter= random.randint(0,2*m-1)
   order_id=str(uuid.uuid1())
-  order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
   if len(order)==0:
     return "Nothing"
-  print('New Order is Placed with Order ID:',order_id,'which consists of',order)
+  print('New Order is Placed with Order ID:',order_id,'which consists of',order,'with id',order_id)
+  print("Racks are",racks)
+  order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
   return (racks,human_counter,order_id)  
 
 
@@ -110,7 +115,7 @@ def add_items(count):
   global item_types_in_db
   for _ in range(count):
     type=random.randint(0,type_of_items)
-    item_types_in_db.append(type)
+    item_types_in_db.add(type)
     quantity=random.randint(1,3)
     shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):

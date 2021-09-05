@@ -216,7 +216,7 @@ while running:
             ind = get_Agent(rack_location)
             if ind == -1:
                 break
-            rack_available[rack]=1
+            rack_available[rack]=0
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
@@ -322,7 +322,7 @@ while running:
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
             agent.Path = []
-            rack_available[agent.CurRack]=0
+            rack_available[agent.CurRack]=1
             bot_db.delete_one({"_id":agent.ind})
             agent.Wait = True
             agent.color = colors.YELLOW1
