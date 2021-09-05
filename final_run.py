@@ -10,7 +10,6 @@ collection=db["item shelf"]
 for i in range(2*m):
     collection.update_one({"_id":i},{"$set": {"score":0}})
 
-import pickle
 import gc
 gc.disable()
 

@@ -77,7 +77,7 @@ def assign_rack(orders):
               racks_dict[lst[j][1]]=[[order[0],lst[j][0]]]
           if target<=0:
             break
-    if collection.find_one({"type":order[0]})["quantity"]==0: 
+    if collection.find_one({"type":order[0]}): 
       if collection.find_one({"type":order[0]})["quantity"]==0:
         collection.delete_one({"type":order[0]})
 
