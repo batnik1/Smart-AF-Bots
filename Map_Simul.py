@@ -8,7 +8,7 @@ import colors
 import time
 # n,m=input().split()   Take input from User
 n = 4   # height
-m = 4   # width
+m = 6   # width
 
 display_height = 120*m+300
 display_width = 120*n+300

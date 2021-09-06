@@ -26,9 +26,9 @@ def make_rect(x, y):
 
 def make_line(x, y, color):
     if x:
-        pygame.draw.line(screen, color, (x, 80), (x, racks_width-70))
+        pygame.draw.line(screen, color, (x, 80), (x, racks_width))
     elif y:
-        pygame.draw.line(screen, color, (80, y), (racks_height-70, y))
+        pygame.draw.line(screen, color, (80, y), (racks_height, y))
 
 # n - Height m - Cols
 
