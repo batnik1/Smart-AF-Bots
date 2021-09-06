@@ -7,13 +7,13 @@ import colors
 
 import time
 # n,m=input().split()   Take input from User
-n = 4   # height
-m = 6   # width
+m = 6 # width
+n = 6  # height     (n,m)>=3
 
-display_height = 120*m+300
-display_width = 120*n+300
-racks_height = 120*m+160
-racks_width = 120*n+160
+display_width = 120*m+800
+display_height = 120*n+300
+racks_height = 120*n+160
+racks_width = 120*m+160
 
 rack_available={}
 def rack_available_fn():
@@ -38,7 +38,7 @@ def num_racks(n,m):
                     numofrack[str((i,j,k,l))]=((k-1)*20+numofrack[str((i,j,1,0))][0],numofrack[str((i,j,1,l))][1])
 
 num_racks(n,m)
-print(numofrack[str((0,0,1,1))])
+#print(numofrack[str((0,0,1,1))])
 
 numofhcounter={}
 def num_hcounter(n,m):
@@ -50,9 +50,9 @@ pygame.display.set_caption("Amazon Warehouse")
 
 def waste3(x, y, dir):
     if x:
-        add_edge((x, 80), (x, racks_width-70),dir)
+        add_edge((x, 80), (x, racks_height-70),dir)
     elif y:
-        add_edge((80, y), (racks_height-70, y),dir)
+        add_edge((80, y), (racks_width-70, y),dir)
 
 
 
@@ -129,11 +129,21 @@ def marking_station_line(n,m):
     add_edge((30, (n//2+n%2)*100), ((30, 80)),direction["down"])
     pass
 
-j = 0
-flag = 0
+
+def waste_conveyor_belt():
+    add_edge((130, 0), (racks_width, 0),direction["right"])
+    add_edge((130, racks_height+10), (racks_width, racks_height+10),direction["right"])
+    add_edge((racks_width, 0),(racks_width,(80+racks_height//2)//2+20),direction["down"])
+    add_edge((racks_width,(80+racks_height//2)//2+20), (racks_width, racks_height+10),direction["up"])
+    x=130
+    for _ in range(m):
+        add_edge((x,1),(x,15),direction["up"])
+        add_edge((x, racks_height-5), (x,racks_height+9),direction["down"])
+        x+=120
+
+
+
 waste1(n, m)
 waste2(n,m)
 marking_queue_line(n,m)
-# for i in range(n):
-#     for j in range(
-# sources
+waste_conveyor_belt()

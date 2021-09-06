@@ -12,7 +12,7 @@ def ManhattanDistance(start, end):
 
 dx4 = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 INF = int(100000)
-dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]
+dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
 
@@ -115,7 +115,7 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            print("Not Possible")
+            #print("Not Possible")
             return []
         else:
             res = [self.dest]
@@ -129,7 +129,7 @@ class Search():
 
     def getBFSPath(self, destiny):
         if self.prev[destiny[0]][destiny[1]] == [-1, -1]:
-            print("Not Possible")
+            #print("Not Possible")
             return []
         else:
             res = [destiny]

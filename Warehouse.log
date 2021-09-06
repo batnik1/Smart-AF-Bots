@@ -1,32 +1,79 @@
-2021-09-05 19:38:24,724 Bot 0 is assigned to go to Rack (1, 0, 2, 3)
-2021-09-05 19:38:26,225 Bot 1 is assigned to go to Rack (2, 1, 4, 2)
-2021-09-05 19:38:26,799 Bot 0: Reached the Desired Rack
-2021-09-05 19:38:26,799 Bot 1: Reached the Desired Rack
-2021-09-05 19:38:27,830 Bot 0: Reached the Human Counter with items [[0, 2]]
-2021-09-05 19:38:28,081 Bot 1: Reached the Human Counter with items [[2, 1]]
-2021-09-05 19:38:28,204 Bot 0: Back at my Rack Now
-2021-09-05 19:38:28,206 Bot 0 is assigned to go to Rack (1, 1, 4, 4)
-2021-09-05 19:38:28,766 Bot 1: Back at my Rack Now
-2021-09-05 19:38:28,767 Bot 1 is assigned to go to Rack (1, 3, 4, 3)
-2021-09-05 19:38:28,873 Bot 0: Reached the Desired Rack
-2021-09-05 19:38:29,644 Bot 1: Reached the Desired Rack
-2021-09-05 19:38:30,045 Bot 0: Reached the Human Counter with items [[1, 2]]
-2021-09-05 19:38:30,191 Bot 1: Reached the Human Counter with items [[5, 3]]
-2021-09-05 19:38:30,678 Bot 0: Back at my Rack Now
-2021-09-05 19:38:30,679 Bot 0 is assigned to go to Rack (3, 3, 0, 1)
-2021-09-05 19:38:30,864 Bot 1: Back at my Rack Now
-2021-09-05 19:38:30,866 Bot 1 is assigned to go to Rack (2, 1, 4, 2)
-2021-09-05 19:38:31,554 Bot 0: Reached the Desired Rack
-2021-09-05 19:38:31,944 Bot 1: Reached the Desired Rack
-2021-09-05 19:38:32,298 Bot 0: Reached the Human Counter with items [[5, 1]]
-2021-09-05 19:38:33,065 Bot 1: Reached the Human Counter with items [[2, 1]]
-2021-09-05 19:38:33,133 Bot 0: Back at my Rack Now
-2021-09-05 19:38:33,135 Bot 0 is assigned to go to Rack (1, 1, 4, 4)
-2021-09-05 19:38:34,120 Bot 0: Reached the Desired Rack
-2021-09-05 19:38:34,259 Bot 1: Back at my Rack Now
-2021-09-05 19:38:34,261 Bot 1 is assigned to go to Rack (1, 0, 2, 3)
-2021-09-05 19:38:35,009 Bot 1: Reached the Desired Rack
-2021-09-05 19:38:35,051 Bot 0: Reached the Human Counter with items [[1, 1]]
-2021-09-05 19:38:35,769 Bot 0: Back at my Rack Now
-2021-09-05 19:38:36,116 Bot 1: Reached the Human Counter with items [[0, 1]]
-2021-09-05 19:38:37,186 Bot 1: Back at my Rack Now
+2021-09-06 19:48:33,856 New Order is Placed with Order ID: 12de7aee-ba04-4f7d-8571-2543a09f4999 which consists of [[5, 2]]
+2021-09-06 19:48:34,340 Bot 1 is assigned to go to Rack (2, 3, 4, 3)
+2021-09-06 19:48:37,771 Bot 1: Reached the Desired Rack
+2021-09-06 19:48:38,176 New Order is Placed with Order ID: 6cd239e2-d387-41e4-a550-265bc9141fda which consists of [[5, 1]]
+2021-09-06 19:48:38,177 Bot 0 is assigned to go to Rack (1, 0, 4, 1)
+2021-09-06 19:48:40,545 New Order is Placed with Order ID: 4cc71542-4946-4382-8995-ca59c5a6c759 which consists of [[0, 4], [4, 1]]
+2021-09-06 19:48:42,155 Bot 1: Reached the Human Counter with items [[5, 2]]
+2021-09-06 19:48:42,156 Order 12de7aee-ba04-4f7d-8571-2543a09f4999 is finished
+2021-09-06 19:48:42,714 New Order is Placed with Order ID: b0acda84-c54c-411d-b08a-23dcd5ea178f which consists of [[0, 1]]
+2021-09-06 19:48:42,990 Bot 0: Reached the Desired Rack
+2021-09-06 19:48:44,877 New Order is Placed with Order ID: b0d30270-af99-4d90-af42-1bebfb6b5bd3 which consists of [[2, 2]]
+2021-09-06 19:48:45,126 Bot 1: Kept the Rack back which I was carrying
+2021-09-06 19:48:45,128 Bot 1 is assigned to go to Rack (2, 0, 2, 0)
+2021-09-06 19:48:45,407 Bot 0: Reached the Human Counter with items [[5, 1]]
+2021-09-06 19:48:45,409 Order 6cd239e2-d387-41e4-a550-265bc9141fda is finished
+2021-09-06 19:48:46,308 Conveyor Belt Moved Order with ID :12de7aee-ba04-4f7d-8571-2543a09f4999 to the Sorting Area
+2021-09-06 19:48:46,446 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:48:46,449 Bot 0 is assigned to go to Rack (3, 0, 3, 1)
+2021-09-06 19:48:47,395 New Order is Placed with Order ID: 61e8a810-6da5-4c5a-ba81-6a4cb8b45b32 which consists of [[4, 1]]
+2021-09-06 19:48:48,108 Bot 1: Reached the Desired Rack
+2021-09-06 19:48:48,267 Bot 0: Reached the Desired Rack
+2021-09-06 19:48:48,577 Conveyor Belt Moved Order with ID :6cd239e2-d387-41e4-a550-265bc9141fda to the Sorting Area
+2021-09-06 19:48:49,566 New Order is Placed with Order ID: e7eea1c0-d455-4718-8de3-9838cda3bff1 which consists of [[1, 4]]
+2021-09-06 19:48:50,348 Bot 0: Reached the Human Counter with items [[0, 1]]
+2021-09-06 19:48:50,807 Bot 1: Reached the Human Counter with items [[0, 3]]
+2021-09-06 19:48:51,543 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:48:51,545 Bot 0 is assigned to go to Rack (3, 0, 0, 4)
+2021-09-06 19:48:51,886 New Order is Placed with Order ID: 51c67ebe-bb85-4f7b-8119-a3a4a823ee11 which consists of [[1, 1]]
+2021-09-06 19:48:52,513 Bot 0: Reached the Desired Rack
+2021-09-06 19:48:52,596 Bot 1: Kept the Rack back which I was carrying
+2021-09-06 19:48:52,600 Bot 1 is assigned to go to Rack (3, 0, 3, 1)
+2021-09-06 19:48:54,012 Bot 1: Reached the Desired Rack
+2021-09-06 19:48:55,460 Bot 0: Reached the Human Counter with items [[4, 1]]
+2021-09-06 19:48:55,461 Order 4cc71542-4946-4382-8995-ca59c5a6c759 is finished
+2021-09-06 19:48:56,147 Bot 1: Reached the Human Counter with items [[0, 1]]
+2021-09-06 19:48:56,148 Order b0acda84-c54c-411d-b08a-23dcd5ea178f is finished
+2021-09-06 19:48:57,135 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:48:57,137 Bot 0 is assigned to go to Rack (2, 1, 4, 2)
+2021-09-06 19:48:57,519 Bot 1: Kept the Rack back which I was carrying
+2021-09-06 19:48:57,521 Bot 1 is assigned to go to Rack (1, 0, 3, 1)
+2021-09-06 19:48:57,712 Conveyor Belt Moved Order with ID :4cc71542-4946-4382-8995-ca59c5a6c759 to the Sorting Area
+2021-09-06 19:48:57,959 Bot 0: Reached the Desired Rack
+2021-09-06 19:48:58,398 Conveyor Belt Moved Order with ID :b0acda84-c54c-411d-b08a-23dcd5ea178f to the Sorting Area
+2021-09-06 19:48:58,908 New Order is Placed with Order ID: a75fe7ba-4934-4f31-ab31-675fbaa7a400 which consists of [[2, 2]]
+2021-09-06 19:48:59,126 Bot 1: Reached the Desired Rack
+2021-09-06 19:49:00,647 Bot 0: Reached the Human Counter with items [[2, 2]]
+2021-09-06 19:49:00,648 Order b0d30270-af99-4d90-af42-1bebfb6b5bd3 is finished
+2021-09-06 19:49:01,958 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:49:01,960 Bot 0 is assigned to go to Rack (0, 3, 2, 4)
+2021-09-06 19:49:04,267 Conveyor Belt Moved Order with ID :b0d30270-af99-4d90-af42-1bebfb6b5bd3 to the Sorting Area
+2021-09-06 19:49:04,547 Bot 0: Reached the Desired Rack
+2021-09-06 19:49:04,923 Bot 1: Reached the Human Counter with items [[4, 1]]
+2021-09-06 19:49:04,924 Order 61e8a810-6da5-4c5a-ba81-6a4cb8b45b32 is finished
+2021-09-06 19:49:08,250 Conveyor Belt Moved Order with ID :61e8a810-6da5-4c5a-ba81-6a4cb8b45b32 to the Sorting Area
+2021-09-06 19:49:08,283 Bot 0: Reached the Human Counter with items [[1, 3]]
+2021-09-06 19:49:10,142 Bot 1: Kept the Rack back which I was carrying
+2021-09-06 19:49:10,145 Bot 1 is assigned to go to Rack (0, 0, 3, 2)
+2021-09-06 19:49:10,749 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:49:10,751 Bot 0 is assigned to go to Rack (2, 1, 4, 2)
+2021-09-06 19:49:11,590 Bot 1: Reached the Desired Rack
+2021-09-06 19:49:13,355 Bot 1: Reached the Human Counter with items [[1, 1]]
+2021-09-06 19:49:13,356 Order e7eea1c0-d455-4718-8de3-9838cda3bff1 is finished
+2021-09-06 19:49:13,667 Bot 0: Reached the Desired Rack
+2021-09-06 19:49:14,156 Bot 1: Kept the Rack back which I was carrying
+2021-09-06 19:49:14,158 Bot 1 is assigned to go to Rack (0, 0, 3, 2)
+2021-09-06 19:49:14,212 Bot 1: Reached the Desired Rack
+2021-09-06 19:49:16,422 Bot 0: Reached the Human Counter with items [[2, 1]]
+2021-09-06 19:49:17,859 Conveyor Belt Moved Order with ID :e7eea1c0-d455-4718-8de3-9838cda3bff1 to the Sorting Area
+2021-09-06 19:49:18,010 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:49:18,012 Bot 0 is assigned to go to Rack (2, 1, 3, 4)
+2021-09-06 19:49:18,703 Bot 0: Reached the Desired Rack
+2021-09-06 19:49:20,006 Bot 1: Reached the Human Counter with items [[1, 1]]
+2021-09-06 19:49:20,007 Order 51c67ebe-bb85-4f7b-8119-a3a4a823ee11 is finished
+2021-09-06 19:49:21,545 Bot 0: Reached the Human Counter with items [[2, 1]]
+2021-09-06 19:49:21,547 Order a75fe7ba-4934-4f31-ab31-675fbaa7a400 is finished
+2021-09-06 19:49:23,712 Bot 0: Kept the Rack back which I was carrying
+2021-09-06 19:49:23,828 Conveyor Belt Moved Order with ID :51c67ebe-bb85-4f7b-8119-a3a4a823ee11 to the Sorting Area
+2021-09-06 19:49:23,954 Conveyor Belt Moved Order with ID :a75fe7ba-4934-4f31-ab31-675fbaa7a400 to the Sorting Area
+2021-09-06 19:49:25,128 Bot 1: Kept the Rack back which I was carrying
