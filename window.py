@@ -20,7 +20,6 @@ def ManhattanDistance(start, end):
 agent_color = colors.LIGHTBLUE1
 
 
-
 HCtoConveyor={}
 def initHCtoConveyor():
     x=130
@@ -28,34 +27,40 @@ def initHCtoConveyor():
         if i==m:
             x=130
         if i<m:
-            HCtoConveyor[i]=(x,11)
+            HCtoConveyor[i]=(x,15)
+            print(HCtoSorting[str((0,i))][0])
         else:
-            HCtoConveyor[i]=(x, racks_height-1)
+            HCtoConveyor[i]=(x, racks_height-5)    
+            print(HCtoSorting[str((1,i-m))][0])
         x+=120
+        
 
 def make_sorting_area():
-    pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,racks_width//2,racks_height//2),3)
-    pygame.draw.line(screen,colors.BLUE,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=3)    # Left
-    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=3)    # Right
+    sorting_w=sorting_m*60+20
+    sorting_h=sorting_n*60+20
+    pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,sorting_w,sorting_h),3)
+    pygame.draw.line(screen,colors.BLUE,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
+    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
+    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
 
-    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=3)             #Down
+    # (n+1)*15+n*10=sorting_n*100+15
+    # (m+1)*15+m*10=sorting_m*100+15
+    x=racks_width+20
 
-    l=racks_width//2
-    b=racks_height//2
-    
-    x=racks_width+40
-    pygame.draw.line(screen, colors.BROWN, (racks_width+20,80), (racks_width+20,80+racks_height//2),width=2)
-    while(x<racks_width+racks_width//2):
-       y=120
-       while(y<80+racks_height//2):
+    for _ in range(int(2*sorting_m)):
+       y=100
+       for _ in range(int(2*sorting_n)):
            make_rect(x, y,colors.PURPLE3)
-           y+=40
-       if x+60<=racks_width+racks_width//2:
-            pygame.draw.line(screen, colors.BLUE, (x+20,80), (x+20,y),width=2)
-       x+=40
-       
-    
-    
+           y+=30
+       x+=30  
+    x=racks_width+10
+    y=80
+    for i in range(2*sorting_m+1):
+        pygame.draw.line(screen, colors.BLUE, (x, 80),(x,sorting_h+80),2)
+        x+=30
+    for i in range(2*sorting_n+1):
+        pygame.draw.line(screen, colors.BLUE, (racks_width, y+10),(racks_width+sorting_w,y+10),2)
+        y+=30
     # for _ in range(0,n//2):
     #     x = racks_width+10
     #     for _ in range(0,m//2):
@@ -65,8 +70,6 @@ def make_sorting_area():
     #         x += 120
     #     y += 120
          
-
-
 
 def conveyor():
     pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width, 0))
@@ -185,7 +188,7 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 2
+Number_of_Agents = 10
 Agents = []
 Conveyor_Agents=[]
 for i in range(Number_of_Agents):
@@ -238,6 +241,45 @@ coloring=[]
 paused=False
 
 initHCtoConveyor()
+for k in HCtoConveyor:
+    print("coneyor",HCtoConveyor[k])
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 while running:
     #time.sleep(0.02)
@@ -310,10 +352,14 @@ while running:
         if len(orders[i][0])==0:
             finished.append(i)      
               
-
     for ind in finished:
         orders.remove(orders[ind])
     finished.clear()
+
+    # for i in range(2*sorting_m):
+    #     for j in range(2*sorting_n):
+    #         pygame.draw.circle(screen, colors.WHITE, numofdump[str((j,i))],6)
+
 
     events = pygame.event.get()
     for event in events:
@@ -350,6 +396,7 @@ while running:
     build_counter_lines()
     conveyor()
     make_sorting_area()
+    
     for agent in Agents:
         if agent.Index==2:                      # Coloring Racks 
             remove=[]
@@ -368,14 +415,25 @@ while running:
                 doc=order_db.find_one({"_id":agent.order_id})
                 quantity=doc["ordered_quantity"]
                 progress=doc["order_progress"]
+                human_ct=doc["human_counter"]
                 total_items_carrying=0
                 for items in agent.items_carrying:
                     total_items_carrying+=items[1]
                 if total_items_carrying+progress==quantity:
                     logger.info("Order "+str(doc['_id'])+" is finished")
+                    sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
+                    delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
                     conveyor_agent= Agent(1,n,m)
-                    conveyor_agent.position=HCtoConveyor[doc["human_counter"]]
+                    conveyor_agent.position=HCtoConveyor[human_ct]
                     conveyor_agent.order_id=agent.order_id
+                    if human_ct<m:
+                        #logger.info("Check Path :"+str(HCtoSorting[str((0,human_ct))]))
+                        conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
+                    else:
+                        conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
+                    conveyor_agent.Path+=Sorting_Counter[0].getBFSPath(numofdump[str(sorting_random)])
+                    conveyor_agent.Path.reverse()
+                    conveyor_agent.Index=len(conveyor_agent.Path)
                     Conveyor_Agents.append(conveyor_agent)
 
                 order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
@@ -400,27 +458,27 @@ while running:
                 coloring.remove(i)
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     
+    # for document in delivered.find_many({"dumped":False}):
+    #     cAgent_sorting=Agent(2,n,m)
+    #     cAgent_sorting.position=numofdump[str((random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1)))]
+        
     removing_conveyor=[]
     for i in range(len(Conveyor_Agents)):
         conveyor_agent=Conveyor_Agents[i]
         if conveyor_agent.position==(racks_width,(80+racks_height//2)//2+20):
             logger.info("Conveyor Belt Moved Order with ID :"+str(conveyor_agent.order_id)+" to the Sorting Area")
+        conveyor_agent.Index-=1
+        if conveyor_agent.Index>=0:
+            conveyor_agent.position = (conveyor_agent.Path[conveyor_agent.Index][0], conveyor_agent.Path[conveyor_agent.Index][1])
+        if conveyor_agent.Index==-1:
+            conveyor_agent.Path=[]
             removing_conveyor.append(i)
-            continue
-        (x,y)=conveyor_agent.position
-        for i in range(1, len(Matrix.grid[x][y]), 1):
-            de = Matrix.grid[x][y][i]
-            nextX = dir[de][0]+x
-            nextY = dir[de][1]+y
-            conveyor_agent.position=(nextX,nextY)
-    for i in removing_conveyor:
-        Conveyor_Agents.remove(Conveyor_Agents[i])  
+            conveyor_agent.color=colors.PALEGREEN
+        pygame.draw.circle(screen, conveyor_agent.color, conveyor_agent.position,4)
+    for ind in removing_conveyor:
+        Conveyor_Agents.remove(Conveyor_Agents[ind])
+    
     removing_conveyor.clear()
-    # print(len(Conveyor_Agents))
-    for conveyor_agent in Conveyor_Agents:
-        pygame.draw.circle(screen, colors.RED1, conveyor_agent.position,4)
-    
-    
     key+=1
     for colo in range(len(coloring)):
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))

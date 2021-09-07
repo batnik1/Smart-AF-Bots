@@ -7,8 +7,13 @@ import colors
 
 import time
 # n,m=input().split()   Take input from User
-m = 6 # width
-n = 6  # height     (n,m)>=3
+m = 4 # width
+n = 4  # height     (n,m)>=3
+sorting_m=6
+sorting_n=4
+
+print("reached map_simul")
+
 
 display_width = 120*m+800
 display_height = 120*n+300
@@ -39,6 +44,20 @@ def num_racks(n,m):
 
 num_racks(n,m)
 #print(numofrack[str((0,0,1,1))])
+#y=100
+numofdump={}
+def numofdumping():
+    x=racks_width+20
+    for i in range(2*sorting_m):
+        y=80
+        for j in range(2*sorting_n):
+            numofdump[str((j,i))]=(x-10,y+10)
+            y+=30
+        x+=30
+
+numofdumping()
+numofdump["conveyor"]=(racks_width,(80+racks_height//2)//2+20)
+
 
 numofhcounter={}
 def num_hcounter(n,m):
@@ -141,9 +160,46 @@ def waste_conveyor_belt():
         add_edge((x, racks_height-5), (x,racks_height+9),direction["down"])
         x+=120
 
+def waste_sorting_area():
+    sorting_w=sorting_m*60+20
+    sorting_h=sorting_n*60+20
+    add_edge((racks_width,80),(sorting_w+racks_width,80),direction["left"])
+    add_edge((racks_width,sorting_h+80),(sorting_w+racks_width,sorting_h+80),direction["right"])
+    add_edge((racks_width,80),(racks_width,sorting_h+80),direction["down"])
+    add_edge((sorting_w+racks_width,80),(sorting_w+racks_width,sorting_h+80),direction["up"])
 
+
+    add_edge((racks_width-25,(80+racks_height//2)//2-25),(racks_width,(80+racks_height//2)//2-25),direction["left"]) #left queue
+    add_edge((racks_width-25,int((80+racks_height//2)//2+20)),(racks_width,int((80+racks_height//2)//2+20)),direction["right"]) #right queue
+    add_edge((racks_width-25,int((80+racks_height//2)//2-25)),(racks_width-25,int((80+racks_height//2)/2+20)),direction["down"]) #down queue
+    #pygame.draw.line(screen,colors.BLUE,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
+    #pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
+    #pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
+
+    # (n+1)*15+n*10=sorting_n*100+15
+    # (m+1)*15+m*10=sorting_m*100+15
+    x=racks_width+20
+
+
+    x=racks_width+10
+    y=80
+    for i in range(sorting_m+1):
+        add_edge((x, 80),(x,sorting_h+80),direction["up"])
+        x+=60
+    x=racks_width+40
+    for i in range(sorting_m):
+        add_edge((x, 80),(x,sorting_h+80),direction["down"])
+        x+=60
+    for i in range(sorting_n+1):
+        add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["right"])
+        y+=60
+    y=110
+    for i in range(sorting_n):
+        add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["left"])
+        y+=30
 
 waste1(n, m)
 waste2(n,m)
 marking_queue_line(n,m)
 waste_conveyor_belt()
+waste_sorting_area()
