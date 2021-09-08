@@ -38,7 +38,9 @@ db=connection['amazon']
 collection=db["big_database"]
 delivered=db["delivered"]
 order_db=db["order_db"]
+order_history=db["order_history"]
 bot_db=db["bot_db"]
+finished_db=db["sorting_bots"]
 #rack_collection=db["rack_shelf"]
 
 order_db.drop()
@@ -112,8 +114,10 @@ def gen_a_order():
   order_id=str(uuid.uuid4())
   if len(order)==0:
     return "Nothing"
+  sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
   logger.info('New Order is Placed with Order ID: '+str(order_id)+' which consists of '+str(order))
   order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
+  order_history.insert_one({"_id":order_id,"ordered":order,"address":sorting_random})  
   return (racks,human_counter,order_id)  
 
 

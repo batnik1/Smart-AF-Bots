@@ -183,18 +183,18 @@ def waste_sorting_area():
 
     x=racks_width+10
     y=80
-    for i in range(sorting_m+1):
+    for _ in range(sorting_m+1):
         add_edge((x, 80),(x,sorting_h+80),direction["up"])
         x+=60
     x=racks_width+40
-    for i in range(sorting_m):
+    for _ in range(sorting_m):
         add_edge((x, 80),(x,sorting_h+80),direction["down"])
         x+=60
-    for i in range(sorting_n+1):
+    for _ in range(sorting_n+1):
         add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["right"])
         y+=60
     y=110
-    for i in range(sorting_n):
+    for _ in range(sorting_n):
         add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["left"])
         y+=30
 

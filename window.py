@@ -28,10 +28,8 @@ def initHCtoConveyor():
             x=130
         if i<m:
             HCtoConveyor[i]=(x,15)
-            print(HCtoSorting[str((0,i))][0])
         else:
             HCtoConveyor[i]=(x, racks_height-5)    
-            print(HCtoSorting[str((1,i-m))][0])
         x+=120
         
 
@@ -188,13 +186,21 @@ def build_station_zone():
 
 running = True
 
-Number_of_Agents = 10
+Number_of_Agents = 5
+Number_of_SAgents= 5
 Agents = []
 Conveyor_Agents=[]
+Sorting_Agents=[]
 for i in range(Number_of_Agents):
     nAgent=Agent(0,n,m)
     nAgent.position=numofrack[nAgent.CurRack]
     Agents.append(nAgent)
+for i in range(Number_of_SAgents):
+    nAgent=Agent(2,n,m)
+    sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
+    nAgent.position=numofdump[str(sorting_random)]
+    Sorting_Agents.append(nAgent)
+    
     
 
 
@@ -226,6 +232,18 @@ def get_Agent(rack_pos):
             if mindis==ManhattanDistance(rack_pos, Agents[i].position):
                 return i
     return -1
+
+def get_SAgent(rack_pos):
+    mindis=99999999999999999
+    for agent in Sorting_Agents:
+        if agent.Wait == True and mindis>ManhattanDistance(rack_pos, agent.position):
+            mindis=ManhattanDistance(rack_pos, agent.position)
+
+    for i in range(len(Sorting_Agents)):
+        if Sorting_Agents[i].Wait==True:
+            if mindis==ManhattanDistance(rack_pos, Sorting_Agents[i].position):
+                return i
+    return -1
     
 def pause():
     paused=True
@@ -234,6 +252,7 @@ def pause():
 
 
 orders=[]
+sorting_orders=[]
 loading_truck = 0
 loading_truck_boxes = 10
 key=0
@@ -241,9 +260,7 @@ coloring=[]
 paused=False
 
 initHCtoConveyor()
-for k in HCtoConveyor:
-    print("coneyor",HCtoConveyor[k])
-    
+
 
 
 
@@ -295,7 +312,7 @@ while running:
     #         agent.Index = len(agent.Path)
     #         loading_truck_boxes -= 1
     
-    if key%500==0:
+    if key%1000==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFC Order
@@ -421,17 +438,15 @@ while running:
                     total_items_carrying+=items[1]
                 if total_items_carrying+progress==quantity:
                     logger.info("Order "+str(doc['_id'])+" is finished")
-                    sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
-                    delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
+                    # delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
                     conveyor_agent= Agent(1,n,m)
                     conveyor_agent.position=HCtoConveyor[human_ct]
                     conveyor_agent.order_id=agent.order_id
                     if human_ct<m:
-                        #logger.info("Check Path :"+str(HCtoSorting[str((0,human_ct))]))
                         conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
                     else:
                         conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
-                    conveyor_agent.Path+=Sorting_Counter[0].getBFSPath(numofdump[str(sorting_random)])
+                    # conveyor_agent.Path+=Sorting_Counter[0].getBFSPath(numofdump[str(sorting_random)])
                     conveyor_agent.Path.reverse()
                     conveyor_agent.Index=len(conveyor_agent.Path)
                     Conveyor_Agents.append(conveyor_agent)
@@ -458,10 +473,6 @@ while running:
                 coloring.remove(i)
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     
-    # for document in delivered.find_many({"dumped":False}):
-    #     cAgent_sorting=Agent(2,n,m)
-    #     cAgent_sorting.position=numofdump[str((random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1)))]
-        
     removing_conveyor=[]
     for i in range(len(Conveyor_Agents)):
         conveyor_agent=Conveyor_Agents[i]
@@ -471,14 +482,51 @@ while running:
         if conveyor_agent.Index>=0:
             conveyor_agent.position = (conveyor_agent.Path[conveyor_agent.Index][0], conveyor_agent.Path[conveyor_agent.Index][1])
         if conveyor_agent.Index==-1:
+            sorting_orders.append(conveyor_agent.order_id)          
             conveyor_agent.Path=[]
             removing_conveyor.append(i)
             conveyor_agent.color=colors.PALEGREEN
         pygame.draw.circle(screen, conveyor_agent.color, conveyor_agent.position,4)
     for ind in removing_conveyor:
         Conveyor_Agents.remove(Conveyor_Agents[ind])
-    
     removing_conveyor.clear()
+        
+    finished_sorder=[]
+    for sorder in sorting_orders:
+        ind = get_SAgent(numofdump["conveyor"])
+        if ind == -1:
+            break
+        agent=Sorting_Agents[ind]
+        logger.info("Sorting Bot is moving order with Order ID: "+str(sorder)+" to it's dumping point")
+        agent.ind=ind
+        #sorting_bots.insert_one({"_id":ind,"Order_ID":order_id})
+        address=tuple(order_history.find_one({"_id":sorder})["address"])
+        finished_sorder.append(sorder)
+        b = Reverse_Sorting_Counter[0].getBFSPath(agent.position)     # From that Rack to Counter
+        c = Sorting_Counter[0].getBFSPath(numofdump[str(address)])
+        b.reverse()
+
+        agent.Path =b+c
+        agent.Path.reverse()
+        agent.Index = len(agent.Path)
+        agent.Wait = False
+        agent.color = colors.RED1
+        agent.size = 4
+        agent.order_id=sorder       
+              
+    for ind in finished_sorder:
+        sorting_orders.remove(ind)
+    finished_sorder.clear()
+    for sagent in Sorting_Agents:
+        sagent.Index-=1
+        if sagent.Index>=0:
+            sagent.position = (sagent.Path[sagent.Index][0], sagent.Path[sagent.Index][1])
+        if sagent.Index==-1:  
+            logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
+            sagent.Wait=True       
+            sagent.Path=[]
+            sagent.color=colors.PALEGREEN
+        pygame.draw.circle(screen, sagent.color, sagent.position,4)
     key+=1
     for colo in range(len(coloring)):
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
