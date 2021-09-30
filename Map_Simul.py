@@ -65,15 +65,13 @@ def num_hcounter(n,m):
         for j in range(m):
             numofhcounter[str((i,j))]=(90+120*j+i*(80), i*(120*(n+1)-40)+45)
 num_hcounter(n,m)
-pygame.display.set_caption("Amazon Warehouse")
+pygame.display.set_caption("Warehouse Simulation V1.0")
 
 def waste3(x, y, dir):
     if x:
         add_edge((x, 80), (x, racks_height-70),dir)
     elif y:
         add_edge((80, y), (racks_width-70, y),dir)
-
-
 
 
 def waste1(n,m):
@@ -160,6 +158,16 @@ def waste_conveyor_belt():
         add_edge((x, racks_height-5), (x,racks_height+9),direction["down"])
         x+=120
 
+def waste_charging():
+    
+    for i in range((n//2+n % 2)*100+20,racks_height-90,10):
+        add_edge((30,i),(80,i),direction["right"])
+
+    add_edge((30, (n//2+n % 2)*100+10), (80, (n//2+n % 2)*100+10),direction["left"])
+    add_edge((30, racks_height-90), (80, racks_height-90),direction["right"])
+    add_edge((30, (n//2+n % 2)*100+10), (30, racks_height-90),direction["down"])
+
+    
 def waste_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
@@ -203,3 +211,4 @@ waste2(n,m)
 marking_queue_line(n,m)
 waste_conveyor_belt()
 waste_sorting_area()
+waste_charging()

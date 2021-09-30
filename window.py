@@ -184,10 +184,40 @@ def build_station_zone():
                      pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
 
 
+charging_state={}
+charging_loc={}
+charging_state_list=[]
+def build_charge_dict():
+    counting=-1
+    for i in range((n//2+n % 2)*100+20,racks_height-90,10):
+        counting+=1
+        charging_state_list.append(counting)
+        charging_state[counting]=0
+        charging_loc[counting]=(55,i)
+      #  pygame.draw.line(screen, colors.ORANGE, (30, i), (80, i))   
+build_charge_dict()
+def build_charging_zone():
+    for i in range((n//2+n % 2)*100+20,racks_height-90,10):
+        pygame.draw.line(screen, colors.ORANGE, (30, i), (80, i))    
+
+
+def build_charging_lines():
+    pygame.draw.line(screen, colors.ORANGE, (80, (n//2+n % 2)*100+10), (30, (n//2+n % 2)*100+10))
+    pygame.draw.line(screen, colors.ORANGE, (80, racks_height-90), ((30, racks_height-90)))
+    pygame.draw.line(screen, colors.ORANGE, (30, (n//2+n % 2)*100+10), (30, racks_height-90))
+
+def get_charging():
+    for i in range(len(charging_state_list)):
+        if charging_state[i]==0:
+            charging_state[i]=1
+            return charging_loc[i]
+    return -1
+              
+        
 running = True
 
-Number_of_Agents = 5
-Number_of_SAgents= 5
+Number_of_Agents = 2
+Number_of_SAgents= 3
 Agents = []
 Conveyor_Agents=[]
 Sorting_Agents=[]
@@ -224,12 +254,13 @@ def compare(item1, item2):
 def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
-        if agent.Wait == True and mindis>ManhattanDistance(rack_pos, agent.position):
-            mindis=ManhattanDistance(rack_pos, agent.position)
+        d=ManhattanDistance(rack_pos, agent.position)
+        if agent.Wait == True and mindis>d and 10*agent.charging>=d:
+            mindis=d
 
     for i in range(len(Agents)):
         if Agents[i].Wait==True:
-            if mindis==ManhattanDistance(rack_pos, Agents[i].position):
+            if mindis==ManhattanDistance(rack_pos, Agents[i].position) and 10*Agents[i].charging>=d:
                 return i
     return -1
 
@@ -244,11 +275,6 @@ def get_SAgent(rack_pos):
             if mindis==ManhattanDistance(rack_pos, Sorting_Agents[i].position):
                 return i
     return -1
-    
-def pause():
-    paused=True
-    while paused:
-        pass
 
 
 orders=[]
@@ -260,38 +286,6 @@ coloring=[]
 paused=False
 
 initHCtoConveyor()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -312,10 +306,10 @@ while running:
     #         agent.Index = len(agent.Path)
     #         loading_truck_boxes -= 1
     
-    if key%1000==0:
+    if key%50==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
-            orders.append(new_orders)   # To mantain FCFC Order
+            orders.append(new_orders)   # To mantain FCFS Order
     
     finished=[]
     for i in range(len(orders)):
@@ -337,8 +331,9 @@ while running:
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
-            bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
+            # bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
             nAgent = Search(agent.position,rack_location)
+            # nAgent = Search(agent.position,charging_loc[4])
             nAgent.BFS()
             
             count+=1
@@ -412,6 +407,8 @@ while running:
     build_station_lines()
     build_counter_lines()
     conveyor()
+    build_charging_lines()
+    build_charging_zone()
     make_sorting_area()
     
     for agent in Agents:
@@ -424,6 +421,9 @@ while running:
                 coloring.remove(i)
         agent.Index -= 1
         if agent.Index >= 0:
+            if  agent.Index%20==0:
+                agent.charging-=1
+                
             if agent.Path[agent.Index]==[-7,-7]:
                 agent.Index -= 1
                 logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
@@ -458,13 +458,37 @@ while running:
                 agent.Index -= 1
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-        if agent.Index == -1:
-            agent.Path = []
-            rack_available[agent.CurRack]=1
-            bot_db.delete_one({"_id":agent.ind})
-            agent.Wait = True
-            agent.color = colors.YELLOW1
-            agent.size = 2
+        if agent.Index <= -1:
+            if agent.needcharge==False:
+                agent.Path = []
+                rack_available[agent.CurRack]=1
+                agent.Wait = True
+                agent.color = colors.YELLOW1
+            else:
+                agent.size = 2
+                agent.Path = []
+                agent.color = colors.GREEN
+                if key%10==0:
+                    agent.charging+=1
+                if agent.charging==100:
+                    agent.color = colors.LIGHTBLUE1
+                    agent.Wait = True
+                    agent.size = 4
+                    agent.needcharge=False
+
+            if agent.charging<20 and agent.needcharge == False:
+                charge_box=get_charging()
+                if charge_box==-1:
+                    continue
+                agent.needcharge=True
+                nAgent = Search(agent.position,charge_box)
+                nAgent.BFS()
+                agent.Path = nAgent.getPath()
+                agent.Path.reverse()
+                agent.Index = len(agent.Path)
+                agent.Wait = False
+                agent.size=2
+                # TODO: Send it to charging station
             remove=[]
             for colo in range(len(coloring)):
                 if coloring[colo][2]==agent:
@@ -532,3 +556,9 @@ while running:
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
 
     pygame.display.update()
+
+
+    """
+    1. Charging State vapis 1 bhi krni h
+    2. jb robot kuj charge hojaye tb charging station se nikalke kai aur bhejna h    
+    """

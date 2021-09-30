@@ -62,8 +62,7 @@ class Search():
                     if self.dist[nextX][nextY] > d+ManhattanDistance([nextX, nextY], self.dest)+1:
                         self.dist[nextX][nextY] = d +ManhattanDistance([nextX, nextY], self.dest)+1
                         self.prev[nextX][nextY] = cState
-                        heapq.heappush(
-                            self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
+                        heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
 
     def AStar(self):
         heapq.heappush(self.heap, (ManhattanDistance(
@@ -114,7 +113,7 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            #print("Not Possible")
+            # print("Not Possible")
             return []
         else:
             res = [self.dest]
