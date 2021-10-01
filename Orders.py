@@ -22,6 +22,7 @@ from Map_Simul import *
 import random
 import numpy as np
 from numpy.random.mtrand import rand
+import logging
 # def generate_order():
 #     item = rand() % num_of_items
 #     quant = rand() % 10
@@ -33,11 +34,13 @@ connection=MongoClient('localhost',27017)
 
 item_types_in_db=set()
 
-db=connection['amazon']
+db=connection['Warehouse']
 collection=db["big_database"]
 delivered=db["delivered"]
 order_db=db["order_db"]
+order_history=db["order_history"]
 bot_db=db["bot_db"]
+finished_db=db["sorting_bots"]
 #rack_collection=db["rack_shelf"]
 
 order_db.drop()
@@ -46,6 +49,12 @@ bot_db.drop()
 
 type_of_items=5
 max_order_limit=5
+
+#Creating Log File
+logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
+logger=logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
 
 def assign_rack(orders):
   racks_dict={}
@@ -105,9 +114,10 @@ def gen_a_order():
   order_id=str(uuid.uuid4())
   if len(order)==0:
     return "Nothing"
-  print('New Order is Placed with Order ID:',order_id,'which consists of',order)
-  print("Racks are",racks)
+  sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
+  logger.info('New Order is Placed with Order ID: '+str(order_id)+' which consists of '+str(order))
   order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
+  order_history.insert_one({"_id":order_id,"ordered":order,"address":sorting_random})  
   return (racks,human_counter,order_id)  
 
 
@@ -128,5 +138,5 @@ def add_items(count):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
   return item_types_in_db
 
-add_items(10)
+add_items(6)
 #print(racks)

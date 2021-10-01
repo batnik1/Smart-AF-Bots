@@ -16,7 +16,7 @@ dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
 
-N = 1000
+N = 2000
 
 diss = [[INF for i in range(N)] for j in range(N)]
 press = [[[-1, -1] for i in range(N)] for j in range(N)]
