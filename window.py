@@ -331,7 +331,7 @@ while running:
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             agent.ind=ind
-            bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
+            # bot_db.insert_one({"_id":ind,"Order_ID":order_id,"Rack":rack,"Items":list_racks[rack],"target":[hCounter]})
             nAgent = Search(agent.position,rack_location)
             # nAgent = Search(agent.position,charging_loc[4])
             nAgent.BFS()
@@ -421,7 +421,7 @@ while running:
                 coloring.remove(i)
         agent.Index -= 1
         if agent.Index >= 0:
-            if  agent.Index%10==0:
+            if  agent.Index%20==0:
                 agent.charging-=1
                 
             if agent.Path[agent.Index]==[-7,-7]:
@@ -458,25 +458,36 @@ while running:
                 agent.Index -= 1
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-        if agent.Index == -1:
-            agent.Path = []
-            rack_available[agent.CurRack]=1
-            bot_db.delete_one({"_id":agent.ind})
-            agent.Wait = True
-            agent.color = colors.YELLOW1
-            agent.size = 2
-            if agent.charging<30 and agent.ischarge==False:
+        if agent.Index <= -1:
+            if agent.needcharge==False:
+                agent.Path = []
+                rack_available[agent.CurRack]=1
+                agent.Wait = True
+                agent.color = colors.YELLOW1
+            else:
+                agent.size = 2
+                agent.Path = []
+                agent.color = colors.GREEN
+                if key%10==0:
+                    agent.charging+=1
+                if agent.charging==100:
+                    agent.color = colors.LIGHTBLUE1
+                    agent.Wait = True
+                    agent.size = 4
+                    agent.needcharge=False
+
+            if agent.charging<20 and agent.needcharge == False:
                 charge_box=get_charging()
                 if charge_box==-1:
                     continue
-                agent.ischarge=True
+                agent.needcharge=True
                 nAgent = Search(agent.position,charge_box)
                 nAgent.BFS()
                 agent.Path = nAgent.getPath()
                 agent.Path.reverse()
                 agent.Index = len(agent.Path)
                 agent.Wait = False
-                agent.size = 4
+                agent.size=2
                 # TODO: Send it to charging station
             remove=[]
             for colo in range(len(coloring)):
@@ -545,3 +556,9 @@ while running:
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
 
     pygame.display.update()
+
+
+    """
+    1. Charging State vapis 1 bhi krni h
+    2. jb robot kuj charge hojaye tb charging station se nikalke kai aur bhejna h    
+    """

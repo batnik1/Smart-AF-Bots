@@ -1,18 +1,452 @@
-2021-09-30 22:26:23,928 New Order is Placed with Order ID: cb0dea9b-cf90-44bc-8943-4c789c7b39cf which consists of [[1, 1]]
-2021-09-30 22:26:23,962 Bot 0 is assigned to go to Rack (1, 3, 4, 1)
-2021-09-30 22:26:24,676 New Order is Placed with Order ID: 1cd74e47-c6be-4ffc-a383-6aa836213c38 which consists of [[5, 3]]
-2021-09-30 22:26:24,679 Bot 1 is assigned to go to Rack (1, 1, 4, 0)
-2021-09-30 22:26:25,147 New Order is Placed with Order ID: 3a3334ed-c9da-4adf-bcee-60d1bd7862ff which consists of [[2, 1]]
-2021-09-30 22:26:25,864 Bot 0: Reached the Desired Rack
-2021-09-30 22:26:25,935 New Order is Placed with Order ID: 32f36169-4332-4418-9521-8529e5f792b4 which consists of [[0, 2]]
-2021-09-30 22:26:26,676 New Order is Placed with Order ID: 4f6b8180-75ac-40ea-a89a-ac9789ef931f which consists of [[2, 2]]
-2021-09-30 22:26:27,428 New Order is Placed with Order ID: b2bca75b-bf76-4b9f-8da4-eb0203374fca which consists of [[2, 1]]
-2021-09-30 22:26:28,323 Bot 1: Reached the Desired Rack
-2021-09-30 22:26:29,627 Bot 0: Reached the Human Counter with items [[1, 1]]
-2021-09-30 22:26:29,630 Order cb0dea9b-cf90-44bc-8943-4c789c7b39cf is finished
-2021-09-30 22:26:32,176 Bot 1: Reached the Human Counter with items [[5, 2]]
-2021-09-30 22:26:32,361 Bot 0: Kept the Rack back which I was carrying
-2021-09-30 22:26:34,721 Bot 1: Kept the Rack back which I was carrying
-2021-09-30 22:26:36,501 Conveyor Belt Moved Order with ID :cb0dea9b-cf90-44bc-8943-4c789c7b39cf to the Sorting Area
-2021-09-30 22:26:36,502 Sorting Bot is moving order with Order ID: cb0dea9b-cf90-44bc-8943-4c789c7b39cf to it's dumping point
-2021-09-30 22:26:37,994 Sorting Bot dumped the order with Order ID: cb0dea9b-cf90-44bc-8943-4c789c7b39cf to it's dumping point
+2021-09-30 23:32:25,151 New Order is Placed with Order ID: c4d7b760-7ead-4200-a6ed-770ba6d54b9b which consists of [[1, 1], [0, 5]]
+2021-09-30 23:32:27,063 New Order is Placed with Order ID: a080a3de-f600-4a59-86b4-5750ef58a282 which consists of [[4, 3], [5, 4]]
+2021-09-30 23:32:27,186 New Order is Placed with Order ID: e89b3675-942d-41d7-ba9d-5a89372e3b41 which consists of [[0, 3]]
+2021-09-30 23:32:27,312 New Order is Placed with Order ID: 4f8835fd-a410-45e8-ad88-72b2416ad04f which consists of [[2, 5]]
+2021-09-30 23:32:27,442 New Order is Placed with Order ID: 773d9c3a-f438-4366-824e-a679ea40cf1b which consists of [[5, 1], [3, 5]]
+2021-09-30 23:32:27,566 New Order is Placed with Order ID: 80517e58-093d-4b96-849d-29db613332f2 which consists of [[5, 4]]
+2021-09-30 23:32:27,694 New Order is Placed with Order ID: a6d7a7d9-7e53-456d-958e-43d2ff489483 which consists of [[5, 4]]
+2021-09-30 23:32:27,821 New Order is Placed with Order ID: a481f21d-779b-4de3-b68a-c30b61578e9e which consists of [[2, 3], [3, 3]]
+2021-09-30 23:32:27,954 New Order is Placed with Order ID: 5f12337d-4389-4970-a85e-f405f70bed5d which consists of [[3, 2], [2, 2], [5, 1]]
+2021-09-30 23:32:28,082 New Order is Placed with Order ID: 9100364d-79c7-41c2-aed2-3ff18d6f4179 which consists of [[4, 4], [3, 5]]
+2021-09-30 23:32:28,213 New Order is Placed with Order ID: 111e95b3-9b8e-4e79-9be1-436b4422c80f which consists of [[5, 2], [3, 1], [1, 5]]
+2021-09-30 23:32:28,348 New Order is Placed with Order ID: a8b26425-38ea-4821-b0c3-5da5b36f65d2 which consists of [[5, 1], [2, 1], [0, 3]]
+2021-09-30 23:32:28,472 New Order is Placed with Order ID: 27a936d2-e0ea-4e79-8a5f-afcbe296c6dd which consists of [[2, 1]]
+2021-09-30 23:32:28,605 New Order is Placed with Order ID: bed706e2-ab67-470a-ad5a-055492fc7e65 which consists of [[4, 2], [2, 3], [0, 3]]
+2021-09-30 23:32:28,733 New Order is Placed with Order ID: 5683e1cd-4f5d-4a15-9fd7-7b0e55cfd9a1 which consists of [[0, 4], [1, 5]]
+2021-09-30 23:32:28,860 New Order is Placed with Order ID: 1deed677-9a45-4727-98b5-2fe778452768 which consists of [[1, 3]]
+2021-09-30 23:32:28,984 New Order is Placed with Order ID: cd911583-d150-478a-9cc8-1cb5ab9cec14 which consists of [[1, 4]]
+2021-09-30 23:32:29,114 New Order is Placed with Order ID: aa8f2037-bbac-451d-9e4f-210cfe3ba4c5 which consists of [[5, 5]]
+2021-09-30 23:32:29,242 New Order is Placed with Order ID: 4a00bafa-302a-413c-a8e9-981b2bbe5152 which consists of [[3, 5]]
+2021-09-30 23:32:29,376 New Order is Placed with Order ID: 5db5fc33-8991-438d-8078-35c2e75d7b19 which consists of [[5, 4], [2, 5], [3, 5]]
+2021-09-30 23:32:29,509 New Order is Placed with Order ID: 42d8d72a-2f1d-4b31-829f-87ff25d087f5 which consists of [[2, 1], [1, 1], [5, 1]]
+2021-09-30 23:32:29,638 New Order is Placed with Order ID: 52b04672-f4fb-45d6-9201-2579cf18434a which consists of [[0, 3], [4, 4]]
+2021-09-30 23:32:29,778 New Order is Placed with Order ID: f44fb479-808e-4cc0-9e52-f148b524ab7b which consists of [[5, 2]]
+2021-09-30 23:32:29,920 New Order is Placed with Order ID: 93df8cdb-58e2-4157-8564-b481d01495cd which consists of [[4, 2]]
+2021-09-30 23:32:30,063 New Order is Placed with Order ID: df083b60-09ab-46bd-b573-ea49198e7903 which consists of [[4, 3], [0, 5], [1, 3]]
+2021-09-30 23:32:30,218 New Order is Placed with Order ID: 0eee0599-78f4-4b09-a10c-b2c2f562c5b0 which consists of [[2, 3], [3, 4], [0, 1]]
+2021-09-30 23:32:30,374 New Order is Placed with Order ID: a41b1ad7-1efa-4f50-9852-00b1bb8c5d4a which consists of [[2, 2], [1, 1], [0, 4]]
+2021-09-30 23:32:30,511 New Order is Placed with Order ID: 4723e934-32dc-46c6-a614-7ae6232f7157 which consists of [[0, 3]]
+2021-09-30 23:32:30,639 New Order is Placed with Order ID: ca29a553-aff4-4de6-9156-934f7069f4f0 which consists of [[4, 3]]
+2021-09-30 23:32:30,778 New Order is Placed with Order ID: 0d8ac506-f11b-4adf-b82e-7f68bb055ac7 which consists of [[5, 4], [4, 4], [1, 3]]
+2021-09-30 23:32:30,907 New Order is Placed with Order ID: b842aad0-8df4-4c2e-b14d-aee7673f38bc which consists of [[2, 4], [0, 2]]
+2021-09-30 23:32:31,035 New Order is Placed with Order ID: 116a8b24-de63-4cd3-8ef4-a5d75dd16555 which consists of [[1, 5], [4, 3]]
+2021-09-30 23:32:31,181 New Order is Placed with Order ID: d4cb59f8-9fbd-4576-8896-91bc76d9e104 which consists of [[2, 2], [0, 5], [3, 5]]
+2021-09-30 23:32:31,328 New Order is Placed with Order ID: bd3b381e-f75d-4eea-9914-261a10675d9b which consists of [[2, 2], [0, 4], [5, 1]]
+2021-09-30 23:32:31,473 New Order is Placed with Order ID: 4e28aaf9-8454-402b-80c8-ee9a2da045b5 which consists of [[1, 2], [4, 1]]
+2021-09-30 23:32:31,611 New Order is Placed with Order ID: 216c7fef-47b6-4468-a184-87946dce8e01 which consists of [[1, 2]]
+2021-09-30 23:32:31,759 New Order is Placed with Order ID: 7fcc920d-655e-4e12-8197-7f6ee566b01e which consists of [[3, 2], [0, 4], [4, 3]]
+2021-09-30 23:32:31,921 New Order is Placed with Order ID: 3b676aa5-2934-4780-917b-157a0b90407c which consists of [[1, 3], [5, 4], [0, 2]]
+2021-09-30 23:32:32,066 New Order is Placed with Order ID: 4c782cc5-b287-434f-832a-e23820c76cd4 which consists of [[4, 4], [0, 5]]
+2021-09-30 23:32:32,207 New Order is Placed with Order ID: 1b3c4358-91dc-446b-9da9-3f079cdc0c52 which consists of [[2, 5], [0, 5]]
+2021-09-30 23:32:32,379 Bot 1 is assigned to go to Rack (2, 3, 0, 4)
+2021-09-30 23:32:32,661 New Order is Placed with Order ID: 50a88c34-def0-4b7d-958e-df626c085140 which consists of [[5, 3]]
+2021-09-30 23:32:32,809 New Order is Placed with Order ID: ad0d1f6b-afd6-40a5-af02-874210b66e77 which consists of [[5, 1], [2, 5]]
+2021-09-30 23:32:32,934 New Order is Placed with Order ID: 6e7097f6-3490-4734-a194-b0472cbc055d which consists of [[5, 1]]
+2021-09-30 23:32:32,939 Bot 0 is assigned to go to Rack (1, 0, 0, 0)
+2021-09-30 23:32:33,200 New Order is Placed with Order ID: 9e45a7ae-3312-488e-b40c-561f416f3018 which consists of [[4, 4], [1, 5]]
+2021-09-30 23:32:33,328 New Order is Placed with Order ID: 804d1e87-0dd3-4f5f-9b67-8e842f19cfba which consists of [[5, 2]]
+2021-09-30 23:32:33,454 New Order is Placed with Order ID: edca85a3-c59c-462c-b104-167c4aaea79f which consists of [[3, 4], [0, 4]]
+2021-09-30 23:32:33,587 New Order is Placed with Order ID: 3edfa262-629d-49df-ac7a-aeb99de8f590 which consists of [[0, 5], [3, 5]]
+2021-09-30 23:32:33,717 New Order is Placed with Order ID: 116faee8-9838-406c-9e24-11526d6c5e07 which consists of [[3, 3], [4, 1], [5, 5]]
+2021-09-30 23:32:33,848 New Order is Placed with Order ID: e4f11352-db55-4052-9067-23c786b5ff20 which consists of [[0, 4], [1, 5]]
+2021-09-30 23:32:33,903 Bot 0: Reached the Desired Rack
+2021-09-30 23:32:33,979 New Order is Placed with Order ID: ac6c1277-223d-489e-b4f0-4552eff8d1e8 which consists of [[5, 2], [2, 4]]
+2021-09-30 23:32:34,120 New Order is Placed with Order ID: 5477b388-8e21-491f-a0a1-3919fafafe31 which consists of [[2, 5], [3, 3], [1, 4]]
+2021-09-30 23:32:34,251 New Order is Placed with Order ID: b2f1f925-425d-441d-a3bf-fc80608167dc which consists of [[1, 5], [5, 4], [4, 1]]
+2021-09-30 23:32:34,379 New Order is Placed with Order ID: 82cc15e5-0bd6-4b0c-bcc8-137730ea34f8 which consists of [[5, 5], [0, 4]]
+2021-09-30 23:32:34,387 Bot 1: Reached the Desired Rack
+2021-09-30 23:32:34,504 New Order is Placed with Order ID: 737b8a5f-4193-434f-a8c1-903769fb62e8 which consists of [[4, 5]]
+2021-09-30 23:32:34,635 New Order is Placed with Order ID: c7ffabad-c0be-4b41-9544-f181ac5beebc which consists of [[1, 2], [3, 3], [4, 3]]
+2021-09-30 23:32:34,766 New Order is Placed with Order ID: 830f37a9-2044-4405-bf53-791e711c03fd which consists of [[4, 5], [2, 4]]
+2021-09-30 23:32:34,896 New Order is Placed with Order ID: 11b40c75-1e5c-4755-8533-3da0a8bcfd97 which consists of [[2, 1], [0, 4]]
+2021-09-30 23:32:34,908 Bot 0: Reached the Human Counter with items [[0, 5]]
+2021-09-30 23:32:35,027 New Order is Placed with Order ID: ad453bd7-ffb3-482f-91e8-b5fa4a1e9e5e which consists of [[1, 4], [3, 2], [4, 4]]
+2021-09-30 23:32:35,063 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:32:35,064 Bot 0 is assigned to go to Rack (3, 1, 0, 4)
+2021-09-30 23:32:35,297 New Order is Placed with Order ID: c7cc4ee3-0e8b-4ae8-a4d6-d0b793d74156 which consists of [[1, 5], [2, 2], [3, 3]]
+2021-09-30 23:32:35,432 New Order is Placed with Order ID: 57e40b3a-fed3-4fde-8924-81f6325aa0bc which consists of [[1, 3], [5, 5], [3, 4]]
+2021-09-30 23:32:35,564 New Order is Placed with Order ID: a24b9224-a64e-495c-858a-0b49215903a3 which consists of [[3, 2], [5, 1]]
+2021-09-30 23:32:35,700 New Order is Placed with Order ID: 0fbba9bd-f20d-4f5c-a5d0-97fa161575c9 which consists of [[2, 1], [3, 1], [5, 5]]
+2021-09-30 23:32:35,829 New Order is Placed with Order ID: 41fc8eff-c75e-4c7e-a353-e554259ef080 which consists of [[5, 4], [2, 4]]
+2021-09-30 23:32:35,964 New Order is Placed with Order ID: 59eefb6d-08cc-44cb-9b91-ccdcc37ed1e6 which consists of [[0, 5], [2, 4], [5, 5]]
+2021-09-30 23:32:36,096 New Order is Placed with Order ID: aca2e5d3-a7fe-4ec5-8bd4-8d16e730a770 which consists of [[3, 4], [5, 5]]
+2021-09-30 23:32:36,220 New Order is Placed with Order ID: 768979b3-a4e1-4078-9100-27b3446b6005 which consists of [[2, 5]]
+2021-09-30 23:32:36,351 New Order is Placed with Order ID: 6dfdd761-a454-46fb-9eaf-0887ca9f6756 which consists of [[2, 5], [0, 4]]
+2021-09-30 23:32:36,374 Bot 0: Reached the Desired Rack
+2021-09-30 23:32:36,517 New Order is Placed with Order ID: 70840c32-2f90-4ba1-93a0-3673c3ce39ea which consists of [[1, 3], [3, 2]]
+2021-09-30 23:32:36,652 New Order is Placed with Order ID: 38444a05-7a74-4d30-b86f-d284c2aac063 which consists of [[0, 3], [2, 1]]
+2021-09-30 23:32:36,786 New Order is Placed with Order ID: 834bd904-2073-4ba8-9e5e-447260c6ce80 which consists of [[5, 1], [3, 5]]
+2021-09-30 23:32:36,940 New Order is Placed with Order ID: d50769fb-35af-41ea-9bdc-34495227184a which consists of [[5, 3], [4, 2]]
+2021-09-30 23:32:37,001 Bot 1: Reached the Human Counter with items [[1, 1]]
+2021-09-30 23:32:37,003 Order c4d7b760-7ead-4200-a6ed-770ba6d54b9b is finished
+2021-09-30 23:32:37,081 New Order is Placed with Order ID: 41e78e39-e1f0-4cc3-8ff0-fac87dc85815 which consists of [[0, 4]]
+2021-09-30 23:32:37,210 New Order is Placed with Order ID: c1d6445f-effd-4cbc-94d4-d824441b8fa6 which consists of [[3, 3]]
+2021-09-30 23:32:37,343 New Order is Placed with Order ID: f2ce4c69-2606-4133-80ea-d45bc5ee99eb which consists of [[0, 5], [5, 5]]
+2021-09-30 23:32:37,471 New Order is Placed with Order ID: 7bd6ce65-fd38-4f86-bdb2-1c1b97fb21ba which consists of [[0, 4]]
+2021-09-30 23:32:37,598 New Order is Placed with Order ID: 30bb9f40-ce5c-459e-a008-d1a54c84b90c which consists of [[5, 1]]
+2021-09-30 23:32:37,727 New Order is Placed with Order ID: 0668efb4-9d3a-4c3e-9ab7-99d70db7f684 which consists of [[2, 1]]
+2021-09-30 23:32:37,855 New Order is Placed with Order ID: ac246174-689c-4728-8f0d-c549c6ef08e4 which consists of [[4, 1]]
+2021-09-30 23:32:37,924 Bot 0: Reached the Human Counter with items [[4, 3]]
+2021-09-30 23:32:37,996 New Order is Placed with Order ID: 6f69cd01-80bd-4102-8898-bc1a7d441f33 which consists of [[4, 5], [3, 4], [1, 5]]
+2021-09-30 23:32:38,193 New Order is Placed with Order ID: 17fbb643-6892-4967-a6e3-8f8890d00251 which consists of [[3, 5], [4, 2], [0, 4]]
+2021-09-30 23:32:38,324 New Order is Placed with Order ID: cc84aba8-cd19-4ac1-9744-9079d3a9c3ce which consists of [[3, 3], [0, 1]]
+2021-09-30 23:32:38,461 New Order is Placed with Order ID: 85478ab4-ab46-4ad5-8eb4-9b6c47bea2b5 which consists of [[2, 1], [3, 4], [4, 2]]
+2021-09-30 23:32:38,593 New Order is Placed with Order ID: 613e109d-e636-481b-83cf-7cb6e44b8b9f which consists of [[0, 4], [4, 1]]
+2021-09-30 23:32:38,701 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:32:38,850 Conveyor Belt Moved Order with ID :c4d7b760-7ead-4200-a6ed-770ba6d54b9b to the Sorting Area
+2021-09-30 23:32:38,850 Sorting Bot is moving order with Order ID: c4d7b760-7ead-4200-a6ed-770ba6d54b9b to it's dumping point
+2021-09-30 23:32:38,863 New Order is Placed with Order ID: 849fe53a-5e3d-403f-97a6-c092b970c189 which consists of [[1, 5], [2, 1], [0, 1]]
+2021-09-30 23:32:38,994 New Order is Placed with Order ID: d74a7bb9-4f9e-49f7-ad8c-8ed206e22052 which consists of [[2, 3], [4, 3]]
+2021-09-30 23:32:39,123 New Order is Placed with Order ID: 1af00477-86f8-4639-8f33-167a65e25702 which consists of [[2, 4]]
+2021-09-30 23:32:39,262 New Order is Placed with Order ID: 284b44e2-ccb9-40c5-b5a1-62fb470769e9 which consists of [[4, 4], [1, 5], [0, 4]]
+2021-09-30 23:32:39,399 New Order is Placed with Order ID: ec7f017f-772f-4e78-bc08-7c9748b62a02 which consists of [[0, 3], [3, 2], [5, 2]]
+2021-09-30 23:32:39,534 New Order is Placed with Order ID: 2f89bfe5-0c6f-47ae-a39b-6429056e8b25 which consists of [[0, 5], [3, 1], [4, 1]]
+2021-09-30 23:32:39,672 New Order is Placed with Order ID: 5facf98f-5641-4f2b-8548-9e52b7e4f037 which consists of [[0, 4], [3, 1], [4, 5]]
+2021-09-30 23:32:39,722 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:32:39,948 New Order is Placed with Order ID: bacdff5e-40df-4668-b05f-c15d6edd6687 which consists of [[1, 3], [3, 1], [5, 1]]
+2021-09-30 23:32:40,080 New Order is Placed with Order ID: f1876d8d-465d-4701-9231-38c4f96113fb which consists of [[1, 5]]
+2021-09-30 23:32:40,184 Sorting Bot dumped the order with Order ID: c4d7b760-7ead-4200-a6ed-770ba6d54b9b to it's dumping point
+2021-09-30 23:32:40,211 New Order is Placed with Order ID: 7b5d6104-49ac-4d24-8f09-680af8428f07 which consists of [[2, 5]]
+2021-09-30 23:32:40,348 New Order is Placed with Order ID: e33195b4-98bd-4229-a762-b499bf5d3baf which consists of [[2, 1], [5, 5]]
+2021-09-30 23:32:40,479 New Order is Placed with Order ID: e57effcc-8bc1-4c7b-846a-2e7ef48c67fc which consists of [[5, 1], [2, 3]]
+2021-09-30 23:32:40,617 New Order is Placed with Order ID: 23a3b6b8-efc8-4a3a-8108-b316cd948716 which consists of [[0, 5], [5, 5]]
+2021-09-30 23:32:40,747 New Order is Placed with Order ID: 7d5a5587-7e9f-4ea1-be22-8335dc012c3d which consists of [[1, 4]]
+2021-09-30 23:32:40,884 New Order is Placed with Order ID: 6f336293-1f16-44ff-ae45-0377baf28f10 which consists of [[1, 4], [4, 1], [3, 5]]
+2021-09-30 23:32:41,012 New Order is Placed with Order ID: 5b052b39-03fc-4892-9839-6e129f3bf864 which consists of [[3, 1]]
+2021-09-30 23:32:41,152 New Order is Placed with Order ID: 3e7f297a-d723-4f91-b622-74b8d7fedd2c which consists of [[0, 3], [2, 3]]
+2021-09-30 23:32:41,305 New Order is Placed with Order ID: b3ed1595-1775-4a24-ba95-b76f3365afbb which consists of [[1, 4], [3, 4], [5, 5]]
+2021-09-30 23:32:41,471 New Order is Placed with Order ID: 8cbb8d2d-4596-41cc-8c8a-e348415f045b which consists of [[5, 1], [4, 5]]
+2021-09-30 23:32:41,622 New Order is Placed with Order ID: 4339c54c-7437-4f59-afba-b8ada4e2760a which consists of [[5, 4]]
+2021-09-30 23:32:41,759 New Order is Placed with Order ID: b1e3c5c3-5619-4ee0-b5e7-f3afc275c378 which consists of [[2, 2]]
+2021-09-30 23:32:41,892 New Order is Placed with Order ID: 9d11b9b7-712e-4d75-9a4c-b4e3a3e26b4c which consists of [[2, 1]]
+2021-09-30 23:32:42,024 New Order is Placed with Order ID: f29b759e-0df3-45db-a0ab-a89072e67704 which consists of [[4, 4]]
+2021-09-30 23:32:42,161 New Order is Placed with Order ID: 0a12ed62-b066-41d9-9eaa-05b5a62418b4 which consists of [[5, 5], [4, 3], [2, 2]]
+2021-09-30 23:32:42,292 New Order is Placed with Order ID: d623a6c5-5ac5-4f31-aba9-4d9c375bf4b0 which consists of [[1, 3]]
+2021-09-30 23:32:42,436 New Order is Placed with Order ID: d30e3f16-c2b0-4564-b692-df6f7235311e which consists of [[5, 3], [0, 1], [3, 4]]
+2021-09-30 23:32:42,564 New Order is Placed with Order ID: d316643b-a4f3-450d-92fa-70d373c5e8e4 which consists of [[3, 3]]
+2021-09-30 23:32:42,702 New Order is Placed with Order ID: 58b910da-13ba-4878-a8f5-747851137aa3 which consists of [[0, 1], [3, 3], [1, 4]]
+2021-09-30 23:32:42,829 New Order is Placed with Order ID: c2d8e64c-92b8-436b-b172-05cdcc0790f8 which consists of [[4, 1]]
+2021-09-30 23:32:42,960 New Order is Placed with Order ID: 5e81353c-3942-4a13-ab3e-ef425fee245d which consists of [[2, 2]]
+2021-09-30 23:32:43,094 New Order is Placed with Order ID: ce79e878-6fff-4262-ad53-6c74f48c6299 which consists of [[3, 3], [1, 4]]
+2021-09-30 23:32:43,230 New Order is Placed with Order ID: 0acc9415-adbc-481d-a361-c687ebb0d0b7 which consists of [[0, 4], [1, 3], [5, 5]]
+2021-09-30 23:32:43,361 New Order is Placed with Order ID: 81a6b488-663d-4df4-ac49-26235e117f55 which consists of [[1, 5]]
+2021-09-30 23:32:43,495 New Order is Placed with Order ID: e09bb4b9-5ddd-4fa5-b6e6-134ab35540e1 which consists of [[4, 1]]
+2021-09-30 23:32:43,638 New Order is Placed with Order ID: f72c00c0-c7b6-4dc5-8c22-4970e9751be2 which consists of [[1, 5], [0, 5], [4, 1]]
+2021-09-30 23:32:43,778 New Order is Placed with Order ID: 1ffa2225-2c4c-4db6-9a8c-6448140da987 which consists of [[2, 5], [4, 3], [0, 5]]
+2021-09-30 23:32:43,922 New Order is Placed with Order ID: 0ecbd64b-6057-4423-bc63-91233bc3dc38 which consists of [[1, 2], [4, 5], [3, 2]]
+2021-09-30 23:32:44,057 New Order is Placed with Order ID: ed7206d1-1b7c-421b-b650-54183f82d68d which consists of [[2, 2]]
+2021-09-30 23:32:44,194 New Order is Placed with Order ID: d6c5a68c-929a-40dd-aba3-e9e5cf4d0942 which consists of [[1, 3], [2, 3]]
+2021-09-30 23:32:44,332 New Order is Placed with Order ID: 982bdd15-efbe-4bdc-b2bb-ce885625b021 which consists of [[0, 3], [1, 2]]
+2021-09-30 23:32:44,460 New Order is Placed with Order ID: cc885f00-557d-45d9-b09f-dec2e40befc9 which consists of [[4, 3]]
+2021-09-30 23:32:44,594 New Order is Placed with Order ID: 85c2bda4-0a8c-4def-8cd7-545476544b4a which consists of [[4, 1], [2, 5]]
+2021-09-30 23:32:44,729 New Order is Placed with Order ID: 62080de2-283f-4393-8c83-79304facbead which consists of [[4, 4], [5, 3]]
+2021-09-30 23:32:44,865 New Order is Placed with Order ID: 17ea8832-fb77-44ce-9700-653927a52157 which consists of [[5, 4], [3, 5]]
+2021-09-30 23:32:44,997 New Order is Placed with Order ID: df68f669-b582-4c90-be11-dc2b9f44d199 which consists of [[3, 5], [2, 2]]
+2021-09-30 23:32:45,026 Bot 1 is assigned to go to Rack (3, 3, 2, 0)
+2021-09-30 23:32:45,262 New Order is Placed with Order ID: 311dd2c9-4479-4dc7-8cf1-d9ba6ba5f969 which consists of [[2, 3], [3, 1]]
+2021-09-30 23:32:45,401 New Order is Placed with Order ID: 359cc0e9-4f72-479a-9fff-5206415fd700 which consists of [[2, 3], [3, 2], [1, 5]]
+2021-09-30 23:32:45,538 New Order is Placed with Order ID: 33debe07-e77d-499c-af08-fd404a1d0a70 which consists of [[3, 3], [2, 5]]
+2021-09-30 23:32:45,670 New Order is Placed with Order ID: b3b537b4-18af-4064-a991-7eb9c03b9e25 which consists of [[2, 4]]
+2021-09-30 23:32:45,800 New Order is Placed with Order ID: a35521b5-c8a0-44b5-a7ca-8c4526b3bf71 which consists of [[0, 1]]
+2021-09-30 23:32:45,827 Bot 0 is assigned to go to Rack (0, 2, 0, 1)
+2021-09-30 23:32:46,072 New Order is Placed with Order ID: 7994a772-5bf6-4d00-8ca7-104ae9ae9e31 which consists of [[4, 5], [2, 2], [0, 3]]
+2021-09-30 23:32:46,209 New Order is Placed with Order ID: badef3eb-6503-4068-bf14-96ec7a8efb4f which consists of [[0, 2], [5, 3]]
+2021-09-30 23:32:46,344 New Order is Placed with Order ID: b9b83341-d367-4247-8d04-ac923f7362a9 which consists of [[0, 3]]
+2021-09-30 23:32:46,482 New Order is Placed with Order ID: eb2e725a-9cbb-4329-a629-0d738451d17d which consists of [[1, 1], [3, 2], [2, 4]]
+2021-09-30 23:32:46,624 New Order is Placed with Order ID: 16c9cdc0-be57-4a56-b658-67b7921fa1d3 which consists of [[5, 4], [0, 5], [2, 4]]
+2021-09-30 23:32:46,658 Bot 0: Reached the Desired Rack
+2021-09-30 23:32:46,772 New Order is Placed with Order ID: 3dbdd457-9472-42a1-9101-b267d13b18ee which consists of [[5, 5], [1, 3], [3, 3]]
+2021-09-30 23:32:46,905 New Order is Placed with Order ID: 13cc2446-d3cf-4884-9b06-299fe4ee26a5 which consists of [[0, 1]]
+2021-09-30 23:32:47,043 New Order is Placed with Order ID: 250f4a14-a1fe-4b42-bde1-6ebef8e16a7a which consists of [[5, 1], [0, 5]]
+2021-09-30 23:32:47,173 New Order is Placed with Order ID: 2903ea68-fbe0-49fd-aa07-b7d96f651fa8 which consists of [[0, 4]]
+2021-09-30 23:32:47,319 New Order is Placed with Order ID: d6f04a6e-d6f5-4da9-b78d-84aa6de06911 which consists of [[5, 4], [3, 5], [2, 4]]
+2021-09-30 23:32:47,459 New Order is Placed with Order ID: 7cd10fb8-d4ee-4ac0-8f24-f53ef5d202db which consists of [[1, 2], [2, 3]]
+2021-09-30 23:32:47,588 Bot 1: Reached the Desired Rack
+2021-09-30 23:32:47,603 New Order is Placed with Order ID: f2cd06da-ff4f-4b2b-9894-539a1bd8b070 which consists of [[4, 3], [2, 1]]
+2021-09-30 23:32:47,762 New Order is Placed with Order ID: de7d261e-685b-4937-bb34-b336fdf7b871 which consists of [[1, 1], [3, 2], [2, 3]]
+2021-09-30 23:32:47,896 New Order is Placed with Order ID: c1e0076f-aac7-499d-9fc4-bbb10432830b which consists of [[3, 2]]
+2021-09-30 23:32:48,040 New Order is Placed with Order ID: 8505d349-2e28-4ba3-b38e-34ececd38267 which consists of [[5, 5], [0, 5], [2, 5]]
+2021-09-30 23:32:48,178 New Order is Placed with Order ID: 0d60a5cd-b25d-43e5-b456-177eee44627f which consists of [[1, 1], [4, 2]]
+2021-09-30 23:32:48,320 New Order is Placed with Order ID: 5498b7f4-2bf8-4cba-ae62-79512c811356 which consists of [[0, 4], [4, 4]]
+2021-09-30 23:32:48,459 New Order is Placed with Order ID: ef05ad3c-04e8-46bc-9a35-cffd4c3987e2 which consists of [[0, 1], [5, 1]]
+2021-09-30 23:32:48,596 New Order is Placed with Order ID: 83876a3f-b0e0-4911-be98-755598eb67de which consists of [[3, 3], [0, 2]]
+2021-09-30 23:32:48,709 Bot 0: Reached the Human Counter with items [[0, 3]]
+2021-09-30 23:32:48,710 Order e89b3675-942d-41d7-ba9d-5a89372e3b41 is finished
+2021-09-30 23:32:48,736 New Order is Placed with Order ID: cc3f01e6-de4c-4500-b40b-dedc929181d4 which consists of [[1, 2], [5, 3]]
+2021-09-30 23:32:48,873 New Order is Placed with Order ID: d9ead103-c234-4f24-acd5-a18ee41cb828 which consists of [[2, 5]]
+2021-09-30 23:32:48,883 Bot 1: Reached the Human Counter with items [[5, 4]]
+2021-09-30 23:32:48,884 Order a080a3de-f600-4a59-86b4-5750ef58a282 is finished
+2021-09-30 23:32:49,014 New Order is Placed with Order ID: 2888f89c-0e14-4e88-aeb2-cd1932ec44e3 which consists of [[5, 4], [3, 4]]
+2021-09-30 23:32:49,154 New Order is Placed with Order ID: 223d683c-6fdb-439f-b062-387219614fc4 which consists of [[4, 5]]
+2021-09-30 23:32:49,288 New Order is Placed with Order ID: c516c02f-31ea-4b91-ba34-03d7db35afd7 which consists of [[1, 5]]
+2021-09-30 23:32:49,434 New Order is Placed with Order ID: b4263f16-eeac-4613-be64-27f6189ff8dd which consists of [[2, 1], [5, 3], [3, 2]]
+2021-09-30 23:32:49,576 New Order is Placed with Order ID: 7674ebdd-8430-4a9a-96e8-ecc08d71df47 which consists of [[1, 1], [4, 3]]
+2021-09-30 23:32:49,719 New Order is Placed with Order ID: 3ea13fcf-b5b4-490c-9daa-70d8268b6044 which consists of [[1, 1], [0, 1], [2, 5]]
+2021-09-30 23:32:49,857 New Order is Placed with Order ID: 5b3aa6e3-3dc7-49cb-ae86-6152e1ccc7de which consists of [[2, 2]]
+2021-09-30 23:32:49,949 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:32:49,951 Bot 0 is assigned to go to Rack (2, 2, 0, 2)
+2021-09-30 23:32:50,129 New Order is Placed with Order ID: c56aa941-b3db-40ad-9521-d96ffad7b1e4 which consists of [[0, 3]]
+2021-09-30 23:32:50,273 New Order is Placed with Order ID: a2ed0f2f-ca65-48cb-8fce-f0550f69a7be which consists of [[1, 5], [2, 4], [5, 3]]
+2021-09-30 23:32:50,352 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:32:50,555 New Order is Placed with Order ID: 059fac95-08f9-459b-a757-731ca48165de which consists of [[3, 5], [2, 4], [1, 4]]
+2021-09-30 23:32:50,693 New Order is Placed with Order ID: 50ee3e9f-f624-4932-afda-6c0f53e5fb0d which consists of [[5, 2], [4, 1]]
+2021-09-30 23:32:50,743 Conveyor Belt Moved Order with ID :e89b3675-942d-41d7-ba9d-5a89372e3b41 to the Sorting Area
+2021-09-30 23:32:50,744 Sorting Bot is moving order with Order ID: e89b3675-942d-41d7-ba9d-5a89372e3b41 to it's dumping point
+2021-09-30 23:32:50,839 New Order is Placed with Order ID: 53fda100-4541-4dfc-8c26-8f1acf48e811 which consists of [[2, 3], [1, 3], [3, 5]]
+2021-09-30 23:32:50,988 New Order is Placed with Order ID: ae1544ae-6952-4756-a2b5-f659a86b8852 which consists of [[3, 2], [2, 4], [4, 5]]
+2021-09-30 23:32:51,127 New Order is Placed with Order ID: f3c61262-de1d-4cdf-9db0-7ee1798bd228 which consists of [[2, 3]]
+2021-09-30 23:32:51,179 Conveyor Belt Moved Order with ID :a080a3de-f600-4a59-86b4-5750ef58a282 to the Sorting Area
+2021-09-30 23:32:51,179 Sorting Bot is moving order with Order ID: a080a3de-f600-4a59-86b4-5750ef58a282 to it's dumping point
+2021-09-30 23:32:51,274 New Order is Placed with Order ID: 16be59d4-6ed2-4fde-9fc7-ba4f260b733e which consists of [[2, 1], [3, 4]]
+2021-09-30 23:32:51,402 Bot 0: Reached the Desired Rack
+2021-09-30 23:32:51,426 New Order is Placed with Order ID: 5a79b613-5a63-4196-8596-eef0ea112b85 which consists of [[0, 5], [2, 1], [1, 5]]
+2021-09-30 23:32:51,571 New Order is Placed with Order ID: 105cd976-70d0-4c9c-bba7-85a2512bb4af which consists of [[3, 1], [2, 4]]
+2021-09-30 23:32:51,712 New Order is Placed with Order ID: 716b7abf-dec0-4b71-855e-a7eb30fc19bf which consists of [[2, 5]]
+2021-09-30 23:32:51,868 New Order is Placed with Order ID: 74258b5c-34de-45ea-b56c-5bcdbcca808b which consists of [[2, 4], [0, 3], [3, 3]]
+2021-09-30 23:32:52,018 New Order is Placed with Order ID: 21d0b3e9-d437-4882-8b96-4715f132ed2d which consists of [[2, 3], [4, 5]]
+2021-09-30 23:32:52,159 New Order is Placed with Order ID: fa86a0f6-f88c-4f53-9f11-db77a7aab2ea which consists of [[5, 3], [0, 3]]
+2021-09-30 23:32:52,302 New Order is Placed with Order ID: 54563e49-b05f-453e-87ce-3ef042d59f61 which consists of [[1, 1], [2, 5]]
+2021-09-30 23:32:52,308 Sorting Bot dumped the order with Order ID: e89b3675-942d-41d7-ba9d-5a89372e3b41 to it's dumping point
+2021-09-30 23:32:52,441 New Order is Placed with Order ID: 9f35f34d-4406-4127-b293-dcede12ac7fd which consists of [[4, 2]]
+2021-09-30 23:32:52,551 Sorting Bot dumped the order with Order ID: a080a3de-f600-4a59-86b4-5750ef58a282 to it's dumping point
+2021-09-30 23:32:52,586 New Order is Placed with Order ID: 1a516a95-dc3c-43f6-97a2-0bb6d6898cae which consists of [[3, 1], [0, 4], [5, 2]]
+2021-09-30 23:32:52,727 New Order is Placed with Order ID: 0a70959a-4a82-4568-afa0-b034c05ea21c which consists of [[3, 2]]
+2021-09-30 23:32:52,869 New Order is Placed with Order ID: 99f8e3af-804a-42c5-b14b-748143a1bd57 which consists of [[5, 1], [4, 5]]
+2021-09-30 23:32:53,007 New Order is Placed with Order ID: 6108ea36-216a-4fee-ba7c-05b6abcabe5d which consists of [[3, 5]]
+2021-09-30 23:32:53,145 New Order is Placed with Order ID: 0abddb32-9243-4846-9951-4b15c79b39d5 which consists of [[0, 3]]
+2021-09-30 23:32:53,287 New Order is Placed with Order ID: cbb4cb27-b69a-4a28-a9f1-792e6c33bec0 which consists of [[4, 1]]
+2021-09-30 23:32:53,309 Bot 0: Reached the Human Counter with items [[4, 2]]
+2021-09-30 23:32:53,439 New Order is Placed with Order ID: 1e5fbc5d-0d91-4f3a-ad17-0f2593fadf24 which consists of [[5, 1], [3, 4], [2, 3]]
+2021-09-30 23:32:53,582 New Order is Placed with Order ID: c42e464f-f2e2-4929-8235-62c7c3e6d253 which consists of [[2, 5], [0, 5]]
+2021-09-30 23:32:53,718 New Order is Placed with Order ID: ae6591b4-ba26-457d-81c0-ff10aa5871ff which consists of [[0, 1], [3, 1]]
+2021-09-30 23:32:53,862 New Order is Placed with Order ID: 5b82c3e8-da43-404a-8262-544a4f05d501 which consists of [[4, 1], [1, 3]]
+2021-09-30 23:32:54,008 New Order is Placed with Order ID: d93a449c-895b-4fac-81bd-5a603a4b4835 which consists of [[5, 1], [1, 4]]
+2021-09-30 23:32:54,142 New Order is Placed with Order ID: 62075089-a2eb-4228-931d-d2f19714bc05 which consists of [[5, 5]]
+2021-09-30 23:32:54,273 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:32:54,420 New Order is Placed with Order ID: e47f4c2f-10d3-4597-aecc-94ce621f359d which consists of [[1, 2], [5, 4]]
+2021-09-30 23:32:54,565 New Order is Placed with Order ID: 5ad703b8-2c3a-4a48-93a8-d77c3b422d4e which consists of [[4, 5], [5, 1]]
+2021-09-30 23:32:54,769 New Order is Placed with Order ID: 95641574-fbf8-47fc-939b-57abf2b48381 which consists of [[4, 2], [2, 5]]
+2021-09-30 23:32:54,920 New Order is Placed with Order ID: da996797-45a9-46e6-94f8-4d537c590d3f which consists of [[2, 4], [3, 1], [1, 1]]
+2021-09-30 23:32:55,062 New Order is Placed with Order ID: 9db91e71-b399-4b47-8ead-8f06936f757d which consists of [[4, 2]]
+2021-09-30 23:32:55,224 New Order is Placed with Order ID: 2d82cb8d-1029-4ae5-a8a3-3bd5ce572065 which consists of [[4, 2], [0, 5], [1, 5]]
+2021-09-30 23:32:55,369 New Order is Placed with Order ID: 53f01f16-fac5-4bf7-88a6-a11cb8d5744c which consists of [[1, 2], [5, 4]]
+2021-09-30 23:32:55,519 New Order is Placed with Order ID: 7cd506eb-171b-4852-8e48-0b5e1fcea406 which consists of [[0, 4], [2, 5], [4, 4]]
+2021-09-30 23:32:55,659 New Order is Placed with Order ID: afa7523e-2956-4121-9e24-f0e687368b67 which consists of [[4, 2]]
+2021-09-30 23:32:55,808 New Order is Placed with Order ID: a10ceae2-2605-4232-bb18-41cde7e10f21 which consists of [[1, 5], [2, 1], [4, 2]]
+2021-09-30 23:32:55,954 New Order is Placed with Order ID: 9dc5fbc7-8e92-4410-a4dc-50d8c0fc8ea1 which consists of [[2, 5], [1, 1]]
+2021-09-30 23:32:56,104 New Order is Placed with Order ID: 66067fa2-66b5-4558-ae5c-d62a1520aa20 which consists of [[1, 3], [5, 5], [4, 2]]
+2021-09-30 23:32:56,251 New Order is Placed with Order ID: e26e2b05-2462-431e-a202-b168699f359d which consists of [[3, 1], [5, 4], [4, 4]]
+2021-09-30 23:32:56,390 New Order is Placed with Order ID: 479bfe1d-2b37-4c98-bd75-8c9590d381ca which consists of [[5, 3]]
+2021-09-30 23:32:56,537 New Order is Placed with Order ID: 2ae6d685-aeae-4f35-aa94-a4e71c4473cb which consists of [[0, 5], [2, 5]]
+2021-09-30 23:32:56,683 New Order is Placed with Order ID: fa9abf71-d944-4062-9166-3e573b9222f4 which consists of [[5, 3], [4, 2]]
+2021-09-30 23:32:56,831 New Order is Placed with Order ID: 71c04545-4b35-469a-b3a4-b9acd0325956 which consists of [[1, 5], [4, 1], [0, 1]]
+2021-09-30 23:32:56,974 New Order is Placed with Order ID: f14649ea-939c-4ba0-800a-0224565e60e8 which consists of [[1, 1], [4, 4]]
+2021-09-30 23:32:56,977 Bot 1 is assigned to go to Rack (3, 0, 1, 4)
+2021-09-30 23:32:57,257 New Order is Placed with Order ID: 793a824a-fa8c-49c1-8059-8346f66b977c which consists of [[2, 1], [0, 2], [5, 5]]
+2021-09-30 23:32:57,405 New Order is Placed with Order ID: 69cd71b4-15f6-4471-8a33-cd2f705ae9b8 which consists of [[0, 3], [3, 1], [2, 1]]
+2021-09-30 23:32:57,547 New Order is Placed with Order ID: 48092a86-6baa-4562-8b55-da3fc67bead1 which consists of [[0, 1]]
+2021-09-30 23:32:57,688 New Order is Placed with Order ID: aad65f28-6817-4f2b-ad6e-34b06a08793d which consists of [[1, 1]]
+2021-09-30 23:32:57,835 New Order is Placed with Order ID: 6b451882-097d-47ed-8d17-cf176ea9811d which consists of [[1, 4], [5, 3]]
+2021-09-30 23:32:57,985 New Order is Placed with Order ID: 15e00090-4791-4e81-9e6f-1793e4544110 which consists of [[1, 4], [5, 4], [4, 1]]
+2021-09-30 23:32:58,129 New Order is Placed with Order ID: 8c3ecc1e-3e81-4f2a-9ade-501e83af710f which consists of [[2, 1]]
+2021-09-30 23:32:58,274 New Order is Placed with Order ID: 7aa793d1-d716-4b0f-a709-b0f3b60da975 which consists of [[0, 1], [3, 2]]
+2021-09-30 23:32:58,420 New Order is Placed with Order ID: 0ce3f523-c26d-481d-9868-b384fd60779c which consists of [[1, 2]]
+2021-09-30 23:32:58,548 Bot 1: Reached the Desired Rack
+2021-09-30 23:32:58,558 New Order is Placed with Order ID: aa3219b6-a484-43e8-bca7-92a127ddf94f which consists of [[3, 1]]
+2021-09-30 23:32:58,699 New Order is Placed with Order ID: c8b00112-755e-41b3-8f2e-d6c71c0cd83f which consists of [[3, 5], [4, 3]]
+2021-09-30 23:32:58,846 New Order is Placed with Order ID: d253a2dd-bb19-48fc-9c2a-4d2acf73e89d which consists of [[5, 4], [4, 5]]
+2021-09-30 23:32:58,988 New Order is Placed with Order ID: 28b8a194-53a3-4be0-b272-3c4f4655c73b which consists of [[1, 3]]
+2021-09-30 23:32:59,125 New Order is Placed with Order ID: 34ed54a8-1cdb-4547-b122-00b2d37fe71e which consists of [[5, 1]]
+2021-09-30 23:32:59,272 New Order is Placed with Order ID: f7b4222e-9001-48c9-83cb-84c44c07a75a which consists of [[3, 5], [0, 5]]
+2021-09-30 23:32:59,419 New Order is Placed with Order ID: eaed3a30-cb9c-4444-9f9b-309adca680a1 which consists of [[3, 3], [0, 5]]
+2021-09-30 23:32:59,557 New Order is Placed with Order ID: be21ae6a-1b6b-4d3d-a564-d84362919f84 which consists of [[5, 2], [3, 1]]
+2021-09-30 23:32:59,707 New Order is Placed with Order ID: 739998cb-62eb-45b2-a466-b626b08f09e9 which consists of [[3, 3], [1, 5]]
+2021-09-30 23:32:59,857 New Order is Placed with Order ID: 9d608992-7e97-4e9d-9498-01b9da7aac2a which consists of [[1, 1], [5, 5], [2, 4]]
+2021-09-30 23:33:00,007 New Order is Placed with Order ID: 02cad2dc-4623-410a-b0f1-2f317b4cb2b3 which consists of [[4, 5], [2, 2]]
+2021-09-30 23:33:00,102 Bot 1: Reached the Human Counter with items [[2, 5]]
+2021-09-30 23:33:00,103 Order 4f8835fd-a410-45e8-ad88-72b2416ad04f is finished
+2021-09-30 23:33:00,163 New Order is Placed with Order ID: 1c4b51f8-6eb7-44ad-aba1-7fd7e8214cb8 which consists of [[4, 1], [0, 3], [3, 3]]
+2021-09-30 23:33:00,314 New Order is Placed with Order ID: f2e0d43e-38c5-4830-a7f5-7f6a29a474de which consists of [[5, 2], [4, 5]]
+2021-09-30 23:33:00,472 New Order is Placed with Order ID: 0a01bce9-ef36-4efe-9e8e-bd9777ce8039 which consists of [[0, 2], [4, 4], [3, 5]]
+2021-09-30 23:33:00,616 New Order is Placed with Order ID: 9d5c78b9-06f5-4e4a-9bde-cf9a877a2107 which consists of [[4, 3]]
+2021-09-30 23:33:00,761 New Order is Placed with Order ID: b859ee96-958d-44b5-976a-670f05e197d4 which consists of [[5, 5]]
+2021-09-30 23:33:00,905 New Order is Placed with Order ID: 0d5a3506-b92d-4125-82b3-94c54632e196 which consists of [[4, 5]]
+2021-09-30 23:33:01,043 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:01,049 New Order is Placed with Order ID: f6b3c96b-c58e-4854-b76a-88261e732309 which consists of [[4, 2]]
+2021-09-30 23:33:01,050 Bot 1 is assigned to go to Rack (3, 2, 2, 0)
+2021-09-30 23:33:01,319 New Order is Placed with Order ID: e27f7fc9-c95a-47f7-887b-9cff689416b0 which consists of [[3, 4]]
+2021-09-30 23:33:01,467 New Order is Placed with Order ID: 43f722d4-fc75-48c4-93f3-cdc3722a2217 which consists of [[1, 5], [4, 5]]
+2021-09-30 23:33:01,610 New Order is Placed with Order ID: 35c186b9-dbf9-4db1-9332-f8bb60a786cb which consists of [[3, 2]]
+2021-09-30 23:33:01,669 Bot 0 is assigned to go to Rack (0, 2, 3, 0)
+2021-09-30 23:33:01,857 Conveyor Belt Moved Order with ID :4f8835fd-a410-45e8-ad88-72b2416ad04f to the Sorting Area
+2021-09-30 23:33:01,857 Sorting Bot is moving order with Order ID: 4f8835fd-a410-45e8-ad88-72b2416ad04f to it's dumping point
+2021-09-30 23:33:01,900 New Order is Placed with Order ID: 90506b1d-1a2d-493f-a12f-d19c03a63cc8 which consists of [[4, 3], [1, 4], [2, 5]]
+2021-09-30 23:33:02,046 New Order is Placed with Order ID: 27a3e84a-fd7f-45a7-9823-d9cb6499d4a0 which consists of [[5, 1], [4, 4]]
+2021-09-30 23:33:02,192 New Order is Placed with Order ID: f3c6d57d-bccd-4ffc-8fc3-6f564daa8056 which consists of [[4, 1]]
+2021-09-30 23:33:02,307 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:02,342 New Order is Placed with Order ID: dd0be651-5b85-4a81-9e38-9651aedb8c8a which consists of [[2, 1], [1, 1], [0, 3]]
+2021-09-30 23:33:02,495 New Order is Placed with Order ID: 6eb2136d-2952-4505-8434-bddeb3d6942c which consists of [[2, 1], [1, 3]]
+2021-09-30 23:33:02,652 New Order is Placed with Order ID: c2022d55-aa47-4947-aab0-d491887d9948 which consists of [[5, 3], [3, 4], [0, 4]]
+2021-09-30 23:33:02,740 Sorting Bot dumped the order with Order ID: 4f8835fd-a410-45e8-ad88-72b2416ad04f to it's dumping point
+2021-09-30 23:33:02,807 New Order is Placed with Order ID: a3b8179d-802a-468b-8b30-35f1e06e75a9 which consists of [[4, 2], [1, 3], [0, 5]]
+2021-09-30 23:33:02,830 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:02,963 New Order is Placed with Order ID: 0878e4fd-db43-4de4-8345-348cb53ddaaa which consists of [[3, 4], [0, 4]]
+2021-09-30 23:33:03,110 New Order is Placed with Order ID: a871383d-4253-4aa0-ab21-d06ae840faae which consists of [[4, 5]]
+2021-09-30 23:33:03,254 New Order is Placed with Order ID: 9d3854dc-ecf7-4745-b3f5-14a3df8e3346 which consists of [[2, 1]]
+2021-09-30 23:33:03,405 New Order is Placed with Order ID: aa90808a-34f8-4726-97f3-7aa654c016ad which consists of [[4, 2]]
+2021-09-30 23:33:03,559 New Order is Placed with Order ID: fea965a3-6e73-4960-9f4a-9b17e3783a1a which consists of [[1, 5], [3, 1]]
+2021-09-30 23:33:03,707 New Order is Placed with Order ID: 6d66109c-e44d-46bb-84df-1f615330adbf which consists of [[3, 1], [0, 3]]
+2021-09-30 23:33:03,864 New Order is Placed with Order ID: 914fc5c9-3f78-42cb-8554-b7007583428d which consists of [[5, 4], [0, 1], [4, 4]]
+2021-09-30 23:33:04,017 New Order is Placed with Order ID: e374416f-9d09-4225-910b-6d1e3b343664 which consists of [[5, 1], [1, 1], [4, 4]]
+2021-09-30 23:33:04,171 New Order is Placed with Order ID: e82eba13-5607-46dc-ab49-8b06e193d25d which consists of [[1, 5], [5, 4]]
+2021-09-30 23:33:04,326 New Order is Placed with Order ID: 566f9a35-122a-48e5-bd76-a0b4b9d05915 which consists of [[5, 5], [2, 4], [1, 5]]
+2021-09-30 23:33:04,365 Bot 0: Reached the Human Counter with items [[3, 5]]
+2021-09-30 23:33:04,489 New Order is Placed with Order ID: 905068c3-608a-4adb-bbbb-49e84472452e which consists of [[1, 4], [2, 2], [3, 4]]
+2021-09-30 23:33:04,637 New Order is Placed with Order ID: 3569191b-7eb4-476e-b918-dd20bf48dd0f which consists of [[5, 1], [0, 2]]
+2021-09-30 23:33:04,798 New Order is Placed with Order ID: 96be97e0-a0f6-4dc4-9f24-8fe4c70a99b2 which consists of [[3, 3], [1, 5], [2, 2]]
+2021-09-30 23:33:04,820 Bot 1: Reached the Human Counter with items [[5, 1]]
+2021-09-30 23:33:04,821 Order 773d9c3a-f438-4366-824e-a679ea40cf1b is finished
+2021-09-30 23:33:04,946 New Order is Placed with Order ID: e0be536e-df65-4aca-8925-beb5d776713f which consists of [[3, 1]]
+2021-09-30 23:33:05,103 New Order is Placed with Order ID: 185f3b51-1193-4a2a-97cf-cfad4aac5d81 which consists of [[2, 4], [4, 4]]
+2021-09-30 23:33:05,256 New Order is Placed with Order ID: 626c2d20-4de4-4aa1-a9ee-f6aa671203d5 which consists of [[5, 4], [0, 2]]
+2021-09-30 23:33:05,403 New Order is Placed with Order ID: fee70561-cedf-47ab-85d8-2dbef4fc5c49 which consists of [[5, 4]]
+2021-09-30 23:33:05,549 New Order is Placed with Order ID: 91696dfd-ca76-4238-9a0d-e60a3056447e which consists of [[0, 3], [4, 1]]
+2021-09-30 23:33:05,663 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:33:05,664 Bot 0 is assigned to go to Rack (1, 3, 3, 4)
+2021-09-30 23:33:05,835 New Order is Placed with Order ID: 93d9abc3-07a5-42f1-a429-80851b6bb4fd which consists of [[5, 1], [4, 5]]
+2021-09-30 23:33:05,996 New Order is Placed with Order ID: 843e36c8-2ebd-4568-b4e1-e07098d906cb which consists of [[0, 5], [2, 5], [1, 5]]
+2021-09-30 23:33:06,146 New Order is Placed with Order ID: 48afb3d7-efff-4c6b-aa49-b494c6a8fa95 which consists of [[3, 1], [0, 2]]
+2021-09-30 23:33:06,295 New Order is Placed with Order ID: 4e20bf4c-0d56-4a82-bab4-74b2bde4bbce which consists of [[2, 3], [1, 4]]
+2021-09-30 23:33:06,457 New Order is Placed with Order ID: 9b5d0de5-e43f-4a23-a820-e5d73e5ea222 which consists of [[3, 3], [2, 4], [4, 4]]
+2021-09-30 23:33:06,615 New Order is Placed with Order ID: ce4c571b-9c83-4c95-a49c-5a952c6fa13b which consists of [[0, 5], [3, 2]]
+2021-09-30 23:33:06,765 New Order is Placed with Order ID: 543387cc-4659-4d23-a4a2-78740f1394ff which consists of [[3, 2]]
+2021-09-30 23:33:06,922 New Order is Placed with Order ID: fcd90369-cc97-4896-bf7d-297c1dd4796f which consists of [[4, 3], [2, 5], [3, 2]]
+2021-09-30 23:33:07,078 New Order is Placed with Order ID: fbeb95e1-8272-4c13-a039-2aaadc091db1 which consists of [[3, 3], [1, 1], [2, 3]]
+2021-09-30 23:33:07,115 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:07,279 New Order is Placed with Order ID: ef00a66c-d4bc-4e74-be64-ac4a2e5f0671 which consists of [[1, 4], [5, 4], [4, 1]]
+2021-09-30 23:33:07,450 New Order is Placed with Order ID: 98cd771e-4589-4359-a2dc-7d5573626675 which consists of [[0, 4]]
+2021-09-30 23:33:07,575 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:07,738 New Order is Placed with Order ID: 09adaa02-ca8b-493d-9de7-cf53243c940d which consists of [[3, 4]]
+2021-09-30 23:33:07,892 New Order is Placed with Order ID: 52481e58-0d0c-42a5-a6b6-e2d701701813 which consists of [[5, 5], [3, 2]]
+2021-09-30 23:33:08,040 New Order is Placed with Order ID: 25f8dcb7-623b-41bf-88c1-e040d08251a0 which consists of [[3, 4]]
+2021-09-30 23:33:08,078 Conveyor Belt Moved Order with ID :773d9c3a-f438-4366-824e-a679ea40cf1b to the Sorting Area
+2021-09-30 23:33:08,078 Sorting Bot is moving order with Order ID: 773d9c3a-f438-4366-824e-a679ea40cf1b to it's dumping point
+2021-09-30 23:33:08,188 New Order is Placed with Order ID: c8114571-481f-471a-9b21-4ada6eea35e8 which consists of [[3, 5]]
+2021-09-30 23:33:08,352 New Order is Placed with Order ID: 53559d8c-d4e9-4b6b-a929-3696924d01bd which consists of [[3, 4], [0, 5], [1, 1]]
+2021-09-30 23:33:08,515 New Order is Placed with Order ID: a30d7170-687d-4540-9dcb-d06172ae1c7e which consists of [[1, 5], [2, 3], [3, 5]]
+2021-09-30 23:33:08,666 New Order is Placed with Order ID: 16867565-be70-4453-9981-13a8c37b66c8 which consists of [[3, 4], [5, 5]]
+2021-09-30 23:33:08,689 Bot 0: Reached the Human Counter with items [[5, 4]]
+2021-09-30 23:33:08,690 Order a6d7a7d9-7e53-456d-958e-43d2ff489483 is finished
+2021-09-30 23:33:08,822 New Order is Placed with Order ID: 49b2208d-280e-44d3-ba38-a088be6ef559 which consists of [[5, 2], [1, 2]]
+2021-09-30 23:33:08,974 New Order is Placed with Order ID: 06d41e58-c46e-4857-b3c4-5536c579546c which consists of [[4, 2], [5, 3]]
+2021-09-30 23:33:09,130 New Order is Placed with Order ID: 23c4180c-2d24-4872-93f6-f95b406a48f2 which consists of [[1, 2], [5, 2], [0, 2]]
+2021-09-30 23:33:09,286 New Order is Placed with Order ID: cc3b4109-829b-452c-80ae-b1b9cb336956 which consists of [[4, 4], [5, 2], [2, 4]]
+2021-09-30 23:33:09,443 New Order is Placed with Order ID: c42115c9-419d-4953-bdfa-4fac374ed3f2 which consists of [[1, 4], [2, 5], [0, 5]]
+2021-09-30 23:33:09,594 New Order is Placed with Order ID: e2275f50-8aab-4444-a2a4-167f3c995b8e which consists of [[1, 3]]
+2021-09-30 23:33:09,751 New Order is Placed with Order ID: f44d0fbb-9b18-4dbb-ae8f-53166c276b03 which consists of [[0, 2], [4, 2], [2, 5]]
+2021-09-30 23:33:09,902 New Order is Placed with Order ID: 427923ce-ee1c-4b5c-8fe7-246c16df8423 which consists of [[5, 4], [2, 1]]
+2021-09-30 23:33:09,920 Sorting Bot dumped the order with Order ID: 773d9c3a-f438-4366-824e-a679ea40cf1b to it's dumping point
+2021-09-30 23:33:09,941 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:33:10,195 New Order is Placed with Order ID: b057b6b3-bf10-4ad2-9d27-ff2c3374b101 which consists of [[3, 4], [5, 2], [2, 2]]
+2021-09-30 23:33:10,349 New Order is Placed with Order ID: be784237-4f7f-4db5-840d-698f3d050311 which consists of [[2, 5]]
+2021-09-30 23:33:10,503 New Order is Placed with Order ID: a368442f-a946-4ed0-85d1-2d57e9323ba6 which consists of [[3, 2], [5, 1]]
+2021-09-30 23:33:10,660 New Order is Placed with Order ID: 3d6b4f4e-f827-4b8d-b38d-8e302e438c89 which consists of [[3, 5]]
+2021-09-30 23:33:10,672 Conveyor Belt Moved Order with ID :a6d7a7d9-7e53-456d-958e-43d2ff489483 to the Sorting Area
+2021-09-30 23:33:10,672 Sorting Bot is moving order with Order ID: a6d7a7d9-7e53-456d-958e-43d2ff489483 to it's dumping point
+2021-09-30 23:33:10,828 New Order is Placed with Order ID: 63e3a4e2-93aa-4ca7-8a64-130b7c49566f which consists of [[0, 5], [2, 1]]
+2021-09-30 23:33:10,984 New Order is Placed with Order ID: d34e0945-76cf-4a60-8667-8fe8a1ab0380 which consists of [[2, 5]]
+2021-09-30 23:33:11,146 New Order is Placed with Order ID: 320cb1c4-3512-4227-9424-130d6b6ba570 which consists of [[5, 2], [3, 5]]
+2021-09-30 23:33:11,300 New Order is Placed with Order ID: fcd142ae-9f97-400b-967a-8368e074d63e which consists of [[5, 1]]
+2021-09-30 23:33:11,455 New Order is Placed with Order ID: 5d92b0c2-d36a-4d8e-897f-bfb3c779fd5a which consists of [[0, 3]]
+2021-09-30 23:33:11,607 New Order is Placed with Order ID: 6989dd8f-92f2-4945-bb45-8a41d379ee43 which consists of [[4, 2]]
+2021-09-30 23:33:11,761 New Order is Placed with Order ID: 5d6195fd-1e46-4037-a8f1-a782fec5b458 which consists of [[4, 5], [0, 4]]
+2021-09-30 23:33:11,909 New Order is Placed with Order ID: d9a32ec4-5b86-4f6b-8915-3ab877d2ff38 which consists of [[4, 1], [1, 1]]
+2021-09-30 23:33:12,046 Sorting Bot dumped the order with Order ID: a6d7a7d9-7e53-456d-958e-43d2ff489483 to it's dumping point
+2021-09-30 23:33:12,068 New Order is Placed with Order ID: 2c662657-4fca-43aa-80ed-3a6ec6a9ebb1 which consists of [[4, 1], [2, 4]]
+2021-09-30 23:33:12,222 New Order is Placed with Order ID: dae22484-e7b2-4713-a282-3d7b016e7e3d which consists of [[0, 2], [5, 3]]
+2021-09-30 23:33:12,373 New Order is Placed with Order ID: 59bdb060-a9d5-4bed-af46-9d4de4ad66f1 which consists of [[1, 2], [0, 3]]
+2021-09-30 23:33:12,672 New Order is Placed with Order ID: 41be609a-6c94-4c32-b826-a75bef0fa7f7 which consists of [[2, 5], [5, 2]]
+2021-09-30 23:33:12,823 New Order is Placed with Order ID: 2215a8f9-d967-4653-8d89-08875f0ce35d which consists of [[5, 1]]
+2021-09-30 23:33:12,981 New Order is Placed with Order ID: d9557848-44e5-4b81-a6f3-e574b0727672 which consists of [[4, 2], [1, 5], [2, 2]]
+2021-09-30 23:33:13,130 New Order is Placed with Order ID: 64e274e8-0b91-4429-a8a4-f7bc9e269284 which consists of [[5, 1]]
+2021-09-30 23:33:13,279 New Order is Placed with Order ID: 23e76625-2eeb-4277-a98e-e8addd59c461 which consists of [[4, 1]]
+2021-09-30 23:33:13,435 New Order is Placed with Order ID: c35840ab-3cc6-4e0e-9c17-dacf0a4227b7 which consists of [[2, 2], [4, 5], [0, 1]]
+2021-09-30 23:33:13,586 New Order is Placed with Order ID: 1f77adb5-50fc-4211-8a74-c3abdd39735d which consists of [[2, 3], [4, 1]]
+2021-09-30 23:33:13,744 New Order is Placed with Order ID: 32a3658b-0c1d-4fc7-a6a2-30838139bf56 which consists of [[0, 2], [5, 5]]
+2021-09-30 23:33:13,895 New Order is Placed with Order ID: 4829aba1-71a0-4e25-8c77-5638fe45c648 which consists of [[4, 4]]
+2021-09-30 23:33:14,049 New Order is Placed with Order ID: e1b5e1d3-0781-4ca7-b7a4-91bc01984dc8 which consists of [[2, 3]]
+2021-09-30 23:33:14,353 New Order is Placed with Order ID: 23d5aebe-e21e-4a77-b1a9-4ce67f4be381 which consists of [[5, 1], [4, 5]]
+2021-09-30 23:33:14,506 New Order is Placed with Order ID: 1ecd1dbe-1e93-41e2-931e-0a700b83efd1 which consists of [[4, 5]]
+2021-09-30 23:33:14,655 New Order is Placed with Order ID: 15e080ba-e13c-46fa-a12d-9c53d54b7217 which consists of [[0, 3]]
+2021-09-30 23:33:14,810 New Order is Placed with Order ID: dea373b7-6208-4c9b-b754-943e427cf3bf which consists of [[4, 1]]
+2021-09-30 23:33:14,962 New Order is Placed with Order ID: 0636aab8-7b2b-452a-9214-c1f0a69cf0ad which consists of [[5, 1], [1, 3]]
+2021-09-30 23:33:15,121 New Order is Placed with Order ID: a5ae9d03-a286-4bd4-a517-a3c10c971e9a which consists of [[5, 4], [2, 2]]
+2021-09-30 23:33:15,415 New Order is Placed with Order ID: a6751b3a-d26a-4034-b6ff-a3f441779642 which consists of [[0, 2]]
+2021-09-30 23:33:15,707 New Order is Placed with Order ID: 5bb50a24-fa4c-48cc-84c6-63fc4e52f67e which consists of [[0, 2]]
+2021-09-30 23:33:15,856 New Order is Placed with Order ID: ddb314b2-5643-4981-a74a-02cff566a73d which consists of [[1, 1]]
+2021-09-30 23:33:16,151 New Order is Placed with Order ID: e69681b8-de00-4eb9-951f-5aacadc1f8e0 which consists of [[0, 2], [1, 1]]
+2021-09-30 23:33:16,308 New Order is Placed with Order ID: 1876bc26-6b88-4049-9a78-aa91ba5ff686 which consists of [[5, 3]]
+2021-09-30 23:33:16,457 New Order is Placed with Order ID: 99559a85-e753-43ba-854b-28d5c77128fb which consists of [[0, 1]]
+2021-09-30 23:33:16,462 Bot 1 is assigned to go to Rack (2, 1, 2, 0)
+2021-09-30 23:33:16,749 New Order is Placed with Order ID: 2c1820c5-3155-4027-9e47-08fa8816e25c which consists of [[1, 1]]
+2021-09-30 23:33:17,196 New Order is Placed with Order ID: 00c800e4-6fd8-4bfe-8074-2520b625a0ab which consists of [[5, 1]]
+2021-09-30 23:33:17,260 Bot 0 is assigned to go to Rack (3, 3, 2, 3)
+2021-09-30 23:33:17,635 New Order is Placed with Order ID: 4f3dc1c2-2151-4098-8bd9-9c57dd4e7c28 which consists of [[0, 1]]
+2021-09-30 23:33:18,230 New Order is Placed with Order ID: f722ad3b-60e5-401d-83ed-bb908641f112 which consists of [[5, 2]]
+2021-09-30 23:33:18,285 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:18,580 New Order is Placed with Order ID: f50b3c60-7064-4812-a995-b939335398b0 which consists of [[5, 3]]
+2021-09-30 23:33:18,881 New Order is Placed with Order ID: b10fe350-7381-4ac6-9485-099e24af35ff which consists of [[5, 2]]
+2021-09-30 23:33:19,043 New Order is Placed with Order ID: 3227d1f0-dcf9-4c17-a4d6-4585a0f4e97b which consists of [[5, 3]]
+2021-09-30 23:33:19,346 New Order is Placed with Order ID: 7e271abd-7748-4b2b-9f06-9ab7141a4f5f which consists of [[5, 2]]
+2021-09-30 23:33:19,498 New Order is Placed with Order ID: 4289c4c9-1352-49bd-821c-3ff8cc9e12f6 which consists of [[5, 2]]
+2021-09-30 23:33:19,649 New Order is Placed with Order ID: 08b79558-664d-45b7-ade1-bcc9e35fb187 which consists of [[5, 1]]
+2021-09-30 23:33:19,872 Bot 1: Reached the Human Counter with items [[5, 4]]
+2021-09-30 23:33:19,873 Order 80517e58-093d-4b96-849d-29db613332f2 is finished
+2021-09-30 23:33:20,036 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:20,634 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:20,635 Bot 1 is assigned to go to Rack (3, 0, 1, 0)
+2021-09-30 23:33:21,127 New Order is Placed with Order ID: 921b61f1-72bc-472e-9c33-34f8afd306be which consists of [[5, 5]]
+2021-09-30 23:33:21,156 Conveyor Belt Moved Order with ID :80517e58-093d-4b96-849d-29db613332f2 to the Sorting Area
+2021-09-30 23:33:21,156 Sorting Bot is moving order with Order ID: 80517e58-093d-4b96-849d-29db613332f2 to it's dumping point
+2021-09-30 23:33:21,429 New Order is Placed with Order ID: 731ccdb3-401a-4cc6-8fce-368131d133dc which consists of [[5, 4]]
+2021-09-30 23:33:21,496 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:21,621 New Order is Placed with Order ID: c3b68032-c46b-40c9-9d2f-8542e688c50b which consists of [[5, 1]]
+2021-09-30 23:33:21,920 Sorting Bot dumped the order with Order ID: 80517e58-093d-4b96-849d-29db613332f2 to it's dumping point
+2021-09-30 23:33:22,925 Bot 1: Reached the Human Counter with items [[3, 3]]
+2021-09-30 23:33:22,973 Bot 0: Reached the Human Counter with items [[2, 3]]
+2021-09-30 23:33:22,974 Order a481f21d-779b-4de3-b68a-c30b61578e9e is finished
+2021-09-30 23:33:23,589 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:24,613 Conveyor Belt Moved Order with ID :a481f21d-779b-4de3-b68a-c30b61578e9e to the Sorting Area
+2021-09-30 23:33:24,613 Sorting Bot is moving order with Order ID: a481f21d-779b-4de3-b68a-c30b61578e9e to it's dumping point
+2021-09-30 23:33:25,038 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:33:26,788 Sorting Bot dumped the order with Order ID: a481f21d-779b-4de3-b68a-c30b61578e9e to it's dumping point
+2021-09-30 23:33:30,278 Bot 1 is assigned to go to Rack (1, 1, 3, 4)
+2021-09-30 23:33:31,743 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:33,071 Bot 0 is assigned to go to Rack (3, 0, 1, 4)
+2021-09-30 23:33:34,034 Bot 1: Reached the Human Counter with items [[3, 2]]
+2021-09-30 23:33:34,893 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:35,461 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:37,331 Bot 0: Reached the Human Counter with items [[2, 2]]
+2021-09-30 23:33:38,978 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:33:40,282 Bot 1 is assigned to go to Rack (0, 3, 0, 0)
+2021-09-30 23:33:40,963 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:43,128 Bot 1: Reached the Human Counter with items [[5, 1]]
+2021-09-30 23:33:43,129 Order 5f12337d-4389-4970-a85e-f405f70bed5d is finished
+2021-09-30 23:33:44,384 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:44,386 Bot 1 is assigned to go to Rack (0, 1, 4, 1)
+2021-09-30 23:33:45,027 Bot 0 is assigned to go to Rack (3, 0, 4, 1)
+2021-09-30 23:33:45,643 Conveyor Belt Moved Order with ID :5f12337d-4389-4970-a85e-f405f70bed5d to the Sorting Area
+2021-09-30 23:33:45,643 Sorting Bot is moving order with Order ID: 5f12337d-4389-4970-a85e-f405f70bed5d to it's dumping point
+2021-09-30 23:33:45,922 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:47,221 Sorting Bot dumped the order with Order ID: 5f12337d-4389-4970-a85e-f405f70bed5d to it's dumping point
+2021-09-30 23:33:47,269 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:47,839 Bot 1: Reached the Human Counter with items [[5, 2]]
+2021-09-30 23:33:48,892 Bot 1: Kept the Rack back which I was carrying
+2021-09-30 23:33:49,765 Bot 0: Reached the Human Counter with items [[4, 4]]
+2021-09-30 23:33:51,321 Bot 0: Kept the Rack back which I was carrying
+2021-09-30 23:33:54,871 Bot 1 is assigned to go to Rack (1, 3, 4, 0)
+2021-09-30 23:33:56,422 Bot 1: Reached the Desired Rack
+2021-09-30 23:33:58,022 Bot 0 is assigned to go to Rack (1, 0, 2, 3)
+2021-09-30 23:33:59,470 Bot 0: Reached the Desired Rack
+2021-09-30 23:33:59,489 Bot 1: Reached the Human Counter with items [[3, 5]]
+2021-09-30 23:33:59,490 Order 9100364d-79c7-41c2-aed2-3ff18d6f4179 is finished

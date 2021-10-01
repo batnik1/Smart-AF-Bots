@@ -18,4 +18,5 @@ class Agent():
         self.items_carrying=[]
         self.ind=0
         self.charging=100
-        self.ischarge=False
+        self.needcharge=False
+        self.charging=False

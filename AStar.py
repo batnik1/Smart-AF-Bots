@@ -12,11 +12,11 @@ def ManhattanDistance(start, end):
 
 dx4 = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 INF = int(100000)
-dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]
+dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
 
-N = 2000
+N = 1500
 
 diss = [[INF for i in range(N)] for j in range(N)]
 press = [[[-1, -1] for i in range(N)] for j in range(N)]
@@ -60,11 +60,9 @@ class Search():
                 nextY = dir[de][1]+cState[1]
                 if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
                     if self.dist[nextX][nextY] > d+ManhattanDistance([nextX, nextY], self.dest)+1:
-                        self.dist[nextX][nextY] = d + \
-                            ManhattanDistance([nextX, nextY], self.dest)+1
+                        self.dist[nextX][nextY] = d +ManhattanDistance([nextX, nextY], self.dest)+1
                         self.prev[nextX][nextY] = cState
-                        heapq.heappush(
-                            self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
+                        heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
 
     def AStar(self):
         heapq.heappush(self.heap, (ManhattanDistance(
@@ -115,7 +113,7 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            #print("Not Possible")
+            # print("Not Possible")
             return []
         else:
             res = [self.dest]

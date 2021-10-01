@@ -92,10 +92,8 @@ for i in range(m):
     HCtoSorting[str((1,i))]=lst+HCtoSorting[str((1,i))]+common_down  # To go From Common_down to target_sorting
     x+=120
 
-# for i in range(m):
-#     if i<m:
-#         HCtoSorting[str((0,i))]=list(dict.fromkeys(HCtoSorting[str((0,i))]))
-#     else:
-#         HCtoSorting[str((1,i))]=list(dict.fromkeys(HCtoSorting[str((1,i))]))
+for i in range(m):
+    HCtoSorting[str((0,i))]=list(dict.fromkeys(HCtoSorting[str((0,i))]))
+    HCtoSorting[str((1,i))]=list(dict.fromkeys(HCtoSorting[str((1,i))]))
 
 print('Pre-Computation Done')
