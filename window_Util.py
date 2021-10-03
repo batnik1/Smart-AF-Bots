@@ -8,8 +8,7 @@ import collections
 pygame.init()
 screen = pygame.display.set_mode(
     (display_width, display_height))  # create screen
-import time
-import operator
+
 
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 
@@ -177,7 +176,7 @@ def build_station_lines():
 
 def build_station_zone():
     # (x,y,x+l,y+b)
-    pygame.draw.rect(screen, colors.AQUAMARINE2,pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
+    pygame.draw.rect(screen, colors.PURPLE2,pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
 
 
 charging_state={}

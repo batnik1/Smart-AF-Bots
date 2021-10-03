@@ -1,6 +1,9 @@
 from window_AgentHandler import *
-
-def handle_orders(orders,coloring):
+orders=[]
+Torders=[]
+sorting_orders=[]
+coloring=[]
+def handle_orders():
     finished=[]
     for i in range(len(orders)):
         list_racks = orders[i][0]
@@ -60,10 +63,10 @@ def truck_orders():
         type=random.randint(0,type_of_items)
         quantity=random.randint(1,3)
         shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
-        items.append((type,quantity,shelf))
+        items.append([type,quantity,shelf])
     return items
 
-def handle_Torders(Torders):
+def handle_Torders():
     Tfinished=[]
     for i in range(len(Torders)):
         type = Torders[i][0]
@@ -81,7 +84,7 @@ def handle_Torders(Torders):
         agent.ind=ind
         nAgent = Search(agent.position,rack_location)
         nAgent.BFS()          
-        Tfinished.append(i)
+        Tfinished.append(Torders[i])
         
         a = nAgent.getPath()                                 # Agent's Position to Desired Rack 
         b=a[:]
@@ -94,8 +97,8 @@ def handle_Torders(Torders):
         agent.size = 5
         agent.items_carrying=(type,quantity)
         agent.CurRack=rack
-              
+
     for ind in Tfinished:
-        Torders.remove(Torders[ind])
+        Torders.remove(ind)
 
 

@@ -1,16 +1,13 @@
 from window_OrderHandler import *
 
 running = True
-orders=[]
-Torders=[]
-sorting_orders=[]
+
 loading_truck = 0
 loading_truck_boxes = 10
 key=0
-coloring=[]
 paused=False
 order_freq=10
-truck_freq=500
+truck_freq=100000
 initHCtoConveyor()
 def init_screen():
     screen.fill((0, 0, 0))
@@ -63,12 +60,13 @@ while running:
         Torders+=new_items
 
     init_screen()
-    handle_orders(orders,coloring)
-    handle_Torders(Torders)
+    handle_orders()
+    handle_Torders()
     handle_events()
     handle_rack_agents(coloring,key)
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
+    handle_truck_agents()
     key+=1
     for colo in range(len(coloring)):
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))

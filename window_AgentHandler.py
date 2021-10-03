@@ -211,13 +211,12 @@ def handle_truck_agents():
             if agent.Path[agent.Index]==[-7,-7]:
                 agent.Index -= 1
                 add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
-                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item '+agent.items_carrying[0]+'with count '+agent.items_carrying[1])
+                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item '+str(agent.items_carrying[0])+'with count '+str(agent.items_carrying[1]))
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
                 agent.Path = []
                 rack_available[agent.CurRack]=1
                 agent.Wait = True   
-                agent.color = colors.YELLOW1
                 agent.size=2
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
