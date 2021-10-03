@@ -17,6 +17,7 @@ class Agent():
         self.order_id=0
         self.items_carrying=[]
         self.ind=0
-        self.charging=100
+        self.charge=200
         self.needcharge=False
         self.charging=False
+        self.cStation=-1

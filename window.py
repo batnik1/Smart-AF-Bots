@@ -210,14 +210,14 @@ def get_charging():
     for i in range(len(charging_state_list)):
         if charging_state[i]==0:
             charging_state[i]=1
-            return charging_loc[i]
-    return -1
-              
+            return i,charging_loc[i]
+    return -1,-1
+            
         
 running = True
 
-Number_of_Agents = 2
-Number_of_SAgents= 3
+Number_of_Agents = 50
+Number_of_SAgents= 10
 Agents = []
 Conveyor_Agents=[]
 Sorting_Agents=[]
@@ -255,12 +255,12 @@ def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
         d=ManhattanDistance(rack_pos, agent.position)
-        if agent.Wait == True and mindis>d and 10*agent.charging>=d:
+        if agent.Wait == True and mindis>d and 10*agent.charge>=d:
             mindis=d
 
     for i in range(len(Agents)):
         if Agents[i].Wait==True:
-            if mindis==ManhattanDistance(rack_pos, Agents[i].position) and 10*Agents[i].charging>=d:
+            if mindis==ManhattanDistance(rack_pos, Agents[i].position) and 10*Agents[i].charge>=d:
                 return i
     return -1
 
@@ -306,7 +306,7 @@ while running:
     #         agent.Index = len(agent.Path)
     #         loading_truck_boxes -= 1
     
-    if key%50==0:
+    if key%10==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFS Order
@@ -325,6 +325,7 @@ while running:
 
             rack_location=numofrack[rack]
             ind = get_Agent(rack_location)
+           # print(ind)
             if ind == -1:
                 break
             rack_available[rack]=0
@@ -412,6 +413,19 @@ while running:
     make_sorting_area()
     
     for agent in Agents:
+        if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and agent.charge==100:
+            charging_state[agent.cStation]=0
+            agent.cStation=-1
+            agent.color = colors.LIGHTBLUE1
+           # agent.Wait = True
+            agent.size = 4
+            agent.needcharge=False
+            nAgent = Search(agent.position,numofrack[agent.CurRack])
+            nAgent.BFS()
+            agent.Path = nAgent.getPath()
+            agent.Path.reverse()
+            agent.Index = len(agent.Path)
+            print(agent.Index,"lo")
         if agent.Index==2:                      # Coloring Racks 
             remove=[]
             for colo in range(len(coloring)):
@@ -422,7 +436,7 @@ while running:
         agent.Index -= 1
         if agent.Index >= 0:
             if  agent.Index%20==0:
-                agent.charging-=1
+                agent.charge-=1
                 
             if agent.Path[agent.Index]==[-7,-7]:
                 agent.Index -= 1
@@ -442,7 +456,7 @@ while running:
                     conveyor_agent= Agent(1,n,m)
                     conveyor_agent.position=HCtoConveyor[human_ct]
                     conveyor_agent.order_id=agent.order_id
-                    if human_ct<m:
+                    if human_ct<m: 
                         conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
                     else:
                         conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
@@ -466,20 +480,15 @@ while running:
                 agent.color = colors.YELLOW1
             else:
                 agent.size = 2
-                agent.Path = []
                 agent.color = colors.GREEN
                 if key%10==0:
-                    agent.charging+=1
-                if agent.charging==100:
-                    agent.color = colors.LIGHTBLUE1
-                    agent.Wait = True
-                    agent.size = 4
-                    agent.needcharge=False
+                    agent.charge+=1
 
-            if agent.charging<20 and agent.needcharge == False:
-                charge_box=get_charging()
+            if agent.charge<20 and agent.needcharge == False:
+                charge_ind,charge_box=get_charging()
                 if charge_box==-1:
                     continue
+                agent.cStation=charge_ind
                 agent.needcharge=True
                 nAgent = Search(agent.position,charge_box)
                 nAgent.BFS()

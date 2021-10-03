@@ -5,6 +5,7 @@ import queue
 import collections
 from Grid import Grid
 import time
+ks=0
 
 def ManhattanDistance(start, end):
     return abs(start[0]-end[0])+abs(start[1]-end[1])
@@ -89,7 +90,10 @@ class Search():
     # def getPrev
 
     def BFS(self, rev=False):
-        
+        global ks
+        ks+=1
+        print(ks)
+      #  ks+=1
         queue = collections.deque([self.source])
         self.dist[self.source[0]][self.source[1]] = 0
         while queue:
