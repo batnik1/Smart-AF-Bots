@@ -159,7 +159,6 @@ def waste_conveyor_belt():
         x+=120
 
 def waste_charging():
-    
     for i in range((n//2+n % 2)*100+20,racks_height-90,10):
         add_edge((30,i),(80,i),direction["right"])
 

@@ -1,92 +1,86 @@
-2021-10-03 16:04:41,601 New Order is Placed with Order ID: 71cb78ba-7a70-4034-a48a-48c116c509da which consists of [[1, 3]]
-2021-10-03 16:04:43,650 Bot 1 is assigned to go to Rack (1, 2, 2, 2)
-2021-10-03 16:04:43,719 Bot 1: Reached the Desired Rack
-2021-10-03 16:04:43,751 New Order is Placed with Order ID: e891760e-3471-42b2-adef-c5cb483f2e48 which consists of [[3, 1]]
-2021-10-03 16:04:43,753 Bot 4 is assigned to go to Rack (2, 2, 3, 1)
-2021-10-03 16:04:43,953 New Order is Placed with Order ID: 84a14870-3de4-415b-bd51-a0f8afc7e4eb which consists of [[2, 1], [3, 1]]
-2021-10-03 16:04:43,955 Bot 2 is assigned to go to Rack (2, 0, 0, 2)
-2021-10-03 16:04:44,152 New Order is Placed with Order ID: fa977b2c-c85e-4806-ba0c-239b7b42a1b8 which consists of [[1, 5]]
-2021-10-03 16:04:44,153 Bot 0 is assigned to go to Rack (1, 1, 3, 4)
-2021-10-03 16:04:44,320 Bot 3 is assigned to go to Rack (0, 1, 4, 3)
-2021-10-03 16:04:44,504 New Order is Placed with Order ID: 9ed2c2bc-93f3-496e-9ed5-75a2eeb37415 which consists of [[2, 2]]
-2021-10-03 16:04:44,539 New Order is Placed with Order ID: e8d8a4a7-4da1-479d-8daf-2c6aa21605f5 which consists of [[4, 4]]
-2021-10-03 16:04:44,725 New Order is Placed with Order ID: b8b4a8df-805a-4268-a0c6-593605f6fcf0 which consists of [[2, 3]]
-2021-10-03 16:04:44,763 New Order is Placed with Order ID: 4bff6b90-d980-4e4b-9525-9701b35a7b49 which consists of [[4, 1], [2, 1]]
-2021-10-03 16:04:44,922 Bot 4: Reached the Desired Rack
-2021-10-03 16:04:45,395 Bot 2: Reached the Desired Rack
-2021-10-03 16:04:45,440 Bot 0: Reached the Desired Rack
-2021-10-03 16:04:45,904 Bot 3: Reached the Desired Rack
-2021-10-03 16:04:46,127 Bot 1: Reached the Human Counter with items [[1, 3]]
-2021-10-03 16:04:46,128 Order 71cb78ba-7a70-4034-a48a-48c116c509da is finished
-2021-10-03 16:04:46,457 Bot 4: Reached the Human Counter with items [[3, 1]]
-2021-10-03 16:04:46,458 Order e891760e-3471-42b2-adef-c5cb483f2e48 is finished
-2021-10-03 16:04:47,349 Bot 2: Reached the Human Counter with items [[2, 1]]
-2021-10-03 16:04:47,417 Bot 0: Reached the Human Counter with items [[1, 3]]
-2021-10-03 16:04:47,669 Bot 1: Kept the Rack back which I was carrying
-2021-10-03 16:04:47,671 Bot 1 is assigned to go to Rack (3, 3, 4, 3)
-2021-10-03 16:04:47,828 Bot 4: Kept the Rack back which I was carrying
-2021-10-03 16:04:48,351 Bot 4 is assigned to go to Rack (2, 2, 3, 1)
-2021-10-03 16:04:48,447 Bot 4: Reached the Desired Rack
-2021-10-03 16:04:48,678 Conveyor Belt Moved Order with ID :71cb78ba-7a70-4034-a48a-48c116c509da to the Sorting Area
-2021-10-03 16:04:48,678 Sorting Bot is moving order with Order ID: 71cb78ba-7a70-4034-a48a-48c116c509da to it's dumping point
-2021-10-03 16:04:49,082 Bot 3: Reached the Human Counter with items [[1, 2]]
-2021-10-03 16:04:49,083 Order fa977b2c-c85e-4806-ba0c-239b7b42a1b8 is finished
-2021-10-03 16:04:49,143 Bot 2: Kept the Rack back which I was carrying
-2021-10-03 16:04:49,145 Bot 2 is assigned to go to Rack (3, 1, 0, 3)
-2021-10-03 16:04:49,522 Conveyor Belt Moved Order with ID :e891760e-3471-42b2-adef-c5cb483f2e48 to the Sorting Area
-2021-10-03 16:04:49,522 Sorting Bot is moving order with Order ID: e891760e-3471-42b2-adef-c5cb483f2e48 to it's dumping point
-2021-10-03 16:04:49,851 Bot 0: Kept the Rack back which I was carrying
-2021-10-03 16:04:49,852 Bot 0 is assigned to go to Rack (1, 3, 2, 0)
-2021-10-03 16:04:50,009 Bot 1: Reached the Desired Rack
-2021-10-03 16:04:50,235 Bot 2: Reached the Desired Rack
-2021-10-03 16:04:50,482 Sorting Bot dumped the order with Order ID: 71cb78ba-7a70-4034-a48a-48c116c509da to it's dumping point
-2021-10-03 16:04:50,536 Conveyor Belt Moved Order with ID :fa977b2c-c85e-4806-ba0c-239b7b42a1b8 to the Sorting Area
-2021-10-03 16:04:50,537 Sorting Bot is moving order with Order ID: fa977b2c-c85e-4806-ba0c-239b7b42a1b8 to it's dumping point
-2021-10-03 16:04:50,896 Sorting Bot dumped the order with Order ID: e891760e-3471-42b2-adef-c5cb483f2e48 to it's dumping point
-2021-10-03 16:04:50,918 Bot 3: Kept the Rack back which I was carrying
-2021-10-03 16:04:50,920 Bot 3 is assigned to go to Rack (3, 3, 1, 1)
-2021-10-03 16:04:51,200 Bot 0: Reached the Desired Rack
-2021-10-03 16:04:51,201 Sorting Bot dumped the order with Order ID: fa977b2c-c85e-4806-ba0c-239b7b42a1b8 to it's dumping point
-2021-10-03 16:04:51,500 Bot 4: Reached the Human Counter with items [[3, 1]]
-2021-10-03 16:04:51,501 Order 84a14870-3de4-415b-bd51-a0f8afc7e4eb is finished
-2021-10-03 16:04:51,760 Bot 2: Reached the Human Counter with items [[4, 2]]
-2021-10-03 16:04:52,614 Bot 0: Reached the Human Counter with items [[4, 2]]
-2021-10-03 16:04:52,615 Order e8d8a4a7-4da1-479d-8daf-2c6aa21605f5 is finished
-2021-10-03 16:04:52,712 Bot 3: Reached the Desired Rack
-2021-10-03 16:04:53,304 Bot 1: Reached the Human Counter with items [[2, 2]]
-2021-10-03 16:04:53,305 Order 9ed2c2bc-93f3-496e-9ed5-75a2eeb37415 is finished
-2021-10-03 16:04:53,311 Bot 2: Kept the Rack back which I was carrying
-2021-10-03 16:04:53,312 Bot 2 is assigned to go to Rack (2, 0, 0, 2)
-2021-10-03 16:04:53,645 Bot 4: Kept the Rack back which I was carrying
-2021-10-03 16:04:53,646 Bot 4 is assigned to go to Rack (1, 1, 3, 0)
-2021-10-03 16:04:53,957 Conveyor Belt Moved Order with ID :84a14870-3de4-415b-bd51-a0f8afc7e4eb to the Sorting Area
-2021-10-03 16:04:53,957 Sorting Bot is moving order with Order ID: 84a14870-3de4-415b-bd51-a0f8afc7e4eb to it's dumping point
-2021-10-03 16:04:54,199 Bot 0: Kept the Rack back which I was carrying
-2021-10-03 16:04:54,553 Bot 4: Reached the Desired Rack
-2021-10-03 16:04:54,646 Conveyor Belt Moved Order with ID :e8d8a4a7-4da1-479d-8daf-2c6aa21605f5 to the Sorting Area
-2021-10-03 16:04:54,646 Sorting Bot is moving order with Order ID: e8d8a4a7-4da1-479d-8daf-2c6aa21605f5 to it's dumping point
-2021-10-03 16:04:54,694 Bot 2: Reached the Desired Rack
-2021-10-03 16:04:54,988 Sorting Bot dumped the order with Order ID: 84a14870-3de4-415b-bd51-a0f8afc7e4eb to it's dumping point
-2021-10-03 16:04:55,414 Conveyor Belt Moved Order with ID :9ed2c2bc-93f3-496e-9ed5-75a2eeb37415 to the Sorting Area
-2021-10-03 16:04:55,414 Sorting Bot is moving order with Order ID: 9ed2c2bc-93f3-496e-9ed5-75a2eeb37415 to it's dumping point
-2021-10-03 16:04:55,913 Sorting Bot dumped the order with Order ID: e8d8a4a7-4da1-479d-8daf-2c6aa21605f5 to it's dumping point
-2021-10-03 16:04:55,933 Bot 1: Kept the Rack back which I was carrying
-2021-10-03 16:04:55,990 Bot 4: Reached the Human Counter with items [[4, 1]]
-2021-10-03 16:04:56,131 Bot 3: Reached the Human Counter with items [[2, 2]]
-2021-10-03 16:04:56,994 Bot 2: Reached the Human Counter with items [[2, 1]]
-2021-10-03 16:04:56,996 Order b8b4a8df-805a-4268-a0c6-593605f6fcf0 is finished
-2021-10-03 16:04:57,160 Bot 4: Kept the Rack back which I was carrying
-2021-10-03 16:04:57,330 Sorting Bot dumped the order with Order ID: 9ed2c2bc-93f3-496e-9ed5-75a2eeb37415 to it's dumping point
-2021-10-03 16:04:58,114 Bot 2: Kept the Rack back which I was carrying
-2021-10-03 16:04:58,273 Bot 0 is assigned to go to Rack (2, 0, 0, 2)
-2021-10-03 16:04:59,523 Bot 3: Kept the Rack back which I was carrying
-2021-10-03 16:04:59,740 Conveyor Belt Moved Order with ID :b8b4a8df-805a-4268-a0c6-593605f6fcf0 to the Sorting Area
-2021-10-03 16:04:59,740 Sorting Bot is moving order with Order ID: b8b4a8df-805a-4268-a0c6-593605f6fcf0 to it's dumping point
-2021-10-03 16:04:59,992 Bot 0: Reached the Desired Rack
-2021-10-03 16:05:01,520 Bot 0: Reached the Human Counter with items [[2, 1]]
-2021-10-03 16:05:01,522 Order 4bff6b90-d980-4e4b-9525-9701b35a7b49 is finished
-2021-10-03 16:05:01,695 Sorting Bot dumped the order with Order ID: b8b4a8df-805a-4268-a0c6-593605f6fcf0 to it's dumping point
-2021-10-03 16:05:02,150 Bot 0: Kept the Rack back which I was carrying
-2021-10-03 16:05:03,470 Conveyor Belt Moved Order with ID :4bff6b90-d980-4e4b-9525-9701b35a7b49 to the Sorting Area
-2021-10-03 16:05:03,470 Sorting Bot is moving order with Order ID: 4bff6b90-d980-4e4b-9525-9701b35a7b49 to it's dumping point
-2021-10-03 16:05:04,721 Sorting Bot dumped the order with Order ID: 4bff6b90-d980-4e4b-9525-9701b35a7b49 to it's dumping point
+2021-10-03 16:41:47,763 New Order is Placed with Order ID: e1194943-de1e-44a2-82a3-698d534662f1 which consists of [[5, 2]]
+2021-10-03 16:41:49,337 Bot 4 is assigned to go to Rack (0, 1, 0, 4)
+2021-10-03 16:41:49,550 New Order is Placed with Order ID: 046fd0dd-7ca0-4ebd-a428-2d0bbb4995a8 which consists of [[4, 2], [2, 3], [5, 1]]
+2021-10-03 16:41:49,553 Bot 7 is assigned to go to Rack (1, 0, 2, 0)
+2021-10-03 16:41:49,672 Bot 0 is assigned to go to Rack (2, 1, 2, 1)
+2021-10-03 16:41:49,830 Bot 6 is assigned to go to Rack (3, 3, 0, 0)
+2021-10-03 16:41:50,061 New Order is Placed with Order ID: 3ec73a1b-4870-48f4-aa2d-1c1c6dfc5f9d which consists of [[5, 3], [0, 1], [3, 1]]
+2021-10-03 16:41:50,065 Bot 3 is assigned to go to Rack (2, 1, 2, 4)
+2021-10-03 16:41:50,175 Bot 8 is assigned to go to Rack (1, 2, 1, 2)
+2021-10-03 16:41:50,329 Bot 9 is assigned to go to Rack (1, 3, 4, 0)
+2021-10-03 16:41:50,545 New Order is Placed with Order ID: b579931b-c0af-41a0-8660-3e503bb6e297 which consists of [[2, 3]]
+2021-10-03 16:41:50,548 Bot 2 is assigned to go to Rack (3, 0, 4, 3)
+2021-10-03 16:41:50,654 Bot 1 is assigned to go to Rack (3, 0, 3, 0)
+2021-10-03 16:41:50,807 Bot 5 is assigned to go to Rack (1, 2, 1, 3)
+2021-10-03 16:41:51,032 New Order is Placed with Order ID: 8f30795f-075f-4f4a-b785-a10592023494 which consists of [[5, 1], [3, 1]]
+2021-10-03 16:41:51,070 New Order is Placed with Order ID: 2215bb44-d232-4622-b8a0-57c1e129de08 which consists of [[0, 1]]
+2021-10-03 16:41:51,510 Bot 7: Reached the Desired Rack
+2021-10-03 16:41:51,631 Bot 8: Reached the Desired Rack
+2021-10-03 16:41:51,742 Bot 0: Reached the Desired Rack
+2021-10-03 16:41:51,742 Bot 9: Reached the Desired Rack
+2021-10-03 16:41:51,758 Bot 3: Reached the Desired Rack
+2021-10-03 16:41:51,899 Bot 6: Reached the Desired Rack
+2021-10-03 16:41:51,981 Bot 2: Reached the Desired Rack
+2021-10-03 16:41:52,026 Bot 5: Reached the Desired Rack
+2021-10-03 16:41:52,043 Bot 1: Reached the Desired Rack
+2021-10-03 16:41:52,111 Bot 4: Reached the Desired Rack
+2021-10-03 16:41:53,164 Bot 9: Reached the Human Counter with items [[3, 1]]
+2021-10-03 16:41:53,239 Bot 1: Reached the Human Counter with items [[2, 1]]
+2021-10-03 16:41:53,424 Bot 3: Reached the Human Counter with items [[5, 2]]
+2021-10-03 16:41:53,491 Bot 2: Reached the Human Counter with items [[2, 1]]
+2021-10-03 16:41:53,583 Bot 6: Reached the Human Counter with items [[5, 1]]
+2021-10-03 16:41:53,687 Bot 8: Reached the Human Counter with items [[0, 1]]
+2021-10-03 16:41:53,707 Bot 1: Kept the Rack back which I was carrying
+2021-10-03 16:41:53,718 Bot 7: Reached the Human Counter with items [[4, 2]]
+2021-10-03 16:41:53,888 Bot 0: Reached the Human Counter with items [[2, 3]]
+2021-10-03 16:41:53,890 Order 046fd0dd-7ca0-4ebd-a428-2d0bbb4995a8 is finished
+2021-10-03 16:41:54,137 Bot 2: Kept the Rack back which I was carrying
+2021-10-03 16:41:54,411 Bot 9: Kept the Rack back which I was carrying
+2021-10-03 16:41:54,413 Bot 9 is assigned to go to Rack (1, 3, 4, 0)
+2021-10-03 16:41:54,490 Bot 9: Reached the Desired Rack
+2021-10-03 16:41:54,619 Bot 5: Reached the Human Counter with items [[2, 1]]
+2021-10-03 16:41:54,620 Order b579931b-c0af-41a0-8660-3e503bb6e297 is finished
+2021-10-03 16:41:54,948 Bot 4: Reached the Human Counter with items [[5, 2]]
+2021-10-03 16:41:54,949 Order e1194943-de1e-44a2-82a3-698d534662f1 is finished
+2021-10-03 16:41:54,981 Bot 3: Kept the Rack back which I was carrying
+2021-10-03 16:41:55,301 Bot 6: Kept the Rack back which I was carrying
+2021-10-03 16:41:55,304 Bot 6 is assigned to go to Rack (3, 3, 0, 0)
+2021-10-03 16:41:55,372 Bot 6: Reached the Desired Rack
+2021-10-03 16:41:55,415 Bot 8: Kept the Rack back which I was carrying
+2021-10-03 16:41:55,418 Bot 8 is assigned to go to Rack (1, 2, 1, 2)
+2021-10-03 16:41:55,491 Bot 8: Reached the Desired Rack
+2021-10-03 16:41:55,975 Conveyor Belt Moved Order with ID :b579931b-c0af-41a0-8660-3e503bb6e297 to the Sorting Area
+2021-10-03 16:41:55,975 Sorting Bot is moving order with Order ID: b579931b-c0af-41a0-8660-3e503bb6e297 to it's dumping point
+2021-10-03 16:41:56,115 Bot 0: Kept the Rack back which I was carrying
+2021-10-03 16:41:56,164 Bot 7: Kept the Rack back which I was carrying
+2021-10-03 16:41:56,203 Bot 9: Reached the Human Counter with items [[3, 1]]
+2021-10-03 16:41:56,314 Conveyor Belt Moved Order with ID :e1194943-de1e-44a2-82a3-698d534662f1 to the Sorting Area
+2021-10-03 16:41:56,314 Sorting Bot is moving order with Order ID: e1194943-de1e-44a2-82a3-698d534662f1 to it's dumping point
+2021-10-03 16:41:56,387 Bot 6: Reached the Human Counter with items [[5, 1]]
+2021-10-03 16:41:56,388 Order 3ec73a1b-4870-48f4-aa2d-1c1c6dfc5f9d is finished
+2021-10-03 16:41:56,656 Bot 5: Kept the Rack back which I was carrying
+2021-10-03 16:41:56,725 Conveyor Belt Moved Order with ID :046fd0dd-7ca0-4ebd-a428-2d0bbb4995a8 to the Sorting Area
+2021-10-03 16:41:56,725 Sorting Bot is moving order with Order ID: 046fd0dd-7ca0-4ebd-a428-2d0bbb4995a8 to it's dumping point
+2021-10-03 16:41:57,029 Bot 4: Kept the Rack back which I was carrying
+2021-10-03 16:41:57,032 Bot 4 is assigned to go to Rack (0, 1, 0, 4)
+2021-10-03 16:41:57,106 Bot 4: Reached the Desired Rack
+2021-10-03 16:41:57,246 Sorting Bot dumped the order with Order ID: b579931b-c0af-41a0-8660-3e503bb6e297 to it's dumping point
+2021-10-03 16:41:57,345 Bot 6: Kept the Rack back which I was carrying
+2021-10-03 16:41:57,575 Bot 8: Reached the Human Counter with items [[0, 1]]
+2021-10-03 16:41:57,576 Order 2215bb44-d232-4622-b8a0-57c1e129de08 is finished
+2021-10-03 16:41:57,807 Sorting Bot dumped the order with Order ID: e1194943-de1e-44a2-82a3-698d534662f1 to it's dumping point
+2021-10-03 16:41:57,924 Bot 9: Kept the Rack back which I was carrying
+2021-10-03 16:41:58,321 Conveyor Belt Moved Order with ID :3ec73a1b-4870-48f4-aa2d-1c1c6dfc5f9d to the Sorting Area
+2021-10-03 16:41:58,321 Sorting Bot is moving order with Order ID: 3ec73a1b-4870-48f4-aa2d-1c1c6dfc5f9d to it's dumping point
+2021-10-03 16:41:58,526 Bot 4: Reached the Human Counter with items [[5, 1]]
+2021-10-03 16:41:58,527 Order 8f30795f-075f-4f4a-b785-a10592023494 is finished
+2021-10-03 16:41:58,970 Sorting Bot dumped the order with Order ID: 046fd0dd-7ca0-4ebd-a428-2d0bbb4995a8 to it's dumping point
+2021-10-03 16:41:59,160 Bot 8: Kept the Rack back which I was carrying
+2021-10-03 16:41:59,393 Conveyor Belt Moved Order with ID :2215bb44-d232-4622-b8a0-57c1e129de08 to the Sorting Area
+2021-10-03 16:41:59,394 Sorting Bot is moving order with Order ID: 2215bb44-d232-4622-b8a0-57c1e129de08 to it's dumping point
+2021-10-03 16:41:59,855 Sorting Bot dumped the order with Order ID: 3ec73a1b-4870-48f4-aa2d-1c1c6dfc5f9d to it's dumping point
+2021-10-03 16:41:59,887 Bot 4: Kept the Rack back which I was carrying
+2021-10-03 16:42:01,305 Conveyor Belt Moved Order with ID :8f30795f-075f-4f4a-b785-a10592023494 to the Sorting Area
+2021-10-03 16:42:01,306 Sorting Bot is moving order with Order ID: 8f30795f-075f-4f4a-b785-a10592023494 to it's dumping point
+2021-10-03 16:42:01,636 Sorting Bot dumped the order with Order ID: 2215bb44-d232-4622-b8a0-57c1e129de08 to it's dumping point
+2021-10-03 16:42:02,439 Sorting Bot dumped the order with Order ID: 8f30795f-075f-4f4a-b785-a10592023494 to it's dumping point
