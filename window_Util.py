@@ -156,7 +156,7 @@ def build_counter_lines():
         pygame.draw.line(screen, colors.ORANGE, (x, 10), (x+80, 10))
         x += 120
     x = 90
-    for i in range(m):
+    for _ in range(m):
         pygame.draw.line(screen, colors.ORANGE,
                          (x, 120*(n+1)-30), (x, 40+120*(n+1)))
         pygame.draw.line(screen, colors.ORANGE,
@@ -168,15 +168,16 @@ def build_counter_lines():
 
 def build_station_lines():
     pygame.draw.line(screen, colors.ORANGE, (80, 80), (30, 80))
-    pygame.draw.line(screen, colors.ORANGE, (80, (n//2+n %
-                     2)*100), ((30, (n//2+n % 2)*100)))
-    pygame.draw.line(screen, colors.ORANGE, (30, (n//2+n % 2)*100), ((30, 80)))
+    pygame.draw.line(screen, colors.ORANGE, (80, (n//2+n%2)*100), ((30, (n//2+n % 2)*100)))
+    pygame.draw.line(screen, colors.ORANGE, (30, (n//2+n%2)*100), ((30, 80)))
+
+    for y in range(80+10,(n//2+n % 2)*100,10):
+        pygame.draw.line(screen, colors.ORANGE, (30, y), (80,y))
 
 
 def build_station_zone():
     # (x,y,x+l,y+b)
-    pygame.draw.rect(screen, colors.AQUAMARINE2,
-                     pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
+    pygame.draw.rect(screen, colors.AQUAMARINE2,pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
 
 
 charging_state={}

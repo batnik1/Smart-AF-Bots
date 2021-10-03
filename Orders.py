@@ -121,6 +121,8 @@ def gen_a_order():
   return (racks,human_counter,order_id)  
 
 
+
+
 def add_items(count):
   global item_types_in_db
   for _ in range(count):
@@ -137,6 +139,19 @@ def add_items(count):
     else:
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
   return item_types_in_db
+
+def add_item(type,quantity,shelf):
+    global item_types_in_db
+    item_types_in_db.add(type)
+    if collection.find_one({"type":type}):
+      collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
+      if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
+        collection.update_one({"type":type,"shelves.shelf":shelf},{"$inc":{"shelves.$.quantity":quantity}})
+      else:
+        collection.update_one({"type":type},{"$push":{"shelves":{"shelf":shelf, "quantity":quantity}}}) 
+    else:
+      collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
+
 
 add_items(10)
 #print(racks)

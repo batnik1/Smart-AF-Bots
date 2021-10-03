@@ -2,19 +2,27 @@ from window_Util import *
 
 Number_of_Agents = 10
 Number_of_SAgents= 10
+Number_of_TAgents=len(truck_resting)
 Agents = []
 Conveyor_Agents=[]
 Sorting_Agents=[]
-for i in range(Number_of_Agents):
-    nAgent=Agent(0,n,m)
-    nAgent.position=numofrack[nAgent.CurRack]
-    Agents.append(nAgent)
-for i in range(Number_of_SAgents):
-    nAgent=Agent(2,n,m)
-    sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
-    nAgent.position=numofdump[str(sorting_random)]
-    Sorting_Agents.append(nAgent)
-    
+Truck_Agents=[]
+def init_agents():
+    for _ in range(Number_of_Agents):
+        nAgent=Agent(0,n,m)
+        nAgent.position=numofrack[nAgent.CurRack]
+        Agents.append(nAgent)
+    for _ in range(Number_of_SAgents):
+        nAgent=Agent(2,n,m)
+        sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
+        nAgent.position=numofdump[str(sorting_random)]
+        Sorting_Agents.append(nAgent)
+    for i in range(Number_of_TAgents):
+        nAgent=Agent(1,n,m)
+        nAgent.truck_rest=i
+        nAgent.position=truck_resting[i]
+        Truck_Agents.append(nAgent)
+
 def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
@@ -38,6 +46,12 @@ def get_SAgent(rack_pos):
         if Sorting_Agents[i].Wait==True:
             if mindis==ManhattanDistance(rack_pos, Sorting_Agents[i].position):
                 return i
+    return -1
+
+def get_TAgent():
+    for i in range(len(Truck_Agents)):
+        if Truck_Agents[i].Wait==True:
+            return i
     return -1
 
 def handle_rack_agents(coloring,key):
@@ -189,3 +203,21 @@ def handle_sorting_agents(sorting_orders):
             sagent.Path=[]
             sagent.color=colors.PALEGREEN
         pygame.draw.circle(screen, sagent.color, sagent.position,4)
+
+def handle_truck_agents():
+    for agent in Truck_Agents:
+        agent.Index -= 1
+        if agent.Index >= 0:        
+            if agent.Path[agent.Index]==[-7,-7]:
+                agent.Index -= 1
+                add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
+                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item '+agent.items_carrying[0]+'with count '+agent.items_carrying[1])
+            else: 
+                agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+        if agent.Index == -1:
+                agent.Path = []
+                rack_available[agent.CurRack]=1
+                agent.Wait = True   
+                agent.color = colors.YELLOW1
+                agent.size=2
+        pygame.draw.circle(screen, agent.color, agent.position, agent.size)

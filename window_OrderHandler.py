@@ -54,3 +54,48 @@ def handle_orders(orders,coloring):
         orders.remove(orders[ind])
     finished.clear()
 
+def truck_orders():
+    items=[]
+    for _ in range(len(Truck_Agents)):
+        type=random.randint(0,type_of_items)
+        quantity=random.randint(1,3)
+        shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
+        items.append((type,quantity,shelf))
+    return items
+
+def handle_Torders(Torders):
+    Tfinished=[]
+    for i in range(len(Torders)):
+        type = Torders[i][0]
+        quantity=Torders[i][1]
+        rack=Torders[i][2]    
+        if rack_available[rack]!=1:
+            continue
+        rack_location=numofrack[rack]
+        ind = get_TAgent()
+        if ind == -1:
+            break
+        rack_available[rack]=0
+        agent=Truck_Agents[ind]
+        logger.info('Truck Bot '+str(ind)+" is assigned to deliever item "+str(type)+"whose count is "+str(quantity))
+        agent.ind=ind
+        nAgent = Search(agent.position,rack_location)
+        nAgent.BFS()          
+        Tfinished.append(i)
+        
+        a = nAgent.getPath()                                 # Agent's Position to Desired Rack 
+        b=a[:]
+        b.reverse()
+        agent.Path =a+[[-7,-7]]+b
+        agent.Path.reverse()
+        agent.Index = len(agent.Path)
+        agent.Wait = False
+        agent.color = colors.PINK1
+        agent.size = 5
+        agent.items_carrying=(type,quantity)
+        agent.CurRack=rack
+              
+    for ind in Tfinished:
+        Torders.remove(Torders[ind])
+
+

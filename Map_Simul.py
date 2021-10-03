@@ -85,12 +85,12 @@ def waste1(n,m):
 
 def waste2(n, m):
     x = 80
-    for i in range(m+1):
+    for _ in range(m+1):
         waste3(x,0,direction["up"])
         waste3(x+10, 0, direction["down"])  # down
         x += 120
     y = 80
-    for i in range(n+1):
+    for _ in range(n+1):
         waste3(0, y, direction["right"])  # right
         waste3(0, y+10, direction["left"])  # left
         y += 120
@@ -140,11 +140,17 @@ def marking_queue_line(n,m):
         add_edge((x, 40+120*(n+1)), (x+80,40+120*(n+1)),direction["right"])
         x+=120
 
-def marking_station_line(n,m):
-    add_edge((80, 80), (30, 80),direction["left"])
-    add_edge((80, (n//2+n%2)*100), ((30, (n//2+n%2)*100)),direction["right"])
-    add_edge((30, (n//2+n%2)*100), ((30, 80)),direction["down"])
-    pass
+truck_resting={}
+def marking_station_line():
+    add_edge((30, 80), (80, 80),direction["left"])
+    add_edge((30, (n//2+n%2)*100), ((80, (n//2+n%2)*100)),direction["right"])
+    add_edge((30,80) , (30, (n//2+n%2)*100),direction["up"])
+    countin=0
+    for y in range(80+10,(n//2+n % 2)*100,10):
+        add_edge((30, y), (80,y),direction["right"])
+        truck_resting[countin]=(55,y)
+        countin+=1
+    
 
 
 def waste_conveyor_belt():
@@ -205,9 +211,12 @@ def waste_sorting_area():
         add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["left"])
         y+=30
 
+
+
 waste1(n, m)
 waste2(n,m)
 marking_queue_line(n,m)
 waste_conveyor_belt()
 waste_sorting_area()
 waste_charging()
+marking_station_line()

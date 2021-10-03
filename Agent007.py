@@ -21,3 +21,4 @@ class Agent():
         self.needcharge=False
         self.charging=False
         self.cStation=-1
+        self.truck_rest=-1
