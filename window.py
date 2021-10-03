@@ -212,12 +212,12 @@ def get_charging():
             charging_state[i]=1
             return i,charging_loc[i]
     return -1,-1
-              
+            
         
 running = True
 
-Number_of_Agents = 100
-Number_of_SAgents= 15
+Number_of_Agents = 5
+Number_of_SAgents= 10
 Agents = []
 Conveyor_Agents=[]
 Sorting_Agents=[]
@@ -306,7 +306,7 @@ while running:
     #         agent.Index = len(agent.Path)
     #         loading_truck_boxes -= 1
     
-    if key%50==0:
+    if key%10==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFS Order
@@ -413,19 +413,17 @@ while running:
     make_sorting_area()
     
     for agent in Agents:
-        # if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and agent.charge==100:
-        #     charging_state[agent.cStation]=0
-        #     agent.cStation=-1
-        #     agent.color = colors.LIGHTBLUE1
-        #    # agent.Wait = True
-        #     agent.size = 4
-        #     agent.needcharge=False
-        #     nAgent = Search(agent.position,numofrack[agent.CurRack])
-        #     nAgent.BFS()
-        #     agent.Path = nAgent.getPath()
-        #     agent.Path.reverse()
-        #     agent.Index = len(agent.Path)
-            
+        if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and agent.charge==200:
+            charging_state[agent.cStation]=0
+            agent.cStation=-1
+            agent.color = colors.LIGHTBLUE1
+            agent.size = 4
+            agent.needcharge=False
+            nAgent = Search(agent.position,numofrack[agent.CurRack])
+            nAgent.BFS()
+            agent.Path = nAgent.getPath()
+            agent.Path.reverse()
+            agent.Index = len(agent.Path)
         if agent.Index==2:                      # Coloring Racks 
             remove=[]
             for colo in range(len(coloring)):
@@ -456,7 +454,7 @@ while running:
                     conveyor_agent= Agent(1,n,m)
                     conveyor_agent.position=HCtoConveyor[human_ct]
                     conveyor_agent.order_id=agent.order_id
-                    if human_ct<m:
+                    if human_ct<m: 
                         conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
                     else:
                         conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
@@ -472,13 +470,18 @@ while running:
                 agent.Index -= 1
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-        if agent.Index == -1:
+        if agent.Index <= -1:
             if agent.needcharge==False:
                 agent.Path = []
                 rack_available[agent.CurRack]=1
                 agent.Wait = True
                 agent.color = colors.YELLOW1
-    
+            else:
+                agent.size = 2
+                agent.color = colors.GREEN
+                if key%10==0:
+                    agent.charge+=1
+
             if agent.charge<20 and agent.needcharge == False:
                 charge_ind,charge_box=get_charging()
                 if charge_box==-1:
@@ -491,6 +494,7 @@ while running:
                 agent.Path.reverse()
                 agent.Index = len(agent.Path)
                 agent.Wait = False
+                agent.size=2
                 # TODO: Send it to charging station
             remove=[]
             for colo in range(len(coloring)):
@@ -498,17 +502,6 @@ while running:
                     remove.append(coloring[colo])
             for i in remove:
                 coloring.remove(i)
-        if agent.needcharge==True:
-            agent.color = colors.GREEN
-            if key%10==0:
-                agent.charge+=1
-            if agent.charge==100:
-                charging_state[agent.cStation]=0
-                agent.cStation=-1
-                agent.color = colors.LIGHTBLUE1
-                agent.Wait = True
-                agent.size = 4
-                agent.needcharge=False
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     
     removing_conveyor=[]
@@ -573,5 +566,6 @@ while running:
 
 
     """
-    1. jb robot kuj charge hojaye tb charging station se nikalke kai aur bhejna h    
+    1. Charging State vapis 1 bhi krni h
+    2. jb robot kuj charge hojaye tb charging station se nikalke kai aur bhejna h    
     """

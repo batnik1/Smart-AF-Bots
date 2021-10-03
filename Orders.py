@@ -34,7 +34,7 @@ connection=MongoClient('localhost',27017)
 
 item_types_in_db=set()
 
-db=connection['amazon']
+db=connection['Warehouse']
 collection=db["big_database"]
 delivered=db["delivered"]
 order_db=db["order_db"]
@@ -138,5 +138,5 @@ def add_items(count):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
   return item_types_in_db
 
-add_items(10000)
+add_items(10)
 #print(racks)
