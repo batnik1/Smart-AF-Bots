@@ -1,12 +1,9 @@
 from window_OrderHandler import *
 
 running = True
-
-loading_truck = 0
-loading_truck_boxes = 10
 key=0
 paused=False
-order_freq=10
+order_freq=100
 truck_freq=100000
 initHCtoConveyor()
 def init_screen():

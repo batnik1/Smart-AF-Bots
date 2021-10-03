@@ -80,7 +80,7 @@ def handle_Torders():
             break
         rack_available[rack]=0
         agent=Truck_Agents[ind]
-        logger.info('Truck Bot '+str(ind)+" is assigned to deliever item "+str(type)+"whose count is "+str(quantity))
+        logger.info('Truck Bot '+str(ind)+" is assigned to deliever item type "+str(type)+" whose quant is "+str(quantity))
         agent.ind=ind
         nAgent = Search(agent.position,rack_location)
         nAgent.BFS()          

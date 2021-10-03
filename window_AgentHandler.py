@@ -1,6 +1,6 @@
 from window_Util import *      
 
-Number_of_Agents = 10
+Number_of_Agents = 50
 Number_of_SAgents= 10
 Number_of_TAgents=len(truck_resting)
 Agents = []
@@ -211,7 +211,7 @@ def handle_truck_agents():
             if agent.Path[agent.Index]==[-7,-7]:
                 agent.Index -= 1
                 add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
-                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item '+str(agent.items_carrying[0])+'with count '+str(agent.items_carrying[1]))
+                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
             else: 
                 agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
         if agent.Index == -1:
