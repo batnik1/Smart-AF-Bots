@@ -4,7 +4,7 @@ running = 1
 key=0
 paused=0
 order_freq=50
-truck_freq=1000
+truck_freq=2000
 initHCtoConveyor()
 def init_screen():
     screen.fill((0, 0, 0))

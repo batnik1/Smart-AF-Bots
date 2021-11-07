@@ -4,6 +4,8 @@ from Grid import Grid
 import AStar
 from AStar import Search,Matrix,Golden_Grid
 import colors
+from collections import defaultdict
+
 
 import time
 Intersections=[]
@@ -310,9 +312,11 @@ def ged(x):
         return 1
     else:
         return 0
+# Make a dictionary for intersections
+Intersec_dic=defaultdict(int)
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
-    #     
+    Intersec_dic[(i,j)]=1     
     new_praylist.append((i,j))
        # print('Hola')
 

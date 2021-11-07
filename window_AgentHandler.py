@@ -1,6 +1,6 @@
 from window_Util import *      
 
-Number_of_Agents = 50
+Number_of_Agents = 25
 Number_of_SAgents= 20
 Number_of_TAgents=len(truck_resting)
 Agents = []
@@ -16,6 +16,7 @@ def init_agents():
 
     for _ in range(Number_of_SAgents):
         nAgent=Agent(2,n,m)
+        nAgent.color=colors.PALEGREEN
         sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
         nAgent.position=numofdump[str(sorting_random)]
         Sorting_Agents.append(nAgent)
@@ -78,6 +79,9 @@ def get_direction(a,b):
 def handle_rack_agents(coloring, key):
     
     for agent in Agents:
+        #print(10*heat_value(agent.position,0,Agents,Truck_Agents,Sorting_Agents))
+        if agent.waitingperiod>0:
+            agent.waitingperiod-=1
         if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-200)<=1:
             charging_state[agent.cStation]=0
             agent.cStation=-1
@@ -122,10 +126,26 @@ def handle_rack_agents(coloring, key):
 
                 agent.Wait = False
 
+        if agent.changelane==1:
+            agent.changelane=0
+            agent.Path=[]
+            agent.Index=-1
+
         if agent.Index>=0:
             agent.charge-=0.05
             agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
             agent.Index-=1
+            if agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1:
+                heating=heat_value(agent.position,0,Agents,Truck_Agents,Sorting_Agents)
+                heating*=100
+                if heating<12:
+                    agent.color = colors.LIGHTBLUE1
+                elif heating<20:
+                    agent.color = colors.YELLOW1
+                else:
+                    agent.color = colors.RED1
+                    agent.changelane=1
+                    agent.waitingperiod=15
               
         elif agent.direction!="rest":
             
@@ -215,7 +235,7 @@ def handle_rack_agents(coloring, key):
                     agent.Index=len(agent.Path)-1
                 else:
                     nAgent = Search(agent.position,nearestIntersec)
-                    nAgent.AStar()
+                    nAgent.AStar(Agents,Truck_Agents,Sorting_Agents)
                     # nextIntersec=nAgent.getPath()
                     agent.direction="motion"
                     # agent.Path=nearest_intersection_path(agent.position,nextIntersec)
@@ -287,7 +307,6 @@ def handle_sorting_agents(sorting_orders):
         agent.direction="motion"
         agent.Index=-1
         agent.Wait = False
-        agent.color = colors.RED1
         agent.size = 4
         agent.order_id=sorder       
               
@@ -295,9 +314,23 @@ def handle_sorting_agents(sorting_orders):
         sorting_orders.remove(ind)
     finished_sorder.clear()
     for sagent in Sorting_Agents:
+       # print(100*heat_value(sagent.position,1,Agents,Truck_Agents,Sorting_Agents))
+        if sagent.waitingperiod>0:
+            sagent.waitingperiod-=1
+
+        if sagent.changelane==1:
+                sagent.changelane=0
+                sagent.Index=-1
+                sagent.Path=[]
+
         if sagent.Index>=0: 
             sagent.position = (sagent.Path[sagent.Index][0], sagent.Path[sagent.Index][1])
             sagent.Index-=1
+            if sagent.waitingperiod==0 and Intersec_dic[(sagent.position[0],sagent.position[1])]==1 and 100*heat_value(sagent.position,1,Agents,Truck_Agents,Sorting_Agents)>16:
+                print("changing Lanes")
+                sagent.changelane=1
+                sagent.waitingperiod=10
+                
         elif sagent.direction!="rest":
             if sagent.position==sagent.goals[sagent.goalindex]:
                 sagent.goalindex+=1
@@ -308,7 +341,8 @@ def handle_sorting_agents(sorting_orders):
                     logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
                     sagent.Wait=True       
                     sagent.Path=[]
-                    sagent.color=colors.PALEGREEN
+                    sagent.size=2
+                    # sagent.color=colors.PALEGREEN
                     sagent.direction="rest"
                     sagent.goals=[]
                     sagent.nearestgoals=[]
@@ -328,7 +362,7 @@ def handle_sorting_agents(sorting_orders):
                 else:
                #     print('else',agent.nearestgoals)    
                     nAgent = Search(sagent.position,nearestIntersec)
-                    nAgent.AStar()
+                    nAgent.AStar(Agents,Truck_Agents,Sorting_Agents)
                     sagent.direction="motion"
                     # nextIntersec=nAgent.getPath()
                     #sagent.Path=nearest_intersection_path(agent.position,nextIntersec)
@@ -358,10 +392,22 @@ def handle_sorting_agents(sorting_orders):
 
 def handle_truck_agents():
     for agent in Truck_Agents:
+        # print(100*heat_value(agent.position,2,Agents,Truck_Agents,Sorting_Agents))
+        if agent.waitingperiod>0:
+            agent.waitingperiod-=1
+
+        if agent.changelane==1:
+                agent.changelane=0
+                agent.Index=-1
+                agent.Path=[]
+
         if agent.Index>=0:
-            
             agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
             agent.Index-=1
+            if agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1 and 100*heat_value(agent.position,2,Agents,Truck_Agents,Sorting_Agents)>11:
+              #  print("changing Lanes")
+                agent.changelane=1
+                agent.waitingperiod=10
             
         elif agent.direction!="rest":
             if agent.position==agent.goals[agent.goalindex]:
@@ -395,7 +441,7 @@ def handle_truck_agents():
                 else:
                #     print('else',agent.nearestgoals)    
                     nAgent = Search(agent.position,nearestIntersec)
-                    nAgent.AStar()
+                    nAgent.AStar(Agents,Truck_Agents,Sorting_Agents)
                     agent.direction="motion"
                     # nextIntersec=nAgent.getPath()
                     # agent.Path=nearest_intersection_path(agent.position,nextIntersec)

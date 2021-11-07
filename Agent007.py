@@ -26,3 +26,5 @@ class Agent():
         self.goalindex=0
         self.goals=[]
         self.nearestgoals=[]
+        self.changelane=0
+        self.waitingperiod=0
