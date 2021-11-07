@@ -1,7 +1,7 @@
 from window_Util import *      
 
 Number_of_Agents = 50
-Number_of_SAgents= 10
+Number_of_SAgents= 20
 Number_of_TAgents=len(truck_resting)
 Agents = []
 Conveyor_Agents=[]
@@ -10,13 +10,16 @@ Truck_Agents=[]
 def init_agents():
     for _ in range(Number_of_Agents):
         nAgent=Agent(0,n,m)
+        nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
         nAgent.position=numofrack[nAgent.CurRack]
         Agents.append(nAgent)
+
     for _ in range(Number_of_SAgents):
         nAgent=Agent(2,n,m)
         sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
         nAgent.position=numofdump[str(sorting_random)]
         Sorting_Agents.append(nAgent)
+        
     for i in range(Number_of_TAgents):
         nAgent=Agent(1,n,m)
         nAgent.truck_rest=i
@@ -54,97 +57,190 @@ def get_TAgent():
             return i
     return -1
 
-def handle_rack_agents(coloring,key):
+def get_direction(a,b):
+    x1,y1=a
+    x2,y2=b
+    if a==b:
+        return "rest"
+    if x1==x2:
+        if y1<y2:
+            return "down"
+        else:
+            return "up"
+    elif y1==y2:
+        if x1<x2:
+            return "right"
+        else:
+            return "left"
+    else:
+        print("Dead Direction Kid")
+    
+def handle_rack_agents(coloring, key):
+    
     for agent in Agents:
-        if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and agent.charge==200:
+        if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-200)<=1:
             charging_state[agent.cStation]=0
             agent.cStation=-1
             agent.color = colors.LIGHTBLUE1
             agent.size = 4
             agent.needcharge=False
-            nAgent = Search(agent.position,numofrack[agent.CurRack])
-            nAgent.BFS()
-            agent.Path = nAgent.getPath()
-            agent.Path.reverse()
-            agent.Index = len(agent.Path)
-        if agent.Index==2:                      # Coloring Racks 
-            remove=[]
-            for colo in range(len(coloring)):
-                if coloring[colo][0]==agent.CurRack:
-                    remove.append(coloring[colo])
-            for i in remove:
-                coloring.remove(i)
-        agent.Index -= 1
-        if agent.Index >= 0:
-            if  agent.Index%20==0:
-                agent.charge-=1
-                
-            if agent.Path[agent.Index]==[-7,-7]:
-                agent.Index -= 1
-                logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
-            elif agent.Path[agent.Index]==[-14,-14]:
-                logger.info('Bot '+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
-                doc=order_db.find_one({"_id":agent.order_id})
-                quantity=doc["ordered_quantity"]
-                progress=doc["order_progress"]
-                human_ct=doc["human_counter"]
-                total_items_carrying=0
-                for items in agent.items_carrying:
-                    total_items_carrying+=items[1]
-                if total_items_carrying+progress==quantity:
-                    logger.info("Order "+str(doc['_id'])+" is finished")
-                    # delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
-                    conveyor_agent= Agent(1,n,m)
-                    conveyor_agent.position=HCtoConveyor[human_ct]
-                    conveyor_agent.order_id=agent.order_id
-                    if human_ct<m: 
-                        conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
-                    else:
-                        conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
-                    # conveyor_agent.Path+=Sorting_Counter[0].getBFSPath(numofdump[str(sorting_random)])
-                    conveyor_agent.Path.reverse()
-                    conveyor_agent.Index=len(conveyor_agent.Path)
-                    Conveyor_Agents.append(conveyor_agent)
-
-                order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
-                agent.Index -= 1
-            elif agent.Path[agent.Index]==[-21,-21]:
-                logger.info('Bot '+str(agent.ind)+': Kept the Rack back which I was carrying')
-                agent.Index -= 1
-            else: 
-                agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-        if agent.Index <= -1:
-            if agent.needcharge==False:
-                agent.Path = []
-                rack_available[agent.CurRack]=1
-                agent.Wait = True
-                agent.color = colors.YELLOW1
-            else:
-                agent.size = 2
+            agent.goals=[numofrack[agent.CurRack],[-200,-200]]
+            agent.nearestgoals=[]
+            agent.goalindex=0
+            agent.direction="motion"
+            for xx in range(len(agent.goals)):
+                if agent.goals[xx][0]<0:
+                    agent.nearestgoals.append(agent.goals[xx])
+                    continue
+                togoal=agent.goals[xx]
+                nearestIntersec=nearest_intersection(togoal,rev=True) 
+                agent.nearestgoals.append(nearestIntersec)
+            
+        if agent.Index <= -1 and agent.direction=="rest":
+            if agent.needcharge==True:
                 agent.color = colors.GREEN
-                if key%10==0:
-                    agent.charge+=1
+                agent.charge+=.1
 
             if agent.charge<20 and agent.needcharge == False:
                 charge_ind,charge_box=get_charging()
                 if charge_box==-1:
                     continue
+                agent.color = colors.LIGHTBLUE1
                 agent.cStation=charge_ind
                 agent.needcharge=True
-                nAgent = Search(agent.position,charge_box)
-                nAgent.BFS()
-                agent.Path = nAgent.getPath()
-                agent.Path.reverse()
-                agent.Index = len(agent.Path)
+                agent.direction="motion"
+                agent.goals=[charge_box,[-11,-11]]
+                agent.nearestgoals=[]
+                agent.goalindex=0
+                for xx in range(len(agent.goals)):
+                    if agent.goals[xx][0]<0:
+                        agent.nearestgoals.append(agent.goals[xx])
+                        continue
+                    togoal=agent.goals[xx]
+                    nearestIntersec=nearest_intersection(togoal,rev=True) 
+                    agent.nearestgoals.append(nearestIntersec)
+
                 agent.Wait = False
-                agent.size=2
-                # TODO: Send it to charging station
-            remove=[]
-            for colo in range(len(coloring)):
-                if coloring[colo][2]==agent:
-                    remove.append(coloring[colo])
-            for i in remove:
-                coloring.remove(i)
+
+        if agent.Index>=0:
+            agent.charge-=0.05
+            agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+            agent.Index-=1
+              
+        elif agent.direction!="rest":
+            
+            if agent.position==agent.goals[agent.goalindex]:
+                agent.goalindex+=1
+                
+            if agent.goalindex<len(agent.goals):
+                if agent.goals[agent.goalindex]==[-7,-7]:
+                    logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
+                    agent.goalindex+=1
+                    
+                elif agent.goals[agent.goalindex]==[-14,-14]:
+                    logger.info('Bot '+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
+                    doc=order_db.find_one({"_id":agent.order_id})
+                    quantity=doc["ordered_quantity"]
+                    progress=doc["order_progress"]
+                    human_ct=doc["human_counter"]
+                    total_items_carrying=0
+                    for items in agent.items_carrying:
+                        total_items_carrying+=items[1]
+                    if total_items_carrying+progress==quantity:
+                        logger.info("Order "+str(doc['_id'])+" is finished")
+                        # delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
+                        conveyor_agent= Agent(1,n,m)
+                        conveyor_agent.position=HCtoConveyor[human_ct]
+                        conveyor_agent.order_id=agent.order_id
+                        if human_ct<m: 
+                            conveyor_agent.Path=HCtoSorting[str((0,human_ct))].copy()
+                        else:
+                            conveyor_agent.Path=HCtoSorting[str((1,human_ct-m))].copy()
+                        # conveyor_agent.Path+=Sorting_Counter[0].getBFSPath(numofdump[str(sorting_random)])
+                        conveyor_agent.Path.reverse()
+                        conveyor_agent.Index=len(conveyor_agent.Path)
+                        Conveyor_Agents.append(conveyor_agent)
+                    order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
+                    agent.goalindex+=1
+                elif  agent.goals[agent.goalindex]==[-21,-21]:
+                    logger.info('Bot '+str(agent.ind)+': Kept the Rack back which I was carrying')
+                    
+                    agent.direction="rest"
+                    agent.goals=[]
+                    agent.nearestgoals=[]
+                    agent.goalindex=0
+                    agent.Index=-1
+                    rack_available[agent.CurRack]=1
+                    agent.Wait = True
+                    agent.color = colors.YELLOW1
+                    agent.size=2
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+                    
+                    remove=[]
+                    for colo in range(len(coloring)):
+                        if coloring[colo][2]==agent:
+                            remove.append(coloring[colo])
+                    for i in remove:
+                        coloring.remove(i)
+                    continue
+                elif agent.goals[agent.goalindex]==[-11,-11]:
+                    logger.info('Bot '+str(agent.ind)+': Reached the Charging Station')
+                    agent.size=2
+                    agent.direction="rest"
+                    agent.goals=[]
+                    agent.nearestgoals=[]
+                    agent.goalindex=0
+                    agent.Index=-1
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+                    continue
+                elif agent.goals[agent.goalindex]==[-200,-200]:
+                    logger.info('Bot '+str(agent.ind)+': Reached back to its rack with full Charge')
+                    agent.direction="rest"
+                    agent.goals=[]
+                    agent.nearestgoals=[]
+                    agent.goalindex=0
+                    agent.Index=-1
+                    agent.color = colors.YELLOW1
+                    agent.size=2
+                    agent.Wait=True
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+                    continue
+                        
+            if agent.position in Intersections:
+                togoal=agent.goals[agent.goalindex]
+                nearestIntersec=agent.nearestgoals[agent.goalindex] 
+                if agent.position==nearestIntersec:       # Goal is very near to this
+                    agent.Path=nearest_intersection_path(agent.position,togoal)
+                    agent.direction="motion"
+                    agent.Index=len(agent.Path)-1
+                else:
+                    nAgent = Search(agent.position,nearestIntersec)
+                    nAgent.AStar()
+                    # nextIntersec=nAgent.getPath()
+                    agent.direction="motion"
+                    # agent.Path=nearest_intersection_path(agent.position,nextIntersec)
+                    # agent.Index=len(agent.Path)-1
+
+                    nextIntersec_path=nAgent.getPathLong()
+                    nextIntersec_path.reverse()
+                    path_temp1=[]
+
+                    for i in range(len(nextIntersec_path)-1):
+                        temp2=nearest_intersection_path(nextIntersec_path[i],nextIntersec_path[i+1])
+                        temp2.reverse()
+                        path_temp1+=temp2
+                    agent.Path=path_temp1
+                    agent.Index=len(agent.Path)-1   
+                    
+            else:
+                nearestIntersec=nearest_intersection(agent.position) 
+                agent.Path=nearest_intersection_path(agent.position,nearestIntersec)
+                agent.direction="motion"
+                agent.Index=len(agent.Path)-1
+
+            agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+        
+
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
 
 def handle_conveyor_belt(sorting_orders):
@@ -178,13 +274,18 @@ def handle_sorting_agents(sorting_orders):
         #sorting_bots.insert_one({"_id":ind,"Order_ID":order_id})
         address=tuple(order_history.find_one({"_id":sorder})["address"])
         finished_sorder.append(sorder)
-        b = Reverse_Sorting_Counter[0].getBFSPath(agent.position)     # From that Rack to Counter
-        c = Sorting_Counter[0].getBFSPath(numofdump[str(address)])
-        b.reverse()
-
-        agent.Path =b+c
-        agent.Path.reverse()
-        agent.Index = len(agent.Path)
+        agent.goals=[numofdump["conveyor"],[-7,-7],numofdump[str(address)],[-14,-14]]
+        agent.nearestgoals=[]
+        agent.goalindex=0
+        for xx in range(len(agent.goals)):
+                if agent.goals[xx][0]<0:
+                    agent.nearestgoals.append(agent.goals[xx])
+                    continue
+                togoal=agent.goals[xx]
+                nearestIntersec=nearest_intersection(togoal,rev=True) 
+                agent.nearestgoals.append(nearestIntersec)
+        agent.direction="motion"
+        agent.Index=-1
         agent.Wait = False
         agent.color = colors.RED1
         agent.size = 4
@@ -194,29 +295,130 @@ def handle_sorting_agents(sorting_orders):
         sorting_orders.remove(ind)
     finished_sorder.clear()
     for sagent in Sorting_Agents:
-        sagent.Index-=1
-        if sagent.Index>=0:
+        if sagent.Index>=0: 
             sagent.position = (sagent.Path[sagent.Index][0], sagent.Path[sagent.Index][1])
-        if sagent.Index==-1:  
-            logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
-            sagent.Wait=True       
-            sagent.Path=[]
-            sagent.color=colors.PALEGREEN
-        pygame.draw.circle(screen, sagent.color, sagent.position,4)
+            sagent.Index-=1
+        elif sagent.direction!="rest":
+            if sagent.position==sagent.goals[sagent.goalindex]:
+                sagent.goalindex+=1
+            if sagent.goalindex<len(sagent.goals):
+                if sagent.goals[sagent.goalindex]==[-7,-7]:
+                    sagent.goalindex+=1
+                elif  sagent.goals[sagent.goalindex]==[-14,-14]:
+                    logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
+                    sagent.Wait=True       
+                    sagent.Path=[]
+                    sagent.color=colors.PALEGREEN
+                    sagent.direction="rest"
+                    sagent.goals=[]
+                    sagent.nearestgoals=[]
+                    sagent.goalindex=0
+                    sagent.Index=-1
+                    pygame.draw.circle(screen, sagent.color, sagent.position, sagent.size)
+
+                    continue
+            
+            if sagent.position in Intersections:
+                togoal=sagent.goals[sagent.goalindex]
+                nearestIntersec=sagent.nearestgoals[sagent.goalindex] 
+                if sagent.position==nearestIntersec:       # Goal is very near to this
+                   sagent.Path=nearest_intersection_path(sagent.position,togoal)
+                   sagent.direction="motion"
+                   sagent.Index=len(sagent.Path)-1
+                else:
+               #     print('else',agent.nearestgoals)    
+                    nAgent = Search(sagent.position,nearestIntersec)
+                    nAgent.AStar()
+                    sagent.direction="motion"
+                    # nextIntersec=nAgent.getPath()
+                    #sagent.Path=nearest_intersection_path(agent.position,nextIntersec)
+                    #sagent.Index=len(agent.Path)-1
+                    nextIntersec_path=nAgent.getPathLong()
+                    nextIntersec_path.reverse()
+                    path_temp1=[]
+                    #print(nextIntersec_path)
+                    for i in range(len(nextIntersec_path)-1):
+                        temp2=nearest_intersection_path(nextIntersec_path[i],nextIntersec_path[i+1])
+                        # print(temp2)
+                        # print(type(temp2),type(path_temp1))
+                        temp2.reverse()
+                        path_temp1+=temp2
+                    sagent.Path=path_temp1
+                    sagent.Index=len(sagent.Path)-1     
+            else:
+                nearestIntersec=nearest_intersection(sagent.position) 
+               # print(agent.position,nearestIntersec)
+                sagent.Path=nearest_intersection_path(sagent.position,nearestIntersec)
+                sagent.direction="motion"
+                sagent.Index=len(sagent.Path)-1
+            if sagent.Index!=-1:
+                sagent.position = (sagent.Path[sagent.Index][0],sagent.Path[sagent.Index][1])
+        pygame.draw.circle(screen, sagent.color, sagent.position, sagent.size)
+
 
 def handle_truck_agents():
     for agent in Truck_Agents:
-        agent.Index -= 1
-        if agent.Index >= 0:        
-            if agent.Path[agent.Index]==[-7,-7]:
-                agent.Index -= 1
-                add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
-                logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
-            else: 
-                agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-        if agent.Index == -1:
-                agent.Path = []
-                rack_available[agent.CurRack]=1
-                agent.Wait = True   
-                agent.size=2
+        if agent.Index>=0:
+            
+            agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+            agent.Index-=1
+            
+        elif agent.direction!="rest":
+            if agent.position==agent.goals[agent.goalindex]:
+                agent.goalindex+=1
+            if agent.goalindex<len(agent.goals):
+                if agent.goals[agent.goalindex]==[-7,-7]:
+                    agent.goalindex+=1
+                    add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
+                    logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
+                
+                elif  agent.goals[agent.goalindex]==[-14,-14]:
+                    agent.Path = []
+                    rack_available[agent.CurRack]=1
+                    agent.Wait = True   
+                    agent.size=2
+                    agent.direction="rest"
+                    agent.goals=[]
+                    agent.nearestgoals=[]
+                    agent.goalindex=0
+                    agent.Index=-1
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+                    continue
+
+            if agent.position in Intersections:
+                togoal=agent.goals[agent.goalindex]
+                nearestIntersec=agent.nearestgoals[agent.goalindex] 
+                if agent.position==nearestIntersec:       # Goal is very near to this
+                    agent.Path=nearest_intersection_path(agent.position,togoal)
+                    agent.direction="motion"
+                    agent.Index=len(agent.Path)-1
+                else:
+               #     print('else',agent.nearestgoals)    
+                    nAgent = Search(agent.position,nearestIntersec)
+                    nAgent.AStar()
+                    agent.direction="motion"
+                    # nextIntersec=nAgent.getPath()
+                    # agent.Path=nearest_intersection_path(agent.position,nextIntersec)
+                    # agent.Index=len(agent.Path)-1
+                    nextIntersec_path=nAgent.getPathLong()
+                    nextIntersec_path.reverse()
+                    path_temp1=[]
+                    #print(nextIntersec_path)
+                    for i in range(len(nextIntersec_path)-1):
+                        temp2=nearest_intersection_path(nextIntersec_path[i],nextIntersec_path[i+1])
+                        # print(temp2)
+                        # print(type(temp2),type(path_temp1))
+                        temp2.reverse()
+                        path_temp1+=temp2
+                    agent.Path=path_temp1
+                    agent.Index=len(agent.Path)-1     
+            else:
+                nearestIntersec=nearest_intersection(agent.position) 
+               # print(agent.position,nearestIntersec)
+                agent.Path=nearest_intersection_path(agent.position,nearestIntersec)
+                agent.direction="motion"
+                agent.Index=len(agent.Path)-1
+
+            agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)

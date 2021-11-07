@@ -22,20 +22,25 @@ def handle_orders():
             rack_available[rack]=0
             agent=Agents[ind]
             logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
+            
             agent.ind=ind
-            nAgent = Search(agent.position,rack_location)
-            nAgent.BFS()          
-            count+=1
-            finished_racks.append(rack)
-          
-            a = nAgent.getPath()                                 # Agent's Position to Desired Rack 
-            b = Reverse_Counter[hCounter].getBFSPath(rack_location)     # From that Rack to Counter
-            c = Counter[hCounter].getBFSPath(rack_location)
-            b.reverse()
+            agent.goals=[rack_location,[-7,-7],numofhcounter[str((int(hCounter/m), hCounter % m))],[-14,-14],rack_location,[-21,-21]]
+            agent.nearestgoals=[]
+            agent.goalindex=0
+            for xx in range(len(agent.goals)):
+                if agent.goals[xx][0]<0:
+                    agent.nearestgoals.append(agent.goals[xx])
+                    continue
+                togoal=agent.goals[xx]
+                nearestIntersec=nearest_intersection(togoal,rev=True) 
 
-            agent.Path =a+[[-7,-7]]+b+[[-14,-14]]+c+[[-21,-21]]
-            agent.Path.reverse()
-            agent.Index = len(agent.Path)
+                agent.nearestgoals.append(nearestIntersec)
+             
+            agent.direction="motion"
+            agent.Index=-1
+            finished_racks.append(rack)
+            #TODO : Speed up this
+
             agent.Wait = False
             agent.color = colors.LIGHTBLUE1
             agent.size = 4
@@ -62,7 +67,7 @@ def truck_orders():
     for _ in range(len(Truck_Agents)):
         type=random.randint(0,type_of_items)
         quantity=random.randint(1,3)
-        shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
+        shelf=str((random.randint(0, m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
         items.append([type,quantity,shelf])
     return items
 
@@ -82,16 +87,23 @@ def handle_Torders():
         agent=Truck_Agents[ind]
         logger.info('Truck Bot '+str(ind)+" is assigned to deliever item type "+str(type)+" whose quant is "+str(quantity))
         agent.ind=ind
-        nAgent = Search(agent.position,rack_location)
-        nAgent.BFS()          
         Tfinished.append(Torders[i])
+
+        agent.goals=[rack_location,[-7,-7],agent.position,[-14,-14]]
+        agent.nearestgoals=[]
+        agent.goalindex=0
+        for xx in range(len(agent.goals)):
+            if agent.goals[xx][0]<0:
+                agent.nearestgoals.append(agent.goals[xx])
+                continue
+            togoal=agent.goals[xx]
+            nearestIntersec=nearest_intersection(togoal,rev=True) 
+
+            agent.nearestgoals.append(nearestIntersec)
+            
+        agent.direction="motion"
+        agent.Index=-1
         
-        a = nAgent.getPath()                                 # Agent's Position to Desired Rack 
-        b=a[:]
-        b.reverse()
-        agent.Path =a+[[-7,-7]]+b
-        agent.Path.reverse()
-        agent.Index = len(agent.Path)
         agent.Wait = False
         agent.color = colors.PINK1
         agent.size = 5

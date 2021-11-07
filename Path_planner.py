@@ -1,5 +1,5 @@
 from Map_Simul import *
-from AStar import Search
+from AStar import *
 import pickle
 import gc
 
@@ -8,7 +8,7 @@ Counter = []
 Reverse_Counter = []
 Sorting_Counter=[]
 Reverse_Sorting_Counter=[]
-print('Pre-Calculating Paths.....')
+print('Pre-Calculating')
 
 cAgent=Search(numofdump["conveyor"],[-1,-1])
 cAgent.BFS(True)

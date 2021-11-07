@@ -129,7 +129,7 @@ def add_items(count):
     type=random.randint(0,type_of_items)
     item_types_in_db.add(type)
     quantity=random.randint(1,3)
-    shelf=str((random.randint(0, 3), random.randint(0,3), random.randint(0, 4), random.randint(0, 4)))
+    shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
       if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
@@ -153,5 +153,5 @@ def add_item(type,quantity,shelf):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
 
 
-# add_items(1000)
+#add_items(10000)
 #print(racks)

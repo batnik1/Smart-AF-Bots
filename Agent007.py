@@ -22,3 +22,7 @@ class Agent():
         self.charging=False
         self.cStation=-1
         self.truck_rest=-1
+        self.direction="rest"
+        self.goalindex=0
+        self.goals=[]
+        self.nearestgoals=[]

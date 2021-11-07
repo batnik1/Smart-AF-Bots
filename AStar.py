@@ -5,8 +5,10 @@ import queue
 import collections
 from Grid import Grid
 import time
-ks=0
 
+# from Map_Simul import Golden_Grid
+ks=0
+Golden_Grid={}
 def ManhattanDistance(start, end):
     return abs(start[0]-end[0])+abs(start[1]-end[1])
 
@@ -66,26 +68,23 @@ class Search():
                         heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
 
     def AStar(self):
-        heapq.heappush(self.heap, (ManhattanDistance(
-            self.source, self.dest), self.source))   # Cost,x,y
-        self.dist[self.source[0]][self.source[1]
-                                  ] = ManhattanDistance(self.source, self.dest)
+        heapq.heappush(self.heap, (ManhattanDistance(self.source, self.dest), self.source))   # Cost,x,y
+        self.dist[self.source[0]][self.source[1]] = ManhattanDistance(self.source, self.dest)
+        
         while len(self.heap) > 0:
             (d, cState) = heapq.heappop(self.heap)
             if d > self.dist[cState[0]][cState[1]]:
                 continue
-            if cState == self.dest:
-                break
 
-            for (x, y) in dx4:
-                nextX = x+cState[0]
-                nextY = y+cState[1]
-                if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width and Matrix.grid[nextX][nextY] == 1:
+            for nextZ in Golden_Grid[(cState[0],cState[1])]:
+                if nextZ==():
+                    continue
+                (nextX,nextY)=nextZ
+                if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
                     if self.dist[nextX][nextY]-ManhattanDistance([nextX, nextY], self.dest) > d-ManhattanDistance([cState[0], cState[1]], self.dest)+1:
                         self.dist[nextX][nextY] = d -ManhattanDistance([cState[0], cState[1]], self.dest)+ ManhattanDistance([nextX, nextY], self.dest)+1
                         self.prev[nextX][nextY] = cState
-                        heapq.heappush(
-                            self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
+                        heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
 
     # def getPrev
 
@@ -117,7 +116,7 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            # print("Not Possible")
+            print('Fucked',self.source,self.dest)
             return []
         else:
             res = [self.dest]
@@ -126,7 +125,19 @@ class Search():
                 res.append(self.prev[cur[0]][cur[1]])
                 cur = self.prev[cur[0]][cur[1]]
             res.reverse()
-            # print("Solution Exists")
+            return res[1]
+
+    def getPathLong(self):
+        if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
+            print('Fucked',self.source,self.dest)
+            return []
+        else:
+            res = [self.dest]
+            cur = self.dest
+            while self.prev[cur[0]][cur[1]] != [-1, -1]:
+                res.append(self.prev[cur[0]][cur[1]])
+                cur = self.prev[cur[0]][cur[1]]
+            res.reverse()
             return res
 
     def getBFSPath(self, destiny):

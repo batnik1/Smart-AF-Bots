@@ -1,10 +1,10 @@
 from window_OrderHandler import *
 
-running = True
+running = 1
 key=0
-paused=False
-order_freq=100
-truck_freq=100000
+paused=0
+order_freq=50
+truck_freq=1000
 initHCtoConveyor()
 def init_screen():
     screen.fill((0, 0, 0))
@@ -24,29 +24,30 @@ def handle_events():
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
-            running = False
+            running = 0
             quit()
         if event.type==pygame.KEYDOWN:
             if event.key==pygame.K_SPACE:
                 if paused:
-                    paused=False
+                    paused=0
                 else:
-                    paused=True
+                    paused=1
                     break
     while paused:
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                running = False
+                running = 0
                 quit()
             if event.type==pygame.KEYDOWN:
                 if event.key==pygame.K_SPACE:
                     if paused:
-                        paused=False
+                        paused=0
                     else:
-                        paused=True
+                        paused=1
                         break
-    
+
+
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
@@ -57,6 +58,11 @@ while running:
         Torders+=new_items
 
     init_screen()
+    # make circles where new_praylist points are
+    
+    # for i in range(len(new_praylist)):
+    #     pygame.draw.circle(screen, (0, 255, 0), (new_praylist[i][0], new_praylist[i][1]), 2)    
+    
     handle_orders()
     handle_Torders()
     handle_events()

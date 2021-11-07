@@ -5,10 +5,10 @@ import pygame
 from final_run import *
 from Orders import *
 import collections
-pygame.init()
-screen = pygame.display.set_mode(
-    (display_width, display_height))  # create screen
 
+pygame.init()
+screen = pygame.display.set_mode((display_width, display_height))  # create screen
+pygame.event.set_allowed([pygame.QUIT, pygame.K_SPACE])
 
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 
