@@ -154,5 +154,5 @@ def add_item(type,quantity,shelf):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
 
 
-add_items(3)
+add_items(1000)
 #print(racks)

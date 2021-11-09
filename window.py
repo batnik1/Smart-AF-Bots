@@ -53,9 +53,9 @@ while running:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFS Order
-    # if key%truck_freq==0:
-    #     new_items=truck_orders()
-    #     Torders+=new_items
+    if key%truck_freq==0:
+        new_items=truck_orders()
+        Torders+=new_items
 
     init_screen()
     # make circles where new_praylist points are

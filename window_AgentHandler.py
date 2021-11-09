@@ -1,7 +1,7 @@
 from window_Util import *      
 
-Number_of_Agents = 1
-Number_of_SAgents= 5
+Number_of_Agents = 25
+Number_of_SAgents= 20
 Number_of_TAgents=len(truck_resting)
 Agents = []
 Conveyor_Agents=[]
