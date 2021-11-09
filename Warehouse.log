@@ -1,0 +1,14 @@
+2021-11-09 20:31:44,632 New Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,-,-,New Order is Placed.
+2021-11-09 20:31:46,682 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot is assigned to go to Rack.
+2021-11-09 20:31:47,070 New Order,2439f052-ab8e-437e-a4d4-99032b294d6b,-,-,New Order is Placed.
+2021-11-09 20:31:49,828 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot Reached the Desired Rack.
+2021-11-09 20:31:52,229 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot Reached the Human Counter with few items.
+2021-11-09 20:31:55,268 Event,-,Warehouse,0,Kept the Rack back which it was carrying.
+2021-11-09 20:31:55,271 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot is assigned to go to Rack.
+2021-11-09 20:31:56,964 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot Reached the Desired Rack.
+2021-11-09 20:31:58,882 Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Bot Reached the Human Counter with few items.
+2021-11-09 20:31:58,883 Finished Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Warehouse,0,Order is completed.
+2021-11-09 20:32:00,641 Event,-,Warehouse,0,Kept the Rack back which it was carrying.
+2021-11-09 20:32:02,062 Conveyor Belt,ce76cffe-5ad1-4ff1-8208-44878abe1640,Conveyor Belt,-,Shifted Order to the Sorting Area.
+2021-11-09 20:32:02,062 Sorting Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Sorting Bot,4,Bot is moving order to it's dumping point.
+2021-11-09 20:32:04,714 Sorting Order,ce76cffe-5ad1-4ff1-8208-44878abe1640,Sorting Bot,4,Bot placed the order to it's dumping point.
