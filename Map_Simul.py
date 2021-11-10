@@ -10,8 +10,8 @@ from collections import defaultdict
 import time
 Intersections=[]
 # n,m=input().split()   Take input from User
-m = 4 # width
-n = 4  # height     (n,m)>=3
+m = 3 # width
+n = 3  # height     (n,m)>=2
 sorting_m=6
 sorting_n=4
 
@@ -240,6 +240,18 @@ def waste_sorting_area():
     #     pygame.draw.line(screen, colors.BLUE, (racks_width, y+10),(racks_width+sorting_w,y+10),2)
     #     y+=30
 
+new_praylist=[]
+def duplicate_grid():
+
+    for i,j in Intersections:
+            cnt=[0]*5
+            updated=[]
+            for d in Matrix.grid[i][j]:
+                if cnt[d]==0:
+                    updated.append(d)
+                    cnt[d]+=1
+            Matrix.grid[i][j]=updated.copy()           
+
 waste1(n, m)
 waste2(n,m)
 marking_queue_line(n,m)
@@ -258,7 +270,7 @@ for i in range(1500):
             Intersections.append((i,j))
            # print("AA")
 
-
+duplicate_grid()
 my_list=[(-1,-1),(-1,-1),(-1,-1),(-1,-1),(-1,-1)]
 # for i in range(N):
 #     for j in range(N):
@@ -305,8 +317,12 @@ while len(stack):
                 if i >= 0 and j >= 0 and i < Matrix.height and j < Matrix.width:
                     stack.append((i,j))
                 
+
+
+
+
 #print(Golden_Grid)    
-new_praylist=[]
+
 def ged(x):
     if x>0:
         return 1
@@ -314,11 +330,14 @@ def ged(x):
         return 0
 # Make a dictionary for intersections
 Intersec_dic=defaultdict(int)
+Position_Booking=defaultdict(int)
+Intersection_Gateway={}
+Intersection_waiting=defaultdict(int)
+
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
-    Intersec_dic[(i,j)]=1     
-    new_praylist.append((i,j))
-       # print('Hola')
+    Intersec_dic[(i,j)]=1
+    Intersection_Gateway[(i,j)]=[0]*5
 
 
 def nearest_intersection(source,rev=False):
@@ -359,17 +378,14 @@ def nearest_intersection_path(source,destination):
             path=list(range(y2,y1))
         #path.reverse()            
         return list(zip([x1]*len(path),path))
-    else:
+    elif y1==y2:
         path=[]
         if x2>x1:
             path=list(range(x2,x1,-1))
         else:
             path=list(range(x2,x1))
-       # path.reverse()
         return list(zip(path,[y1]*len(path)))
-
-# else:
-#     print('Not Fucked')
+    else:
+        print('Fucked')
 
 # TODO: Verify this Magnificient Piece of Art
-

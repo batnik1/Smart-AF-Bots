@@ -56,10 +56,14 @@ def handle_orders():
         for rack in finished_racks:
             orders[i][0].pop(rack)
         if len(orders[i][0])==0:
-            finished.append(i)      
-              
+            finished.append(orders[i])      
+
     for ind in finished:
-        orders.remove(orders[ind])
+        try:
+            orders.remove(ind)
+        except:
+            print(finished,ind,len(orders),orders)
+            input()
     finished.clear()
 
 def truck_orders():

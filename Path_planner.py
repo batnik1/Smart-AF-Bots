@@ -5,37 +5,37 @@ import gc
 
 gc.disable()
 Counter = []
-Reverse_Counter = []
-Sorting_Counter=[]
-Reverse_Sorting_Counter=[]
+# Reverse_Counter = []
+# Sorting_Counter=[]
+# Reverse_Sorting_Counter=[]
 print('Pre-Calculating')
 
-cAgent=Search(numofdump["conveyor"],[-1,-1])
-cAgent.BFS(True)
-Reverse_Sorting_Counter.append(cAgent)
+# cAgent=Search(numofdump["conveyor"],[-1,-1])
+# cAgent.BFS(True)
+# Reverse_Sorting_Counter.append(cAgent)
 
-cAgent=Search(numofdump["conveyor"],[-1,-1])
-cAgent.BFS()
-Sorting_Counter.append(cAgent)
+# cAgent=Search(numofdump["conveyor"],[-1,-1])
+# cAgent.BFS()
+# Sorting_Counter.append(cAgent)
 
-for j in range(2*m):
-    cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
-    cAgent.BFS(True)
-    Reverse_Counter.append(cAgent)
+# for j in range(2*m):
+#     cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
+#     cAgent.BFS(True)
+#     Reverse_Counter.append(cAgent)
     
-    cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
-    cAgent.BFS()
-    Counter.append(cAgent)
+#     cAgent = Search(numofhcounter[str((int(j/m), j % m))], [-1, 1])
+#     cAgent.BFS()
+#     Counter.append(cAgent)
 
-Reverse_Station = []
-Station = []
-station_counter = (30, 80+(n//2+n % 2)*50)
-cAgent = Search(station_counter, [-1, -1])
-cAgent.BFS(True)
-Reverse_Station.append(cAgent)
-cAgent = Search(station_counter, [-1, -1])
-cAgent.BFS()
-Station.append(cAgent)
+# Reverse_Station = []
+# Station = []
+# station_counter = (30, 80+(n//2+n % 2)*50)
+# cAgent = Search(station_counter, [-1, -1])
+# cAgent.BFS(True)
+# Reverse_Station.append(cAgent)
+# cAgent = Search(station_counter, [-1, -1])
+# cAgent.BFS()
+# Station.append(cAgent)
 
 
 HCtoSorting={}

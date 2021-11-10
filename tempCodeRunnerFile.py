@@ -1,2 +1,1 @@
-for i in range(len(new_praylist)):
-       
+ Intersection_Gateway[(i,j)]!=[0,1,0,0,0]:

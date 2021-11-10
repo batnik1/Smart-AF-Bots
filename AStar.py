@@ -30,7 +30,6 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
     sigma=100
     num=0
     if z==0:
-        #num=len(Agents)+len(Truck_Agents)
         for agent in Agents:
             if agent.Wait==True:
                 continue
@@ -42,7 +41,6 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
                 continue
             num+=1
             X,Y=agent.position
-       #     print('pos',-(pow(x-X,2)+pow(y-Y,2)))
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))        
     if z==1:
         num=len(Sorting_Agents)
@@ -69,12 +67,12 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))/10    
     if num==0:
         return 0
-    return heat/num
+    return (heat-1)/num
 
 Matrix = Grid(N, N)
 
-def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents):
-    return ManhattanDistance(Point,Goal)+100*heat_value(Point,0,Agents,Truck_Agents,Sorting_Agents)
+def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):
+    return 0.8*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
 
 class Search(): 
 
@@ -92,8 +90,7 @@ class Search():
 
     def AStarModif(self, sources):
         for k in range(0, len(sources)):
-            heapq.heappush(self.heap, (ManhattanDistance(
-                sources[k], self.dest), sources[k]))
+            heapq.heappush(self.heap, (ManhattanDistance(sources[k], self.dest), sources[k]))
             self.dist[sources[k][0]][sources[k][1]
                                      ] = ManhattanDistance(sources[k], self.dest)
         while len(self.heap) > 0:
@@ -115,9 +112,9 @@ class Search():
                         heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
 
 
-    def AStar(self,Agents,Truck_Agents,Sorting_Agents):
-        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents),0, self.source))   # Cost,x,y
-        self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents)
+    def AStar(self,Agents,Truck_Agents,Sorting_Agents,flag):
+        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0, self.source))   # Cost,x,y
+        self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
         while len(self.heap) > 0:
             (cumltv,g, cState) = heapq.heappop(self.heap)
             if cumltv > self.dist[cState[0]][cState[1]]:
@@ -131,31 +128,12 @@ class Search():
                 (nextX,nextY)=nextZ
         
                 if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                    if self.dist[nextX][nextY] > g+ManhattanDistance(cState,[nextX,nextY])+get_heuristic([nextX,nextY],self.dest,Agents,Truck_Agents,Sorting_Agents):
-                        self.dist[nextX][nextY] = g+ManhattanDistance(cState,[nextX,nextY])+get_heuristic([nextX,nextY],self.dest,Agents,Truck_Agents,Sorting_Agents)
+                    newDist=g+ManhattanDistance(cState,[nextX,nextY])+get_heuristic([nextX,nextY],self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
+                    if self.dist[nextX][nextY] > newDist:
+                        self.dist[nextX][nextY] = newDist
                         self.prev[nextX][nextY] = cState
                         heapq.heappush(self.heap, (self.dist[nextX][nextY],g+ManhattanDistance(cState,[nextX,nextY]), [nextX, nextY]))
 
-    # def AStar(self):
-    #     heapq.heappush(self.heap, (ManhattanDistance(self.source, self.dest), self.source))   # Cost,x,y
-    #     self.dist[self.source[0]][self.source[1]] = ManhattanDistance(self.source, self.dest)
-        
-    #     while len(self.heap) > 0:
-    #         (d, cState) = heapq.heappop(self.heap)
-    #         if d > self.dist[cState[0]][cState[1]]:
-    #             continue
-
-    #         for nextZ in Golden_Grid[(cState[0],cState[1])]:
-    #             if nextZ==():
-    #                 continue
-    #             (nextX,nextY)=nextZ
-    #             if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-    #                 if self.dist[nextX][nextY]-ManhattanDistance([nextX, nextY], self.dest) > d-ManhattanDistance([cState[0], cState[1]], self.dest)+1:
-    #                     self.dist[nextX][nextY] = d -ManhattanDistance([cState[0], cState[1]], self.dest)+ ManhattanDistance([nextX, nextY], self.dest)+1
-    #                     self.prev[nextX][nextY] = cState
-    #                     heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
-
-    # def getPrev
 
     def BFS(self, rev=False):
         # global ks

@@ -13,7 +13,7 @@ class Agent():
         self.Path = []
         self.CurRack = str((random.randint(0,n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
         self.color = colors.YELLOW1
-        self.size = 2
+        self.size = 4
         self.order_id=0
         self.items_carrying=[]
         self.ind=0
