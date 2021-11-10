@@ -259,11 +259,14 @@ def handle_rack_agents(coloring, key):
                 
             if agent.goalindex<len(agent.goals):
                 if agent.goals[agent.goalindex]==[-7,-7]:
-                    logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
+                    # logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
+                    logger.info('Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached the Desired Rack.')
+                    
                     agent.goalindex+=1
                     
                 elif agent.goals[agent.goalindex]==[-14,-14]:
-                    logger.info('Bot '+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
+                    # logger.info('Bot'+','+str(agent.ind)+': Reached the Human Counter with items '+str(agent.items_carrying))
+                    logger.info('Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached the Human Counter with few items.')
                     doc=order_db.find_one({"_id":agent.order_id})
                     quantity=doc["ordered_quantity"]
                     progress=doc["order_progress"]
@@ -272,7 +275,8 @@ def handle_rack_agents(coloring, key):
                     for items in agent.items_carrying:
                         total_items_carrying+=items[1]
                     if total_items_carrying+progress==quantity:
-                        logger.info("Order "+str(doc['_id'])+" is finished")
+                        # logger.info("Order "+str(doc['_id'])+" is finished")
+                        logger.info('Finished Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(agent.ind)+','+'Order is completed.')
                         # delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
                         conveyor_agent= Agent(1,n,m)
                         conveyor_agent.position=HCtoConveyor[human_ct]
@@ -288,8 +292,10 @@ def handle_rack_agents(coloring, key):
                     order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})
                     agent.goalindex+=1
                 elif  agent.goals[agent.goalindex]==[-21,-21]:
-                    logger.info('Bot '+str(agent.ind)+': Kept the Rack back which I was carrying')
+                 #   logger.info('Bot '+str(agent.ind)+': Kept the Rack back which I was carrying')
                     Position_Booking[(agent.position[0],agent.position[1])]=0
+                    # logger.info('Bot '+str(agent.ind)+': Kept the Rack back which I was carrying')
+                    logger.info('Event'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Kept the Rack back which it was carrying.')
                     agent.direction="rest"
                     agent.goals=[]
                     agent.nearestgoals=[]
@@ -309,7 +315,8 @@ def handle_rack_agents(coloring, key):
                         coloring.remove(i)
                     continue
                 elif agent.goals[agent.goalindex]==[-11,-11]:
-                    logger.info('Bot '+str(agent.ind)+': Reached the Charging Station')
+                    # logger.info('Bot '+str(agent.ind)+': Reached the Charging Station')
+                    logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached the Charging Station.')
                     agent.size=2
                     agent.direction="rest"
                     agent.goals=[]
@@ -319,7 +326,8 @@ def handle_rack_agents(coloring, key):
                     pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     continue
                 elif agent.goals[agent.goalindex]==[-200,-200]:
-                    logger.info('Bot '+str(agent.ind)+': Reached back to its rack with full Charge')
+                    # logger.info('Bot '+str(agent.ind)+': Reached back to its rack with full Charge')
+                    logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached back to its Rack with full Charge.')
                     agent.direction="rest"
                     agent.goals=[]
                     agent.nearestgoals=[]
@@ -379,7 +387,8 @@ def handle_conveyor_belt(sorting_orders):
     for i in range(len(Conveyor_Agents)):
         conveyor_agent=Conveyor_Agents[i]
         if conveyor_agent.position==(racks_width,(80+racks_height//2)//2+20):
-            logger.info("Conveyor Belt Moved Order with ID :"+str(conveyor_agent.order_id)+" to the Sorting Area")
+            # logger.info("Conveyor Belt Moved Order with ID :"+str(conveyor_agent.order_id)+" to the Sorting Area")
+            logger.info('Conveyor Belt'+','+str(conveyor_agent.order_id)+','+'Conveyor Belt'+','+'-'+','+'Shifted Order to the Sorting Area.')
         conveyor_agent.Index-=1
         if conveyor_agent.Index>=0:
             conveyor_agent.position = (conveyor_agent.Path[conveyor_agent.Index][0], conveyor_agent.Path[conveyor_agent.Index][1])
@@ -400,7 +409,8 @@ def handle_sorting_agents(sorting_orders):
         if ind == -1:
             break
         agent=Sorting_Agents[ind]
-        logger.info("Sorting Bot is moving order with Order ID: "+str(sorder)+" to it's dumping point")
+        # logger.info("Sorting Bot is moving order with Order ID: "+str(sorder)+" to it's dumping point")
+        logger.info('Sorting Order'+','+str(sorder)+','+'Sorting Bot'+','+str(ind)+','+"Bot is moving order to it's dumping point.")
         agent.ind=ind
         #sorting_bots.insert_one({"_id":ind,"Order_ID":order_id})
         address=tuple(order_history.find_one({"_id":sorder})["address"])
@@ -449,7 +459,8 @@ def handle_sorting_agents(sorting_orders):
                 if sagent.goals[sagent.goalindex]==[-7,-7]:
                     sagent.goalindex+=1
                 elif  sagent.goals[sagent.goalindex]==[-14,-14]:
-                    logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
+                    # logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
+                    logger.info('Sorting Order'+','+str(sagent.order_id)+','+'Sorting Bot'+','+str(sagent.ind)+','+"Bot placed the order to it's dumping point.")
                     sagent.Wait=True       
                     sagent.Path=[]
                     sagent.size=2
@@ -527,8 +538,8 @@ def handle_truck_agents():
                 if agent.goals[agent.goalindex]==[-7,-7]:
                     agent.goalindex+=1
                     add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
-                    logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
-                
+                    # logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
+                    logger.info('Trucks in Warehouse'+','+'-'+','+'Truck Bot'+','+'-'+','+"Reached the Desired Rack with some new item type.")
                 elif  agent.goals[agent.goalindex]==[-14,-14]:
                     agent.Path = []
                     rack_available[agent.CurRack]=1

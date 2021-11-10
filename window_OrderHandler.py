@@ -21,8 +21,8 @@ def handle_orders():
                 break
             rack_available[rack]=0
             agent=Agents[ind]
-            logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
-            
+            # logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
+            logger.info('Order'+','+str(order_id)+','+'Warehouse'+','+str(ind)+','+'Bot is assigned to go to Rack.')
             agent.ind=ind
             agent.goals=[rack_location,[-7,-7],numofhcounter[str((int(hCounter/m), hCounter % m))],[-14,-14],rack_location,[-21,-21]]
             agent.nearestgoals=[]
@@ -89,7 +89,8 @@ def handle_Torders():
             break
         rack_available[rack]=0
         agent=Truck_Agents[ind]
-        logger.info('Truck Bot '+str(ind)+" is assigned to deliever item type "+str(type)+" whose quant is "+str(quantity))
+        # logger.info('Truck Bot '+str(ind)+" is assigned to deliever item type "+str(type)+" whose quant is "+str(quantity))
+        logger.info('New Items'+','+'-'+','+'Truck Bot'+','+str(ind)+','+'Bot is assigned to deliever new items.')
         agent.ind=ind
         Tfinished.append(Torders[i])
 
