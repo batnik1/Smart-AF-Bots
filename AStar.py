@@ -5,7 +5,7 @@ import queue
 import collections
 from Grid import Grid
 import time
-
+congestion_flag=1
 # from Map_Simul import Golden_Grid
 ks=0
 Golden_Grid={}
@@ -31,13 +31,13 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
     num=0
     if z==0:
         for agent in Agents:
-            if agent.Wait==True:
+            if agent.Wait==True or agent.direction=='rest':
                 continue
             num+=1
             X,Y=agent.position
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))
         for agent in Truck_Agents:
-            if agent.Wait==True:
+            if agent.Wait==True or agent.direction=='rest':
                 continue
             num+=1
             X,Y=agent.position
@@ -45,7 +45,7 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
     if z==1:
         num=len(Sorting_Agents)
         for agent in Sorting_Agents:
-            if agent.Wait==True:
+            if agent.Wait==True or agent.direction=='rest':
                 continue
             num+=1
             X,Y=agent.position
@@ -53,17 +53,16 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
     if z==2:
         num=len(Agents)+len(Truck_Agents)
         for agent in Agents:
-            if agent.Wait==True:
+            if agent.Wait==True or agent.direction=='rest':
                 continue
             num+=1
             X,Y=agent.position
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))
         for agent in Truck_Agents:
-            if agent.Wait==True:
+            if agent.Wait==True or agent.direction=='rest':
                 continue
             num+=1
             X,Y=agent.position
-       #     print('pos',-(pow(x-X,2)+pow(y-Y,2)))
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))/10    
     if num==0:
         return 0
@@ -72,8 +71,11 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
 Matrix = Grid(N, N)
 
 def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):
-    return 0.8*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
-
+    if congestion_flag:
+        return 0.8*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
+    else:
+        return 0.95*ManhattanDistance(Point,Goal)
+        
 class Search(): 
 
     def __init__(self, source, destination):

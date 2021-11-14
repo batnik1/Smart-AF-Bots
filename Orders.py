@@ -20,8 +20,8 @@ import time
 import collections
 from Map_Simul import *
 import random
+random.seed(10)
 import numpy as np
-from numpy.random.mtrand import rand
 import logging
 # def generate_order():
 #     item = rand() % num_of_items
@@ -156,5 +156,5 @@ def add_item(type,quantity,shelf):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
 
 
-add_items(1000)
+add_items(2)
 #print(racks)

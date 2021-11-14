@@ -1,6 +1,5 @@
 from window_Util import *      
-
-Number_of_Agents = 250
+Number_of_Agents = 50
 Number_of_SAgents= 20
 Number_of_TAgents=len(truck_resting)
 Agents = []
@@ -32,12 +31,12 @@ def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
         d=ManhattanDistance(rack_pos, agent.position)
-        if agent.Wait == True and mindis>d and 10*agent.charge>=d:
+        if agent.Wait == True and mindis>d and agent.charge>20:#10*agent.charge>=d:TODO: change to charge
             mindis=d
 
     for i in range(len(Agents)):
         if Agents[i].Wait==True:
-            if mindis==ManhattanDistance(rack_pos, Agents[i].position) and 10*Agents[i].charge>=d:
+            if mindis==ManhattanDistance(rack_pos, Agents[i].position) and agent.charge>20:#10*Agents[i].charge>=d:
                 return i
     return -1
 
@@ -78,10 +77,10 @@ def get_direction(a,b):
 
 def count_bots(Point):
     dirs=[1,2,3,4]
-    counts=[]
-    for d in dirs:
-        if d not in Matrix.grid[Point[0]][Point[1]]:
-            counts.append(d)
+    # counts=[]
+    # for d in dirs:
+    #     if d not in Matrix.grid[Point[0]][Point[1]]:
+    #         counts.append(d)
 
     maximus=0
     chus=0
@@ -99,16 +98,12 @@ def count_bots(Point):
             count+=1
         if count>maximus:
             chus=d
-       # print(count,d)
         maximus=max(maximus,count)
-    #input()    
     if chus==0:
         print(Position_Booking[(Point[0],Point[1])])
         print(maximus)
         input()
         return -1
-    # elif maximus>1:
-    #     print(maximus,Point)
     return chus
 
 def handle_intersection():
@@ -123,12 +118,14 @@ def handle_intersection():
                 if ken==0:
                     ken=1
                 Intersection_Gateway[(i,j)][Matrix.grid[i][j][ken]]=1
-                # print(Matrix.grid[i][j][k],Matrix.grid[i][j][ken])
                 break
       
 def handle_rack_agents(coloring, key):
-    
+    flag_finisher=0
     for agent in Agents:
+        if agent.Wait==True or agent.direction=='rest':
+            flag_finisher+=1
+          #  print("HUA")
         if agent.waitingperiod>0:
             agent.waitingperiod-=1
         if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-200)<=1:
@@ -185,51 +182,26 @@ def handle_rack_agents(coloring, key):
             agent.charge-=0.05
             
             newPos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-            # print(Position_Booking[newPos])
-         #   print(newPos)
-          #  input()
             if Position_Booking[newPos]==0 or (newPos==agent.position):
-                # Position_Booking[agent.position]=0
-                # if agent.position in Position_Booking:
-                #     Position_Booking.pop(agent.position)
                 new_pos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-                # agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-                # Position_Booking[agent.position]=1
-                #print(Position_Booking)
-               # print(agent.position)
-               # input()
                 agent.Index-=1
                 flag=0
 
                 if Intersec_dic[(new_pos[0],new_pos[1])]==1:     
-                    #    print(Intersection_Gateway[(new_pos[0],new_pos[1])])
                         target_dir=get_direction(new_pos,agent.position)
-                      #  print(target_dir)
                         if Intersection_Gateway[(new_pos[0],new_pos[1])][target_dir]==0:
-                            # print("A")
                             if key-Intersection_waiting[(new_pos[0],new_pos[1])]>50: 
-                                # print("B")
                                 Intersection_waiting[(new_pos[0],new_pos[1])]=key
                                 dir=count_bots(new_pos)  #Evil Laugh in background**
-                                # print(dir)
                                 if dir==-1:
                                     print('Error')
-                                    print(new_pos)
-                                    print(agent.position)
-                                    print(Position_Booking[(new_pos[0],new_pos[1])])
-                                    print(Position_Booking[agent.position])
                                 if dir !=0 :
                                     Intersection_Gateway[(new_pos[0],new_pos[1])]=[0]*5
                                     Intersection_Gateway[(new_pos[0],new_pos[1])][dir]=1
-                                    flag=1
-                                else:
-                                    print("Death preceeds us")
-                                    
+                                    flag=1                     
                             else:   
                                 agent.Index+=1
                                 flag=1
-                        #input()
-                        # print(key)
                 if flag==0:
                     Position_Booking[agent.position]=0
                     if agent.position in Position_Booking:
@@ -238,7 +210,6 @@ def handle_rack_agents(coloring, key):
                     Position_Booking[agent.position]=1
             else:
                 pass
-                # print('vis',agent.position,newPos)
             if agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1:
                 heating=heat_value(agent.position,0,Agents,Truck_Agents,Sorting_Agents)
                 heating*=100
@@ -249,8 +220,8 @@ def handle_rack_agents(coloring, key):
                     agent.color = colors.YELLOW1
                 else:
                     agent.color = colors.RED1
-                    #agent.changelane=1
-                    #agent.waitingperiod=10
+                    agent.changelane=1
+                    agent.waitingperiod=10
                                 
         elif agent.direction!="rest":
             
@@ -259,7 +230,6 @@ def handle_rack_agents(coloring, key):
                 
             if agent.goalindex<len(agent.goals):
                 if agent.goals[agent.goalindex]==[-7,-7]:
-                    # logger.info('Bot '+str(agent.ind)+': Reached the Desired Rack')
                     logger.info('Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached the Desired Rack.')
                     
                     agent.goalindex+=1
@@ -305,7 +275,7 @@ def handle_rack_agents(coloring, key):
                     agent.Wait = True
                     agent.color = colors.YELLOW1
                     agent.size=2
-                    pygame.draw.circle(screen, agent.color, agent.position, agent.size,width=1)
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     
                     remove=[]
                     for colo in range(len(coloring)):
@@ -336,11 +306,11 @@ def handle_rack_agents(coloring, key):
                     agent.color = colors.YELLOW1
                     agent.size=2
                     agent.Wait=True
-                    pygame.draw.circle(screen, agent.color, agent.position, agent.size,width=1)
+                    pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     continue
                         
-            if agent.position in Intersections:
-                # print('Hardik Galat hai')
+            if Intersec_dic[(agent.position[0],agent.position[1])]==1:
+            # if agent.position in Intersections:
                 togoal=agent.goals[agent.goalindex]
                 nearestIntersec=agent.nearestgoals[agent.goalindex] 
                 if agent.position==nearestIntersec:       # Goal is very near to this
@@ -350,10 +320,7 @@ def handle_rack_agents(coloring, key):
                 else:
                     nAgent = Search(agent.position,nearestIntersec)
                     nAgent.AStar(Agents,Truck_Agents,Sorting_Agents,0)
-                    # nextIntersec=nAgent.getPath()
                     agent.direction="motion"
-                    # agent.Path=nearest_intersection_path(agent.position,nextIntersec)
-                    # agent.Index=len(agent.Path)-1
 
                     nextIntersec_path=nAgent.getPathLong()
                     nextIntersec_path.reverse()
@@ -380,8 +347,8 @@ def handle_rack_agents(coloring, key):
             Position_Booking[agent.position]=1
 
 
-        pygame.draw.circle(screen, agent.color, agent.position, agent.size,width=1)
-
+        pygame.draw.circle(screen, agent.color, agent.position, agent.size)
+    return flag_finisher
 def handle_conveyor_belt(sorting_orders):
     removing_conveyor=[]
     for i in range(len(Conveyor_Agents)):
@@ -396,11 +363,12 @@ def handle_conveyor_belt(sorting_orders):
             sorting_orders.append(conveyor_agent.order_id)          
             conveyor_agent.Path=[]
             removing_conveyor.append(i)
-            conveyor_agent.color=colors.PALEGREEN
-        pygame.draw.circle(screen, conveyor_agent.color, conveyor_agent.position,4,width=1)
+            # conveyor_agent.color=colors.PALEGREEN
+        pygame.draw.circle(screen, conveyor_agent.color, conveyor_agent.position,4)
     for ind in removing_conveyor:
         Conveyor_Agents.remove(Conveyor_Agents[ind])
     removing_conveyor.clear()
+    
 
 def handle_sorting_agents(sorting_orders):
     finished_sorder=[]
@@ -413,7 +381,10 @@ def handle_sorting_agents(sorting_orders):
         logger.info('Sorting Order'+','+str(sorder)+','+'Sorting Bot'+','+str(ind)+','+"Bot is moving order to it's dumping point.")
         agent.ind=ind
         #sorting_bots.insert_one({"_id":ind,"Order_ID":order_id})
-        address=tuple(order_history.find_one({"_id":sorder})["address"])
+        if  sorder[0:3]=='Dum':
+            address=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
+        else:
+            address=tuple(order_history.find_one({"_id":sorder})["address"])
         finished_sorder.append(sorder)
         agent.goals=[numofdump["conveyor"],[-7,-7],numofdump[str(address)],[-14,-14]]
         agent.nearestgoals=[]
@@ -512,7 +483,7 @@ def handle_sorting_agents(sorting_orders):
         pygame.draw.circle(screen, sagent.color, sagent.position, sagent.size,width=1)
 
 
-def handle_truck_agents():
+def handle_truck_agents(key):
     for agent in Truck_Agents:
         # print(100*heat_value(agent.position,2,Agents,Truck_Agents,Sorting_Agents))
         if agent.waitingperiod>0:
@@ -524,8 +495,35 @@ def handle_truck_agents():
                 agent.Path=[]
 
         if agent.Index>=0:
-            agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
-            agent.Index-=1
+            newPos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+            if Position_Booking[newPos]==0 or (newPos==agent.position):
+                new_pos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+                agent.Index-=1
+                flag=0
+
+                if Intersec_dic[(new_pos[0],new_pos[1])]==1:     
+                        target_dir=get_direction(new_pos,agent.position)
+                        if Intersection_Gateway[(new_pos[0],new_pos[1])][target_dir]==0:
+                            if key-Intersection_waiting[(new_pos[0],new_pos[1])]>50: 
+                                Intersection_waiting[(new_pos[0],new_pos[1])]=key
+                                dir=count_bots(new_pos)  #Evil Laugh in background**
+                                if dir==-1:
+                                    print('Error')
+                                if dir !=0 :
+                                    Intersection_Gateway[(new_pos[0],new_pos[1])]=[0]*5
+                                    Intersection_Gateway[(new_pos[0],new_pos[1])][dir]=1
+                                    flag=1                     
+                            else:   
+                                agent.Index+=1
+                                flag=1
+                if flag==0:
+                    Position_Booking[agent.position]=0
+                    if agent.position in Position_Booking:
+                        Position_Booking.pop(agent.position)
+                    agent.position = new_pos
+                    Position_Booking[agent.position]=1
+            else:
+                pass
             if agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1 and 100*heat_value(agent.position,2,Agents,Truck_Agents,Sorting_Agents)>11:
               #  print("changing Lanes")
                 agent.changelane=1
@@ -553,7 +551,7 @@ def handle_truck_agents():
                     pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     continue
 
-            if agent.position in Intersections:
+            if Intersec_dic[(agent.position[0],agent.position[1])]==1:
                 togoal=agent.goals[agent.goalindex]
                 nearestIntersec=agent.nearestgoals[agent.goalindex] 
                 if agent.position==nearestIntersec:       # Goal is very near to this
@@ -564,9 +562,6 @@ def handle_truck_agents():
                     nAgent = Search(agent.position,nearestIntersec)
                     nAgent.AStar(Agents,Truck_Agents,Sorting_Agents,2)
                     agent.direction="motion"
-                    # nextIntersec=nAgent.getPath()
-                    # agent.Path=nearest_intersection_path(agent.position,nextIntersec)
-                    # agent.Index=len(agent.Path)-1
                     nextIntersec_path=nAgent.getPathLong()
                     nextIntersec_path.reverse()
                     path_temp1=[]
@@ -584,7 +579,12 @@ def handle_truck_agents():
                 agent.Path=nearest_intersection_path(agent.position,nearestIntersec)
                 agent.direction="motion"
                 agent.Index=len(agent.Path)-1
-
+            Position_Booking[agent.position]=0
+            if agent.position in Position_Booking:
+                    Position_Booking.pop(agent.position)
+            
             agent.position = (agent.Path[agent.Index][0], agent.Path[agent.Index][1])
+            agent.Index-=1
+            Position_Booking[agent.position]=1
 
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)

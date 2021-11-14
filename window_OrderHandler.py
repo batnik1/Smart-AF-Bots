@@ -43,7 +43,7 @@ def handle_orders():
 
             agent.Wait = False
             agent.color = colors.LIGHTBLUE1
-            agent.size = 4
+            agent.size = 3
             agent.order_id=order_id
             agent.items_carrying=list_racks[rack]
             agent.CurRack=rack
@@ -74,6 +74,10 @@ def truck_orders():
         shelf=str((random.randint(0, m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
         items.append([type,quantity,shelf])
     return items
+def dummy_sorting(key,count):
+    
+    for i in range(1,count+1):
+        sorting_orders.append('Dummy '+str(key)+'#'+str(i))
 
 def handle_Torders():
     Tfinished=[]

@@ -1,6 +1,5 @@
 import AStar
 from Agent007 import Agent
-import random
 import pygame
 from final_run import *
 from Orders import *

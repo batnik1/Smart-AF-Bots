@@ -1,5 +1,6 @@
 import math
 import random
+random.seed(20)
 import colors
 #  1 toh yeh truck wale aur varna yeh counter
 
@@ -13,7 +14,7 @@ class Agent():
         self.Path = []
         self.CurRack = str((random.randint(0,n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
         self.color = colors.YELLOW1
-        self.size = 4
+        self.size = 1
         self.order_id=0
         self.items_carrying=[]
         self.ind=0

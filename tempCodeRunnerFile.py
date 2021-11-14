@@ -1,1 +1,2 @@
- Intersection_Gateway[(i,j)]!=[0,1,0,0,0]:
+dict={}
+# dict['Model1']=[5,100,]
