@@ -206,10 +206,3 @@ def get_charging():
             charging_state[i]=1
             return i,charging_loc[i]
     return -1,-1
-
-def write_path(agent_position):
-    a = Reverse_Station[0].getBFSPath(agent_position)
-    b = Station[0].getBFSPath(agent_position)
-    b.reverse()
-    a = a+b
-    return a

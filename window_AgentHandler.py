@@ -7,10 +7,13 @@ Conveyor_Agents=[]
 coutins=0
 Sorting_Agents=[]
 Truck_Agents=[]
-def init_agents():
+num_Agents=[1,10,25,50,75,100]
+def init_agents(ind):
+    global Number_of_Agents
+    Number_of_Agents=num_Agents[ind]
     for _ in range(Number_of_Agents):
         nAgent=Agent(0,n,m)
-        nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
+        # nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
         nAgent.position=numofrack[nAgent.CurRack]
         Agents.append(nAgent)
 
@@ -39,7 +42,6 @@ def get_Agent(rack_pos):
             if mindis==ManhattanDistance(rack_pos, Agents[i].position) and agent.charge>20:#10*Agents[i].charge>=d:
                 return i
     return -1
-
 def get_SAgent(rack_pos):
     mindis=99999999999999999
     for agent in Sorting_Agents:
@@ -123,7 +125,7 @@ def handle_intersection():
 def handle_rack_agents(coloring, key):
     flag_finisher=0
     for agent in Agents:
-        if agent.Wait==True or agent.direction=='rest':
+        if agent.Wait==True:
             flag_finisher+=1
           #  print("HUA")
         if agent.waitingperiod>0:
@@ -210,7 +212,7 @@ def handle_rack_agents(coloring, key):
                     Position_Booking[agent.position]=1
             else:
                 pass
-            if agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1:
+            if congestion_flag and agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1:
                 heating=heat_value(agent.position,0,Agents,Truck_Agents,Sorting_Agents)
                 heating*=100
             

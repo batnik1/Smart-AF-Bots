@@ -3,16 +3,18 @@ orders=[]
 Torders=[]
 sorting_orders=[]
 coloring=[]
+
 def handle_orders():
     finished=[]
+    
     for i in range(len(orders)):
         list_racks = orders[i][0]
         hCounter=orders[i][1]
         order_id=orders[i][2]
-        count=0
         finished_racks=[]
         for rack in list_racks:    
             if rack_available[rack]!=1:
+                # print('SKIP',order_id)
                 continue
 
             rack_location=numofrack[rack]
@@ -20,7 +22,9 @@ def handle_orders():
             if ind == -1:
                 break
             rack_available[rack]=0
+            
             agent=Agents[ind]
+            agent.CurRack=rack
             # logger.info('Bot '+str(ind)+" is assigned to go to Rack "+str(rack))
             logger.info('Order'+','+str(order_id)+','+'Warehouse'+','+str(ind)+','+'Bot is assigned to go to Rack.')
             agent.ind=ind
