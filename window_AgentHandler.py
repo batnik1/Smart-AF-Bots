@@ -42,7 +42,6 @@ def get_Agent(rack_pos):
             if mindis==ManhattanDistance(rack_pos, Agents[i].position) and agent.charge>20:#10*Agents[i].charge>=d:
                 return i
     return -1
-
 def get_SAgent(rack_pos):
     mindis=99999999999999999
     for agent in Sorting_Agents:
