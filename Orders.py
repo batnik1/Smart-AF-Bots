@@ -86,6 +86,7 @@ def assign_rack(orders):
               racks_dict[lst[j][1]]=[[order[0],lst[j][0]]]
           if target<=0:
             break
+            
     if collection.find_one({"type":order[0]}): 
       if collection.find_one({"type":order[0]})["quantity"]==0:
         collection.delete_one({"type":order[0]})
@@ -110,8 +111,8 @@ def gen_a_order():
       
   racks=assign_rack(order)
   
-  human_counter= random.randint(0,2*m-1)
-  #human_counter=0
+  # human_counter= random.randint(0,2*m-1)
+  human_counter=0
   
   order_id=str(uuid.uuid4())
   if len(order)==0:
@@ -133,6 +134,7 @@ def add_items(count):
     item_types_in_db.add(type)
     quantity=random.randint(1,3)
     shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
+    # shelf=str((0, 0, random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
       if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
@@ -156,5 +158,5 @@ def add_item(type,quantity,shelf):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
 
 
-add_items(2)
+add_items(30)
 #print(racks)

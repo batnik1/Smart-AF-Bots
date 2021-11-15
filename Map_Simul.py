@@ -23,7 +23,7 @@ display_height = 120*n+300
 racks_height = 120*n+160
 racks_width = 120*m+160
 
-rack_available={}
+rack_available=defaultdict(int)
 def rack_available_fn():
     for i in range(m):
         for j in range(n):
@@ -32,6 +32,14 @@ def rack_available_fn():
                     rack_available[str((i,j,k,l))]=1
 
 rack_available_fn()
+extras=[]
+for i in range(m):
+    for j in range(n):
+        for k in range(5):
+            for l in range(5):
+                if rack_available[str((i,j,k,l))]!=1:
+                    print(rack_available[str((i,j,k,l))])
+                    extras.append(str((i,j,k,l)))
 #print(rack_availaible[str((3,1,1,1))])
 
 
@@ -387,5 +395,7 @@ def nearest_intersection_path(source,destination):
         return list(zip(path,[y1]*len(path)))
     else:
         print('Fucked')
+
+
 
 # TODO: Verify this Magnificient Piece of Art
