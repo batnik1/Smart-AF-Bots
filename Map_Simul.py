@@ -389,3 +389,5 @@ def nearest_intersection_path(source,destination):
         print('Fucked')
 
 # TODO: Verify this Magnificient Piece of Art
+
+
