@@ -22,9 +22,6 @@ count=0
 for fil in range(len(y_arr)):
     count+=1
     filename='./Pics/image'+str(y_arr[fil])+'.jpg'
-
-    # filename=x_arr[dis[y_arr[fil]]]
-   # print(filename)
     img = cv2.imread(filename)
     height, width, layers = img.shape
     size = (width,height)

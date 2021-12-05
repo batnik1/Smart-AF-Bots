@@ -5,10 +5,17 @@ import queue
 import collections
 from Grid import Grid
 import time
+import yaml
 
-congestion_flag=1
 ks=0
 Golden_Grid={}
+
+def get_config(config):
+    with open(config, 'r') as stream:
+        return yaml.load(stream)
+
+config = get_config('parameters.yaml')
+congestion_flag=config['congestion_flag']
 
 def ManhattanDistance(start, end):
     return abs(start[0]-end[0])+abs(start[1]-end[1])

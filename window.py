@@ -1,24 +1,14 @@
 import argparse
 import numpy as np
 
-# parser=argparse.ArgumentParser()
-# parser.add_argument('n_Agents',type=int)
-# args=parser.parse_args()
 from window_OrderHandler import *
 
-import sys,io,os
-# from os import path
-# if(path.exists('input.txt')):
-#      sys.stdin = open('input.txt','r')
-#      sys.stdout = open('output.txt','a')
-# else:
-#      input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
 
 running = 1
 key=0  
 paused=0  
-order_freq=50
-truck_freq=50000
+order_freq=config['order_freq']
+truck_freq=config['truck_freq']
 initHCtoConveyor()
 def init_screen():
     screen.fill((0, 0, 0))
@@ -32,7 +22,6 @@ def init_screen():
     build_charging_lines()
     build_charging_zone()
     make_sorting_area()
-
 
 
 init_agents()
@@ -95,4 +84,4 @@ while running:
          pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
     
     pygame.display.update()
-    pygame.image.save(screen,"./Pics/image"+str(key)+".jpg")
+   # pygame.image.save(screen,"./Pics/image"+str(key)+".jpg")

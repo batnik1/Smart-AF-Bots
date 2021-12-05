@@ -25,10 +25,10 @@ order_history = db["order_history"]
 order_db.drop()
 collection.drop()
 
-type_of_items = 5
-max_diff_item=3
-max_order_limit = 5
-
+type_of_items = config['type_of_items']
+max_diff_item = config['max_diff_item']
+max_order_limit = config['max_order_limit']
+initial_items= config['initial_items']
 # Creating Log File
 logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s', filemode='w')
 logger = logging.getLogger()
@@ -140,4 +140,4 @@ def add_item(type, quantity, shelf):
                               {"shelf": shelf, "quantity": quantity}]})
 
 
-add_items(100)    # Adding some Items initially in Warehouse so that Bots don't have to sit idle
+add_items(initial_items)    # Adding some Items initially in Warehouse so that Bots don't have to sit idle

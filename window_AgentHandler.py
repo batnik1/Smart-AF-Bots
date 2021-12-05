@@ -1,14 +1,14 @@
 from window_Util import *      
-Number_of_Agents = 100
-Number_of_SAgents= 75
+Number_of_Agents=config['Number_of_Agents']
+Number_of_SAgents= config['Number_of_SAgents']
 Number_of_TAgents=len(truck_resting)
 Agents = []
 Conveyor_Agents=[]
-coutins=0
 Sorting_Agents=[]
 Truck_Agents=[]
-random_intersection_flag=1
-epsilon=0.75
+
+random_intersection_flag=config['random_intersection_flag']
+epsilon=config['epsilon']
 
 # Used for Initialising our agents of rack/truck/sorting
 def init_agents():

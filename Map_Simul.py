@@ -5,15 +5,24 @@ import AStar
 from AStar import Search,Matrix,Golden_Grid
 import colors
 from collections import defaultdict
-
+import yaml
 
 import time
+
+# get configs
+def get_config(config):
+    with open(config, 'r') as stream:
+        return yaml.load(stream)
+
+config = get_config('parameters.yaml')
+
+
 Intersections=[]
-# n,m=input().split()   Take input from User
-m = 4 # width
-n = 4  # height     (n,m)>=2
-sorting_m=6
-sorting_n=4
+
+m = config['m']   # width
+n = config['n']  # height     (n,m)>=2
+sorting_m=config['sorting_m']
+sorting_n=config['sorting_n']
 
 
 
