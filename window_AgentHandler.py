@@ -1,5 +1,5 @@
 from window_Util import *      
-Number_of_Agents = 50
+Number_of_Agents = 100
 Number_of_SAgents= 75
 Number_of_TAgents=len(truck_resting)
 Agents = []
@@ -7,17 +7,11 @@ Conveyor_Agents=[]
 coutins=0
 Sorting_Agents=[]
 Truck_Agents=[]
-# num_Agents=[4,10,25,50,75,100,300]
-num_Agents=[75]
-num_epsilon=[0.5,0.75,1]
 random_intersection_flag=1
-epsilon=0.6
+epsilon=0.75
 
-def init_agents(ind,test_flag,ind2):
-    global Number_of_Agents,random_intersection_flag,epsilon
-    Number_of_Agents=num_Agents[ind]
-    random_intersection_flag=test_flag
-    epsilon=num_epsilon[ind2]
+# Used for Initialising our agents of rack/truck/sorting
+def init_agents():
     for _ in range(Number_of_Agents):
         nAgent=Agent(0,n,m)
         # nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
@@ -37,6 +31,7 @@ def init_agents(ind,test_flag,ind2):
         nAgent.position=truck_resting[i]
         Truck_Agents.append(nAgent)
 
+# Get the nearest agent from the rack given
 def get_Agent(rack_pos):
     mindis=99999999999999999
     for agent in Agents:
@@ -67,6 +62,7 @@ def get_TAgent():
             return i
     return -1
 
+# Getting direction from 2 points
 def get_direction(a,b):
     x1,y1=a
     x2,y2=b
@@ -80,10 +76,8 @@ def get_direction(a,b):
             return 3
         else:
             return 4
-    else:
-        print("Dead Direction Kid")
 
-
+# Counting number of bots on directions allowed by the intersection and return the road with max bots waiting
 def count_bots(Point):
     dirs=[1,2,3,4]
     maximus=0
@@ -120,7 +114,7 @@ def count_bots(Point):
 
     return finald
     
-
+# another method for handling intersections where we randomly change the intersection direction
 def handle_intersection():
     for i,j in Intersections:
         if Intersection_Gateway[(i,j)]==[0]*5:
@@ -135,8 +129,10 @@ def handle_intersection():
                 Intersection_Gateway[(i,j)][Matrix.grid[i][j][ken]]=1
                 break
       
+#  handling rack agents
 def handle_rack_agents(coloring, key):
     flag_finisher=0
+    # Checking for rack cooldown
     for agent in Agents:
         if agent.cooldown_rack>0:
             agent.cooldown_rack-=1
@@ -145,9 +141,11 @@ def handle_rack_agents(coloring, key):
             continue
         if agent.Wait==True:
             flag_finisher+=1
-          #  print("HUA")
+
+        # Reducing waiting period every loop
         if agent.waitingperiod>0:
             agent.waitingperiod-=1
+        # Sending agent back to its defautl rack after charging is fulll
         if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-200)<=1:
             charging_state[agent.cStation]=0
             agent.cStation=-1
@@ -165,12 +163,13 @@ def handle_rack_agents(coloring, key):
                 togoal=agent.goals[xx]
                 nearestIntersec=nearest_intersection(togoal,rev=True) 
                 agent.nearestgoals.append(nearestIntersec)
-            
+          
         if agent.Index <= -1 and agent.direction=="rest":
+            # Increasing charge
             if agent.needcharge==True:
                 agent.color = colors.GREEN
                 agent.charge+=.1
-
+            # Assigning agent a charging station if charge is low
             if agent.charge<20 and agent.needcharge == False:
                 charge_ind,charge_box=get_charging()
                 if charge_box==-1:
@@ -200,7 +199,7 @@ def handle_rack_agents(coloring, key):
         if agent.Index>=0:
             
             agent.charge-=0.05
-            
+            # Intersection Management is handled by the ghost robot collision 
             newPos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
             if Position_Booking[newPos]==0 or (newPos==agent.position):
                 new_pos=(agent.Path[agent.Index][0], agent.Path[agent.Index][1])
@@ -228,6 +227,7 @@ def handle_rack_agents(coloring, key):
                     Position_Booking[agent.position]=1
             else:
                 pass
+            # Congestion Management
             if congestion_flag and agent.waitingperiod==0 and Intersec_dic[(agent.position[0],agent.position[1])]==1:
                 heating=heat_value(agent.position,0,Agents,Truck_Agents,Sorting_Agents)
                 heating*=100
@@ -240,7 +240,7 @@ def handle_rack_agents(coloring, key):
                     agent.color = colors.RED1
                     agent.changelane=1
                     agent.waitingperiod=50
-                                
+        # Different Logs in situations                      
         elif agent.direction!="rest":
             # if agent.goalindex==0:
 
@@ -271,7 +271,6 @@ def handle_rack_agents(coloring, key):
                     for items in agent.items_carrying:
                         total_items_carrying+=items[1]
                     if total_items_carrying+progress==quantity:
-                        # logger.info("Order "+str(doc['_id'])+" is finished")
                         logger.info('Finished Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(agent.ind)+','+'Order is completed.')
                         # delivered.insert_one({"_id":doc["_id"],"dumping_rack":sorting_random,"dumped":False})
                         conveyor_agent= Agent(1,n,m)
@@ -338,7 +337,7 @@ def handle_rack_agents(coloring, key):
                     agent.Wait=True
                     pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     continue
-                        
+            # Calculating final paths when paths are empty but goals are still not reached.          
             if Intersec_dic[(agent.position[0],agent.position[1])]==1:
             # if agent.position in Intersections:
                 togoal=agent.goals[agent.goalindex]
@@ -379,6 +378,8 @@ def handle_rack_agents(coloring, key):
 
         pygame.draw.circle(screen, agent.color, agent.position, agent.size)
     return flag_finisher
+
+# Same as for rack agents    
 def handle_conveyor_belt(sorting_orders):
     removing_conveyor=[]
     for i in range(len(Conveyor_Agents)):
@@ -400,7 +401,7 @@ def handle_conveyor_belt(sorting_orders):
         Conveyor_Agents.remove(ind)
     removing_conveyor.clear()
     
-
+# Same as for rack agents
 def handle_sorting_agents(sorting_orders):
     finished_sorder=[]
     for sorder in sorting_orders:
@@ -513,7 +514,7 @@ def handle_sorting_agents(sorting_orders):
                 sagent.position = (sagent.Path[sagent.Index][0],sagent.Path[sagent.Index][1])
         pygame.draw.circle(screen, sagent.color, sagent.position, sagent.size,width=1)
 
-
+# same as for rack agents
 def handle_truck_agents(key):
     for agent in Truck_Agents:
         # print(100*heat_value(agent.position,2,Agents,Truck_Agents,Sorting_Agents))

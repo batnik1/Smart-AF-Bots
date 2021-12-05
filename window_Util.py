@@ -1,10 +1,10 @@
 import AStar
 from Agent007 import Agent
 import pygame
-from final_run import *
 from Orders import *
+from Path_planner import *
 import collections
-
+# file just for drawing and showing to screen different utilities
 pygame.init()
 screen = pygame.display.set_mode((display_width, display_height))  # create screen
 pygame.event.set_allowed([pygame.QUIT, pygame.K_SPACE])
@@ -17,7 +17,7 @@ def ManhattanDistance(start, end):
 
 agent_color = colors.LIGHTBLUE1
 
-
+# Paths from Human Counter to sorting area
 HCtoConveyor={}
 def initHCtoConveyor():
     x=130
@@ -38,6 +38,7 @@ def compare(item1, item2):
     else:
         return 0
 
+# Making the sorting area
 def make_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
@@ -62,6 +63,7 @@ def make_sorting_area():
         pygame.draw.line(screen, colors.BLUE, (racks_width, y+10),(racks_width+sorting_w,y+10),2)
         y+=30
 
+# Drawing the coveyor on screen
 def conveyor():
     pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width, 0))
     pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (racks_width, racks_height+10),width=2)
@@ -75,7 +77,7 @@ def conveyor():
     
     
 
-
+# Functions to draw different things on screen
 def make_rect(x, y,color=(255,0,0)):
     pygame.draw.rect(screen,color, pygame.Rect(x, y, 10, 10))
 
@@ -85,8 +87,6 @@ def make_line(x, y, color):
         pygame.draw.line(screen, color, (x, 80), (x, racks_height-70))
     elif y:
         pygame.draw.line(screen, color, (80, y), (racks_width-70, y))
-
-# n - Height m - Cols
 
 
 def build_racks(n, m):
@@ -181,6 +181,9 @@ def build_station_zone():
 charging_state={}
 charging_loc={}
 charging_state_list=[]
+
+
+# Drawing chargin Stations
 def build_charge_dict():
     counting=-1
     for i in range((n//2+n % 2)*100+20,racks_height-90,10):

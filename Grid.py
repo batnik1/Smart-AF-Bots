@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 import numpy as np
 from matplotlib import path
-
+# grid class for making our roadmap
 class Grid():
 
     def __init__(self, width, height):

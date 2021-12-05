@@ -5,11 +5,11 @@ import queue
 import collections
 from Grid import Grid
 import time
-#  https://xxxx@github.com/batnik1/Smart-AF-Bots.git
+
 congestion_flag=1
-# from Map_Simul import Golden_Grid
 ks=0
 Golden_Grid={}
+
 def ManhattanDistance(start, end):
     return abs(start[0]-end[0])+abs(start[1]-end[1])
 
@@ -25,7 +25,7 @@ N = 1500
 diss = [[INF for i in range(N)] for j in range(N)]
 press = [[[-1, -1] for i in range(N)] for j in range(N)]
 
-def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
+def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):         # To get Heat Value at position = Point with flag as z depicting which type of bot we want to calculate for 
     x,y=Point
     heat=0
     sigma=100
@@ -71,7 +71,7 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
 
 Matrix = Grid(N, N)
 
-def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):
+def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):              # Heuristic Function
     if congestion_flag:
         return 0.9*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
     else:
@@ -83,40 +83,11 @@ class Search():
         self.heap = []
         self.source = source
         self.dest = destination
-        start=time.perf_counter()
         self.dist=[x[:] for x in diss]
         self.prev=[x[:] for x in press]
-        # self.dist = [[INF for i in range(N)] for j in range(N)]
-        # self.prev = [[[-1, -1] for i in range(N)] for j in range(N)]
-        end=time.perf_counter()
-        #print(end-start)
 
-    def AStarModif(self, sources):
-        for k in range(0, len(sources)):
-            heapq.heappush(self.heap, (ManhattanDistance(sources[k], self.dest), sources[k]))
-            self.dist[sources[k][0]][sources[k][1]
-                                     ] = ManhattanDistance(sources[k], self.dest)
-        while len(self.heap) > 0:
-            (d, cState) = heapq.heappop(self.heap)
-            if d > self.dist[cState[0]][cState[1]]:
-                continue
-            if cState == self.dest:
-                break
-            # print(cState[0],cState[1],Matrix.grid[cState[0]][cState[1]],"bete")
-            for i in range(1, len(Matrix.grid[cState[0]][cState[1]]), 1):
-                de = Matrix.grid[cState[0]][cState[1]][i]
-                # print(d)
-                nextX = dir[de][0]+cState[0]
-                nextY = dir[de][1]+cState[1]
-                if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                    if self.dist[nextX][nextY] > d+ManhattanDistance([nextX, nextY], self.dest)+1:
-                        self.dist[nextX][nextY] = d +ManhattanDistance([nextX, nextY], self.dest)+1
-                        self.prev[nextX][nextY] = cState
-                        heapq.heappush(self.heap, (self.dist[nextX][nextY], [nextX, nextY]))
-
-
-    def AStar(self,Agents,Truck_Agents,Sorting_Agents,flag):
-        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0, self.source))   # Cost,x,y
+    def AStar(self,Agents,Truck_Agents,Sorting_Agents,flag):    # Main Path Planning Function for all type of Agents
+        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0, self.source)) 
         self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
         while len(self.heap) > 0:
             (cumltv,g, cState) = heapq.heappop(self.heap)
@@ -139,10 +110,6 @@ class Search():
 
 
     def BFS(self, rev=False):
-        # global ks
-        # ks+=1
-        # print(ks)
-      #  ks+=1
         queue = collections.deque([self.source])
         self.dist[self.source[0]][self.source[1]] = 0
         while queue:
@@ -164,7 +131,7 @@ class Search():
             if cState == self.dest:
                 break
 
-    def getPath(self):
+    def getPath(self):          # To get next immediate Point in Path
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
             return []
         else:
@@ -176,7 +143,7 @@ class Search():
             res.reverse()
             return res[1]
 
-    def getPathLong(self):
+    def getPathLong(self):          # To get Path in Ambient Graph
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
             return []
         else:
@@ -188,16 +155,3 @@ class Search():
             res.reverse()
             return res
 
-    def getBFSPath(self, destiny):
-        if self.prev[destiny[0]][destiny[1]] == [-1, -1]:
-            #print("Not Possible")
-            return []
-        else:
-            res = [destiny]
-            cur = destiny
-            while self.prev[cur[0]][cur[1]] != [-1, -1]:
-                res.append(self.prev[cur[0]][cur[1]])
-                cur = self.prev[cur[0]][cur[1]]
-            res.reverse()
-            # print("Solution Exists")
-            return res

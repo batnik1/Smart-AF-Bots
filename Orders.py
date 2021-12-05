@@ -1,38 +1,21 @@
 """
-Which rack has which item
-
-total items in workshop, item type id in :{all the racks that have it}
-
-
-Item - Item  type Id ,Item ID, Rack Numbers in which it is stored
- 
-Gen_order():
-  rand item id
-
-Call_Truck():
-    for item in type of items:
-        d=rand_quantity()
+This file contains functions to do the following tasks:
+1) Random Order Generation
+2) Adding Items into DB
 
 """
 import uuid
-import re
-import time
-import collections
 from Map_Simul import *
 import random
 random.seed(2500)
 import numpy as np
 import logging
-# def generate_order():
-#     item = rand() % num_of_items
-#     quant = rand() % 10
-#     return (item, quant)
 
 import pymongo
 from pymongo import MongoClient
 connection = MongoClient('localhost', 27017)
 
-item_types_in_db = set()
+item_types_in_db = set()  # List of all item type which have non zero quantity in our DB
 
 db = connection['Warehouse']
 collection = db["big_database"]
@@ -43,16 +26,17 @@ order_db.drop()
 collection.drop()
 
 type_of_items = 5
+max_diff_item=3
 max_order_limit = 5
 
 # Creating Log File
-logging.basicConfig(filename="Warehouse.log",
-                    format='%(asctime)s %(message)s', filemode='w')
+logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s', filemode='w')
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 
-def assign_rack(orders):
+# After we get the list of Orders which is of form (Item,Quantity) , here the function returns the list of racks on which those items lie.
+def assign_rack(orders):    
   racks_dict={}
   for order in orders:
     docker=collection.find({"type":order[0]})
@@ -89,9 +73,10 @@ def assign_rack(orders):
 
   return racks_dict
 
+# To generate a random order by initializing all the fields required (Order ID , Human Counter Index , List of Racks)
 def gen_a_order(): 
   global item_types_in_db
-  num_types_ordered=random.randint(1,3)
+  num_types_ordered=random.randint(1,max_diff_item)
   order=[]
   sum=0  
   types_chosen=random.sample(item_types_in_db,min(num_types_ordered,len(item_types_in_db)))
@@ -113,7 +98,6 @@ def gen_a_order():
   if len(order)==0:
     return "Nothing"
   sorting_random=(random.randint(0,2*sorting_n-1),random.randint(0,2*sorting_m-1))
-  # logger.info('New Order is Placed with Order ID: '+str(order_id)+' which consists of '+str(order))
   logger.info('New Order'+','+str(order_id)+','+'-'+','+'-'+','+'New Order is Placed.')
   order_db.insert_one({"_id":order_id,"order_progress":0,"ordered_quantity":sum,"Target_Racks":racks,"human_counter":human_counter})  
   order_history.insert_one({"_id":order_id,"ordered":order,"address":sorting_random})  
@@ -121,13 +105,13 @@ def gen_a_order():
 
 
 
-
+# This function is to add ay arbitary number of items in warehouse on random racks with random quantity.
 def add_items(count):
   global item_types_in_db
   for _ in range(count):
     type=random.randint(0,type_of_items)
     item_types_in_db.add(type)
-    quantity=random.randint(1,3)
+    quantity=random.randint(1,max_order_limit)
     shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
@@ -139,6 +123,7 @@ def add_items(count):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
   return item_types_in_db
 
+# This function is to update the DB when Truck bots arrive to racks with new items
 def add_item(type, quantity, shelf):
     global item_types_in_db
     item_types_in_db.add(type)
@@ -155,4 +140,4 @@ def add_item(type, quantity, shelf):
                               {"shelf": shelf, "quantity": quantity}]})
 
 
-add_items(75)
+add_items(100)    # Adding some Items initially in Warehouse so that Bots don't have to sit idle

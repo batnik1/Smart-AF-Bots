@@ -1,7 +1,8 @@
 import cv2
 import numpy as np
 import glob
- 
+
+# This file is just for taking screenshots of the running process at each epoch and merge the whole thing to make a video for demonstration
 img_array = []
 x_arr=[]
 count=0

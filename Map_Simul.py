@@ -23,6 +23,7 @@ display_height = 120*n+300
 racks_height = 120*n+160
 racks_width = 120*m+160
 
+# Availability Checking of Racks using rack_available dictionary
 rack_available=defaultdict(int)
 def rack_available_fn():
     for i in range(m):
@@ -40,9 +41,8 @@ for i in range(m):
                 if rack_available[str((i,j,k,l))]!=1:
                     print(rack_available[str((i,j,k,l))])
                     extras.append(str((i,j,k,l)))
-#print(rack_availaible[str((3,1,1,1))])
 
-
+# position of racks calculated 
 numofrack={}
 def num_racks(xx,xxx):
     for i in range(m):
@@ -54,8 +54,7 @@ def num_racks(xx,xxx):
                     numofrack[str((i,j,k,l))]=((k-1)*20+numofrack[str((i,j,1,0))][0],numofrack[str((i,j,1,l))][1])
 
 num_racks(n,m)
-#print(numofrack[str((0,0,1,1))])
-#y=100
+#Dumping location 
 numofdump={}
 def numofdumping():
     x=racks_width+20
@@ -69,7 +68,7 @@ def numofdumping():
 numofdumping()
 numofdump["conveyor"]=(racks_width,(80+racks_height//2)//2+20)
 
-
+# Human counter location
 numofhcounter={}
 def num_hcounter(n,m):
     for i in range(2):
@@ -78,6 +77,8 @@ def num_hcounter(n,m):
 num_hcounter(n,m)
 pygame.display.set_caption("Warehouse Simulation V1.0")
 
+
+# waste 1,2,3 for making roadmap
 def waste3(x, y, dir):
     if x:
         add_edge((x, 80), (x, racks_height-70),dir)
@@ -107,7 +108,7 @@ def waste2(n, m):
         y += 120
 
 
-
+# Direction dictionary
 direction = {}
 direction["up"] = 1
 direction["down"] = 2
@@ -115,8 +116,7 @@ direction["right"] = 3
 direction["left"] = 4
 
 
-#  Grid[x][y]=empty list ho
-
+# add edge function to make connectivity edge between two points in a particualr direction
 def add_edge(X, Y, dir):
     if X[0] == Y[0]:
         for i in range(X[1], Y[1]+1, 1):
@@ -126,7 +126,7 @@ def add_edge(X, Y, dir):
             Matrix.grid[i][X[1]].append(dir)
 
 
-
+# Making the sorting area
 def marking_line(x,y):
     add_edge((x+15,y-10),(x+15,y+100),direction["up"])
     add_edge((x+55,y-10),(x+55,y+100),direction["up"])
@@ -163,7 +163,7 @@ def marking_station_line():
         countin+=1
     
 
-
+# Making the conveyor belt
 def waste_conveyor_belt():
     add_edge((130, 0), (racks_width, 0),direction["right"])
     add_edge((130, racks_height+10), (racks_width, racks_height+10),direction["right"])
@@ -175,6 +175,7 @@ def waste_conveyor_belt():
         add_edge((x, racks_height-5), (x,racks_height+9),direction["down"])
         x+=120
 
+# Making the charging area
 def waste_charging():
     for i in range((n//2+n % 2)*100+20,racks_height-90,10):
         add_edge((30,i),(80,i),direction["right"])
@@ -183,7 +184,7 @@ def waste_charging():
     add_edge((30, racks_height-90), (80, racks_height-90),direction["right"])
     add_edge((30, (n//2+n % 2)*100+10), (30, racks_height-90),direction["down"])
 
-    
+# making the connectivity lanes in sorting area
 def waste_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
@@ -225,30 +226,9 @@ def waste_sorting_area():
         add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["left"])
         y+=60
 
-    # sorting_w=sorting_m*60+20
-    # sorting_h=sorting_n*60+20
-    # pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,sorting_w,sorting_h),3)
-    # pygame.draw.line(screen,colors.BLUE,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
-    # x=racks_width+20
-
-    # for _ in range(int(2*sorting_m)):
-    #    y=100
-    #    for _ in range(int(2*sorting_n)):
-    #        make_rect(x, y,colors.PURPLE3)
-    #        y+=30
-    #    x+=30  
-    # x=racks_width+10
-    # y=80
-    # for i in range(2*sorting_m+1):
-    #     pygame.draw.line(screen, colors.GREEN, (x, 80),(x,sorting_h+80),2)
-    #     x+=30
-    # for i in range(2*sorting_n+1):
-    #     pygame.draw.line(screen, colors.BLUE, (racks_width, y+10),(racks_width+sorting_w,y+10),2)
-    #     y+=30
-
+    
 new_praylist=[]
+# Assigning directions to all interesections
 def duplicate_grid():
 
     for i,j in Intersections:
@@ -269,6 +249,7 @@ waste_charging()
 marking_station_line()
 
 
+# Calculating Intersections
 stack=[]
 for i in range(1500):
     for j in range(1500):
@@ -296,6 +277,8 @@ pradius=[]
 count=0
 vis={}
 
+
+# BFS on our ambient workspace
 while len(stack):
     x,y=stack.pop()
     if (x,y) in vis:
@@ -329,7 +312,6 @@ while len(stack):
 
 
 
-#print(Golden_Grid)    
 
 def ged(x):
     if x>0:
@@ -343,12 +325,13 @@ Position_Booking=defaultdict(int)
 Intersection_Gateway={}
 Intersection_waiting=defaultdict(int)
 
+# Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
     Intersec_dic[(i,j)]=1
     Intersection_Gateway[(i,j)]=[0]*5
 
-
+# Calculating nearest_intersection from our ambient workspace into our roadmap
 def nearest_intersection(source,rev=False):
     stack=[source]
     vis={}
@@ -372,6 +355,7 @@ def nearest_intersection(source,rev=False):
                 stack.append((x,y))    
     return None
 
+# Returning the path from earlier function
 def nearest_intersection_path(source,destination):
     if source==None or destination==None:
         return []
@@ -394,11 +378,5 @@ def nearest_intersection_path(source,destination):
         else:
             path=list(range(x2,x1))
         return list(zip(path,[y1]*len(path)))
-    else:
-        print('Fucked')
-
-
-
-# TODO: Verify this Magnificient Piece of Art
 
 
