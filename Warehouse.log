@@ -1,219 +1,115 @@
-2021-11-15 00:50:45,482 New Order,e026f251-dec6-44ff-ac76-915a8380ddc4,-,-,New Order is Placed.
-2021-11-15 00:50:46,537 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,16,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,541 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,23,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,546 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,6,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,550 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,61,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,557 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,61,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,613 New Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,-,-,New Order is Placed.
-2021-11-15 00:50:46,623 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,7,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,627 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,17,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,631 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,10,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,635 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,7,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,682 New Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,-,-,New Order is Placed.
-2021-11-15 00:50:46,690 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,11,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,693 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,48,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,735 New Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,-,-,New Order is Placed.
-2021-11-15 00:50:46,744 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,32,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,748 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,57,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,801 New Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,-,-,New Order is Placed.
-2021-11-15 00:50:46,811 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,39,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,834 New Order,407529cf-478a-4f76-8248-90b7240b3a67,-,-,New Order is Placed.
-2021-11-15 00:50:46,840 Order,407529cf-478a-4f76-8248-90b7240b3a67,Warehouse,24,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,877 New Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,-,-,New Order is Placed.
-2021-11-15 00:50:46,882 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,70,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,884 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,63,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,886 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,9,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,888 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,15,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,889 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,27,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,891 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,15,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,892 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,63,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,907 New Order,90df97ae-66dc-4e9d-9577-76121fe991ce,-,-,New Order is Placed.
-2021-11-15 00:50:46,911 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,2,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,914 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,43,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,915 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,2,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,916 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,43,Bot Reached the Desired Rack.
-2021-11-15 00:50:46,934 New Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,-,-,New Order is Placed.
-2021-11-15 00:50:46,939 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,64,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,941 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,36,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,943 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,5,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,960 New Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,-,-,New Order is Placed.
-2021-11-15 00:50:46,981 New Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,-,-,New Order is Placed.
-2021-11-15 00:50:46,987 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,30,Bot is assigned to go to Rack.
-2021-11-15 00:50:46,990 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,46,Bot is assigned to go to Rack.
-2021-11-15 00:50:47,008 New Order,d0825a70-0807-4b4d-b529-bb6429151491,-,-,New Order is Placed.
-2021-11-15 00:50:47,012 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,29,Bot is assigned to go to Rack.
-2021-11-15 00:50:47,030 New Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,-,-,New Order is Placed.
-2021-11-15 00:50:47,034 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,13,Bot is assigned to go to Rack.
-2021-11-15 00:50:47,094 New Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,-,-,New Order is Placed.
-2021-11-15 00:50:47,097 Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Warehouse,65,Bot is assigned to go to Rack.
-2021-11-15 00:50:49,602 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,11,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,603 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,17,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,603 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,27,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,603 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,30,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,604 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,64,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,604 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,70,Bot Reached the Desired Rack.
-2021-11-15 00:50:49,612 Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Warehouse,65,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,543 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,5,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,543 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,23,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,605 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,29,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,909 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,6,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,910 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,36,Bot Reached the Desired Rack.
-2021-11-15 00:50:50,910 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,46,Bot Reached the Desired Rack.
-2021-11-15 00:50:51,080 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,16,Bot Reached the Desired Rack.
-2021-11-15 00:50:51,081 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,48,Bot Reached the Desired Rack.
-2021-11-15 00:50:51,795 Order,407529cf-478a-4f76-8248-90b7240b3a67,Warehouse,24,Bot Reached the Desired Rack.
-2021-11-15 00:50:51,841 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,10,Bot Reached the Desired Rack.
-2021-11-15 00:50:51,999 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,39,Bot Reached the Desired Rack.
-2021-11-15 00:50:52,697 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,32,Bot Reached the Desired Rack.
-2021-11-15 00:50:53,517 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,57,Bot Reached the Desired Rack.
-2021-11-15 00:50:53,560 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,13,Bot Reached the Desired Rack.
-2021-11-15 00:50:53,705 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,9,Bot Reached the Desired Rack.
-2021-11-15 00:51:13,473 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,5,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:20,091 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,30,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:25,323 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,2,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:27,353 Event,-,Warehouse,5,Kept the Rack back which it was carrying.
-2021-11-15 00:51:29,226 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,70,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:31,401 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,63,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:32,460 Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,43,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:32,462 Finished Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Warehouse,43,Order is completed.
-2021-11-15 00:51:32,770 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,15,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:34,746 Event,-,Warehouse,30,Kept the Rack back which it was carrying.
-2021-11-15 00:51:35,170 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,10,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:35,958 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,16,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:36,195 Order,407529cf-478a-4f76-8248-90b7240b3a67,Warehouse,24,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:36,197 Finished Order,407529cf-478a-4f76-8248-90b7240b3a67,Warehouse,24,Order is completed.
-2021-11-15 00:51:39,808 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,64,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:39,861 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,7,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:40,087 Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Warehouse,65,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:40,089 Finished Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Warehouse,65,Order is completed.
-2021-11-15 00:51:41,073 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,39,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:43,044 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,61,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:43,317 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,9,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:44,994 Event,-,Warehouse,43,Kept the Rack back which it was carrying.
-2021-11-15 00:51:45,183 Event,-,Warehouse,2,Kept the Rack back which it was carrying.
-2021-11-15 00:51:46,921 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,6,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:47,061 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,17,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:47,072 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,36,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:47,999 Event,-,Warehouse,70,Kept the Rack back which it was carrying.
-2021-11-15 00:51:49,773 Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,23,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:49,775 Finished Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Warehouse,23,Order is completed.
-2021-11-15 00:51:49,935 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,27,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:49,956 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,11,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:50,532 Event,-,Warehouse,16,Kept the Rack back which it was carrying.
-2021-11-15 00:51:50,537 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,16,Bot is assigned to go to Rack.
-2021-11-15 00:51:50,539 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,16,Bot Reached the Desired Rack.
-2021-11-15 00:51:51,154 Event,-,Warehouse,63,Kept the Rack back which it was carrying.
-2021-11-15 00:51:53,177 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,29,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:53,325 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,13,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:53,338 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,57,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:53,357 Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,46,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:53,359 Finished Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Warehouse,46,Order is completed.
-2021-11-15 00:51:53,372 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,48,Bot Reached the Human Counter with few items.
-2021-11-15 00:51:57,060 Event,-,Warehouse,15,Kept the Rack back which it was carrying.
-2021-11-15 00:51:57,919 Event,-,Warehouse,9,Kept the Rack back which it was carrying.
-2021-11-15 00:51:58,698 Event,-,Warehouse,10,Kept the Rack back which it was carrying.
-2021-11-15 00:51:58,704 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,10,Bot is assigned to go to Rack.
-2021-11-15 00:51:58,707 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,10,Bot Reached the Desired Rack.
-2021-11-15 00:52:02,272 Event,-,Warehouse,7,Kept the Rack back which it was carrying.
-2021-11-15 00:52:03,821 Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,32,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:03,822 Finished Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Warehouse,32,Order is completed.
-2021-11-15 00:52:03,824 Event,-,Warehouse,65,Kept the Rack back which it was carrying.
-2021-11-15 00:52:04,560 Event,-,Warehouse,24,Kept the Rack back which it was carrying.
-2021-11-15 00:52:04,599 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,24,Bot is assigned to go to Rack.
-2021-11-15 00:52:04,601 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,24,Bot Reached the Desired Rack.
-2021-11-15 00:52:09,492 Event,-,Warehouse,39,Kept the Rack back which it was carrying.
-2021-11-15 00:52:09,511 Conveyor Belt,90df97ae-66dc-4e9d-9577-76121fe991ce,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:09,511 Sorting Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Sorting Bot,1,Bot is moving order to it's dumping point.
-2021-11-15 00:52:10,141 Event,-,Warehouse,64,Kept the Rack back which it was carrying.
-2021-11-15 00:52:11,057 Conveyor Belt,407529cf-478a-4f76-8248-90b7240b3a67,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:11,057 Sorting Order,407529cf-478a-4f76-8248-90b7240b3a67,Sorting Bot,4,Bot is moving order to it's dumping point.
-2021-11-15 00:52:11,937 Event,-,Warehouse,6,Kept the Rack back which it was carrying.
-2021-11-15 00:52:11,942 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,6,Bot is assigned to go to Rack.
-2021-11-15 00:52:11,944 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,6,Bot Reached the Desired Rack.
-2021-11-15 00:52:12,079 Event,-,Warehouse,36,Kept the Rack back which it was carrying.
-2021-11-15 00:52:12,086 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,36,Bot is assigned to go to Rack.
-2021-11-15 00:52:12,087 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,36,Bot Reached the Desired Rack.
-2021-11-15 00:52:14,079 Event,-,Warehouse,61,Kept the Rack back which it was carrying.
-2021-11-15 00:52:14,087 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,61,Bot is assigned to go to Rack.
-2021-11-15 00:52:14,089 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,61,Bot Reached the Desired Rack.
-2021-11-15 00:52:15,035 Conveyor Belt,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:15,035 Sorting Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Sorting Bot,0,Bot is moving order to it's dumping point.
-2021-11-15 00:52:17,019 Event,-,Warehouse,11,Kept the Rack back which it was carrying.
-2021-11-15 00:52:17,134 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,11,Bot is assigned to go to Rack.
-2021-11-15 00:52:17,204 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,11,Bot Reached the Desired Rack.
-2021-11-15 00:52:17,268 Event,-,Warehouse,17,Kept the Rack back which it was carrying.
-2021-11-15 00:52:17,272 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,17,Bot is assigned to go to Rack.
-2021-11-15 00:52:17,273 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,17,Bot Reached the Desired Rack.
-2021-11-15 00:52:17,903 Event,-,Warehouse,29,Kept the Rack back which it was carrying.
-2021-11-15 00:52:17,917 Event,-,Warehouse,27,Kept the Rack back which it was carrying.
-2021-11-15 00:52:17,948 Event,-,Warehouse,48,Kept the Rack back which it was carrying.
-2021-11-15 00:52:18,204 Event,-,Warehouse,57,Kept the Rack back which it was carrying.
-2021-11-15 00:52:18,382 Event,-,Warehouse,13,Kept the Rack back which it was carrying.
-2021-11-15 00:52:18,440 Event,-,Warehouse,23,Kept the Rack back which it was carrying.
-2021-11-15 00:52:18,486 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,16,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:18,548 Conveyor Belt,e026f251-dec6-44ff-ac76-915a8380ddc4,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:18,548 Sorting Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Sorting Bot,7,Bot is moving order to it's dumping point.
-2021-11-15 00:52:19,043 Sorting Order,407529cf-478a-4f76-8248-90b7240b3a67,Sorting Bot,4,Bot placed the order to it's dumping point.
-2021-11-15 00:52:19,474 Conveyor Belt,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:19,474 Sorting Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Sorting Bot,4,Bot is moving order to it's dumping point.
-2021-11-15 00:52:19,559 Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,10,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:19,561 Finished Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Warehouse,10,Order is completed.
-2021-11-15 00:52:20,333 Sorting Order,90df97ae-66dc-4e9d-9577-76121fe991ce,Sorting Bot,1,Bot placed the order to it's dumping point.
-2021-11-15 00:52:20,853 Event,-,Warehouse,46,Kept the Rack back which it was carrying.
-2021-11-15 00:52:22,811 Event,-,Warehouse,16,Kept the Rack back which it was carrying.
-2021-11-15 00:52:22,934 Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Warehouse,16,Bot is assigned to go to Rack.
-2021-11-15 00:52:22,935 Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Warehouse,16,Bot Reached the Desired Rack.
-2021-11-15 00:52:23,937 Conveyor Belt,8b282aaa-b283-48ef-a888-5dc9477d11d2,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:23,937 Sorting Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Sorting Bot,3,Bot is moving order to it's dumping point.
-2021-11-15 00:52:24,646 Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,24,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:24,647 Finished Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Warehouse,24,Order is completed.
-2021-11-15 00:52:26,472 Event,-,Warehouse,32,Kept the Rack back which it was carrying.
-2021-11-15 00:52:27,445 Sorting Order,f61b7d77-d2cf-48a9-8308-1d520fbc47fb,Sorting Bot,0,Bot placed the order to it's dumping point.
-2021-11-15 00:52:29,213 Event,-,Warehouse,10,Kept the Rack back which it was carrying.
-2021-11-15 00:52:31,630 Sorting Order,ce2f2f06-f79f-4c96-bd61-1b1663f0a12d,Sorting Bot,4,Bot placed the order to it's dumping point.
-2021-11-15 00:52:32,548 Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,36,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:32,549 Finished Order,d0825a70-0807-4b4d-b529-bb6429151491,Warehouse,36,Order is completed.
-2021-11-15 00:52:33,087 Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,6,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:33,088 Finished Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Warehouse,6,Order is completed.
-2021-11-15 00:52:33,101 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,61,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:33,765 Sorting Order,e026f251-dec6-44ff-ac76-915a8380ddc4,Sorting Bot,7,Bot placed the order to it's dumping point.
-2021-11-15 00:52:34,273 Conveyor Belt,6855ea03-f89e-45f6-85c3-97cd798fbe01,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:34,273 Sorting Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Sorting Bot,15,Bot is moving order to it's dumping point.
-2021-11-15 00:52:34,535 Event,-,Warehouse,24,Kept the Rack back which it was carrying.
-2021-11-15 00:52:35,450 Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,17,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:35,451 Finished Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Warehouse,17,Order is completed.
-2021-11-15 00:52:36,310 Sorting Order,8b282aaa-b283-48ef-a888-5dc9477d11d2,Sorting Bot,3,Bot placed the order to it's dumping point.
-2021-11-15 00:52:36,405 Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,11,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:36,406 Finished Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Warehouse,11,Order is completed.
-2021-11-15 00:52:37,403 Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Warehouse,16,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:37,405 Finished Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Warehouse,16,Order is completed.
-2021-11-15 00:52:37,420 Conveyor Belt,97714b71-4b45-47ed-8ad9-243d88e0df9e,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:37,420 Sorting Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Sorting Bot,19,Bot is moving order to it's dumping point.
-2021-11-15 00:52:41,059 Event,-,Warehouse,36,Kept the Rack back which it was carrying.
-2021-11-15 00:52:41,504 Event,-,Warehouse,16,Kept the Rack back which it was carrying.
-2021-11-15 00:52:41,697 Event,-,Warehouse,6,Kept the Rack back which it was carrying.
-2021-11-15 00:52:41,701 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,6,Bot is assigned to go to Rack.
-2021-11-15 00:52:41,702 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,6,Bot Reached the Desired Rack.
-2021-11-15 00:52:42,771 Event,-,Warehouse,61,Kept the Rack back which it was carrying.
-2021-11-15 00:52:42,862 Conveyor Belt,d0825a70-0807-4b4d-b529-bb6429151491,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:42,863 Sorting Order,d0825a70-0807-4b4d-b529-bb6429151491,Sorting Bot,0,Bot is moving order to it's dumping point.
-2021-11-15 00:52:43,285 Conveyor Belt,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:43,285 Sorting Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Sorting Bot,1,Bot is moving order to it's dumping point.
-2021-11-15 00:52:43,605 Event,-,Warehouse,11,Kept the Rack back which it was carrying.
-2021-11-15 00:52:43,616 Event,-,Warehouse,17,Kept the Rack back which it was carrying.
-2021-11-15 00:52:43,733 Sorting Order,6855ea03-f89e-45f6-85c3-97cd798fbe01,Sorting Bot,15,Bot placed the order to it's dumping point.
-2021-11-15 00:52:43,892 Conveyor Belt,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:43,892 Sorting Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Sorting Bot,17,Bot is moving order to it's dumping point.
-2021-11-15 00:52:44,313 Conveyor Belt,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:44,313 Sorting Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Sorting Bot,12,Bot is moving order to it's dumping point.
-2021-11-15 00:52:44,563 Sorting Order,97714b71-4b45-47ed-8ad9-243d88e0df9e,Sorting Bot,19,Bot placed the order to it's dumping point.
-2021-11-15 00:52:44,737 Conveyor Belt,83b5f05b-eff8-4e2f-ae47-972389e795dc,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2021-11-15 00:52:44,737 Sorting Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Sorting Bot,4,Bot is moving order to it's dumping point.
-2021-11-15 00:52:46,770 Sorting Order,d0825a70-0807-4b4d-b529-bb6429151491,Sorting Bot,0,Bot placed the order to it's dumping point.
-2021-11-15 00:52:46,858 Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,6,Bot Reached the Human Counter with few items.
-2021-11-15 00:52:46,859 Finished Order,6bbf2b53-ef31-417c-9ca7-648a553fbb7d,Warehouse,6,Order is completed.
-2021-11-15 00:52:46,980 Sorting Order,b47af0a4-8a15-47d0-86a3-5524d7177e1b,Sorting Bot,1,Bot placed the order to it's dumping point.
-2021-11-15 00:52:46,993 Sorting Order,9e955e30-bbb8-48cf-a17c-43228c62c3d9,Sorting Bot,12,Bot placed the order to it's dumping point.
-2021-11-15 00:52:47,790 Sorting Order,4cd1f5ee-92b1-4fbd-b77f-52d8bd2fd143,Sorting Bot,17,Bot placed the order to it's dumping point.
-2021-11-15 00:52:48,669 Sorting Order,83b5f05b-eff8-4e2f-ae47-972389e795dc,Sorting Bot,4,Bot placed the order to it's dumping point.
-2021-11-15 00:52:49,214 Event,-,Warehouse,6,Kept the Rack back which it was carrying.
+2021-11-20 18:00:21,445 New Order,f96395aa-6945-4f07-9374-65dbb0a40030,-,-,New Order is Placed.
+2021-11-20 18:00:21,459 Order,f96395aa-6945-4f07-9374-65dbb0a40030,Warehouse,15,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,460 New Items,-,Truck Bot,0,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,460 New Items,-,Truck Bot,1,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,461 New Items,-,Truck Bot,2,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,461 New Items,-,Truck Bot,3,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,462 New Items,-,Truck Bot,4,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,462 New Items,-,Truck Bot,5,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,462 New Items,-,Truck Bot,6,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,463 New Items,-,Truck Bot,7,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,463 New Items,-,Truck Bot,8,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,464 New Items,-,Truck Bot,9,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,464 New Items,-,Truck Bot,10,Bot is assigned to deliever new items.
+2021-11-20 18:00:21,465 Order,f96395aa-6945-4f07-9374-65dbb0a40030,Warehouse,15,Bot Reached the Desired Rack.
+2021-11-20 18:00:21,481 New Order,f59e7abf-75a2-4b4a-96b6-eeeccd0bba4b,-,-,New Order is Placed.
+2021-11-20 18:00:21,493 New Order,05352117-8236-48a6-81cc-b980954e5a97,-,-,New Order is Placed.
+2021-11-20 18:00:21,494 Order,05352117-8236-48a6-81cc-b980954e5a97,Warehouse,0,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,505 New Order,b9556db9-7fef-482c-8bc4-c7021cafbc46,-,-,New Order is Placed.
+2021-11-20 18:00:21,508 Order,b9556db9-7fef-482c-8bc4-c7021cafbc46,Warehouse,14,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,518 New Order,c3400bb9-a485-480f-b14c-44b9147a287a,-,-,New Order is Placed.
+2021-11-20 18:00:21,520 Order,c3400bb9-a485-480f-b14c-44b9147a287a,Warehouse,16,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,533 New Order,b263e1f7-6056-467f-af29-ccf92910203c,-,-,New Order is Placed.
+2021-11-20 18:00:21,536 Order,b263e1f7-6056-467f-af29-ccf92910203c,Warehouse,4,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,548 New Order,2bf836aa-67df-4e89-9d80-3272dcf065ca,-,-,New Order is Placed.
+2021-11-20 18:00:21,551 Order,2bf836aa-67df-4e89-9d80-3272dcf065ca,Warehouse,12,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,563 New Order,412f6dcd-3a02-432b-a5e9-b47d52dd1db3,-,-,New Order is Placed.
+2021-11-20 18:00:21,576 New Order,5496af3d-18fa-4f5d-9367-1da1a2eca744,-,-,New Order is Placed.
+2021-11-20 18:00:21,578 Order,5496af3d-18fa-4f5d-9367-1da1a2eca744,Warehouse,5,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,589 New Order,431fbbf1-29b2-4485-85d0-c7a0a1b46db0,-,-,New Order is Placed.
+2021-11-20 18:00:21,591 Order,431fbbf1-29b2-4485-85d0-c7a0a1b46db0,Warehouse,9,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,602 New Order,89caa7e5-a7f5-4f7f-813e-bf58333091c4,-,-,New Order is Placed.
+2021-11-20 18:00:21,604 Order,89caa7e5-a7f5-4f7f-813e-bf58333091c4,Warehouse,11,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,615 New Order,c9f9e5a6-5051-4c18-bd25-b4dc571cb3b5,-,-,New Order is Placed.
+2021-11-20 18:00:21,617 Order,c9f9e5a6-5051-4c18-bd25-b4dc571cb3b5,Warehouse,17,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,628 New Order,c8da2e04-1e6f-4f08-bbb1-21fe1082a392,-,-,New Order is Placed.
+2021-11-20 18:00:21,630 Order,c8da2e04-1e6f-4f08-bbb1-21fe1082a392,Warehouse,19,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,640 New Order,cd67e2b2-5cc5-458e-a7e7-dd5669c7c451,-,-,New Order is Placed.
+2021-11-20 18:00:21,654 New Order,480416e0-e027-4441-bb80-24391eae975f,-,-,New Order is Placed.
+2021-11-20 18:00:21,668 New Order,11b9a462-47c6-4608-bd4d-87b4575693a1,-,-,New Order is Placed.
+2021-11-20 18:00:21,670 Order,11b9a462-47c6-4608-bd4d-87b4575693a1,Warehouse,3,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,681 New Order,f109cfd8-2a69-460b-a1a4-727ece8a78d3,-,-,New Order is Placed.
+2021-11-20 18:00:21,683 Order,f109cfd8-2a69-460b-a1a4-727ece8a78d3,Warehouse,1,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,684 Order,f109cfd8-2a69-460b-a1a4-727ece8a78d3,Warehouse,8,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,694 New Order,e3dd7b12-0e67-4a17-a1f0-3cc0e9e43848,-,-,New Order is Placed.
+2021-11-20 18:00:21,696 Order,e3dd7b12-0e67-4a17-a1f0-3cc0e9e43848,Warehouse,2,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,706 New Order,ef598ba5-2650-4bb6-944b-57c3b3e0430c,-,-,New Order is Placed.
+2021-11-20 18:00:21,708 Order,ef598ba5-2650-4bb6-944b-57c3b3e0430c,Warehouse,6,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,718 New Order,d530ebe2-a481-41a5-ad1a-5fa07efd865a,-,-,New Order is Placed.
+2021-11-20 18:00:21,729 New Order,ff3b82ec-4ffd-47cc-b910-d334e87573b9,-,-,New Order is Placed.
+2021-11-20 18:00:21,730 Order,ff3b82ec-4ffd-47cc-b910-d334e87573b9,Warehouse,13,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,740 New Order,ef517f4c-d3cb-4caf-8a02-639dd1735c21,-,-,New Order is Placed.
+2021-11-20 18:00:21,750 New Order,70610027-f4eb-4869-b2e7-90923744a366,-,-,New Order is Placed.
+2021-11-20 18:00:21,763 New Order,404e6440-66cb-4253-b493-48d7f0d54863,-,-,New Order is Placed.
+2021-11-20 18:00:21,766 Order,404e6440-66cb-4253-b493-48d7f0d54863,Warehouse,18,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,778 New Order,e961fa1a-925e-460c-b4a5-33e5cc0821b4,-,-,New Order is Placed.
+2021-11-20 18:00:21,790 New Order,985acdb3-2aa7-48f7-a871-318fb7ffecc9,-,-,New Order is Placed.
+2021-11-20 18:00:21,792 Order,985acdb3-2aa7-48f7-a871-318fb7ffecc9,Warehouse,7,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,802 New Order,221911f5-a956-4f50-a10a-fb7d909556a3,-,-,New Order is Placed.
+2021-11-20 18:00:21,804 Order,221911f5-a956-4f50-a10a-fb7d909556a3,Warehouse,10,Bot is assigned to go to Rack.
+2021-11-20 18:00:21,814 New Order,44f8e6fb-cf51-48b6-a858-e2a451d57bef,-,-,New Order is Placed.
+2021-11-20 18:00:21,826 New Order,46e763f1-e6f4-4b6e-af72-2c19dd4b1e37,-,-,New Order is Placed.
+2021-11-20 18:00:21,838 New Order,1f525956-e32a-4cfe-a512-3d5827e89413,-,-,New Order is Placed.
+2021-11-20 18:00:21,850 New Order,071c80f8-02c7-4494-988f-c5149bcfa0cb,-,-,New Order is Placed.
+2021-11-20 18:00:21,864 New Order,b79463f5-cc0a-4c27-b1e1-2ad29da273c2,-,-,New Order is Placed.
+2021-11-20 18:00:21,876 New Order,5cf2be18-7bab-471b-ad47-c4ba00fe4690,-,-,New Order is Placed.
+2021-11-20 18:00:21,890 New Order,f7e5a228-802c-4a2a-8838-c4489a2b4016,-,-,New Order is Placed.
+2021-11-20 18:00:21,903 New Order,2b8dc5ad-bdd7-4de3-a414-4bce58af7acb,-,-,New Order is Placed.
+2021-11-20 18:00:21,916 New Order,b75032a3-2b06-42ea-bfd7-698d075a1dc2,-,-,New Order is Placed.
+2021-11-20 18:00:21,929 New Order,4ee33182-c7eb-49a8-8bda-8ecbdd8dd2ed,-,-,New Order is Placed.
+2021-11-20 18:00:21,944 New Order,7a35f471-0150-423e-9322-478ec71df600,-,-,New Order is Placed.
+2021-11-20 18:00:21,960 New Order,3642ed2a-6289-4c46-9cec-6f54108c8923,-,-,New Order is Placed.
+2021-11-20 18:00:21,977 New Order,cfd0323d-012b-4cdd-97ff-77dfb2057066,-,-,New Order is Placed.
+2021-11-20 18:00:21,992 New Order,573e113d-bc87-4860-ae00-eb79e50b17c0,-,-,New Order is Placed.
+2021-11-20 18:00:22,007 New Order,ee665559-93c0-485e-a666-df0e53c64051,-,-,New Order is Placed.
+2021-11-20 18:00:22,020 New Order,1bd72a9c-573f-444c-8eea-656448f152b7,-,-,New Order is Placed.
+2021-11-20 18:00:22,031 New Order,fe607dc1-4d65-47fe-8c2e-90094a337367,-,-,New Order is Placed.
+2021-11-20 18:00:22,043 New Order,c31585f3-2c05-451c-b075-f8319c8dd6d1,-,-,New Order is Placed.
+2021-11-20 18:00:22,055 New Order,4be18908-674e-4b63-bf1e-2f278fcb13dc,-,-,New Order is Placed.
+2021-11-20 18:00:22,066 New Order,b4deb31c-4565-45be-a769-6b8261fc364d,-,-,New Order is Placed.
+2021-11-20 18:00:22,078 New Order,163ecb32-1831-47b0-b8c5-062cacfc17aa,-,-,New Order is Placed.
+2021-11-20 18:00:22,089 New Order,2e81fa4a-0fe9-40e3-91ac-8a71c64e5c64,-,-,New Order is Placed.
+2021-11-20 18:00:22,102 New Order,c95c1f95-60a8-46a4-9bb6-ccf5a9f40788,-,-,New Order is Placed.
+2021-11-20 18:00:22,115 New Order,8608d268-c640-4f34-ad53-d08e06c2ba1f,-,-,New Order is Placed.
+2021-11-20 18:00:22,128 New Order,cbbeccb9-b885-4d65-a0ff-bb67a4a78918,-,-,New Order is Placed.
+2021-11-20 18:00:22,143 New Order,8458bd82-1b4d-473d-8d80-9995674560cf,-,-,New Order is Placed.
+2021-11-20 18:00:22,159 New Order,779d9485-1050-43dd-9272-41c061929739,-,-,New Order is Placed.
+2021-11-20 18:00:24,206 New Order,a0733c54-219e-41f2-a984-ff15c4eac115,-,-,New Order is Placed.
+2021-11-20 18:00:24,633 New Order,dd3c572c-caa8-409c-9533-98b98e808714,-,-,New Order is Placed.
+2021-11-20 18:00:24,719 New Order,8a181b30-e97f-4bd7-b87b-7cb4548d376f,-,-,New Order is Placed.
+2021-11-20 18:00:24,730 New Order,6b176fc2-8ecb-4a8a-af02-c90cbd0b4616,-,-,New Order is Placed.
+2021-11-20 18:00:24,743 New Order,e9f234f5-fb5e-425e-958f-9b7633c00c35,-,-,New Order is Placed.
+2021-11-20 18:00:24,757 New Order,363ed41a-5faa-48b7-89f1-99431edaa9cc,-,-,New Order is Placed.
+2021-11-20 18:00:24,773 New Order,7118ac6e-1301-49f0-b3f0-151f4f03af4a,-,-,New Order is Placed.
+2021-11-20 18:00:24,787 New Order,59df14e9-8fb6-4237-b708-3bdfc607b313,-,-,New Order is Placed.
+2021-11-20 18:00:24,803 New Order,ff10f807-d9b9-42d7-bafa-9cad32dc01d7,-,-,New Order is Placed.
+2021-11-20 18:00:24,820 New Order,03178abc-18e4-4ea4-b452-288a8ac88fce,-,-,New Order is Placed.
+2021-11-20 18:00:24,823 Order,05352117-8236-48a6-81cc-b980954e5a97,Warehouse,0,Bot Reached the Desired Rack.
+2021-11-20 18:00:24,833 New Order,9079aacb-ec86-4b2c-9f59-2c2f9403af0c,-,-,New Order is Placed.
+2021-11-20 18:00:24,847 New Order,786d8506-288e-499b-a0c1-3bd6a9621023,-,-,New Order is Placed.
+2021-11-20 18:00:24,924 New Order,e51e95c4-5658-454e-8166-654f39c1fc25,-,-,New Order is Placed.
+2021-11-20 18:00:24,971 New Order,d7a58fd1-ac60-4e32-b645-3f8f16e3229d,-,-,New Order is Placed.
+2021-11-20 18:00:25,307 Order,5496af3d-18fa-4f5d-9367-1da1a2eca744,Warehouse,5,Bot Reached the Desired Rack.
+2021-11-20 18:00:25,392 Order,b263e1f7-6056-467f-af29-ccf92910203c,Warehouse,4,Bot Reached the Desired Rack.
+2021-11-20 18:00:25,408 Order,c3400bb9-a485-480f-b14c-44b9147a287a,Warehouse,16,Bot Reached the Desired Rack.
+2021-11-20 18:00:25,570 Order,c9f9e5a6-5051-4c18-bd25-b4dc571cb3b5,Warehouse,17,Bot Reached the Desired Rack.
+2021-11-20 18:00:26,257 New Order,487d4d05-8d7a-48df-83df-ede503fd4f28,-,-,New Order is Placed.
+2021-11-20 18:00:27,294 Order,e3dd7b12-0e67-4a17-a1f0-3cc0e9e43848,Warehouse,2,Bot Reached the Desired Rack.
+2021-11-20 18:00:27,295 Order,c8da2e04-1e6f-4f08-bbb1-21fe1082a392,Warehouse,19,Bot Reached the Desired Rack.
+2021-11-20 18:00:28,071 Order,89caa7e5-a7f5-4f7f-813e-bf58333091c4,Warehouse,11,Bot Reached the Desired Rack.
+2021-11-20 18:00:30,427 Order,2bf836aa-67df-4e89-9d80-3272dcf065ca,Warehouse,12,Bot Reached the Desired Rack.
+2021-11-20 18:00:30,564 Order,f109cfd8-2a69-460b-a1a4-727ece8a78d3,Warehouse,1,Bot Reached the Desired Rack.
+2021-11-20 18:00:35,541 Order,f109cfd8-2a69-460b-a1a4-727ece8a78d3,Warehouse,8,Bot Reached the Desired Rack.
+2021-11-20 18:00:36,360 Order,431fbbf1-29b2-4485-85d0-c7a0a1b46db0,Warehouse,9,Bot Reached the Desired Rack.
+2021-11-20 18:00:36,414 Order,b9556db9-7fef-482c-8bc4-c7021cafbc46,Warehouse,14,Bot Reached the Desired Rack.
+2021-11-20 18:00:37,090 Order,11b9a462-47c6-4608-bd4d-87b4575693a1,Warehouse,3,Bot Reached the Desired Rack.

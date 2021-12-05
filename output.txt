@@ -1,0 +1,87 @@
+# With separate
+With Congestion Management For 10 Agents Final Key Value is - 12702
+With Congestion Management For 25 Agents Final Key Value is - 5670
+With Congestion Management For 50 Agents Final Key Value is - 3156
+With Congestion Management For 75 Agents Final Key Value is - 4231
+With Congestion Management For 100 Agents Final Key Value is - 4029
+With Congestion Management For 10 Agents Final Key Value is - 11927
+With Congestion Management For 25 Agents Final Key Value is - 5755
+With Congestion Management For 50 Agents Final Key Value is - 4342
+With Congestion Management For 75 Agents Final Key Value is - 3588
+With Congestion Management For 100 Agents Final Key Value is - 5325
+With Congestion Management For 10 Agents Final Key Value is - 11775
+With Congestion Management For 25 Agents Final Key Value is - 5197
+With Congestion Management For 50 Agents Final Key Value is - 3330
+With Congestion Management For 75 Agents Final Key Value is - 4248
+With Congestion Management For 100 Agents Final Key Value is - 3103
+With Congestion Management For 10 Agents Final Key Value is - 12008
+With Congestion Management For 25 Agents Final Key Value is - 6309
+With Congestion Management For 50 Agents Final Key Value is - 3668
+With Congestion Management For 75 Agents Final Key Value is - 3847
+With Congestion Management For 100 Agents Final Key Value is - 3812
+With Congestion Management For 10 Agents Final Key Value is - 11605
+With Congestion Management For 25 Agents Final Key Value is - 5722
+With Congestion Management For 50 Agents Final Key Value is - 4529
+With Congestion Management For 75 Agents Final Key Value is - 3151
+With Congestion Management For 100 Agents Final Key Value is - 3577
+With Congestion Management For 10 Agents Final Key Value is - 12791
+With Congestion Management For 25 Agents Final Key Value is - 5290
+With Congestion Management For 50 Agents Final Key Value is - 4270
+With Congestion Management For 75 Agents Final Key Value is - 3630
+With Congestion Management For 100 Agents Final Key Value is - 3531
+With Congestion Management For 10 Agents Final Key Value is - 11438
+With Congestion Management For 25 Agents Final Key Value is - 5202
+With Congestion Management For 50 Agents Final Key Value is - 3945
+With Congestion Management For 75 Agents Final Key Value is - 5253
+With Congestion Management For 100 Agents Final Key Value is - 4723
+
+
+# With Random Case
+
+With Congestion Management For 10 Agents Final Key Value is - 14931
+With Congestion Management For 25 Agents Final Key Value is - 6355
+With Congestion Management For 50 Agents Final Key Value is - 4437
+With Congestion Management For 75 Agents Final Key Value is - 4803
+With Congestion Management For 100 Agents Final Key Value is - 3289
+With Congestion Management For 10 Agents Final Key Value is - 14166
+With Congestion Management For 25 Agents Final Key Value is - 6617
+With Congestion Management For 50 Agents Final Key Value is - 4248
+With Congestion Management For 75 Agents Final Key Value is - 4720
+With Congestion Management For 100 Agents Final Key Value is - 3721
+With Congestion Management For 10 Agents Final Key Value is - 14237
+With Congestion Management For 25 Agents Final Key Value is - 6755
+With Congestion Management For 50 Agents Final Key Value is - 5227
+With Congestion Management For 75 Agents Final Key Value is - 3854
+With Congestion Management For 100 Agents Final Key Value is - 3979
+With Congestion Management For 10 Agents Final Key Value is - 14911
+With Congestion Management For 25 Agents Final Key Value is - 6505
+With Congestion Management For 50 Agents Final Key Value is - 3537
+With Congestion Management For 75 Agents Final Key Value is - 4049
+With Congestion Management For 100 Agents Final Key Value is - 3390
+With Congestion Management For 10 Agents Final Key Value is - 15248
+With Congestion Management For 25 Agents Final Key Value is - 6377
+With Congestion Management For 50 Agents Final Key Value is - 3951
+With Congestion Management For 75 Agents Final Key Value is - 4953
+With Congestion Management For 100 Agents Final Key Value is - 4179
+With Congestion Management For 10 Agents Final Key Value is - 13234
+With Congestion Management For 25 Agents Final Key Value is - 6076
+With Congestion Management For 50 Agents Final Key Value is - 4883
+With Congestion Management For 75 Agents Final Key Value is - 4029
+With Congestion Management For 100 Agents Final Key Value is - 4307
+With Congestion Management For 10 Agents Final Key Value is - 14674
+With Congestion Management For 25 Agents Final Key Value is - 6124
+With Congestion Management For 50 Agents Final Key Value is - 3521
+With Congestion Management For 75 Agents Final Key Value is - 4072
+With Congestion Management For 100 Agents Final Key Value is - 4566
+
+# With Cooldown
+
+With Congestion Management For 100 Agents Final Key Value is - 9035
+With Congestion Management For 150 Agents Final Key Value is - 5514
+
+With Congestion Management For 200 Agents Final Key Value is - 5605
+With Congestion Management For 250 Agents Final Key Value is - 6335
+With Congestion Management For 100 Agents Final Key Value is - 5896
+With Congestion Management For 150 Agents Final Key Value is - 7218
+With Congestion Management For 200 Agents Final Key Value is - 7722
+With Congestion Management For 250 Agents Final Key Value is - 7163
