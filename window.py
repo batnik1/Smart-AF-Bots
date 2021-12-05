@@ -1,22 +1,32 @@
 import argparse
+import numpy as np
+import cv2
+import pyautogui
 parser=argparse.ArgumentParser()
 parser.add_argument('n_Agents',type=int)
+<<<<<<< HEAD
 # parser.add_argument('RandomIns',type=int)
+=======
+# parser.add_argument('Congestion',type=int)
+>>>>>>> 1f0ee8fe2edc0a744883d196844819d8b2003b33
 args=parser.parse_args()
 from window_OrderHandler import *
 
 import sys,io,os
 from os import path
 if(path.exists('input.txt')):
+<<<<<<< HEAD
      sys.stdin = open('input.txt','r')
+=======
+#     sys.stdin = open('input.txt','r')
+>>>>>>> 1f0ee8fe2edc0a744883d196844819d8b2003b33
      sys.stdout = open('output.txt','a')
 else:
      input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
 
-clock = pygame.time.Clock()
 running = 1
-key=0
-paused=0
+key=0  
+paused=0  
 order_freq=1
 truck_freq=2000
 initHCtoConveyor()
@@ -41,7 +51,7 @@ index=args.n_Agents%10
 # print(index,test_flag)
 init_agents(0,test_flag,index)
 
-
+# 
 def handle_events():
     global paused,running
     events = pygame.event.get()
@@ -66,6 +76,7 @@ def handle_events():
                 if event.key==pygame.K_SPACE:
                     if paused:
                         paused=0
+                #        add_items(5)
                     else:
                         paused=1
                         break
@@ -79,22 +90,11 @@ while running:
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFS Order
 
-    # if key==0:
-    #     new_items=truck_orders()
-    #     Torders+=new_items
+    if key==0:
+        new_items=truck_orders()
+        Torders+=new_items
 
-    init_screen()
-    # make circles where new_praylist points are
-    
-    #new_praylist=[]  
-    # for i,j in Intersections:
-    #     if 1 in Matrix.grid[i][j] and 4 in Matrix.grid[i][j]:
-    #         new_praylist.append((i,j))
-    #     elif 4 in Matrix.grid[i][j]:
-    #         pygame.draw.circle(screen, (255,0,0), (i,j), 5)
-
-    # for i in range(len(new_praylist)):
-    #     pygame.draw.circle(screen, (0, 0, 255), (new_praylist[i][0], new_praylist[i][1]),1)        
+    init_screen() 
     handle_orders()
     handle_Torders()
     handle_events()

@@ -1,4 +1,4 @@
-# dict={}
+# dict={} 
 # dict['Model1']=[5,100,]
 
 # num_Agents=[4,10,25,50,75,100]
@@ -15,9 +15,4 @@ call(["python3", "window.py",str(11)])
 """
     for keys in dict:
     
-
-
-
-
-
 """

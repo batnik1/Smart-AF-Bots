@@ -1,7 +1,7 @@
 import math
 import pygame
 class Agent():
-
+    
     def __init__(self, Destination, Target, Agent_Image, Target_Image):
         self.playerX = Destination[0]
         self.playerY = Destination[1]

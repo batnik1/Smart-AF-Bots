@@ -18,7 +18,7 @@ class Agent():
         self.order_id=0
         self.items_carrying=[]
         self.ind=0
-        self.charge=200
+        self.charge=1e9
         self.needcharge=False
         self.charging=False
         self.cStation=-1
@@ -29,3 +29,4 @@ class Agent():
         self.nearestgoals=[]
         self.changelane=0
         self.waitingperiod=0
+        self.cooldown_rack=0

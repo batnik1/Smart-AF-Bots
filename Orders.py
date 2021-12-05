@@ -30,29 +30,25 @@ import logging
 
 import pymongo
 from pymongo import MongoClient
-connection=MongoClient('localhost',27017)
+connection = MongoClient('localhost', 27017)
 
-item_types_in_db=set()
+item_types_in_db = set()
 
-db=connection['Warehouse']
-collection=db["big_database"]
-delivered=db["delivered"]
-order_db=db["order_db"]
-order_history=db["order_history"]
-bot_db=db["bot_db"]
-finished_db=db["sorting_bots"]
-#rack_collection=db["rack_shelf"]
+db = connection['Warehouse']
+collection = db["big_database"]
+order_db = db["order_db"]
+order_history = db["order_history"]
 
 order_db.drop()
 collection.drop()
-bot_db.drop()
 
-type_of_items=0
-max_order_limit=1
+type_of_items = 5
+max_order_limit = 5
 
-#Creating Log File
-logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
-logger=logging.getLogger()
+# Creating Log File
+logging.basicConfig(filename="Warehouse.log",
+                    format='%(asctime)s %(message)s', filemode='w')
+logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 
@@ -111,8 +107,7 @@ def gen_a_order():
       
   racks=assign_rack(order)
   
-  # human_counter= random.randint(0,2*m-1)
-  human_counter=1
+  human_counter= random.randint(0,2*m-1)
 
   order_id=str(uuid.uuid4())
   if len(order)==0:
@@ -132,10 +127,8 @@ def add_items(count):
   for _ in range(count):
     type=random.randint(0,type_of_items)
     item_types_in_db.add(type)
-    # quantity=random.randint(1,3)
-    quantity=1
+    quantity=random.randint(1,3)
     shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
-    # shelf=str((1, random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
       if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
@@ -146,18 +139,20 @@ def add_items(count):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
   return item_types_in_db
 
-def add_item(type,quantity,shelf):
+def add_item(type, quantity, shelf):
     global item_types_in_db
     item_types_in_db.add(type)
-    if collection.find_one({"type":type}):
-      collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
-      if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
-        collection.update_one({"type":type,"shelves.shelf":shelf},{"$inc":{"shelves.$.quantity":quantity}})
-      else:
-        collection.update_one({"type":type},{"$push":{"shelves":{"shelf":shelf, "quantity":quantity}}}) 
+    if collection.find_one({"type": type}):
+        collection.update_one({"type": type}, {"$inc": {"quantity": quantity}})
+        if collection.find_one({"type": type, "shelves": {"$elemMatch": {"shelf": shelf}}}):
+            collection.update_one({"type": type, "shelves.shelf": shelf}, {
+                                  "$inc": {"shelves.$.quantity": quantity}})
+        else:
+            collection.update_one(
+                {"type": type}, {"$push": {"shelves": {"shelf": shelf, "quantity": quantity}}})
     else:
-      collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
+        collection.insert_one({"type": type, "quantity": quantity, "shelves": [
+                              {"shelf": shelf, "quantity": quantity}]})
 
 
 add_items(75)
-#print(racks)

@@ -47,7 +47,7 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):
         num=len(Sorting_Agents)
         for agent in Sorting_Agents:
             if agent.Wait==True or agent.direction=='rest':
-                continue
+                continue    
             num+=1
             X,Y=agent.position
             heat+=math.exp(-(pow(x-X,2)+pow(y-Y,2))/pow(sigma,2))
@@ -166,7 +166,6 @@ class Search():
 
     def getPath(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            print('Fucked',self.source,self.dest)
             return []
         else:
             res = [self.dest]
@@ -179,7 +178,6 @@ class Search():
 
     def getPathLong(self):
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
-            print('Fucked',self.source,self.dest)
             return []
         else:
             res = [self.dest]

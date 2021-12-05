@@ -138,6 +138,11 @@ def handle_intersection():
 def handle_rack_agents(coloring, key):
     flag_finisher=0
     for agent in Agents:
+        if agent.cooldown_rack>0:
+            agent.cooldown_rack-=1
+            if agent.cooldown_rack==0:
+                Position_Booking[agent.position]=1
+            continue
         if agent.Wait==True:
             flag_finisher+=1
           #  print("HUA")
@@ -207,9 +212,7 @@ def handle_rack_agents(coloring, key):
                         if Intersection_Gateway[(new_pos[0],new_pos[1])][target_dir]==0:
                             if key-Intersection_waiting[(new_pos[0],new_pos[1])]>50: 
                                 Intersection_waiting[(new_pos[0],new_pos[1])]=key
-                                dir=count_bots(new_pos)  #Evil Laugh in background**
-                                if dir==-1:
-                                    print('Error')
+                                dir=count_bots(new_pos)  
                                 if dir !=0 :
                                     Intersection_Gateway[(new_pos[0],new_pos[1])]=[0]*5
                                     Intersection_Gateway[(new_pos[0],new_pos[1])][dir]=1
@@ -239,7 +242,15 @@ def handle_rack_agents(coloring, key):
                     agent.waitingperiod=50
                                 
         elif agent.direction!="rest":
-            
+            # if agent.goalindex==0:
+
+            #     heating=heat_value(agent.goals[0],0,Agents,Truck_Agents,Sorting_Agents)
+            #  #   print(heating)
+            #     if 100*heating>22:
+            #         Position_Booking[agent.position]=0
+            #      #   print("done it bois")
+            #         agent.cooldown_rack=50
+            #         continue
             if agent.position==agent.goals[agent.goalindex]:
                 agent.goalindex+=1
                 
@@ -283,6 +294,7 @@ def handle_rack_agents(coloring, key):
                     logger.info('Event'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Kept the Rack back which it was carrying.')
                     agent.direction="rest"
                     agent.goals=[]
+                    Position_Booking[agent.position]=0
                     agent.nearestgoals=[]
                     agent.goalindex=0
                     agent.Index=-1
@@ -343,7 +355,7 @@ def handle_rack_agents(coloring, key):
                     nextIntersec_path=nAgent.getPathLong()
                     nextIntersec_path.reverse()
                     path_temp1=[]
-
+                    
                     for i in range(len(nextIntersec_path)-1):
                         temp2=nearest_intersection_path(nextIntersec_path[i],nextIntersec_path[i+1])
                         temp2.reverse()
