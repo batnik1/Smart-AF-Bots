@@ -1,17 +1,17 @@
 import argparse
 parser=argparse.ArgumentParser()
-# parser.add_argument('n_Agents',type=int)
-# parser.add_argument('Congestion',type=int)
-# args=parser.parse_args()
+parser.add_argument('n_Agents',type=int)
+# parser.add_argument('RandomIns',type=int)
+args=parser.parse_args()
 from window_OrderHandler import *
 
 import sys,io,os
 from os import path
-# if(path.exists('input.txt')):
-#      sys.stdin = open('input.txt','r')
-#      sys.stdout = open('output.txt','a')
-# else:
-#      input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
+if(path.exists('input.txt')):
+     sys.stdin = open('input.txt','r')
+     sys.stdout = open('output.txt','a')
+else:
+     input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
 
 clock = pygame.time.Clock()
 running = 1
@@ -35,8 +35,11 @@ def init_screen():
 
 
 # index=args.n_Agents
-index=4
-init_agents(index)
+
+test_flag=args.n_Agents//10
+index=args.n_Agents%10
+# print(index,test_flag)
+init_agents(0,test_flag,index)
 
 
 def handle_events():
@@ -96,8 +99,19 @@ while running:
     handle_Torders()
     handle_events()
     finish=handle_rack_agents(coloring,key)
-    # print(finish,num_Agents[index])
-        
+    # print(finish,num_Agents[2])
+    # if num_Agents[index]-finish<=2:
+        # extras=[]
+        # for i in list(Position_Booking):
+        #     extras.append(i)
+        # # for i in range(1500):
+        # #     for j in range(1500):
+        # #         if Position_Booking[(i,j)]==1:
+        # #             extras.append((i,j))
+        # print(len(extras))
+        # for extra in extras:
+        #     pygame.draw.circle(screen, (0, 0, 255), (extra[0],extra[1]),6)
+        # # input() 
     # if flag:
     # extras=[]
     # for i in range(m):
@@ -113,9 +127,19 @@ while running:
     #     pygame.draw.circle(screen, (0, 0, 255), (numofrack[extra][0],numofrack[extra][1]),6)        
     # input()
         
-    # print(finish,num_Agents[index],len(orders))
-    if len(orders)==0 and finish==num_Agents[index]:
-        print('For',num_Agents[index],'Agents Final Key Value is -',key)
+    # print(input.txt')):
+#      sys.stdin = open('input.txt','r')
+#      sys.stdout = open('output.txt','a')
+# else:
+#      input = io.finish,num_Agents[index],len(orders))
+    if len(orders)==0 and finish==num_Agents[0]:
+        str1='Without Congestion Management'
+        if congestion_flag:
+            str1='With Congestion Management'
+        str2='Normal Intersection Management'
+        if test_flag:
+            str2='Intersection Management with Randomization and epsilon '+str(num_epsilon[index])
+        print(str1,str2,'For',num_Agents[0],'Agents Final Key Value is -',key)
         break
     
     # if key%300==0:
@@ -134,4 +158,4 @@ while running:
 
 
     pygame.display.update()
-    
+    pygame.image.save(screen,"./Pics/image"+str(key)+".jpg")

@@ -1,16 +1,23 @@
 from window_Util import *      
 Number_of_Agents = 50
-Number_of_SAgents= 20
+Number_of_SAgents= 75
 Number_of_TAgents=len(truck_resting)
 Agents = []
 Conveyor_Agents=[]
 coutins=0
 Sorting_Agents=[]
 Truck_Agents=[]
-num_Agents=[1,10,25,50,75,100]
-def init_agents(ind):
-    global Number_of_Agents
+# num_Agents=[4,10,25,50,75,100,300]
+num_Agents=[75]
+num_epsilon=[0.5,0.75,1]
+random_intersection_flag=1
+epsilon=0.6
+
+def init_agents(ind,test_flag,ind2):
+    global Number_of_Agents,random_intersection_flag,epsilon
     Number_of_Agents=num_Agents[ind]
+    random_intersection_flag=test_flag
+    epsilon=num_epsilon[ind2]
     for _ in range(Number_of_Agents):
         nAgent=Agent(0,n,m)
         # nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
@@ -79,15 +86,12 @@ def get_direction(a,b):
 
 def count_bots(Point):
     dirs=[1,2,3,4]
-    # counts=[]
-    # for d in dirs:
-    #     if d not in Matrix.grid[Point[0]][Point[1]]:
-    #         counts.append(d)
-
     maximus=0
-    chus=0
+    choices=[]
+    finald=0
     counts=dirs
     dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)] 
+
     for d in counts:
         count=0
         Cur=[Point[0],Point[1]]
@@ -98,15 +102,24 @@ def count_bots(Point):
             Cur[0]+=dir[d][0]
             Cur[1]+=dir[d][1]
             count+=1
+        
         if count>maximus:
-            chus=d
+            finald=d
+        if count!=0:
+            choices.append(d)
         maximus=max(maximus,count)
-    if chus==0:
-        print(Position_Booking[(Point[0],Point[1])])
-        print(maximus)
+    
+    if random_intersection_flag:
+        prob=random.random()    
+        if prob<=epsilon:
+            finald=random.choice(choices)
+
+    if finald==0:
+        print('lordgavy01')
         input()
-        return -1
-    return chus
+
+    return finald
+    
 
 def handle_intersection():
     for i,j in Intersections:
@@ -223,7 +236,7 @@ def handle_rack_agents(coloring, key):
                 else:
                     agent.color = colors.RED1
                     agent.changelane=1
-                    agent.waitingperiod=10
+                    agent.waitingperiod=50
                                 
         elif agent.direction!="rest":
             
@@ -277,6 +290,8 @@ def handle_rack_agents(coloring, key):
                     agent.Wait = True
                     agent.color = colors.YELLOW1
                     agent.size=2
+                    
+                    Position_Booking[agent.position]=0
                     pygame.draw.circle(screen, agent.color, agent.position, agent.size)
                     
                     remove=[]
@@ -302,6 +317,7 @@ def handle_rack_agents(coloring, key):
                     logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached back to its Rack with full Charge.')
                     agent.direction="rest"
                     agent.goals=[]
+                    Position_Booking[agent.position]=0
                     agent.nearestgoals=[]
                     agent.goalindex=0
                     agent.Index=-1
@@ -364,11 +380,12 @@ def handle_conveyor_belt(sorting_orders):
         if conveyor_agent.Index==-1:
             sorting_orders.append(conveyor_agent.order_id)          
             conveyor_agent.Path=[]
-            removing_conveyor.append(i)
+            removing_conveyor.append(Conveyor_Agents[i])
             # conveyor_agent.color=colors.PALEGREEN
         pygame.draw.circle(screen, conveyor_agent.color, conveyor_agent.position,4)
+    
     for ind in removing_conveyor:
-        Conveyor_Agents.remove(Conveyor_Agents[ind])
+        Conveyor_Agents.remove(ind)
     removing_conveyor.clear()
     
 

@@ -10,8 +10,8 @@ from collections import defaultdict
 import time
 Intersections=[]
 # n,m=input().split()   Take input from User
-m = 3 # width
-n = 3  # height     (n,m)>=2
+m = 4 # width
+n = 4  # height     (n,m)>=2
 sorting_m=6
 sorting_n=4
 
@@ -339,6 +339,7 @@ def ged(x):
 # Make a dictionary for intersections
 Intersec_dic=defaultdict(int)
 Position_Booking=defaultdict(int)
+# Index_Booking=defaultdict(int)
 Intersection_Gateway={}
 Intersection_waiting=defaultdict(int)
 

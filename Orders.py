@@ -20,7 +20,7 @@ import time
 import collections
 from Map_Simul import *
 import random
-random.seed(10)
+random.seed(2500)
 import numpy as np
 import logging
 # def generate_order():
@@ -47,8 +47,8 @@ order_db.drop()
 collection.drop()
 bot_db.drop()
 
-type_of_items=5
-max_order_limit=5
+type_of_items=0
+max_order_limit=1
 
 #Creating Log File
 logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s',filemode='w')
@@ -112,8 +112,8 @@ def gen_a_order():
   racks=assign_rack(order)
   
   # human_counter= random.randint(0,2*m-1)
-  human_counter=0
-  
+  human_counter=1
+
   order_id=str(uuid.uuid4())
   if len(order)==0:
     return "Nothing"
@@ -132,9 +132,10 @@ def add_items(count):
   for _ in range(count):
     type=random.randint(0,type_of_items)
     item_types_in_db.add(type)
-    quantity=random.randint(1,3)
+    # quantity=random.randint(1,3)
+    quantity=1
     shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
-    # shelf=str((0, 0, random.randint(0, 4), random.randint(0, 4)))
+    # shelf=str((1, random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
     if collection.find_one({"type":type}):
       collection.update_one({"type":type},{"$inc":{"quantity":quantity}})
       if collection.find_one({"type":type, "shelves":{"$elemMatch":{"shelf":shelf}}}):
@@ -158,5 +159,5 @@ def add_item(type,quantity,shelf):
       collection.insert_one({"type":type, "quantity":quantity, "shelves":[{"shelf":shelf, "quantity":quantity}]})
 
 
-add_items(30)
+add_items(75)
 #print(racks)

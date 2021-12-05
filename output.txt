@@ -1,0 +1,264 @@
+Without Congestion Management For 4 Agents Final Key Value is - 98501
+Without Congestion Management For 10 Agents Final Key Value is - 38750
+Without Congestion Management For 25 Agents Final Key Value is - 17878
+Without Congestion Management For 50 Agents Final Key Value is - 13670
+Without Congestion Management For 75 Agents Final Key Value is - 15070
+Without Congestion Management For 100 Agents Final Key Value is - 16237
+With Congestion Management For 4 Agents Final Key Value is - 99338
+With Congestion Management For 10 Agents Final Key Value is - 41773
+With Congestion Management For 25 Agents Final Key Value is - 17887
+With Congestion Management For 50 Agents Final Key Value is - 13304
+With Congestion Management For 75 Agents Final Key Value is - 14469
+With Congestion Management For 100 Agents Final Key Value is - 15637
+With Congestion Management For 200 Agents Final Key Value is - 14601
+Without Congestion Management For 200 Agents Final Key Value is - 10314
+With Congestion Management Normal Intersection Management For 4 Agents Final Key Value is - 57741
+With Congestion Management Normal Intersection Management For 10 Agents Final Key Value is - 23360
+With Congestion Management Normal Intersection Management For 25 Agents Final Key Value is - 9615
+With Congestion Management Normal Intersection Management For 50 Agents Final Key Value is - 4319
+With Congestion Management Normal Intersection Management For 75 Agents Final Key Value is - 7424
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 4477
+With Congestion Management Intersection Management with Randomization For 4 Agents Final Key Value is - 57787
+With Congestion Management Intersection Management with Randomization For 10 Agents Final Key Value is - 23333
+With Congestion Management Intersection Management with Randomization For 25 Agents Final Key Value is - 9666
+With Congestion Management Intersection Management with Randomization For 50 Agents Final Key Value is - 4330
+With Congestion Management Intersection Management with Randomization For 75 Agents Final Key Value is - 7423
+With Congestion Management Intersection Management with Randomization For 100 Agents Final Key Value is - 4534
+With Congestion Management Intersection Management with Randomization For 4 Agents Final Key Value is - 57787
+With Congestion Management Intersection Management with Randomization For 10 Agents Final Key Value is - 23333
+With Congestion Management Intersection Management with Randomization For 50 Agents Final Key Value is - 7364
+With Congestion Management Intersection Management with Randomization For 75 Agents Final Key Value is - 7375
+With Congestion Management Intersection Management with Randomization For 100 Agents Final Key Value is - 4423
+With Congestion Management Intersection Management with Randomization For 4 Agents Final Key Value is - 57787
+With Congestion Management Intersection Management with Randomization For 10 Agents Final Key Value is - 23333
+With Congestion Management Intersection Management with Randomization For 50 Agents Final Key Value is - 7364
+With Congestion Management Intersection Management with Randomization For 75 Agents Final Key Value is - 7375
+With Congestion Management Intersection Management with Randomization For 100 Agents Final Key Value is - 4423
+With Congestion Management Intersection Management with Randomization For 25 Agents Final Key Value is - 9557
+With Congestion Management Intersection Management with Randomization For 200 Agents Final Key Value is - 4045
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 4049
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9100
+With Congestion Management Intersection Management with Randomization For 200 Agents Final Key Value is - 8994
+With Congestion Management Intersection Management with Randomization For 300 Agents Final Key Value is - 9129
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9044
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8993
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 12060
+For 1000 Orders:
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 12072
+With Congestion Management Intersection Management with Randomization For 300 Agents Final Key Value is - 11477
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 12060
+Without Congestion Management Intersection Management with Randomization For 300 Agents Final Key Value is - 11995
+0.75 Randomization
+Without Congestion Management Intersection Management with Randomization For 300 Agents Final Key Value is - 12305
+With Congestion Management Intersection Management with Randomization For 300 Agents Final Key Value is - 11397
+Day 2 Testing (for 300 Orders)
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15633
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15896
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15255
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15719
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15300
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 14637
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15811
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15822
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15919
+Without Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 14651
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 8712
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9387
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 8938
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9476
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9126
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9435
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 10168
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 10511
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9407
+Without Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9182
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9559
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 11717
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8837
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8718
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9402
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9147
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8893
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9079
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8691
+Without Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9455
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15035
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15481
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 18675
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15731
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15502
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 16456
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15303
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15635
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15696
+With Congestion Management Normal Intersection Management For 100 Agents Final Key Value is - 15394
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9353
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9086
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 8801
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 10860
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 8929
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 10363
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 11637
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9285
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9575
+With Congestion Management Normal Intersection Management For 200 Agents Final Key Value is - 9663
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9597
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9177
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8544
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10857
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8393
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10593
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8997
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10992
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9428
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8971
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10739
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15120
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15629
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 14908
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15135
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15143
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15210
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15794
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 16152
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15490
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 14976
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 12350
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 9661
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10850
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 11024
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10338
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 9621
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 9706
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10345
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 11054
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 9922
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10373
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10131
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9684
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9811
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9084
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8013
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8816
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10454
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9153
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10052
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15332
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15296
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15376
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15357
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15360
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15241
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 14875
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15313
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 16116
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 100 Agents Final Key Value is - 15118
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 9987
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 11786
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 8934
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 8865
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 8788
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10039
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10656
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10979
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10850
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 200 Agents Final Key Value is - 10534
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10321
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9964
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10204
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10287
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8787
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9934
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9586
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10583
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10596
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 12555
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 17052
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15564
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15207
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15480
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15835
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 18337
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 17181
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15560
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 16284
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 100 Agents Final Key Value is - 15855
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 9709
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 9818
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 9292
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 10210
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 11443
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 10646
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 10117
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 8849
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 9327
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 200 Agents Final Key Value is - 9492
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 8365
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9162
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9457
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 11259
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9199
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 8045
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9715
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 11894
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9307
+With Congestion Management Intersection Management with Randomization and epsilon 0.6 For 300 Agents Final Key Value is - 9118
+Day 3 Testing
+Take 1
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 12098
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 10477
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 11184
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 10129
+Take 2
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 11449
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 12383
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9821
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 11432
+Take 3
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10683
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 10585
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9956
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 10488
+Take 4
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8712
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 9790
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8982
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 9478
+Take 5
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8871
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 9258
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9324
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 8398
+Take 6
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8330
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 8416
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8087
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 9235
+Take 7
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9142
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 9664
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 10381
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 10116
+Take 8
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 9424
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 8994
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9735
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 9468
+Take 9
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 10186
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 8841
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 9285
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 9497
+Take 10
+With Congestion Management Normal Intersection Management For 300 Agents Final Key Value is - 8222
+With Congestion Management Intersection Management with Randomization and epsilon 0.5 For 300 Agents Final Key Value is - 8486
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 300 Agents Final Key Value is - 8677
+With Congestion Management Intersection Management with Randomization and epsilon 1 For 300 Agents Final Key Value is - 8463
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 20 Agents Final Key Value is - 2541
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 20 Agents Final Key Value is - 2520
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 50 Agents Final Key Value is - 2512
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 50 Agents Final Key Value is - 2519
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 50 Agents Final Key Value is - 2800
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 50 Agents Final Key Value is - 2676
+Without Congestion Management Intersection Management with Randomization and epsilon 0.75 For 75 Agents Final Key Value is - 2910
+With Congestion Management Intersection Management with Randomization and epsilon 0.75 For 75 Agents Final Key Value is - 2933

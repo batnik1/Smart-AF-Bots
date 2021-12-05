@@ -5,7 +5,7 @@ import queue
 import collections
 from Grid import Grid
 import time
-
+#  https://xxxx@github.com/batnik1/Smart-AF-Bots.git
 congestion_flag=1
 # from Map_Simul import Golden_Grid
 ks=0
@@ -73,9 +73,9 @@ Matrix = Grid(N, N)
 
 def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):
     if congestion_flag:
-        return 0.8*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
+        return 0.9*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
     else:
-        return 0.95*ManhattanDistance(Point,Goal)
+        return ManhattanDistance(Point,Goal)
         
 class Search(): 
 

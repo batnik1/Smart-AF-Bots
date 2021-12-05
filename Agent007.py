@@ -1,6 +1,6 @@
 import math
 import random
-random.seed(20)
+random.seed(2600)
 import colors
 #  1 toh yeh truck wale aur varna yeh counter
 
