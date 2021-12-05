@@ -12,7 +12,7 @@ Golden_Grid={}
 
 def get_config(config):
     with open(config, 'r') as stream:
-        return yaml.load(stream)
+        return yaml.load(stream,yaml.SafeLoader)
 
 config = get_config('parameters.yaml')
 congestion_flag=config['congestion_flag']

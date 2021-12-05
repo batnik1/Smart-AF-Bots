@@ -1,0 +1,51 @@
+function Handle_Rack_Agents():
+    if Agent.State==Charging:
+        Increase(Agent.Charge)
+        if Full_Charge(Agent):
+            Agent.Goal=Alloted Resting Area
+            Agent.State=Motion
+        
+    if Agent.State==Resting:
+        if Agent.Charge<20:
+            Agent.Goal=Alloted Charging Station
+            Agent.State=Motion
+        else:
+            Wait(New_Orders)
+    
+    if Path!= None:
+        Agent.Charge <-- reduced
+        if next point in Intersection:
+            if direction of agent is allowed in Intersection:
+                Agent.Position<--next point
+            else:
+                Cooldown(next point) is over:
+                    Recompute Direction 
+                if direction of agent is allowed in Intersection:
+                    Agent.Position<--next point
+                
+    
+    else if Agent.State==Motion:
+    
+        Decrease(Agent.Charge)
+        if Agent.Position==Agent.Goal:
+            if Agent.Goal in Charging Stations:
+                Agent.State=Charging
+            if Agent.Goal in Human_Counters:
+                Deposit(Agent.items_carrying)
+                Agent.Goal=Rack_Position[Agent.rack_carrying]
+            
+            if Agent.Goal in Racks:
+                // Depending on Case: 1) While finishing the Order 2) While beginning the Order
+                if Agent.HasRack==True:
+                    Deposit(Rack)
+                    Agent.State=Resting
+                    Agent.Path=None
+                else:    
+                    Pickup(Rack)
+                    Agent.Goal=Agent.Order.human_counter
+                    
+            if Goals are completed:
+                return 
+                
+        Recompute_Path(Goal)
+            

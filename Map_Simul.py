@@ -12,7 +12,7 @@ import time
 # get configs
 def get_config(config):
     with open(config, 'r') as stream:
-        return yaml.load(stream)
+        return yaml.load(stream,yaml.SafeLoader)
 
 config = get_config('parameters.yaml')
 

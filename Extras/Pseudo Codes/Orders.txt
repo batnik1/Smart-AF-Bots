@@ -1,0 +1,65 @@
+function assign_rack(orders):
+    racks_dict <-- empty dictionary
+    loop through order in orders:
+        docker<-- All documents with type order[0]
+        target = order[1]  // Number of items of the type wanted
+        lst <--empty list
+        Collection--> update(target) //reduce the orignal quantity by target
+        loop through nobj in docker:
+            loop through obj in nobj['shelves']: //Shelves in docker collection having type order[0]
+                shelf = obj['shelf']
+                quant = obj['quantity']
+                lst<--[quant, shelf]
+            reverse-sort(lst) // For best racks to pick  
+            loop through lst:
+               if lst[j][0] > target:
+                    Collection<--update(target) // if quantity is more than required only reduce by target
+                    racks-dict[lst[j][1]]-->  [order[0], target]  // dictionary assignment
+                    target = 0
+                else:
+                    target -= lst[j][0] // reduce target by available items at rack
+                    Collection<--update(lst[j][0]) // remove all the items from the rack of type order[0] 
+                    racks-dict[lst[j][1]]-->  [order[0], lst[j][0]]  // dictionary assignment
+                if target <= 0:
+                    break
+    return racks_dict
+
+
+function gen_a_order():
+
+    num_types_ordered = random.randint(1, 3)
+    order <--empty_list
+    sum = 0
+    //random(x,y) meaning choosing a random number between (1,3) including them
+    //sample(x,y) meaning choosing y random numbers from list x
+    types_chosen=sample(item_types_in_db,min(random(1,3),size of item_types_in_db))
+    loop through type in types_chosen:
+        if size of find_collection(type) > 0: // Find all collections with type- "type"
+            quant = find_quantity(type)
+            low = 1
+            high = min(max_order_limit, quant)
+            if low > high:
+                continue
+            order<--Append<--[type, random.randint(low, high)]
+            sum += order[-1][1]
+
+    racks = assign_rack(order)
+    human_counter = random(0, 2*m-1)
+    if size of order is 0:
+        return "Nothing"
+    sorting_random = (random(0, 2*sorting_n-1),random(0, 2*sorting_m-1))
+    Order_db--> Update-->"_id": order_id, "order_progress": 0, "ordered_quantity": sum,
+                        "Target_Racks": racks, "human_counter": human_counter 
+    return (racks, human_counter, order_id)
+
+
+def add_items(count):
+    loop through (1,count):
+        type=random(0,type_of_items)
+        item_types_in_db<--add<--type
+        quantity = random(1, 3)
+        shelf = str((random(0, m-1), random(0, n-1),random(0, 4), random(0, 4)))
+        collection-->update--> +quantity in type "type"
+    return item_types_in_db
+
+

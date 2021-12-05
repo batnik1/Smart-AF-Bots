@@ -1,0 +1,56 @@
+ταυ--> Path to travel on
+
+function Move(Agent):
+    flag=1
+    if ταυ is not empty:
+        Ghost_Robot<-- Agent
+        Ghost_Robot.position=ταυ[1] 
+        if Collision_Check(Ghost_Robot.position) is True:
+            return (Vx=0,Vy=0)
+        if Ghost_Robot is at Intersection:
+            if Intersection_Management(request=False,query=True,Ghost_Robot.position) is not road(Agent.Position):
+                Intersection_Management(request=True,query=False,Ghost_Robot.position)
+                flag=0
+        if flag == 1:
+            if Congestion_Management(Agent.position) is True:
+                ταυ=[]
+                return (Vx=0,Vy=0)
+            else:
+                ταυ.pop_front()
+                New = Speed(Ghost_Robot.position,Agent.position)
+                Agent<--Ghost_Robot
+                return New
+        else:
+            return (Vx=0,Vy=0)
+    else:
+        ταυ=Planning(Agent.position,Agent.goal)
+        return (Vx=0,Vy=0)
+
+function Speed(A,B):
+    return Bx-Ax,By-Ay
+
+function Planning(position,goal):    
+    α=Path from position to Access point  
+    β=Path from Access point to Depart point
+    δ=Path from Depart point to goal
+    return α+β+δ 
+    
+function Collision_Check(position):
+    if position is Occupied:  //Current Position is input from Sensor  
+        return True
+    else:
+        return False
+
+function Intersection_Management(request,query,Intersection):
+    if query==True:
+        return road(Intersection)
+    else:
+        if last_time_updation(Intersection) > threshold:
+            Re-Evaluate(Intersection)
+
+
+function Congestion_Management(position):
+    if Heat(position)>Threshold:
+        return True
+    else:
+        return False    

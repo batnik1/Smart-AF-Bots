@@ -1,0 +1,66 @@
+congestion_flag=1
+function heat_value(Point,z): 
+    // z depends on what the heat value is being checked for rack agents or sorting agents
+    x,y=Point
+    heat=0
+    sigma=100
+    num=0
+    if z==0: // if z is in rack area
+        Agents=rack_agents
+    else:
+        Agents=Sorting_Agents
+    
+    loop through Agents:
+        if agent.Wait are at rest:
+            continue
+        num=num+=1
+        X,Y=agent.position
+        heat+=e^(-((x-X)^2+(y-Y)^2)/sigma^2)     
+    if num==0:
+        return 0
+    return (heat-1)/num    
+
+funcion get_heuristic(Point,Goal,flag):
+    if congestion_flag is set 1:
+        return 0.8*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag)
+    else:
+        return ManhattanDistance(Point,Goal)
+
+class Search(source,dest):  
+    self.dist = N*N grid with default value INF
+    self.prev = N*N grid with default value [-1,-1]
+    // self.prev is used to find parent to calculate path
+
+
+
+    function AStar(flag):
+        heap<-Heap //Define a heap as self.heap
+        heapq --> Append --> (get_heuristic(source,dest,flag),0, source) 
+        self.dist[self.source]=get_heuristic(source,dest,flag)
+        while size of heap > 0:
+            (cumltv,g, cState) <-- heap.pop
+            if cumltv > self.dist[cState]:
+                continue
+            if cState is equal to dest:
+                break
+            // Golden grid has stored neighbors in a list with [zero,up,down,right,left]
+            loop through Golden_grid[cState] as nextX,nextY:
+                if first element:
+                    continue
+                nextXY=nextX,nextY
+                if nextX >= 0 and nextY >= 0 and nextX < height_of_window and nextY < width_of_window:
+                    newDist=g+ManhattanDistance(cState,nextXY)+get_heuristic(nextXY,dest,flag)
+                    if self.dist[nextXY] > newDist:
+                        self.dist[nextXY] = newDist
+                        self.prev[nextXY] = cState
+                        heapq<--Append<--(self.dist[nextXY],g+ManhattanDistance(cState,nextXY), nextXY)
+
+function getPathLong:    
+    res = [self.dest]
+    cur = self.dest
+    while self.prev[cur[0]][cur[1]] is not equal to [-1, -1]:
+        res<--Append<--(self.prev[cur])
+        cur = self.prev[cur]
+    reverse(res) // Reverse the list
+    return res
+
