@@ -83,7 +83,28 @@ def get_heuristic(Point,Goal,Agents,Truck_Agents,Sorting_Agents,flag):          
         return 0.9*ManhattanDistance(Point,Goal)+200*heat_value(Point,flag,Agents,Truck_Agents,Sorting_Agents)
     else:
         return ManhattanDistance(Point,Goal)
-        
+
+def turning_time(A,B,theta):
+    if A==B:
+        return theta,0
+    
+    if A[0]==B[0]:
+        if A[1]>B[1]:
+            curTheta="North"
+        else:
+            curTheta="South"
+    else:
+        if A[0]>B[0]:
+            curTheta="West"
+        else:
+            curTheta="East"
+    
+    if curTheta==theta:
+        return curTheta,0
+
+    return curTheta,50
+
+
 class Search(): 
 
     def __init__(self, source, destination):
@@ -93,11 +114,11 @@ class Search():
         self.dist=[x[:] for x in diss]
         self.prev=[x[:] for x in press]
 
-    def AStar(self,Agents,Truck_Agents,Sorting_Agents,flag):    # Main Path Planning Function for all type of Agents
-        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0, self.source)) 
+    def AStar(self,theta,Agents,Truck_Agents,Sorting_Agents,flag):    # Main Path Planning Function for all type of Agents
+        heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0,theta, self.source)) 
         self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
         while len(self.heap) > 0:
-            (cumltv,g, cState) = heapq.heappop(self.heap)
+            (cumltv,g,curTheta,cState) = heapq.heappop(self.heap)
             if cumltv > self.dist[cState[0]][cState[1]]:
                 continue
             if cState == self.dest:
@@ -107,13 +128,13 @@ class Search():
                 if nextZ==():
                     continue
                 (nextX,nextY)=nextZ
-        
                 if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                    newDist=g+ManhattanDistance(cState,[nextX,nextY])+get_heuristic([nextX,nextY],self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
+                    nextTheta,turnTime=turning_time(cState,nextZ,curTheta)
+                    newDist=g+ManhattanDistance(cState,[nextX,nextY])+turnTime+get_heuristic([nextX,nextY],self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
                     if self.dist[nextX][nextY] > newDist:
                         self.dist[nextX][nextY] = newDist
                         self.prev[nextX][nextY] = cState
-                        heapq.heappush(self.heap, (self.dist[nextX][nextY],g+ManhattanDistance(cState,[nextX,nextY]), [nextX, nextY]))
+                        heapq.heappush(self.heap, (self.dist[nextX][nextY],g+ManhattanDistance(cState,[nextX,nextY])+turnTime,nextTheta, [nextX, nextY]))
 
 
     def BFS(self, rev=False):

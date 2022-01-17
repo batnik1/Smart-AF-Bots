@@ -25,6 +25,11 @@ def handle_orders():
             rack_location=numofrack[rack]
             ind = get_Agent(rack_location)  # Get the Index of Agent to which we will assign this Order
             if ind == -1:                   # No Agent is free so we will check later for order assignment
+                # ct=0
+                # for d in Agents:
+                #     if d.Wait==True:
+                #         ct+=1
+                # print('no bande aval ',ct)
                 break
             rack_available[rack]=0
             

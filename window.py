@@ -63,7 +63,7 @@ while running:
         if new_orders!="Nothing":
             orders.append(new_orders)   # To mantain FCFS Order
 
-    if key==0:
+    if key==-1:
         new_items=truck_orders()
         Torders+=new_items
 
