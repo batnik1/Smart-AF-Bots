@@ -93,7 +93,6 @@ def gen_a_order():
   racks=assign_rack(order)
   
   human_counter= random.randint(0,2*m-1)
-
   order_id=str(uuid.uuid4())
   if len(order)==0:
     return "Nothing"

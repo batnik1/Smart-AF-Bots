@@ -17,7 +17,7 @@ class Agent():
         self.order_id=0
         self.items_carrying=[]
         self.ind=0        
-        self.charge=200   # Initial Charge
+        self.charge=200000   # Initial Charge
         self.needcharge=False  # If Agent is Assisgned to a Chargin Station
         self.charging=False    # If Agent is Charging
         self.cStation=-1       # Current Charging Station
@@ -29,3 +29,8 @@ class Agent():
         self.changelane=0      # if the agent wants to re-configure its path
         self.waitingperiod=0   # Waiting period for next time to calculate if the agent wants to change its lane
         self.cooldown_rack=0   # Cooldown period of racks assigned if congestion near the rack is too high
+        self.velocity=1.5
+        self.theta="North"
+        self.maxcharge=self.charge
+        self.human_delay=0
+        
