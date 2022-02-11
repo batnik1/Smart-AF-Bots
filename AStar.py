@@ -182,4 +182,3 @@ class Search():
                 cur = self.prev[cur[0]][cur[1]]
             res.reverse()
             return res
-

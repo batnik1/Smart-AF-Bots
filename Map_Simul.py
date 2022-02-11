@@ -4,7 +4,7 @@ from Grid import Grid
 import AStar
 from AStar import Search,Matrix,Golden_Grid
 import colors
-from collections import defaultdict
+from collections import defaultdict,deque
 import yaml
 
 import time
@@ -389,3 +389,15 @@ def nearest_intersection_path(source,destination):
         return list(zip(path,[y1]*len(path)))
 
 
+Roads_Grid=defaultdict(list)
+Roads_lr=defaultdict(int)
+
+def divide_roads():
+    for i,j in Intersections:
+        for nebr in Golden_Grid[(i,j)]:
+            if ((i,j),nebr) not in Roads_lr:
+                Roads_lr[((i,j),nebr)]=1
+                Roads_lr[(nebr,(i,j))]=-1
+
+
+divide_roads()

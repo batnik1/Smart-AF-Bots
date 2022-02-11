@@ -55,12 +55,12 @@ def handle_events():
                         paused=1
                         break
 
-
+# https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
 
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-        if new_orders!="Nothing":
+        if new_orders!="Nothing": 
             orders.append(new_orders)   # To mantain FCFS Order
 
     if key==-1:
@@ -69,15 +69,15 @@ while running:
 
     init_screen() 
     handle_orders()
-    handle_Torders()
+    # handle_Torders()
     handle_events()
-    finish=handle_rack_agents(coloring,key)
+    handle_rack_agents(key)
     
     # if key==0:
     #     dummy_sorting(key,10)
-    handle_conveyor_belt(sorting_orders)
-    handle_sorting_agents(sorting_orders)
-    handle_truck_agents(key)
+    # handle_conveyor_belt(sorting_orders)
+    # handle_sorting_agents(sorting_orders)
+    # handle_truck_agents(key)
     key+=1
 
     for colo in range(len(coloring)):

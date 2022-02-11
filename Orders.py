@@ -7,7 +7,7 @@ This file contains functions to do the following tasks:
 import uuid
 from Map_Simul import *
 import random
-random.seed(2500)
+# random.seed(2500)
 import numpy as np
 import logging
 

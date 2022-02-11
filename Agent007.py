@@ -1,8 +1,8 @@
 import math
 import random
-random.seed(2600)
+# random.seed(2600)
 import colors
-
+import numpy as np
 
 class Agent():
     def __init__(self, type,n,m):
@@ -33,4 +33,74 @@ class Agent():
         self.theta="North"
         self.maxcharge=self.charge
         self.human_delay=0
+        self.key_field=-1       # Key field is used to test when did agent moved last
+        self.valet=None
+        # Vehicle's Fields
+        self.l = 3
+        self.dt=0.1
+        self.s0 = 3
+        self.T = 0.1
+        self.v_max = 5
+        self.a_max = 2
+        self.b_max = 2
+        self.x = 0
+        self.v = 0
+        self.a = 0
+        self.stopped = False
+        self.sqrt_ab = 2*np.sqrt(self.a_max*self.b_max)
+        self._v_max = self.v_max
+
+    def update(self, lead,motion):
+        movexy=0
+        movenp=1
+        if motion==1:
+            movexy=1
+            movenp=-1
+        elif motion==2:
+            movexy=1
+        elif motion==4:
+            movenp=-1 
+
+        self.x=(movenp)*self.position[movexy]
+        # Update position and velocity
+        if self.v + self.a*self.dt < 0:
+            self.x -= 1/2*self.v*self.v/self.a
+            self.v = 0
+        else:
+            self.v += self.a*self.dt
+            self.x += self.v*self.dt + self.a*self.dt*self.dt/2
         
+        # Update acceleration
+        alpha = 0
+        if lead:
+            lead.x=(movenp)*lead.position[movexy]
+            delta_x = lead.x - self.x - lead.l
+            delta_v = self.v - lead.v
+
+            alpha = (self.s0 + max(0, self.T*self.v + delta_v*self.v/self.sqrt_ab)) / delta_x
+
+        self.a = self.a_max * (1-(self.v/self.v_max)**4 - alpha**2)
+
+        if self.stopped: 
+            self.a = -self.b_max*self.v/self.v_max
+
+        
+        # print(self.position,self.x*movenp)
+        if movexy:
+            self.position=(self.position[0],self.x*movenp)
+        else:
+            self.position=(self.x*movenp,self.position[1])
+
+    def stop(self):
+        self.stopped = True
+
+    def unstop(self):
+        self.stopped = False
+
+    def slow(self, v):
+        self.v_max = v
+
+    def unslow(self):
+        self.v_max = self._v_max
+
+
