@@ -41,9 +41,9 @@ class Agent():
         self.dt=0.1
         self.s0 = 3
         self.T = 0.1
-        self.v_max = 150
-        self.a_max = 5
-        self.b_max = 100 # TODO: Can change this to be same as a_max
+        self.v_max = 1.5
+        self.a_max = .1
+        self.b_max = .1 # TODO: Can change this to be same as a_max
         self.x = 0
         self.v = 0
         self.a = 0

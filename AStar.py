@@ -173,6 +173,8 @@ class Search():
 
     def getPathLong(self):          # To get Path in Ambient Graph
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
+            if self.source == self.dest:
+                return [self.source]
             return []
         else:
             res = [self.dest]

@@ -210,6 +210,7 @@ def handle_rack_agents(key,coloring):
                 print("WTH")
                 print(agent.ind)
                 print(agent.position,new_point,k)
+                print(agent.path,agent.stopped)
                 for i in range(1,100000000):
                     pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
                     pygame.draw.circle(screen,(0,255,0),(int(k[0]),int(k[1])),2) 
@@ -219,12 +220,14 @@ def handle_rack_agents(key,coloring):
                 try:
                     D=D[1]
                 except:
+
                     print(agent.position)
                     print(agent.path)
                     print(k)
                     print(agent.Index)
+                    print(agent.ind)
                     for i in range(1,100000000):
-                        pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
+                        pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),10)
                         pygame.display.flip()
                         
                     x=input()
@@ -338,7 +341,7 @@ def handle_rack_agents(key,coloring):
                 dist_r=ManhattanDistance(agent.position,k)
              #   print("Going",dist_r,k)
              # TODO : Try to adjust speed as bots enter intersection
-                if dist_r<=1.5 and passing:
+                if dist_r<=1.6 and passing:
     
                     removal.append(Road)
                     agent.position=k
@@ -392,9 +395,9 @@ def handle_rack_agents(key,coloring):
             totlset.append(pt)
             
         # if agent is at a rack
-        if i==17:
+        if i==44:
             pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),5)
-            print(agent.position,agent.v,agent.stopped)
+          #  print(agent.position,agent.v,agent.stopped,agent.goalindex,agent.goals)
         else:
             if agent.position in israck:
                 pygame.draw.circle(screen, agent.color, (agent.position[0]+10,agent.position[1]),2)
@@ -419,10 +422,16 @@ def handle_rack_agents(key,coloring):
             nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,0)
             nextIntersec_path=nAgent.getPathLong()
             agent.path=nextIntersec_path
+            # if agent==Agents[17]:
+            #     print(agent.path,agent.Index,togoal,nearestIntersec,nextIntersec_path,Source)
+            #     x=input()
             last=nearest_intersection(togoal)
             agent.path.append(last)
             agent.path.reverse()
             agent.Index=len(nextIntersec_path)-1
+            # if agent==Agents[17]:
+            #     print(agent.path,agent.Index,togoal,nearestIntersec,nextIntersec_path,Source,last)
+            #     x=input()
 
 
     for p in dupl:

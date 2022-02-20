@@ -1,4 +1,5 @@
 import argparse
+from re import L
 import numpy as np
 
 from window_OrderHandler import *
@@ -73,6 +74,9 @@ while running:
     handle_events()
     handle_rack_agents(key,coloring)
     
+    # color all intersection
+    # for intersection in Intersections:
+    #     pygame.draw.circle(screen, (255,255,255), intersection, 3)
     # if key==0:
     #     dummy_sorting(key,10)
     # handle_conveyor_belt(sorting_orders)
