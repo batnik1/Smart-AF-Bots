@@ -1,6 +1,6 @@
 # Warehouse Parameters
-n: 2                   # n*m big racks where each rack has 25 small racks
-m: 2
+n: 3                   # n*m big racks where each rack has 25 small racks
+m: 3
 sorting_m: 6           # Sorting Window size
 sorting_n: 6
 
@@ -13,7 +13,7 @@ truck_freq: 50000       # Truck Frequency
 initial_items: 500     # Initial Items assigned in racks
 
 # For Agents
-Number_of_Agents: 1    # Number of Rack Agents
+Number_of_Agents: 250    # Number of Rack Agents
 Number_of_SAgents: 75   # Number of Sorting Agents
 random_intersection_flag: 1  # 1 means Randomized Intersection Management, else Normal Intersection Management
 epsilon: 0.75       # probability of randomisation in Intersection

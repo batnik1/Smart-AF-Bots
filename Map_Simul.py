@@ -51,6 +51,7 @@ for i in range(m):
                     print(rack_available[str((i,j,k,l))])
                     extras.append(str((i,j,k,l)))
 
+israck={}
 # position of racks calculated 
 numofrack={}
 def num_racks(xx,xxx):
@@ -58,10 +59,12 @@ def num_racks(xx,xxx):
         for j in range(n):
             for l in range(5):
                 numofrack[str((i,j,0,l))]=(120*i+90,120*j+105+20*l)
+                israck[(120*i+90,120*j+105+20*l)]=1
                 numofrack[str((i,j,1,l))]=(25+numofrack[str((i,j,0,0))][0],l*20+numofrack[str((i,j,0,0))][1])
+                israck[(25+numofrack[str((i,j,0,0))][0],l*20+numofrack[str((i,j,0,0))][1])]=1
                 for k in range(2,5):
                     numofrack[str((i,j,k,l))]=((k-1)*20+numofrack[str((i,j,1,0))][0],numofrack[str((i,j,1,l))][1])
-
+                    israck[((k-1)*20+numofrack[str((i,j,1,0))][0],numofrack[str((i,j,1,l))][1])]=1
 num_racks(n,m)
 #Dumping location 
 numofdump={}
@@ -332,13 +335,19 @@ Intersec_dic=defaultdict(int)
 Position_Booking=defaultdict(int)
 # Index_Booking=defaultdict(int)
 Intersection_Gateway={}
-Intersection_waiting=defaultdict(int)
-
+Intersection_Timeout={}
+Intersection_Booking={}
+Intersection_Bot={}
 # Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
     Intersec_dic[(i,j)]=1
     Intersection_Gateway[(i,j)]=[0]*5
+    Intersection_Timeout[(i,j)]=50
+    Intersection_Booking[(i,j)]=-1
+    Intersection_Bot[(i,j)]=Agent(0,n,m)
+    Intersection_Bot[(i,j)].l=2
+    Intersection_Bot[(i,j)].position=(i,j)
 
 # Calculating nearest_intersection from our ambient workspace into our roadmap
 def nearest_intersection(source,rev=False):

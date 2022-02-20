@@ -1,6 +1,6 @@
 import math
 import random
-# random.seed(2600)
+random.seed(2600)
 import colors
 import numpy as np
 
@@ -29,20 +29,21 @@ class Agent():
         self.changelane=0      # if the agent wants to re-configure its path
         self.waitingperiod=0   # Waiting period for next time to calculate if the agent wants to change its lane
         self.cooldown_rack=0   # Cooldown period of racks assigned if congestion near the rack is too high
-        self.velocity=1.5
+        self.velocity=1
         self.theta="North"
         self.maxcharge=self.charge
         self.human_delay=0
         self.key_field=-1       # Key field is used to test when did agent moved last
         self.valet=None
+        self.temp_valet=None
         # Vehicle's Fields
-        self.l = 3
+        self.l = 0.5
         self.dt=0.1
         self.s0 = 3
         self.T = 0.1
-        self.v_max = 5
-        self.a_max = 2
-        self.b_max = 2
+        self.v_max = 150
+        self.a_max = 5
+        self.b_max = 100 # TODO: Can change this to be same as a_max
         self.x = 0
         self.v = 0
         self.a = 0

@@ -11,7 +11,7 @@ order_freq=config['order_freq']
 truck_freq=config['truck_freq']
 initHCtoConveyor()
 def init_screen():
-    screen.fill((0, 0, 0))
+    screen.fill((0, 0, 0))  
     build_racks(n, m)
     draw_line(n, m)
     build_counter()
@@ -71,7 +71,7 @@ while running:
     handle_orders()
     # handle_Torders()
     handle_events()
-    handle_rack_agents(key)
+    handle_rack_agents(key,coloring)
     
     # if key==0:
     #     dummy_sorting(key,10)
@@ -81,7 +81,8 @@ while running:
     key+=1
 
     for colo in range(len(coloring)):
-         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10))
+         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10),1)
     
     pygame.display.update()
-   # pygame.image.save(screen,"./Pics/image"+str(key)+".jpg")
+    pygame.image.save(screen,"./New/image"+str(key)+".jpg")
+   
