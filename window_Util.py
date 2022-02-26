@@ -7,7 +7,7 @@ import collections
 # file just for drawing and showing to screen different utilities
 pygame.init()
 screen = pygame.display.set_mode((display_width, display_height))  # create screen
-pygame.event.set_allowed([pygame.QUIT, pygame.K_SPACE])
+# pygame.event.set_allowed([pygame.QUIT, #pygame.K_SPACE])
 
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 
@@ -116,6 +116,7 @@ def draw_line(n, m):
 
 
 def draw_rack_lines(x, y,color=colors.ORANGE):
+   # return
     pygame.draw.line(screen, color, (x+15, y-10), (x+15, y+100))  # up
     pygame.draw.line(screen, color, (x+55, y-10), (x+55, y+100))  # up
     pygame.draw.line(screen, color,
@@ -134,7 +135,8 @@ def draw_rack_lines(x, y,color=colors.ORANGE):
 
 
 def build_counter():
-    # pygame.draw.rect(screen, colors.VIOLETRED3, pygame.Rect(100, 10, 60, 60))
+  #  return
+    pygame.draw.rect(screen, colors.VIOLETRED3, pygame.Rect(100, 10, 60, 60))
     x = 100
     for i in range(m):
         pygame.draw.rect(screen, colors.PURPLE1, pygame.Rect(x, 20, 60, 50))
@@ -147,6 +149,7 @@ def build_counter():
 
 
 def build_counter_lines():
+    #return 
     x = 90
     for i in range(m):
         pygame.draw.line(screen, colors.ORANGE, (x, 10), (x, 80))
@@ -165,6 +168,7 @@ def build_counter_lines():
 
 
 def build_station_lines():
+  #  return
     pygame.draw.line(screen, colors.ORANGE, (80, 80), (30, 80))
     pygame.draw.line(screen, colors.ORANGE, (80, (n//2+n%2)*100), ((30, (n//2+n % 2)*100)))
     pygame.draw.line(screen, colors.ORANGE, (30, (n//2+n%2)*100), ((30, 80)))
@@ -175,6 +179,7 @@ def build_station_lines():
 
 def build_station_zone():
     # (x,y,x+l,y+b)
+   # return
     pygame.draw.rect(screen, colors.PURPLE2,pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
 
 
@@ -191,7 +196,7 @@ def build_charge_dict():
         charging_state_list.append(counting)
         charging_state[counting]=0
         charging_loc[counting]=(55,i)
-      #  pygame.draw.line(screen, colors.ORANGE, (30, i), (80, i))   
+        pygame.draw.line(screen, colors.ORANGE, (30, i), (80, i))   
 build_charge_dict()
 def build_charging_zone():
     for i in range((n//2+n % 2)*100+20,racks_height-90,10):

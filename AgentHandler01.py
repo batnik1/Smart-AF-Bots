@@ -211,10 +211,10 @@ def handle_rack_agents(key,coloring):
                 print(agent.ind)
                 print(agent.position,new_point,k)
                 print(agent.path,agent.stopped)
-                for i in range(1,100000000):
-                    pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
-                    pygame.draw.circle(screen,(0,255,0),(int(k[0]),int(k[1])),2) 
-                    pygame.display.flip()   
+                # for i in range(1,100000000):
+                #     pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
+                #     pygame.draw.circle(screen,(0,255,0),(int(k[0]),int(k[1])),2) 
+                #     pygame.display.flip()   
                 input()
             else:
                 try:
@@ -226,9 +226,9 @@ def handle_rack_agents(key,coloring):
                     print(k)
                     print(agent.Index)
                     print(agent.ind)
-                    for i in range(1,100000000):
-                        pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),10)
-                        pygame.display.flip()
+                    # for i in range(1,100000000):
+                    #     pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),10)
+                    #     pygame.display.flip()
                         
                     x=input()
             if agent.key_field==key:
@@ -434,8 +434,8 @@ def handle_rack_agents(key,coloring):
             #     x=input()
 
 
-    for p in dupl:
-        pygame.draw.circle(screen, colors.RED1, p, 3)
+    # for p in dupl:
+    #     pygame.draw.circle(screen, colors.RED1, p, 3)
             
             
             
