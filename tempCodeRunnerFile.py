@@ -1,2 +1,3 @@
-
-    #     pygame.draw.circle(screen, (255,255
+  # if key%truck_freq==0:
+    #     new_items=truck_orders()
+    #     T

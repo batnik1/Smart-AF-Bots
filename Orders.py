@@ -140,3 +140,10 @@ def add_item(type, quantity, shelf):
 
 
 add_items(initial_items)    # Adding some Items initially in Warehouse so that Bots don't have to sit idle
+
+# total items in warehouse
+total_items=0
+for obj in collection.find():
+  total_items+=obj["quantity"]
+print("Total Items in Warehouse:",total_items)
+# input()

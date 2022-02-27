@@ -10,14 +10,14 @@ class Agent():
         self.Wait = True  # State Wait T/F, T if it can receive new orders, F is it is busy and cannot.
         self.type = type  # Type Rack/Warehouse/Sorting  -- 0/1/2
         self.Index = -1   # Path Index location
-        self.Path = []
+        self.path = []
         self.CurRack = str((random.randint(0,n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4))) #default-rack for agent 
         self.color = colors.YELLOW1  
-        self.size = 1
+        self.size = 2
         self.order_id=0
         self.items_carrying=[]
         self.ind=0        
-        self.charge=200000   # Initial Charge
+        self.charge=200   # Initial Charge
         self.needcharge=False  # If Agent is Assisgned to a Chargin Station
         self.charging=False    # If Agent is Charging
         self.cStation=-1       # Current Charging Station
@@ -36,6 +36,7 @@ class Agent():
         self.key_field=-1       # Key field is used to test when did agent moved last
         self.valet=None
         self.temp_valet=None
+        self.onroad=False
         # Vehicle's Fields
         self.l = 0.5
         self.dt=0.1

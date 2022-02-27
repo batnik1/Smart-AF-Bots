@@ -115,6 +115,7 @@ class Search():
         self.prev=[x[:] for x in press]
 
     def AStar(self,theta,Agents,Truck_Agents,Sorting_Agents,flag):    # Main Path Planning Function for all type of Agents
+       # print(self.source,self.dest)
         heapq.heappush(self.heap, (get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag),0,theta, self.source)) 
         self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest,Agents,Truck_Agents,Sorting_Agents,flag)
         while len(self.heap) > 0:
@@ -175,6 +176,7 @@ class Search():
         if self.prev[self.dest[0]][self.dest[1]] == [-1, -1]:
             if self.source == self.dest:
                 return [self.source]
+            print('Path Not Found')
             return []
         else:
             res = [self.dest]

@@ -42,26 +42,26 @@ def compare(item1, item2):
 def make_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
-    pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,sorting_w,sorting_h),3)
-    pygame.draw.line(screen,colors.BLUE,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
-    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
-    pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
+   # pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,sorting_w,sorting_h),3)
+    pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2-20),(racks_width-40,(80+racks_height//2)/2-20),width=2)    # Left
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width+10,(80+racks_height//2)/2+70),width=2)    # Right
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2-20),(racks_width-40,(80+racks_height//2)/2+70),width=2)    # Down
     x=racks_width+20
 
-    for _ in range(int(2*sorting_m)):
+    for _ in range(int(2*sorting_m-1)):
        y=100
-       for _ in range(int(2*sorting_n)):
+       for _ in range(int(2*sorting_n-1)):
            make_rect(x, y,colors.PURPLE3)
            y+=30
        x+=30  
     x=racks_width+10
     y=80
-    for i in range(2*sorting_m+1):
-        pygame.draw.line(screen, colors.BLUE, (x, 80),(x,sorting_h+80),2)
+    for i in range(2*sorting_m):
+        pygame.draw.line(screen, colors.BLUE, (x, 90),(x,sorting_h+40),2)
         x+=30
-    for i in range(2*sorting_n+1):
-        pygame.draw.line(screen, colors.BLUE, (racks_width, y+10),(racks_width+sorting_w,y+10),2)
-        y+=30
+    for i in range(2*sorting_n):
+        pygame.draw.line(screen, colors.BLUE, (racks_width+10, y+10),(racks_width+sorting_w-40,y+10),2)
+        y+=30   
 
 # Drawing the coveyor on screen
 def conveyor():

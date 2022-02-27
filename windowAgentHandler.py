@@ -455,7 +455,7 @@ def handle_conveyor_belt(sorting_orders):
     removing_conveyor.clear()
     
 # Same as for rack agents
-def handle_sorting_agents(sorting_orders):
+def handle_sorting_agentssdd(sorting_orders):
     finished_sorder=[]
     for sorder in sorting_orders:
         ind = get_SAgent(numofdump["conveyor"])
@@ -486,10 +486,12 @@ def handle_sorting_agents(sorting_orders):
         agent.Wait = False
         agent.size = 4
         agent.order_id=sorder       
-              
+    
     for ind in finished_sorder:
         sorting_orders.remove(ind)
     finished_sorder.clear()
+    return 
+
     for sagent in Sorting_Agents:
        # print(100*heat_value(sagent.position,1,Agents,Truck_Agents,Sorting_Agents))
         if sagent.waitingperiod>0:
