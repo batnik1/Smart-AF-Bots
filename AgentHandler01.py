@@ -227,6 +227,7 @@ def handle_rack_agents(key,coloring):
                 print(agent.ind)
                 print(agent.position,new_point,k)
                 print(agent.path,agent.stopped)
+                print(agent.Index,agent.CurRack)
                 for i in range(1,100000000):
                     pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
                     pygame.draw.circle(screen,(0,255,0),(int(k[0]),int(k[1])),5) 
@@ -332,7 +333,7 @@ def handle_rack_agents(key,coloring):
                                 logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached the Charging Station.')
                                 motion_to_rest(agent)
                                 agent.Wait=False
-                                remover.append((Road,agent))
+                              #  remover.append((Road,agent))
 
                             elif agent.goals[agent.goalindex]==[-200,-200]:
                                 logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(agent.ind)+','+'Bot Reached back to its Rack with full Charge.')
@@ -356,7 +357,7 @@ def handle_rack_agents(key,coloring):
                                 agent.nearestgoals=[]
                                 agent.goalindex=0
                                 agent.Index=-1
-                                remover.append((Road,agent))
+                                # remover.append((Road,agent))
                         elif agent.type==2:
                             if agent.goals[agent.goalindex]==[-7,-7]:
                                 agent.goalindex+=1
@@ -413,9 +414,11 @@ def handle_rack_agents(key,coloring):
     for I in Intersections:
         if Intersection_Booking[I]==-1:
             continue
+        print("HEY")
         agent=All_Agents[Intersection_Booking[I]]
      #   print("HERE ")
         if agent.key_field==key:
+            print("WWW",agent.key_field)
             continue
         nextI=intT(agent.path[agent.Index])
         #    raod joining I and nextI
@@ -436,6 +439,8 @@ def handle_rack_agents(key,coloring):
             Roads_Grid[Road]=[agent]+Roads_Grid[Road]
             Intersection_Booking[I]=-1
             agent.key_field=key
+        else:
+            print("wrong")
     
     dupl=[] 
     totlset=[]
@@ -452,12 +457,12 @@ def handle_rack_agents(key,coloring):
             
         # if agent is at a rack
 
-        if i==10000:
+        if i==1:
             # for points in agent.path:
             #     pygame.draw.circle(screen,colors.RED1,(int(points[0]),int(points[1])),2)
             pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),5)
             #print(agent.charge,agent.cStation,agent.Index)
-          #  print(agent.position,agent.path,agent.Index,agent.goalindex,agent.goals)
+         #   print(agent.position,agent.path,agent.Index,agent.goalindex,agent.goals)
         elif agent.type==0:
             if agent.position in israck:
                 pygame.draw.circle(screen, agent.color, (agent.position[0]+10,agent.position[1]),2)
@@ -467,10 +472,9 @@ def handle_rack_agents(key,coloring):
             pygame.draw.circle(screen, agent.color, agent.position, agent.size)
         elif agent.type==2:
             pygame.draw.circle(screen, agent.color, agent.position, agent.size)  
-        # if agent.type==1:
-        #     print(agent.direction,agent.Index)
-     #   print("GOAL",agent.ind)
-        if agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-agent.maxcharge)<=1:
+
+        if agent.type==0 and agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-agent.maxcharge)<=1:
+            print("AL")
             charging_state[agent.cStation]=0
             agent.cStation=-1
             agent.color = colors.LIGHTBLUE1
@@ -480,6 +484,7 @@ def handle_rack_agents(key,coloring):
             agent.nearestgoals=[]
             agent.goalindex=0
             agent.direction="motion"
+          #  agent.Index=-1
             for xx in range(len(agent.goals)):
                 if agent.goals[xx][0]<0:
                     agent.nearestgoals.append(agent.goals[xx])
@@ -490,20 +495,24 @@ def handle_rack_agents(key,coloring):
 
         if agent.direction=='motion' and agent.Index==-1: #Order assigned hua h bhai ko naya naya --> nope               
          #   print("BOAT",agent.ind)
+            print("BL")
             Source=nearest_intersection(intT(agent.position))
-            if agent.position in israck:
+            if agent.position in israck or agent.position in isdump:
                 allowed,First=robo_rack_entry(i)
                 if allowed==-1:
                     continue
                 else:
                     Source=First
-            else:
-                # append in road
-                #if agent.type!=0:
-                Previous=nearest_intersection(intT(agent.position),rev=True)
-                # APpend n Road
-                if agent not in Roads_Grid[(Previous,Source)]:
-                    Roads_Grid[(Previous,Source)]=[agent]+Roads_Grid[(Previous,Source)]
+
+            # else:
+
+            # else:
+            #     # append in road
+            #     #if agent.type!=0:
+            #     Previous=nearest_intersection(intT(agent.position),rev=True)
+            #     # APpend n Road
+            #     if agent not in Roads_Grid[(Previous,Source)]:
+            #         Roads_Grid[(Previous,Source)]=[agent]+Roads_Grid[(Previous,Source)]
             
             togoal=agent.goals[agent.goalindex]
             Ghost=Agent(0,n,m)
@@ -512,7 +521,7 @@ def handle_rack_agents(key,coloring):
             nearestIntersec=agent.nearestgoals[agent.goalindex]
             nAgent = Search(Source,nearestIntersec)
             if nearestIntersec==None:
-                print(togoal)
+                print(togoal,"F")
                 for i in range(1000000):
                     pygame.draw.circle(screen,colors.TEAL,(int(agent.position[0]),int(agent.position[1])),5)
                     pygame.draw.circle(screen,colors.TEAL,(int(Source[0]),int(Source[1])),5)
@@ -524,6 +533,7 @@ def handle_rack_agents(key,coloring):
             nextIntersec_path=nAgent.getPathLong()
             agent.path=nextIntersec_path
             if agent.path==[]:
+                print("FF")
                 for i in range(1,100000000):
                     pygame.draw.circle(screen,colors.GOLDENROD,Source,4)
                     pygame.draw.circle(screen,colors.GOLDENROD,nearestIntersec,4)
@@ -533,26 +543,19 @@ def handle_rack_agents(key,coloring):
             agent.path.append(last)
             agent.path.reverse()
             agent.Index=len(nextIntersec_path)-1
-           # pygame.draw.circle(screen, colors.GREENYELLOW, togoal, 5)
-            # delay 1 sec
-         #   pygame.time.delay(1000)
-            #x=input()
-            # if agent.type==1:
-            #     print("Path",agent.path)
-            # if agent==Agents[17]:
-            #     print(agent.path,agent.Index,togoal,nearestIntersec,nextIntersec_path,Source,last)
-            #     x=input()
+
+        if agent.type==0 and agent.Index <= -1 and agent.direction=="rest":
             
-        if agent.Index <= -1 and agent.direction=="rest":
             # Increasing charge
             if agent.needcharge==True:
                 agent.color = colors.GREEN
                 agent.charge+=.1
             # Assigning agent a charging station if charge is low
-            if agent.charge<20 and agent.needcharge == False:
+            if agent.charge<20 and agent.needcharge == False and agent.cStation==-1:
                 charge_ind,charge_box=get_charging()
                 if charge_box==-1:
                     continue
+                print("CL")
                 agent.color = colors.LIGHTBLUE1
                 agent.cStation=charge_ind
                 agent.needcharge=True
@@ -570,10 +573,6 @@ def handle_rack_agents(key,coloring):
 
                 agent.Wait = False
     return current_items,orders_completed_now
-
-    # for p in dupl:
-    #     pygame.draw.circle(screen, colors.RED1, p, 3)
-            
             
             
 

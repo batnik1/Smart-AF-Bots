@@ -81,7 +81,7 @@ while running:
         handle_orders_SBIG()
     else:
         handle_orders()
-    handle_Torders()
+   # handle_Torders()
     handle_events()
     current_items,orders_completed_now=handle_rack_agents(key,coloring)
 
@@ -107,7 +107,7 @@ while running:
     # total items in warehouse 
     # items done
     items_done+=current_items
-
+    #change_signal()
     screen.blit(PBar_Items,(racks_width+160,55))
     # Make a progress bar with a base rectangle as 100% and filled with items_done/total_items*100%
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100,10),1)
@@ -126,5 +126,5 @@ while running:
     # print(items_done,total_items)
     # print(orders_done,pending_orders)
     pygame.display.update()
-    # pygame.image.save(screen,"./New/image"+str(key)+".jpg")
+ #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    

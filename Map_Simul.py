@@ -68,12 +68,14 @@ def num_racks(xx,xxx):
 num_racks(n,m)
 #Dumping location 
 numofdump={}
+isdump={}
 def numofdumping():
     x=racks_width+20
     for i in range(2*sorting_m-1):
         y=80
         for j in range(2*sorting_n-1):
             numofdump[str((j,i))]=(x-10,y+25)
+            isdump[(x-10,y+25)]=1
             y+=30
         x+=30
 

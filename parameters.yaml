@@ -5,9 +5,9 @@ sorting_m: 10           # Sorting Window size
 sorting_n: 6
 
 # For Orders
-type_of_items: 3        # Types of items in the Warehouse
-max_diff_item: 3        # Max unique items that can be ordered
-max_order_limit: 3      # Max quantity that can be ordered
+type_of_items: 1        # Types of items in the Warehouse
+max_diff_item: 2        # Max unique items that can be ordered
+max_order_limit: 2      # Max quantity that can be ordered
 order_freq: 1          # Order Frequency
 truck_freq: 50       # Truck Frequency
 initial_items: 500     # Initial Items assigned in racks
