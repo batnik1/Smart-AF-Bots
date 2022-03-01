@@ -70,11 +70,11 @@ def handle_events():
 Total_orders=0
 Running_Finisher=0
 while running:
-    # if key%order_freq==0:
-    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-    #     if new_orders!="Nothing": 
-    #         Total_orders+=1
-    #         orders.append(new_orders)   # To mantain FCFS Order
+    if key%order_freq==0:
+        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+        if new_orders!="Nothing": 
+            Total_orders+=1
+            orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
@@ -110,8 +110,8 @@ while running:
 
 
     if key==0:
-        dummy_sorting(key,1)
-        Final_Finisher=1
+        dummy_sorting(key,300)
+        Final_Finisher=300
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -141,6 +141,7 @@ while running:
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
+    print(pending_orders,orders_done)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
     
@@ -148,7 +149,7 @@ while running:
 
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
-        print(Running_Finisher)
+        print(key)
         break
 print("DONE")
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")

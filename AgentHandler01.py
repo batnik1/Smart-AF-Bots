@@ -546,7 +546,7 @@ def handle_rack_agents(key,coloring):
             agent.valet=Ghost
             nearestIntersec=agent.nearestgoals[agent.goalindex]
             nAgent = Search(Source,nearestIntersec)
-            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,0)
+            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type)
             nextIntersec_path=nAgent.getPathLong()
             agent.path=nextIntersec_path
             last=nearest_intersection(togoal)
