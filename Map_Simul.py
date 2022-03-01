@@ -89,7 +89,7 @@ def num_hcounter(n,m):
         for j in range(m):
             numofhcounter[str((i,j))]=(90+120*j+i*(80), i*(120*(n+1)-40)+45)
 num_hcounter(n,m)
-# pygame.display.set_caption("Warehouse Simulation V1.0")
+pygame.display.set_caption("Warehouse Simulation V2.0")
 
 
 # waste 1,2,3 for making roadmap
@@ -179,10 +179,7 @@ def marking_station_line():
 
 # Making the conveyor belt
 def waste_conveyor_belt():
-    # add_edge((130, 0), (racks_width, 0),direction["right"])
-    # add_edge((130, racks_height+10), (racks_width, racks_height+10),direction["right"])
-    # add_edge((racks_width, 0),(racks_width,(80+racks_height//2)//2+20),direction["down"])
-    # add_edge((racks_width,(80+racks_height//2)//2+20), (racks_width, racks_height+10),direction["up"])
+
     x=130
     for _ in range(m):
         add_edge((x,1),(x,15),direction["up"])
@@ -205,45 +202,14 @@ def waste_charging():
 def waste_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
-    
-    # add_edge((racks_width,80),(sorting_w+racks_width,80),direction["left"])
-    # add_edge((racks_width,sorting_h+80),(sorting_w+racks_width,sorting_h+80),direction["right"])
-    # add_edge((sorting_w+racks_width,80),(sorting_w+racks_width,sorting_h+80),direction["down"])
- #   add_edge((sorting_w+racks_width,80),(sorting_w+racks_width,sorting_h+80),direction["up"])
-
 
     add_edge((racks_width-40,(80+racks_height//2)//2-20),(racks_width+10,(80+racks_height//2)//2-20),direction["right"]) #left queue
     add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width+10,int((80+racks_height//2)//2+70)),direction["left"]) #right queue
     add_edge((racks_width-40,int((80+racks_height//2)//2-20)),(racks_width-40,int((80+racks_height//2)/2+70)),direction["up"]) #down queue
-    #pygame.draw.line(screen,colors.RED,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+130),(racks_width+10,(80+racks_height//2)/2+130),width=2)
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width-40,(80+racks_height//2)/2+130),width=2)
+
     add_edge((racks_width-40,int((80+racks_height//2)//2+130)),(racks_width+10,int((80+racks_height//2)//2+130)),direction["left"]) #right queue
     add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
-    # (n+1)*15+n*10=sorting_n*100+15
-    # (m+1)*15+m*10=sorting_m*100+15
-    # x=racks_width+20
 
-    # x=racks_width+10
-    # y=80
-    # for _ in range(sorting_m+1):    
-    #     add_edge((x, 80),(x,sorting_h+80),direction["up"])
-    #     x+=60
-    
-    # x=racks_width+40
-    # for _ in range(sorting_m):
-    #     add_edge((x, 80),(x,sorting_h+80),direction["down"])
-    #     x+=60
-    
-    # for _ in range(sorting_n+1):
-    #     add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["right"])
-    #     y+=60
-    # y=110
-    # for _ in range(sorting_n):
-    #     add_edge((racks_width, y+10),(racks_width+sorting_w,y+10),direction["left"])
-    #     y+=60
     lis_hori=[]
     x=racks_width+10
     y=80
@@ -254,8 +220,7 @@ def waste_sorting_area():
     for i in range(2*sorting_n):
         lis_vert.append(((racks_width+10,y+10),(racks_width+sorting_w-40,y+10)))
         y+=30
-    # lis_vert=lis_vert[:-1]
-    # lis_hori=lis_hori[:-1]
+
     alt=1
     for i in range(len(lis_hori)):
         if alt==1:

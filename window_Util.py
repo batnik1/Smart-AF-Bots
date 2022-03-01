@@ -7,7 +7,7 @@ import collections
 # file just for drawing and showing to screen different utilities
 pygame.init()
 screen = pygame.display.set_mode((display_width, display_height))  # create screen
-# pygame.event.set_allowed([pygame.QUIT, #pygame.K_SPACE])
+pygame.event.set_allowed([pygame.QUIT, pygame.K_SPACE])
 
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 
@@ -68,15 +68,16 @@ def make_sorting_area():
 
 # Drawing the coveyor on screen
 def conveyor():
-    pygame.draw.line(screen, colors.GREEN, (130, 0), (racks_width, 0))
-    pygame.draw.line(screen, colors.GREEN, (130, racks_height+10), (racks_width, racks_height+10),width=2)
+    col=colors.LAWNGREEN
+    pygame.draw.line(screen, col, (130, 0), (racks_width, 0))
+    pygame.draw.line(screen, col, (130, racks_height+10), (racks_width, racks_height+10),width=2)
     x=130
     for i in range(m):
-        pygame.draw.line(screen, colors.GREEN, (x, 0), (x, 15),width=10)
-        pygame.draw.line(screen, colors.GREEN, (x, racks_height+10), (x,racks_height-5 ),width=10)
+        pygame.draw.line(screen, col, (x, 0), (x, 15),width=10)
+        pygame.draw.line(screen, col, (x, racks_height+10), (x,racks_height-5 ),width=10)
         x+=120
     
-    pygame.draw.line(screen, colors.GREEN, (racks_width, 0), (racks_width, racks_height+10),width=2)
+    pygame.draw.line(screen, col, (racks_width, 0), (racks_width, racks_height+10),width=2)
     
     
 
@@ -138,21 +139,19 @@ def draw_rack_lines(x, y,color=colors.ORANGE):
 
 
 def build_counter():
-  #  return
-    pygame.draw.rect(screen, colors.VIOLETRED3, pygame.Rect(100, 10, 60, 60))
+    # pygame.draw.rect(screen, colors.VIOLETRED3, pygame.Rect(100, 10, 60, 60))
     x = 100
     for i in range(m):
-        pygame.draw.rect(screen, colors.PURPLE1, pygame.Rect(x, 20, 60, 50))
+        pygame.draw.rect(screen, colors.SLATEBLUE, pygame.Rect(x, 20, 60, 50))
         x += 120
     x = 100
     for i in range(m):
-        pygame.draw.rect(screen, colors.PURPLE1,
+        pygame.draw.rect(screen, colors.SLATEBLUE,
                          pygame.Rect(x, 120*(n+1)-20, 60, 50))
         x += 120
 
 
 def build_counter_lines():
-    #return 
     x = 90
     for i in range(m):
         pygame.draw.line(screen, colors.ORANGE, (x, 10), (x, 80))
@@ -181,8 +180,6 @@ def build_station_lines():
 
 
 def build_station_zone():
-    # (x,y,x+l,y+b)
-   # return
     pygame.draw.rect(screen, colors.PURPLE2,pygame.Rect(30, 80, 50, (n//2+n % 2)*100-80))
 
 

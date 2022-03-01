@@ -29,9 +29,7 @@ def init_agents():
     for _ in range(Number_of_SAgents):
         nAgent=Agent(2,n,m)
         nAgent.color=colors.PALEGREEN
-        # while 1:
         sorting_random=(random.randint(0,2*sorting_n-3),random.randint(0,2*sorting_m-3))
-
         nAgent.position=numofdump[str(sorting_random)]
         All_Agents.append(nAgent)
         Sorting_Agents.append(nAgent)
@@ -144,6 +142,7 @@ def motion_to_rest(agent):
     agent.goals=[]
     agent.nearestgoals=[]
     agent.size=2
+    agent.path=[]
 
 def get_direction(a,b):
     x1,y1=a
@@ -197,75 +196,62 @@ def update_intersection():
         else:
             Intersection_Timeout[I]-=1
 
-
+def get_subgoals(agent):
+    agent.direction="motion"
+    agent.nearestgoals=[]
+    agent.goalindex=0
+    for g in range(len(agent.goals)):
+        if agent.goals[g][0]<0:
+            agent.nearestgoals.append(agent.goals[g])
+            continue
+        togoal=agent.goals[g]
+        nearestIntersec=nearest_intersection(togoal,rev=True) 
+        agent.nearestgoals.append(nearestIntersec)
 
 def handle_rack_agents(key,coloring):
     current_items=0
     orders_completed_now=0
     Running_Finisher=0
-    # update_intersection()
     for Road in Roads_lr:
         if Roads_lr[Road]==-1:      #Road in Reverse Direction
             continue
         removal,remover=[],[]
         for i in range(len(Roads_Grid[Road])): 
             agent=Roads_Grid[Road][i]
-         #   print(agent.ind,"in handler")
+            if agent.human_delay>0:
+                agent.human_delay-=1
+                continue
             if agent.type==0:
                 agent.charge-=0.005
-        #     print(Road,agent.ind,len(Roads_Grid[Road]))
-            # if agent.type==1:
-            #     print("WOW")
-            #     input()
             if i==len(Roads_Grid[Road])-1:
                 next_agent=Roads_Grid[Road][i]
             else:
                 next_agent=Roads_Grid[Road][i+1]
             k=intT(agent.path[agent.Index])
-         #   pygame.draw.circle(screen,colors.GREEN1,(k[0],k[1]),5)
             D=Matrix.grid[int(Roads_Grid[Road][i].position[0])][int(Roads_Grid[Road][i].position[1])]
+
             if len(D)>2:
                 new_point=((agent.position[0]+k[0])/2,(agent.position[1]+k[1])/2) 
-             #   D=Matrix.grid[int(new_point[0])][int(new_point[1])][1]
-                print("WTH")
-                print(agent.ind)
-                print(agent.position,new_point,k)
-                print(agent.path,agent.stopped)
-                print(agent.Index,agent.CurRack)
-                for i in range(1,100000000):
-                    pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),2)
-                    pygame.draw.circle(screen,(0,255,0),(int(k[0]),int(k[1])),5) 
-                    pygame.display.flip()   
-                input()
+                print('On Intersection')
+                print(agent.position,k)
+                pygame.draw.circle(screen,(255,0,0),(int(new_point[0]),int(new_point[1])),5)
+                pygame.display.flip()
+                x=input()
             else:
                 try:
                     D=D[1]
                 except:
-
-                    print(agent.position)
-                    print(agent.path)
-                    print(k)
-                    print(agent.Index)
-                    print(agent.ind)
-                    # for i in range(1,100000000):
-                    #     pygame.draw.circle(screen,(255,0,0),(int(agent.position[0]),int(agent.position[1])),10)
-                    #     pygame.display.flip()
-                        
+                    print('Out of Map')
                     x=input()
             if agent.key_field==key:
                 continue
             agent.key_field=key
             
             if agent.Index==0:
-                # if agent.ind==1:
-                #     print("HERE XOX")
-              #  print("potOOOO",agent.ind)
                 flag=0
-                # next_agent==agent or distance between agent and next_agent is greater than distance between agent and agent.valet
                 if next_agent==agent or (abs(agent.position[0]-next_agent.position[0])+abs(agent.position[1]-next_agent.position[1]))>abs(agent.position[0]-agent.valet.position[0])+abs(agent.position[1]-agent.valet.position[1]):
-                    if agent.v==0: # can improve upon this condition but will work fine till any bot does not malfunction and stop in between
-                        # Reached the valet
-                        flag=1
+                    if agent.v==0: # can improve upon this condition but will work fine till any bot does not malfunction and stop in between                
+                        flag=1  # Reached the valet
                     agent.update(agent.valet,D)
                 else:
                     agent.update(next_agent,D)
@@ -298,7 +284,6 @@ def handle_rack_agents(key,coloring):
                                 if SBIG:
                                     for rack in agent.items_carrying:
                                         for items in agent.items_carrying[rack]:
-                                            # print(items)
                                             total_items_carrying+=items[1]  
                                 else:
                                     for items in agent.items_carrying:
@@ -320,7 +305,7 @@ def handle_rack_agents(key,coloring):
 
                                 order_db.update_one({"_id":agent.order_id},{"$inc":{"order_progress":total_items_carrying}})                            
                                 agent.goalindex+=1
-                                # agent.Index=-1
+                            
                             elif  agent.goals[agent.goalindex]==[-21,-21]:
                                 if agent.position in israck:
                                     remover.append((Road,agent))
@@ -352,36 +337,20 @@ def handle_rack_agents(key,coloring):
                                 agent.goalindex+=1
                                 add_item(agent.items_carrying[0],agent.items_carrying[1],agent.CurRack)
                                 remover.append((Road,agent))
-                                # logger.info('Truck Bot '+str(agent.ind)+': Reached the Desired Rack with item type'+str(agent.items_carrying[0])+' with quant '+str(agent.items_carrying[1]))
                                 logger.info('Trucks in Warehouse'+','+'-'+','+'Truck Bot'+','+'-'+','+"Reached the Desired Rack with some new item type.")
+
                             elif  agent.goals[agent.goalindex]==[-14,-14]:
-                                agent.path = []
                                 rack_available[agent.CurRack]=1
-                                agent.Wait = True   
-                                agent.size=2
-                                agent.direction="rest"  
-                                agent.goals=[]
-                                agent.nearestgoals=[]
-                                agent.goalindex=0
-                                agent.Index=-1
+                                motion_to_rest(agent)
                                 remover.append((Road,agent))
+
                         elif agent.type==2:
                             if agent.goals[agent.goalindex]==[-7,-7]:
                                 agent.goalindex+=1
                             elif  agent.goals[agent.goalindex]==[-14,-14]:
                                 Running_Finisher+=1
-
-                                # logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
                                 logger.info('Sorting Order'+','+str(agent.order_id)+','+'Sorting Bot'+','+str(agent.ind)+','+"Bot placed the order to it's dumping point.")
-                                agent.Wait=True       
-                                agent.path=[]
-                                agent.size=2
-                                # sagent.color=colors.PALEGREEN
-                                agent.direction="rest"
-                                agent.goals=[]
-                                agent.nearestgoals=[]
-                                agent.goalindex=0
-                                agent.Index=-1
+                                motion_to_rest(agent)
                                 remover.append((Road,agent))
 
             elif i==len(Roads_Grid[Road])-1:
@@ -412,32 +381,27 @@ def handle_rack_agents(key,coloring):
                             Intersection_Recal[k]=1
                         else:
                             passing=False
-            #    print("GOOOOOO",passing,agent.ind)
+
                 if passing:
                     agent.update(None,D)
                 else:
                     agent.update(Intersection_Bot[k],D)
                 
                 dist_r=ManhattanDistance(agent.position,k)
-             #   print("Going",dist_r,k)
-             # TODO : Try to adjust speed as bots enter intersection
+                # TODO : Try to adjust speed as bots enter intersection
                 if dist_r<=1.6 and passing:
-               #     print("Going to intersection~ ok ",agent.ind) 
                     removal.append(Road)
                     agent.position=k
                     agent.Index-=1
-                # else:
-                #     print('bhai ja mat yr',agent.ind)    
+
             else:
-                # if distance between k and agent.position is less than 5
-              #  print("ROxOOOO",agent.ind)
+
                 if ManhattanDistance(agent.position,k)<=5:
                     agent.stop()
                 else:
                     agent.update(next_agent,D)
         
         for r in removal:
-         #   print(agent.ind,"removing",r)   
             Roads_Grid[r].pop()
         for r,a in remover:
             Roads_Grid[r].remove(a)
@@ -445,25 +409,21 @@ def handle_rack_agents(key,coloring):
     for I in Intersections:
         if Intersection_Booking[I]==-1:
             continue
-      #  print("HEY")
+
         agent=All_Agents[Intersection_Booking[I]]
-        #print("XL")
         if agent.key_field==key:
-        #    print("WWW",agent.key_field)
             continue
+
         nextI=intT(agent.path[agent.Index])
-        #    raod joining I and nextI
         Road=(I,nextI)
         if Roads_Grid[Road]==[] or ManhattanDistance(I,Roads_Grid[Road][0].position)>2.5: # TODO: can improve this 2.5 later
             D_Dash=Matrix.grid[(I[0]+nextI[0])//2][(I[1]+nextI[1])//2][1]
             D=Intersection_Coming_Dir[I]
             x_gap=nextI[0]-I[0]
             y_gap=nextI[1]-I[1]
-            if x_gap==0:
-                # move in y
+            if x_gap==0:    # move in y
                 agent.position=(I[0],I[1]+y_gap/abs(y_gap))
-            elif y_gap==0:
-                # move in x
+            elif y_gap==0:  # move in x
                 agent.position=(I[0]+x_gap/abs(x_gap),I[1])
          
             if D_Dash!=D:
@@ -472,28 +432,11 @@ def handle_rack_agents(key,coloring):
             Intersection_Booking[I]=-1
             agent.key_field=key
     
-    dupl=[] 
-    totlset=[]
-
     for i in range(len(All_Agents)):
         
         agent=All_Agents[i]
-      #  print(agent.type)
-        if agent.direction=="motion":
-            pt=int(agent.position[0]),int(agent.position[1])
-            if pt in totlset:
-                dupl.append(pt)
-            totlset.append(pt)
-            
-        # if agent is at a rack
-
-        if i==50000:
-            for points in agent.path:
-                pygame.draw.circle(screen,colors.RED1,(int(points[0]),int(points[1])),2)
-            pygame.draw.circle(screen,(255,255,255),(int(agent.position[0]),int(agent.position[1])),5)
-          #  print(agent.charge,agent.cStation,agent.Index)
-         #   print(agent.position,agent.path,agent.Index,agent.goalindex,agent.goals)
-        elif agent.type==0:
+        
+        if agent.type==0:
             if agent.position in israck:
                 pygame.draw.circle(screen, agent.color, (agent.position[0]+10,agent.position[1]),2)
             else: 
@@ -504,39 +447,22 @@ def handle_rack_agents(key,coloring):
             pygame.draw.circle(screen, agent.color, agent.position, agent.size)  
 
         if agent.type==0 and agent.cStation!=-1 and agent.position==charging_loc[agent.cStation] and abs(agent.charge-agent.maxcharge)<=1:
-         #   print("AL")
             charging_state[agent.cStation]=0
             agent.cStation=-1
             agent.color = colors.LIGHTBLUE1
             agent.size = 3
             agent.needcharge=False
             agent.goals=[numofrack[agent.CurRack],[-200,-200]]
-            agent.nearestgoals=[]
-            agent.goalindex=0
-            agent.direction="motion"
-          #  agent.Index=-1
-            for xx in range(len(agent.goals)):
-                if agent.goals[xx][0]<0:
-                    agent.nearestgoals.append(agent.goals[xx])
-                    continue
-                togoal=agent.goals[xx]
-                nearestIntersec=nearest_intersection(togoal,rev=True) 
-                agent.nearestgoals.append(nearestIntersec)
-
+            get_subgoals(agent)
         if agent.direction=='motion' and agent.Index==-1: #Order assigned hua h bhai ko naya naya --> nope               
-         #   print("BOAT",agent.ind)
-       #     print("BL")
             Source=nearest_intersection(intT(agent.position))
             if (agent.position in israck) or (agent.position in isdump and agent.position!=numofdump["conveyor"]):
-           #     print('aka')
                 allowed,First=robo_rack_entry(i)
                 if allowed==-1:
                     continue
                 else:
-                   # print('entry hogi bhai ki')
                     Source=First
             elif (agent.position not in numofhcounter.values()) and (agent.position!=numofdump["conveyor"]):
-              #  print("XS")
                 las=nearest_intersection(intT(agent.position),rev=True)
                 Roads_Grid[(las,Source)].append(agent)
                 
@@ -562,7 +488,7 @@ def handle_rack_agents(key,coloring):
             # Increasing charge
             if agent.needcharge==True:
                 agent.color = colors.GREEN
-                agent.charge+=.1
+                agent.charge+=.05
             # Assigning agent a charging station if charge is low
             if agent.charge<20 and agent.needcharge == False:# and agent.cStation==-1: TODO: Remove this
                 charge_ind,charge_box=get_charging()
@@ -571,18 +497,8 @@ def handle_rack_agents(key,coloring):
                 agent.color = colors.LIGHTBLUE1
                 agent.cStation=charge_ind
                 agent.needcharge=True
-                agent.direction="motion"
                 agent.goals=[charge_box,[-11,-11]]
-                agent.nearestgoals=[]
-                agent.goalindex=0
-                for xx in range(len(agent.goals)):
-                    if agent.goals[xx][0]<0:
-                        agent.nearestgoals.append(agent.goals[xx])
-                        continue
-                    togoal=agent.goals[xx]
-                    nearestIntersec=nearest_intersection(togoal,rev=True) 
-                    agent.nearestgoals.append(nearestIntersec)
-
+                get_subgoals(agent)
                 agent.Wait = False
     return current_items,orders_completed_now,Running_Finisher
             
