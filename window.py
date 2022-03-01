@@ -76,9 +76,9 @@ while running:
             Total_orders+=1
             orders.append(new_orders)   # To mantain FCFS Order
 
-    if key%truck_freq==0:
-        new_items=truck_orders()
-        Torders+=new_items
+    # if key%truck_freq==0:
+    #     new_items=truck_orders()
+    #     Torders+=new_items
     
     init_screen() 
     if sbig_flag:
@@ -110,29 +110,19 @@ while running:
 
 
     if key==0:
-        dummy_sorting(key,100)
-        Final_Finisher=100
+        # dummy_sorting(key,100)
+        Final_Finisher=212
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
     key+=1
-    # numofdump conveyor
+
     pygame.draw.circle(screen,(255,0,0),numofdump["conveyor"],3)
-    # for i in ra
-    #if sbig_flag:
+
     for colo in range(len(coloring)):
         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10),1)
-    # print(Golden_Grid[(racks_width-40,(80+racks_height//2)//2-25)],(racks_width-40,(80+racks_height//2)//2-25))
-    # print(Matrix.grid[racks_width-40][(80+racks_height//2)//2-25])
-    # # same on intersection 15
-    # print(Golden_Grid[Intersections[15]],Intersections[15])
-    # x=input()
     
-    # get number of items in warehouse left
-    # total items in warehouse 
-    # items done
     items_done+=current_items
-    #change_signal()
     screen.blit(PBar_Items,(racks_width+160,55))
     # Make a progress bar with a base rectangle as 100% and filled with items_done/total_items*100%
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100,10),1)
@@ -143,13 +133,13 @@ while running:
     orders_done+=orders_completed_now
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
-    
+    print(pending_orders,orders_done)
     screen.blit(PBar_Orders,(racks_width+160,35))
 
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
         print(Running_Finisher)
         break
-print("DONE")
+print("DONE",pending_orders,orders_done)
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    
