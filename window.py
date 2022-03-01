@@ -76,9 +76,9 @@ while running:
             Total_orders+=1
             orders.append(new_orders)   # To mantain FCFS Order
 
-    if key%truck_freq==0:
-        new_items=truck_orders()
-        Torders+=new_items
+    # if key%truck_freq==0:
+    #     new_items=truck_orders()
+    #     Torders+=new_items
     
     init_screen() 
     if sbig_flag:
@@ -110,8 +110,8 @@ while running:
 
 
     if key==0:
-        dummy_sorting(key,100)
-        Final_Finisher=100
+        #dummy_sorting(key,100)
+        Final_Finisher=212
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
