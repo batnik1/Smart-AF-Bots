@@ -202,6 +202,7 @@ def update_intersection():
 def handle_rack_agents(key,coloring):
     current_items=0
     orders_completed_now=0
+    Running_Finisher=0
     # update_intersection()
     for Road in Roads_lr:
         if Roads_lr[Road]==-1:      #Road in Reverse Direction
@@ -368,6 +369,8 @@ def handle_rack_agents(key,coloring):
                             if agent.goals[agent.goalindex]==[-7,-7]:
                                 agent.goalindex+=1
                             elif  agent.goals[agent.goalindex]==[-14,-14]:
+                                Running_Finisher+=1
+
                                 # logger.info("Sorting Bot dumped the order with Order ID: "+str(sagent.order_id)+" to it's dumping point")
                                 logger.info('Sorting Order'+','+str(agent.order_id)+','+'Sorting Bot'+','+str(agent.ind)+','+"Bot placed the order to it's dumping point.")
                                 agent.Wait=True       
@@ -581,7 +584,7 @@ def handle_rack_agents(key,coloring):
                     agent.nearestgoals.append(nearestIntersec)
 
                 agent.Wait = False
-    return current_items,orders_completed_now
+    return current_items,orders_completed_now,Running_Finisher
             
             
 

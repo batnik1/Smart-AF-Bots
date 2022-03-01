@@ -1,3 +1,3 @@
-  # if key%truck_freq==0:
+    # if key%truck_freq==0:
     #     new_items=truck_orders()
-    #     T
+    #     Torders+=new_items
