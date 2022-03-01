@@ -4,10 +4,12 @@ import numpy as np
 
 from window_OrderHandler import *
 
+
 pygame.font.init()
 myfont = pygame.font.SysFont('Comic Sans MS', 15)
 PBar_Items = myfont.render('Progress Bar for Remaining Items', False, (255, 255, 255))
 PBar_Orders=myfont.render('Progress Bar for Remaining Orders', False, (255, 255, 255))
+Traffic_Flag=config['Traffic_Flag']
 running = 1
 key=0  
 paused=0  
@@ -65,11 +67,13 @@ def handle_events():
                         break
 
 # https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
+Total_orders=0
 
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
         if new_orders!="Nothing": 
+            Total_orders+=1
             orders.append(new_orders)   # To mantain FCFS Order
 
     if key%truck_freq==0:
@@ -84,6 +88,25 @@ while running:
    # handle_Torders()
     handle_events()
     current_items,orders_completed_now=handle_rack_agents(key,coloring)
+    if Traffic_Flag:
+        update_intersection()
+        for I in Intersections:
+            r=Intersection_Gateway[I]
+
+            try:
+                r=r.index(1)
+            except:
+                pass
+            # Red for 1, Green for 2, Yellow for 3, Blue for 4
+            if r==1:
+                pygame.draw.circle(screen, colors.RED1, I,2)  #Up
+            elif r==2:
+                pygame.draw.circle(screen, colors.GREEN1,I,2) #Down
+            elif r==3:
+                pygame.draw.circle(screen, colors.YELLOW1,I,2)#Right
+            elif r==4:
+                pygame.draw.circle(screen, colors.BLUE,I,2) #Left
+
 
     if key==0:
         dummy_sorting(key,300)
@@ -113,13 +136,14 @@ while running:
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100,10),1)
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100-items_done/total_items*100,10),0)
 
-    pending_orders=len(orders)
+    pending_orders=Total_orders
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
     # make progress bar for orders 10 pixels above the progress bar
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
+    print(orders_done,pending_orders,orders_done/pending_orders*100)
     
     screen.blit(PBar_Orders,(racks_width+160,35))
 

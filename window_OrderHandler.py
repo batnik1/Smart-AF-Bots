@@ -200,7 +200,7 @@ def handle_sorting_agents(sorting_orders):
         agent.ind=ind
         #sorting_bots.insert_one({"_id":ind,"Order_ID":order_id})
         if  sorder[0:3]=='Dum':
-            address=(random.randint(0,2*sorting_n-2),random.randint(0,2*sorting_m-2))
+            address=(random.randint(0,2*sorting_n-3),random.randint(0,2*sorting_m-3))
         else:
             address=tuple(order_history.find_one({"_id":sorder})["address"])
         finished_sorder.append(sorder)

@@ -17,7 +17,7 @@ class Agent():
         self.order_id=0
         self.items_carrying=[]
         self.ind=0        
-        self.charge=200   # Initial Charge
+        self.charge=100   # Initial Charge
         self.needcharge=False  # If Agent is Assisgned to a Chargin Station
         self.charging=False    # If Agent is Charging
         self.cStation=-1       # Current Charging Station

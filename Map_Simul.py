@@ -71,9 +71,9 @@ numofdump={}
 isdump={}
 def numofdumping():
     x=racks_width+20
-    for i in range(2*sorting_m-1):
+    for i in range(2*sorting_m-2):
         y=80
-        for j in range(2*sorting_n-1):
+        for j in range(2*sorting_n-2):
             numofdump[str((j,i))]=(x-10,y+25)
             isdump[(x-10,y+25)]=1
             y+=30
@@ -369,12 +369,14 @@ Intersection_Gateway={}
 Intersection_Timeout={}
 Intersection_Booking={}
 Intersection_Bot={}
+Intersection_Recal={}
+Intersection_Coming_Dir={}
 # Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
     Intersec_dic[(i,j)]=1
     Intersection_Gateway[(i,j)]=[0]*5
-    Intersection_Timeout[(i,j)]=50
+    Intersection_Timeout[(i,j)]=0
     Intersection_Booking[(i,j)]=-1
     Intersection_Bot[(i,j)]=Agent(0,n,m)
     Intersection_Bot[(i,j)].l=2
