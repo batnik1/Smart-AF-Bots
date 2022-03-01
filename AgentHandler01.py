@@ -484,7 +484,7 @@ def handle_rack_agents(key,coloring):
             
         # if agent is at a rack
 
-        if i==5:
+        if i==50000:
             for points in agent.path:
                 pygame.draw.circle(screen,colors.RED1,(int(points[0]),int(points[1])),2)
             pygame.draw.circle(screen,(255,255,255),(int(agent.position[0]),int(agent.position[1])),5)
