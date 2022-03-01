@@ -68,13 +68,13 @@ def handle_events():
 
 # https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
 Total_orders=0
-
+Running_Finisher=0
 while running:
-    # if key%order_freq==0:
-    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-    #     if new_orders!="Nothing": 
-    #         Total_orders+=1
-    #         orders.append(new_orders)   # To mantain FCFS Order
+    if key%order_freq==0:
+        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+        if new_orders!="Nothing": 
+            Total_orders+=1
+            orders.append(new_orders)   # To mantain FCFS Order
 
     if key%truck_freq==0:
         new_items=truck_orders()
@@ -87,7 +87,8 @@ while running:
         handle_orders()
     
     handle_events()
-    current_items,orders_completed_now=handle_rack_agents(key,coloring)
+    current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
+    Running_Finisher+=Running_Fin
     if Traffic_Flag:
         update_intersection()
         for I in Intersections:
@@ -109,7 +110,8 @@ while running:
 
 
     if key==0:
-        dummy_sorting(key,300)
+        dummy_sorting(key,100)
+        Final_Finisher=100
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -135,9 +137,6 @@ while running:
     # Make a progress bar with a base rectangle as 100% and filled with items_done/total_items*100%
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100,10),1)
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100-items_done/total_items*100,10),0)
-    if len(sorting_orders)==0:
-        print(key)
-        break
     pending_orders=Total_orders
     if pending_orders==0:
         pending_orders=1000
@@ -148,5 +147,9 @@ while running:
     screen.blit(PBar_Orders,(racks_width+160,35))
 
     pygame.display.update()
+    if Running_Finisher==Final_Finisher:
+        print(Running_Finisher)
+        break
+print("DONE")
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    

@@ -32,17 +32,7 @@ def handle_orders():
             logger.info('Order'+','+str(order_id)+','+'Warehouse'+','+str(ind)+','+'Bot is assigned to go to Rack.')
             agent.ind=ind
             agent.goals=[rack_location,[-7,-7],numofhcounter[str((int(hCounter/m), hCounter % m))],[-14,-14],rack_location,[-21,-21]]   # Goals of the Agent which includes all the sub goals and negative coordinates are just there for logging purposes.
-            agent.nearestgoals=[]
-            agent.goalindex=0
-            for xx in range(len(agent.goals)):
-                if agent.goals[xx][0]<0:
-                    agent.nearestgoals.append(agent.goals[xx])
-                    continue
-                togoal=agent.goals[xx]
-                nearestIntersec=nearest_intersection(togoal,rev=True)       # Converting Sub Goals from Workspace Domain to Ambient Graph Domainxxxxxxxxx   
-                agent.nearestgoals.append(nearestIntersec)
-             
-            agent.direction="motion"
+            get_subgoals(agent)
             agent.Index=-1
             finished_racks.append(rack)
 
@@ -84,7 +74,6 @@ def handle_orders_SBIG():
             continue
         agent=Agents[ind]
         agent.ind=ind
-        #agent.goals=[rack_location,[-7,-7]]#,numofhcounter[str((int(hCounter/m), hCounter % m))],[-14,-14],rack_location,[-21,-21]]
         agent.goals=[]
         for rack in list_racks:
             if rack[7]=="0":
@@ -95,18 +84,8 @@ def handle_orders_SBIG():
         agent.goals.pop()
         agent.goals.append([-7,-7])
         agent.goals+=[numofhcounter[str((int(hCounter/m), hCounter % m))],[-14,-14],rack_location,[-21,-21]]
-        agent.nearestgoals=[]
-        agent.goalindex=0
-        for xx in range(len(agent.goals)):
-                if agent.goals[xx][0]<0:
-                    agent.nearestgoals.append(agent.goals[xx])
-                    continue
-                togoal=agent.goals[xx]
-                nearestIntersec=nearest_intersection(togoal,rev=True)       # Converting Sub Goals from Workspace Domain to Ambient Graph Domainxxxxxxxxx   
-                agent.nearestgoals.append(nearestIntersec)
-
+        get_subgoals(agent)
         finished.append(orders[i])  
-        agent.direction="motion"
         agent.Index=-1
         agent.Wait = False
         agent.color = colors.LIGHTBLUE1
@@ -125,15 +104,12 @@ def handle_orders_SBIG():
 
 # This function gives random items with random quantities to Truck Agents to send them to random racks.
 def truck_orders():     
-   # print(1)
-   # x=input()    
     items=[]
     for _ in range(len(Truck_Agents)):
         type=random.randint(0,type_of_items)
         quantity=random.randint(1,max_order_limit)
         shelf=str((random.randint(0, n-1), random.randint(0,m-1), random.randint(0, 4), random.randint(0, 4)))
         items.append([type,quantity,shelf])
- #   print(items,"X")
     return items
     
 # Utility Function - To generate Dummy Sorting Orders so they don't sit idle
