@@ -212,13 +212,16 @@ def waste_sorting_area():
  #   add_edge((sorting_w+racks_width,80),(sorting_w+racks_width,sorting_h+80),direction["up"])
 
 
-    add_edge((racks_width-40,(80+racks_height//2)//2-20),(racks_width+10,(80+racks_height//2)//2-20),direction["left"]) #left queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width+10,int((80+racks_height//2)//2+70)),direction["right"]) #right queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2-20)),(racks_width-40,int((80+racks_height//2)/2+70)),direction["down"]) #down queue
+    add_edge((racks_width-40,(80+racks_height//2)//2-20),(racks_width+10,(80+racks_height//2)//2-20),direction["right"]) #left queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width+10,int((80+racks_height//2)//2+70)),direction["left"]) #right queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2-20)),(racks_width-40,int((80+racks_height//2)/2+70)),direction["up"]) #down queue
     #pygame.draw.line(screen,colors.RED,(racks_width,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2-25),width=2)    # Left
     # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2+20),(racks_width,(80+racks_height//2)/2+20),width=2)    # Right
     # pygame.draw.line(screen,colors.BLUE,(racks_width-25,(80+racks_height//2)/2-25),(racks_width-25,(80+racks_height//2)/2+20),width=2)             #Down
-
+    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+130),(racks_width+10,(80+racks_height//2)/2+130),width=2)
+    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width-40,(80+racks_height//2)/2+130),width=2)
+    add_edge((racks_width-40,int((80+racks_height//2)//2+130)),(racks_width+10,int((80+racks_height//2)//2+130)),direction["left"]) #right queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
     # (n+1)*15+n*10=sorting_n*100+15
     # (m+1)*15+m*10=sorting_m*100+15
     # x=racks_width+20

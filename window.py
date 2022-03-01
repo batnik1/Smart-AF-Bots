@@ -70,22 +70,22 @@ def handle_events():
 Total_orders=0
 
 while running:
-    if key%order_freq==0:
-        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-        if new_orders!="Nothing": 
-            Total_orders+=1
-            orders.append(new_orders)   # To mantain FCFS Order
+    # if key%order_freq==0:
+    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    #     if new_orders!="Nothing": 
+    #         Total_orders+=1
+    #         orders.append(new_orders)   # To mantain FCFS Order
 
     if key%truck_freq==0:
         new_items=truck_orders()
         Torders+=new_items
-   # print(Torders)
+    
     init_screen() 
     if sbig_flag:
         handle_orders_SBIG()
     else:
         handle_orders()
-   # handle_Torders()
+    
     handle_events()
     current_items,orders_completed_now=handle_rack_agents(key,coloring)
     if Traffic_Flag:
@@ -125,7 +125,7 @@ while running:
     # # same on intersection 15
     # print(Golden_Grid[Intersections[15]],Intersections[15])
     # x=input()
-
+    
     # get number of items in warehouse left
     # total items in warehouse 
     # items done
@@ -135,20 +135,18 @@ while running:
     # Make a progress bar with a base rectangle as 100% and filled with items_done/total_items*100%
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100,10),1)
     pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(racks_width+50,60,100-items_done/total_items*100,10),0)
-
+    if len(sorting_orders)==0:
+        print(key)
+        break
     pending_orders=Total_orders
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
-    # make progress bar for orders 10 pixels above the progress bar
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
-    print(orders_done,pending_orders,orders_done/pending_orders*100)
     
     screen.blit(PBar_Orders,(racks_width+160,35))
 
-    # print(items_done,total_items)
-    # print(orders_done,pending_orders)
     pygame.display.update()
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    
