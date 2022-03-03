@@ -130,7 +130,8 @@ def handle_Torders():
         ind = get_TAgent()
         if ind == -1:
             break
-        rack_available[rack]=0
+        if SBIG==0:
+            rack_available[rack]=0
         agent=All_Agents[ind]
         # logger.info('Truck Bot '+str(ind)+" is assigned to deliever item type "+str(type)+" whose quant is "+str(quantity))
         logger.info('New Items'+','+'-'+','+'Truck Bot'+','+str(ind)+','+'Bot is assigned to deliever new items.')

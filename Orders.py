@@ -7,7 +7,7 @@ This file contains functions to do the following tasks:
 import uuid
 from Map_Simul import *
 import random
-random.seed(2500)
+random.seed(2400)
 import numpy as np
 import logging
 
@@ -89,7 +89,7 @@ def gen_a_order():
         continue
       order.append([type,random.randint(low,high)])
       sum+=order[-1][1]
-      
+        
   racks=assign_rack(order)
   
   human_counter= random.randint(0,2*m-1)

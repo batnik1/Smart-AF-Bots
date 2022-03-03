@@ -80,7 +80,7 @@ def numofdumping():
         x+=30
 
 numofdumping()
-numofdump["conveyor"]=(racks_width-40,(80+racks_height//2)//2+10)
+numofdump["conveyor"]=(racks_width-40,(95+racks_height//2)//2+30)
 
 # Human counter location
 numofhcounter={}
@@ -203,12 +203,16 @@ def waste_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
 
-    add_edge((racks_width-40,(80+racks_height//2)//2-20),(racks_width+10,(80+racks_height//2)//2-20),direction["right"]) #left queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width+10,int((80+racks_height//2)//2+70)),direction["left"]) #right queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2-20)),(racks_width-40,int((80+racks_height//2)/2+70)),direction["up"]) #down queue
+    add_edge((racks_width-40,(80+racks_height//2)//2-50),(racks_width+10,(80+racks_height//2)//2-50),direction["right"]) #left queue
+    add_edge((racks_width-40,(80+racks_height//2)//2+10),(racks_width+10,(80+racks_height//2)//2+10),direction["right"]) #left queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2+100)),(racks_width+10,int((80+racks_height//2)//2+100)),direction["left"]) #right queue
+  #  add_edge((racks_width-40,int((80+racks_height//2)//2-50)),(racks_width-40,int((80+racks_height//2)/2+100)),direction["up"]) #down queue
 
-    add_edge((racks_width-40,int((80+racks_height//2)//2+130)),(racks_width+10,int((80+racks_height//2)//2+130)),direction["left"]) #right queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
+    add_edge((racks_width-40,int((80+racks_height//2)//2+160)),(racks_width+10,int((80+racks_height//2)//2+160)),direction["left"]) #right queue
+  #  add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
+
+    add_edge((racks_width-40,int((80+racks_height//2)//2+220)),(racks_width+10,int((80+racks_height//2)//2+220)),direction["left"]) #right queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2-50)),(racks_width-40,int((80+racks_height//2)/2+220)),direction["up"])
 
     lis_hori=[]
     x=racks_width+10
@@ -339,6 +343,7 @@ Intersection_Booking={}
 Intersection_Bot={}
 Intersection_Recal={}
 Intersection_Coming_Dir={}
+Intersection_Calculated={}
 # Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
@@ -349,7 +354,8 @@ for i,j in Intersections:
     Intersection_Bot[(i,j)]=Agent(0,n,m)
     Intersection_Bot[(i,j)].l=2
     Intersection_Bot[(i,j)].position=(i,j)
-
+    Intersection_Recal[(i,j)]=0
+    Intersection_Calculated[(i,j)]=0
 # Calculating nearest_intersection from our ambient workspace into our roadmap
 def nearest_intersection(source,rev=False):
     source=tuple(source)

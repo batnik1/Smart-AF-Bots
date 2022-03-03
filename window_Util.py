@@ -43,12 +43,18 @@ def make_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
    # pygame.draw.rect(screen,colors.BLUE,pygame.Rect(racks_width,80,sorting_w,sorting_h),3)
-    pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2-20),(racks_width-40,(80+racks_height//2)/2-20),width=2)    # Left
-    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width+10,(80+racks_height//2)/2+70),width=2)    # Right
-    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2-20),(racks_width-40,(80+racks_height//2)/2+70),width=2)    # Down
+    pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2-50),(racks_width-40,(80+racks_height//2)/2-50),width=2)    # Left
+    pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2+10),(racks_width-40,(80+racks_height//2)/2+10),width=2)    # Left
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+100),(racks_width+10,(80+racks_height//2)/2+100),width=2)    # Right
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2-50),(racks_width-40,(80+racks_height//2)/2+100),width=2)    # Down
     
-    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+130),(racks_width+10,(80+racks_height//2)/2+130),width=2)
-    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width-40,(80+racks_height//2)/2+130),width=2)
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+160),(racks_width+10,(80+racks_height//2)/2+160),width=2)
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width-40,(80+racks_height//2)/2+160),width=2)
+
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+220),(racks_width+10,(80+racks_height//2)/2+220),width=2)
+    pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+130),(racks_width-40,(80+racks_height//2)/2+220),width=2)
+
+
     x=racks_width+20
 
     for _ in range(int(2*sorting_m-1)):
