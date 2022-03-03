@@ -146,4 +146,6 @@ total_items=0
 for obj in collection.find():
   total_items+=obj["quantity"]
 print("Total Items in Warehouse:",total_items)
-# input()
+# for i in range(5):
+#   # print(random.randint(1,100000),gen_a_order())
+#   print(gen_a_order())

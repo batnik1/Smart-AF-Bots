@@ -69,9 +69,11 @@ def handle_events():
 # https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
 Total_orders=0
 Running_Finisher=0
+
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+        print("New Order Generated:",new_orders)
         if new_orders!="Nothing": 
             Total_orders+=1
             orders.append(new_orders)   # To mantain FCFS Order
@@ -111,7 +113,7 @@ while running:
 
     if key==0:
         # dummy_sorting(key,100)
-        Final_Finisher=212
+        Final_Finisher=210
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -134,7 +136,6 @@ while running:
     print(pending_orders,orders_done)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
-    print(pending_orders,orders_done)
     screen.blit(PBar_Orders,(racks_width+160,35))
 
     pygame.display.update()

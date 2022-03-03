@@ -1,349 +1,109 @@
-2022-03-01 14:51:44,006 New Order,5efdcbb5-8646-4abd-bc2e-403737136a2d,-,-,New Order is Placed.
-2022-03-01 14:51:44,178 New Order,399530de-ba32-45ac-939a-408c14cfec7a,-,-,New Order is Placed.
-2022-03-01 14:51:44,277 New Order,6045b75a-cceb-468c-90d9-3e4b07f3f2a7,-,-,New Order is Placed.
-2022-03-01 14:51:44,384 New Order,0f956faf-e556-4707-a240-bc98bccba0c7,-,-,New Order is Placed.
-2022-03-01 14:51:44,494 New Order,4670bc34-ac64-481a-ae09-cb7222a5b90a,-,-,New Order is Placed.
-2022-03-01 14:51:44,599 New Order,440ae19c-b41d-44fe-8c33-ff0d5a00b410,-,-,New Order is Placed.
-2022-03-01 14:51:44,701 New Order,05765ca8-dd02-4827-94d6-c699760c536e,-,-,New Order is Placed.
-2022-03-01 14:51:44,809 New Order,aea75677-a843-46b2-a107-6f02fe9e62b2,-,-,New Order is Placed.
-2022-03-01 14:51:44,818 Order,05765ca8-dd02-4827-94d6-c699760c536e,Warehouse,55,Bot Reached the Desired Rack.
-2022-03-01 14:51:45,015 New Order,8e5e30e0-2a29-408f-820e-23cd261110fe,-,-,New Order is Placed.
-2022-03-01 14:51:45,021 Order,aea75677-a843-46b2-a107-6f02fe9e62b2,Warehouse,48,Bot Reached the Desired Rack.
-2022-03-01 14:51:45,205 New Order,33c91db9-a35c-4496-886e-3fe8e2d70205,-,-,New Order is Placed.
-2022-03-01 14:51:45,213 Order,8e5e30e0-2a29-408f-820e-23cd261110fe,Warehouse,31,Bot Reached the Rack No. 1
-2022-03-01 14:51:45,383 New Order,d508f959-fe8c-4852-944e-ab2edadd5fc7,-,-,New Order is Placed.
-2022-03-01 14:51:45,489 New Order,bdd9c544-0bf4-4a8e-b9e7-2dae91815c01,-,-,New Order is Placed.
-2022-03-01 14:51:45,595 New Order,05456f06-addb-4eaa-8f5d-6ef88be8d9e3,-,-,New Order is Placed.
-2022-03-01 14:51:45,698 New Order,7269171f-fea5-4abd-89f8-6301c4dc1199,-,-,New Order is Placed.
-2022-03-01 14:51:45,805 New Order,76584284-b99c-4a28-90ba-da2c9fe65e35,-,-,New Order is Placed.
-2022-03-01 14:51:45,835 New Order,1a954017-c643-45d9-83c2-8087a8a00c5a,-,-,New Order is Placed.
-2022-03-01 14:51:45,942 New Order,606ec343-aa41-4eab-bfd5-91b6d344b534,-,-,New Order is Placed.
-2022-03-01 14:51:46,051 New Order,03d2a4f1-dfbc-44b1-80c6-da1d830e184b,-,-,New Order is Placed.
-2022-03-01 14:51:46,082 New Order,0a485bf6-8649-41e6-9946-830df50e49a4,-,-,New Order is Placed.
-2022-03-01 14:51:46,198 New Order,6acd9352-cb05-4528-ad71-0816b9119d93,-,-,New Order is Placed.
-2022-03-01 14:51:46,205 Order,0a485bf6-8649-41e6-9946-830df50e49a4,Warehouse,40,Bot Reached the Rack No. 1
-2022-03-01 14:51:46,414 New Order,de2e65f2-c939-4852-a342-7ec34b3e1716,-,-,New Order is Placed.
-2022-03-01 14:51:46,555 New Order,d51cb1c1-f6df-433a-992a-13097f364a54,-,-,New Order is Placed.
-2022-03-01 14:51:46,747 New Order,4ec6999e-ab46-403f-b66a-acdb075dc426,-,-,New Order is Placed.
-2022-03-01 14:51:46,933 New Order,01068069-343d-4805-a346-ec7602bba75c,-,-,New Order is Placed.
-2022-03-01 14:51:47,075 New Order,02f7ed7f-feab-4cc8-bc3e-62cf9b8915e1,-,-,New Order is Placed.
-2022-03-01 14:51:47,106 New Order,db378bf9-5641-429c-8057-616c76320c33,-,-,New Order is Placed.
-2022-03-01 14:51:47,325 New Order,e025e24e-0cda-45ab-8508-5701b352753b,-,-,New Order is Placed.
-2022-03-01 14:51:47,342 Order,db378bf9-5641-429c-8057-616c76320c33,Warehouse,16,Bot Reached the Desired Rack.
-2022-03-01 14:51:47,623 New Order,8be6df59-c540-437a-a168-6d411a293a76,-,-,New Order is Placed.
-2022-03-01 14:51:47,752 New Order,8743f7f6-dde2-4042-bdd8-aeb7fdd917f2,-,-,New Order is Placed.
-2022-03-01 14:51:47,788 New Order,eb8743aa-45d1-4730-ba57-93251f027ac7,-,-,New Order is Placed.
-2022-03-01 14:51:47,937 New Order,220e8fb7-b130-4fea-8926-f87b4f061a33,-,-,New Order is Placed.
-2022-03-01 14:51:48,166 New Order,cbfb0e8e-a622-4bf7-b8a0-fe5c0884193a,-,-,New Order is Placed.
-2022-03-01 14:51:48,193 Order,220e8fb7-b130-4fea-8926-f87b4f061a33,Warehouse,8,Bot Reached the Rack No. 1
-2022-03-01 14:51:48,443 New Order,3419f2ce-6cca-4a5f-be0e-11efc6265053,-,-,New Order is Placed.
-2022-03-01 14:51:48,542 New Order,6e197d38-cbce-4aea-9c82-a20f981d2bc8,-,-,New Order is Placed.
-2022-03-01 14:51:48,548 Order,3419f2ce-6cca-4a5f-be0e-11efc6265053,Warehouse,29,Bot Reached the Desired Rack.
-2022-03-01 14:51:48,713 New Order,2016b873-0bd4-457b-bfbf-ece4ec1ed38d,-,-,New Order is Placed.
-2022-03-01 14:51:48,718 Order,6e197d38-cbce-4aea-9c82-a20f981d2bc8,Warehouse,11,Bot Reached the Desired Rack.
-2022-03-01 14:51:48,887 New Order,6c41845c-56f5-4b1f-868d-fd671f0c6a94,-,-,New Order is Placed.
-2022-03-01 14:51:48,897 Order,2016b873-0bd4-457b-bfbf-ece4ec1ed38d,Warehouse,43,Bot Reached the Desired Rack.
-2022-03-01 14:51:49,072 New Order,ebe3c34b-5338-4619-9cae-d77dc07d093b,-,-,New Order is Placed.
-2022-03-01 14:51:49,078 Order,6c41845c-56f5-4b1f-868d-fd671f0c6a94,Warehouse,76,Bot Reached the Desired Rack.
-2022-03-01 14:51:49,247 New Order,b3acbd0a-6196-4967-99e0-8a1169678892,-,-,New Order is Placed.
-2022-03-01 14:51:49,352 New Order,52fef0e2-5971-4ad5-9c8e-8ae273eed5be,-,-,New Order is Placed.
-2022-03-01 14:51:49,487 New Order,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,-,-,New Order is Placed.
-2022-03-01 14:51:49,642 New Order,4d5233e9-2f49-4422-a609-ded6f2da1284,-,-,New Order is Placed.
-2022-03-01 14:51:49,651 Order,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,Warehouse,24,Bot Reached the Desired Rack.
-2022-03-01 14:51:49,830 New Order,b5d95689-3e68-40e3-9fbd-d22b778e84d9,-,-,New Order is Placed.
-2022-03-01 14:51:49,942 New Order,fdf6c207-5878-498b-9c3e-61ac1320134e,-,-,New Order is Placed.
-2022-03-01 14:51:49,949 Order,b5d95689-3e68-40e3-9fbd-d22b778e84d9,Warehouse,6,Bot Reached the Desired Rack.
-2022-03-01 14:51:50,137 New Order,ad463fbd-fb8b-4f8b-b89e-0e32c0210222,-,-,New Order is Placed.
-2022-03-01 14:51:50,248 New Order,ebceaa24-af12-4deb-849d-0c30866a9b91,-,-,New Order is Placed.
-2022-03-01 14:51:50,272 New Order,e4e6e58c-9858-42e9-bddf-e093ad204549,-,-,New Order is Placed.
-2022-03-01 14:51:50,391 New Order,357831c8-bd05-422d-9127-c977e47bf72b,-,-,New Order is Placed.
-2022-03-01 14:51:50,491 New Order,30e8db2a-b11b-4206-8f57-c87754c013ea,-,-,New Order is Placed.
-2022-03-01 14:51:50,517 New Order,8ebb33b8-fd20-4c73-8df8-eb7cf8437c26,-,-,New Order is Placed.
-2022-03-01 14:51:50,624 New Order,fd7b2fb3-b5aa-4a46-a03a-0f75881beaf6,-,-,New Order is Placed.
-2022-03-01 14:51:50,739 New Order,bc58a320-fc8d-4f8c-92aa-b9a41d93a37c,-,-,New Order is Placed.
-2022-03-01 14:51:50,855 New Order,346ab9e9-7dad-4406-9209-535b5eb40441,-,-,New Order is Placed.
-2022-03-01 14:51:50,970 New Order,32d923bc-6526-47dc-97f4-3bbf95d0c801,-,-,New Order is Placed.
-2022-03-01 14:51:51,087 New Order,d831eb2c-eb1a-42d8-b803-433bdf9a99b9,-,-,New Order is Placed.
-2022-03-01 14:51:51,093 Order,32d923bc-6526-47dc-97f4-3bbf95d0c801,Warehouse,28,Bot Reached the Rack No. 1
-2022-03-01 14:51:51,269 New Order,83a22eee-1dae-428d-b8de-46d765b7d9c6,-,-,New Order is Placed.
-2022-03-01 14:51:51,366 New Order,75ec2fe7-c868-48f0-a4a1-a8d961021005,-,-,New Order is Placed.
-2022-03-01 14:51:51,464 New Order,b88c9698-b515-49de-9c02-fa561bf29acf,-,-,New Order is Placed.
-2022-03-01 14:51:51,564 New Order,709e3fb3-b6cc-4f6f-9309-22c39525483a,-,-,New Order is Placed.
-2022-03-01 14:51:51,571 Order,b88c9698-b515-49de-9c02-fa561bf29acf,Warehouse,22,Bot Reached the Desired Rack.
-2022-03-01 14:51:51,739 New Order,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,-,-,New Order is Placed.
-2022-03-01 14:51:51,747 Order,709e3fb3-b6cc-4f6f-9309-22c39525483a,Warehouse,99,Bot Reached the Desired Rack.
-2022-03-01 14:51:51,930 New Order,14d47016-b3b9-4f4c-aa93-89fb152ba38b,-,-,New Order is Placed.
-2022-03-01 14:51:52,040 New Order,e803acc4-9eb9-4606-b7b0-e6cab5b50937,-,-,New Order is Placed.
-2022-03-01 14:51:52,139 New Order,a56e1ada-3f8e-4f17-a97d-1a38f622556a,-,-,New Order is Placed.
-2022-03-01 14:51:52,147 Order,e803acc4-9eb9-4606-b7b0-e6cab5b50937,Warehouse,86,Bot Reached the Rack No. 1
-2022-03-01 14:51:52,326 New Order,b59721e0-a48e-4c58-a758-10618b33b761,-,-,New Order is Placed.
-2022-03-01 14:51:52,431 New Order,20010b42-3c93-4fd7-bc90-03d6cf7553bd,-,-,New Order is Placed.
-2022-03-01 14:51:52,548 New Order,bcdcf63d-fff3-439c-b0b5-f0fcfb8c0f4c,-,-,New Order is Placed.
-2022-03-01 14:51:52,661 New Order,983d2a0e-abb0-45d3-af1e-60e964049bb6,-,-,New Order is Placed.
-2022-03-01 14:51:52,669 Order,bcdcf63d-fff3-439c-b0b5-f0fcfb8c0f4c,Warehouse,87,Bot Reached the Rack No. 1
-2022-03-01 14:51:52,842 New Order,52fa93f0-54df-4efc-b157-f855508987ad,-,-,New Order is Placed.
-2022-03-01 14:51:52,948 New Order,dff2ee8c-7806-41a3-912d-acd139d653d9,-,-,New Order is Placed.
-2022-03-01 14:51:53,056 New Order,8d7afddc-f421-44d7-8278-201d9c21d01a,-,-,New Order is Placed.
-2022-03-01 14:51:53,163 New Order,871cc2ff-c7d5-4e68-b174-a081f5c43065,-,-,New Order is Placed.
-2022-03-01 14:51:53,188 New Order,8bd97954-290b-43ae-9f19-a661d06d6af7,-,-,New Order is Placed.
-2022-03-01 14:51:53,216 New Order,75e465b6-ec5c-40a9-bb28-73bb769cd72d,-,-,New Order is Placed.
-2022-03-01 14:51:53,319 New Order,8c259e82-4780-452c-8609-456b71fb85c7,-,-,New Order is Placed.
-2022-03-01 14:51:53,326 Order,75e465b6-ec5c-40a9-bb28-73bb769cd72d,Warehouse,38,Bot Reached the Desired Rack.
-2022-03-01 14:51:53,500 New Order,aebe62b3-2439-4486-8ebe-73e890d75578,-,-,New Order is Placed.
-2022-03-01 14:51:53,608 New Order,06495356-a2ec-4a6a-9ede-f2c2b1572e44,-,-,New Order is Placed.
-2022-03-01 14:51:53,718 New Order,2d310686-e726-4282-8cf6-2eaad10ea3d7,-,-,New Order is Placed.
-2022-03-01 14:51:53,826 New Order,1656fcd5-ad18-4ab0-ae74-d712b791c5b7,-,-,New Order is Placed.
-2022-03-01 14:51:53,936 New Order,6572b22b-9ce7-4652-9f5f-bbec01436011,-,-,New Order is Placed.
-2022-03-01 14:51:54,057 New Order,336de82f-18a5-466c-ab26-88afc9fead34,-,-,New Order is Placed.
-2022-03-01 14:51:54,173 New Order,9ba303c3-f2cc-44a5-b935-22000bbb0f3d,-,-,New Order is Placed.
-2022-03-01 14:51:54,202 New Order,c6287814-fd33-4988-84d0-933a51144e31,-,-,New Order is Placed.
-2022-03-01 14:51:54,230 New Order,0c6f132c-94d8-49e8-852e-e6dd2b5d8dc4,-,-,New Order is Placed.
-2022-03-01 14:51:54,337 New Order,f643d151-73bc-4c95-a344-31b7f04e65ef,-,-,New Order is Placed.
-2022-03-01 14:51:54,446 New Order,2a6d40e7-c4af-4669-a7f3-570bcde3c301,-,-,New Order is Placed.
-2022-03-01 14:51:54,644 New Order,9b49a1b0-c003-4760-a3d4-e741988cdc26,-,-,New Order is Placed.
-2022-03-01 14:51:54,780 New Order,27894e21-7681-48c7-8e5a-3279482f1818,-,-,New Order is Placed.
-2022-03-01 14:51:54,960 New Order,6164c17e-354e-442d-a838-03c7e44bca8f,-,-,New Order is Placed.
-2022-03-01 14:51:54,967 Order,8743f7f6-dde2-4042-bdd8-aeb7fdd917f2,Warehouse,96,Bot Reached the Rack No. 1
-2022-03-01 14:51:55,063 New Order,f3c7b13e-8c00-42cf-8a01-2172fdb10192,-,-,New Order is Placed.
-2022-03-01 14:51:55,251 New Order,7956db4d-1400-4e07-92bf-8b24d60588f2,-,-,New Order is Placed.
-2022-03-01 14:51:55,258 Order,76584284-b99c-4a28-90ba-da2c9fe65e35,Warehouse,77,Bot Reached the Rack No. 1
-2022-03-01 14:51:55,361 New Order,a1eca9d1-7f37-40f2-99b2-8338fa5fab1f,-,-,New Order is Placed.
-2022-03-01 14:51:55,564 New Order,4addeab6-2e72-4de6-8fbe-efbf601a5cfd,-,-,New Order is Placed.
-2022-03-01 14:51:55,670 New Order,94e6504f-3248-48d2-9c3d-ae19a12524ea,-,-,New Order is Placed.
-2022-03-01 14:51:55,784 New Order,fcd035d7-f515-4543-8254-5c916aa7cd1f,-,-,New Order is Placed.
-2022-03-01 14:51:55,898 New Order,ed1be3e5-13c9-457f-a8de-0331be6e2dc8,-,-,New Order is Placed.
-2022-03-01 14:51:56,012 New Order,9c1f052e-323c-452f-abf7-bfb0a4896264,-,-,New Order is Placed.
-2022-03-01 14:51:56,192 New Order,b0183156-75ff-4a7a-887c-e2e972791900,-,-,New Order is Placed.
-2022-03-01 14:51:56,297 New Order,82d11a12-cf62-4da9-bd7c-894cde5ce220,-,-,New Order is Placed.
-2022-03-01 14:51:56,334 New Order,7bef93cf-8816-48f8-804f-255d1a9c6908,-,-,New Order is Placed.
-2022-03-01 14:51:56,367 New Order,f46bdf1e-45b7-43f5-8e55-cce77594e919,-,-,New Order is Placed.
-2022-03-01 14:51:56,401 New Order,50d0f716-960c-4ec8-b80a-72be5e925166,-,-,New Order is Placed.
-2022-03-01 14:51:56,587 New Order,8688e962-8f1e-422e-998f-fa185e20c72d,-,-,New Order is Placed.
-2022-03-01 14:51:56,592 Order,ebceaa24-af12-4deb-849d-0c30866a9b91,Warehouse,70,Bot Reached the Rack No. 1
-2022-03-01 14:51:56,766 New Order,7190e9a2-eef5-4743-832a-0e9ce6098c40,-,-,New Order is Placed.
-2022-03-01 14:51:56,801 New Order,9af979e1-70d9-431a-a171-e7ed3d313d0d,-,-,New Order is Placed.
-2022-03-01 14:51:56,825 New Order,4e52076f-d21d-40b2-b068-e1faa4591191,-,-,New Order is Placed.
-2022-03-01 14:51:56,855 New Order,8e6b659b-10bc-4e50-9c4e-3bc6647804be,-,-,New Order is Placed.
-2022-03-01 14:51:56,888 New Order,6bcc4bf1-796b-4ff3-a6a8-6956571840da,-,-,New Order is Placed.
-2022-03-01 14:51:56,921 New Order,ad396eff-7f27-41a4-926c-6621b695e3c5,-,-,New Order is Placed.
-2022-03-01 14:51:56,957 New Order,aee03345-a24a-4d44-9e23-b02926e3be8a,-,-,New Order is Placed.
-2022-03-01 14:51:56,985 New Order,250af74a-51d8-4cb9-8398-4827a3abf5ba,-,-,New Order is Placed.
-2022-03-01 14:51:57,015 New Order,95a72eeb-d0ce-4914-b708-8ba7657f78ae,-,-,New Order is Placed.
-2022-03-01 14:51:57,122 New Order,5883ddfa-bd5e-493c-b35f-303e9a50aa6f,-,-,New Order is Placed.
-2022-03-01 14:51:57,156 New Order,cdd8a0e7-cf76-4aa0-b35f-ef6b1d1561c4,-,-,New Order is Placed.
-2022-03-01 14:51:57,183 New Order,c14ad1c3-ac48-4c77-9906-e30bedf39b96,-,-,New Order is Placed.
-2022-03-01 14:51:57,217 New Order,6dbfdb22-29d2-4496-8157-ab5c9f044eb4,-,-,New Order is Placed.
-2022-03-01 14:51:57,243 New Order,6c23162c-13ee-4c0c-b5c9-4b179fdbfe6d,-,-,New Order is Placed.
-2022-03-01 14:51:57,268 New Order,4f58d867-71c0-4aaf-b3e6-804ae44a3edc,-,-,New Order is Placed.
-2022-03-01 14:51:57,292 New Order,7a156946-cee9-417c-bed2-f0f15ada119d,-,-,New Order is Placed.
-2022-03-01 14:51:57,321 New Order,3ae000b1-cc04-437f-9bd7-39b46edd9076,-,-,New Order is Placed.
-2022-03-01 14:51:57,355 New Order,1733f0c3-4277-43cb-9eea-8f7bd3b9bf63,-,-,New Order is Placed.
-2022-03-01 14:51:57,381 New Order,f2343ad3-a500-4253-9aaa-0ccda5369e00,-,-,New Order is Placed.
-2022-03-01 14:51:57,407 New Order,1c628c02-9fb5-4237-9901-992d3c592d07,-,-,New Order is Placed.
-2022-03-01 14:51:57,435 New Order,5b365ea1-f947-41e6-90ab-3987f111f932,-,-,New Order is Placed.
-2022-03-01 14:51:57,550 New Order,86654f43-6d70-44a0-be5b-341d2730b2ef,-,-,New Order is Placed.
-2022-03-01 14:51:57,581 New Order,814c3ba0-e58b-4b58-b0cf-2f6c0aad978c,-,-,New Order is Placed.
-2022-03-01 14:51:57,605 New Order,2c53b524-cc22-491e-9eb8-df413f1401d1,-,-,New Order is Placed.
-2022-03-01 14:51:57,639 New Order,9d97c840-2e4b-4f52-9e78-4a87fe9ae7ec,-,-,New Order is Placed.
-2022-03-01 14:51:57,665 New Order,08144712-f036-4412-96cd-55371edcaecb,-,-,New Order is Placed.
-2022-03-01 14:51:57,689 New Order,8d6520c1-c3be-417e-8029-fe7af39f95ca,-,-,New Order is Placed.
-2022-03-01 14:51:57,792 New Order,032749ba-e086-483d-a474-f8075af3f783,-,-,New Order is Placed.
-2022-03-01 14:51:57,818 New Order,963c25f4-61a5-49f4-a775-bf0c0c7425db,-,-,New Order is Placed.
-2022-03-01 14:51:57,852 New Order,18881232-03ee-43b7-8692-2f92412013b6,-,-,New Order is Placed.
-2022-03-01 14:51:57,884 New Order,f323c15b-8690-43a9-9bc8-f49a43da115f,-,-,New Order is Placed.
-2022-03-01 14:51:57,918 New Order,1d6514d7-eb41-4557-b41f-115363b43e81,-,-,New Order is Placed.
-2022-03-01 14:51:57,941 New Order,4415b083-2c51-4c21-9f6f-8fa1149a2f6a,-,-,New Order is Placed.
-2022-03-01 14:51:57,976 New Order,cb2fd36a-7cda-40e8-8956-3034d3a2f1b4,-,-,New Order is Placed.
-2022-03-01 14:51:58,004 New Order,d481ae80-00b1-47c5-a843-bb49accecd9b,-,-,New Order is Placed.
-2022-03-01 14:51:58,038 New Order,ab76ab78-ff15-423e-add3-7aaec7855440,-,-,New Order is Placed.
-2022-03-01 14:51:58,072 New Order,1e67adc5-d855-453f-8627-aa88b53da9b2,-,-,New Order is Placed.
-2022-03-01 14:51:58,099 New Order,763a63ec-f203-4381-93be-6da1259450e0,-,-,New Order is Placed.
-2022-03-01 14:51:58,131 New Order,54c05bf1-4dc9-4bc9-a53e-72dce4eed824,-,-,New Order is Placed.
-2022-03-01 14:51:58,157 New Order,a2c847de-ea3c-44ec-9500-7ea8c49deefc,-,-,New Order is Placed.
-2022-03-01 14:51:58,186 New Order,df636451-e81d-4274-9398-4b2e7cdcb918,-,-,New Order is Placed.
-2022-03-01 14:51:58,216 New Order,f9ef9f32-7d2a-44bd-bfd0-b796a06631c8,-,-,New Order is Placed.
-2022-03-01 14:51:58,243 New Order,0336ae68-05a0-4f72-8c40-f181639a70b9,-,-,New Order is Placed.
-2022-03-01 14:51:58,283 New Order,9ea2e077-c5cc-4845-a82c-0e1115924d66,-,-,New Order is Placed.
-2022-03-01 14:51:58,310 New Order,f88234bf-08a7-4d63-865f-75c149ebe4f3,-,-,New Order is Placed.
-2022-03-01 14:51:58,439 New Order,e3a2cab0-c2e9-4893-8244-152ccae2efac,-,-,New Order is Placed.
-2022-03-01 14:51:58,470 New Order,8c0f0ffc-36a0-4e10-bad9-1f21769403f6,-,-,New Order is Placed.
-2022-03-01 14:51:58,511 New Order,ccdb8c97-7b06-49a0-ac82-cc73b2589d56,-,-,New Order is Placed.
-2022-03-01 14:51:58,543 New Order,f5886eef-bb4c-49fe-a987-4f59329f119d,-,-,New Order is Placed.
-2022-03-01 14:51:58,573 New Order,b6ce32d9-be4f-413d-9a56-b8b8aba3d818,-,-,New Order is Placed.
-2022-03-01 14:51:58,700 New Order,7e4e5d71-4b94-485c-b45e-8e6de4372af4,-,-,New Order is Placed.
-2022-03-01 14:51:58,729 New Order,b30dddb4-cba8-41bd-9463-07c01e69f6d1,-,-,New Order is Placed.
-2022-03-01 14:51:58,765 New Order,9b63029a-8d68-4ba0-8239-fcdffed58616,-,-,New Order is Placed.
-2022-03-01 14:51:58,792 New Order,6724e275-9416-4d06-8115-b951f1efad71,-,-,New Order is Placed.
-2022-03-01 14:51:58,829 New Order,c59c89a6-c56f-45fa-a684-27090e6aec09,-,-,New Order is Placed.
-2022-03-01 14:51:58,867 New Order,d468ffac-589f-4b3a-bc87-6c8dd07e3ef1,-,-,New Order is Placed.
-2022-03-01 14:51:58,974 New Order,e11eb3eb-d710-4016-ab11-aed253ce72b8,-,-,New Order is Placed.
-2022-03-01 14:51:59,010 New Order,4010e3e0-a38a-4b00-ab92-769634a90372,-,-,New Order is Placed.
-2022-03-01 14:51:59,044 New Order,ed700e33-776e-4252-a6fc-0b8e587a55b8,-,-,New Order is Placed.
-2022-03-01 14:51:59,072 New Order,3f0daebc-80b4-4584-8606-19e132b5203f,-,-,New Order is Placed.
-2022-03-01 14:51:59,106 New Order,597d4e48-c604-4372-92cb-6423d20b487b,-,-,New Order is Placed.
-2022-03-01 14:51:59,143 New Order,b23d3e90-33da-46b6-9a4b-c4a7f81e1bdd,-,-,New Order is Placed.
-2022-03-01 14:51:59,179 New Order,21e7506b-9ea3-4770-81b6-4e6febf23261,-,-,New Order is Placed.
-2022-03-01 14:51:59,216 New Order,a70cc9a7-4185-439a-8607-fd5ace4c1b37,-,-,New Order is Placed.
-2022-03-01 14:51:59,252 New Order,357d4691-0aeb-486b-a6ee-3f5ed7a577a0,-,-,New Order is Placed.
-2022-03-01 14:51:59,287 New Order,a5169bf6-cd00-44b6-ba6d-ea53f66bb22e,-,-,New Order is Placed.
-2022-03-01 14:51:59,326 New Order,62eabb40-f571-4a69-8bf3-444d230362ed,-,-,New Order is Placed.
-2022-03-01 14:51:59,363 New Order,b6cb9795-3e7f-4db4-8e80-5909977f11a9,-,-,New Order is Placed.
-2022-03-01 14:51:59,397 New Order,716ca617-3982-430a-867c-9c9092d2793b,-,-,New Order is Placed.
-2022-03-01 14:51:59,435 New Order,c18b02f1-02f5-458b-9e71-0ec9299335c1,-,-,New Order is Placed.
-2022-03-01 14:51:59,466 New Order,0c51321a-862f-4cd4-a37b-22e25b5656f3,-,-,New Order is Placed.
-2022-03-01 14:51:59,495 New Order,2b484fa3-2111-4411-8a44-83b8983498e7,-,-,New Order is Placed.
-2022-03-01 14:51:59,524 New Order,df8a8ea9-8510-40dc-933b-4043a8217a4d,-,-,New Order is Placed.
-2022-03-01 14:51:59,652 New Order,f31fb5d9-fe7b-4e2d-877c-5c2a399cd73f,-,-,New Order is Placed.
-2022-03-01 14:51:59,763 New Order,df6b9403-9821-40c8-897c-2a8a7971cafa,-,-,New Order is Placed.
-2022-03-01 14:51:59,814 New Order,317d33d8-cb7f-4bda-bbdc-f5af44a12184,-,-,New Order is Placed.
-2022-03-01 14:51:59,861 New Order,73693eb9-3e80-47b9-9c43-3a4edbdb04a5,-,-,New Order is Placed.
-2022-03-01 14:51:59,899 New Order,7f84db04-b391-4436-8dcc-c2fd0df7774a,-,-,New Order is Placed.
-2022-03-01 14:51:59,947 New Order,ad05ee4c-6d61-4f62-8dae-beb49e0208c5,-,-,New Order is Placed.
-2022-03-01 14:51:59,983 New Order,bc0ce753-6802-4ac5-92cb-c2e881ffb387,-,-,New Order is Placed.
-2022-03-01 14:52:00,051 New Order,7eb8ba34-9cad-4114-919e-17ecc1cf6c50,-,-,New Order is Placed.
-2022-03-01 14:52:00,127 New Order,862c568f-0fe7-4c9b-8034-59e6cfb54e5f,-,-,New Order is Placed.
-2022-03-01 14:52:00,235 New Order,579ed2b5-efc1-4499-b4c8-1f6e6401e188,-,-,New Order is Placed.
-2022-03-01 14:52:00,302 New Order,c0c0d421-073c-4514-91f3-3d4966e952bb,-,-,New Order is Placed.
-2022-03-01 14:52:00,401 New Order,b25158f3-7d41-4199-b34b-42c77128ae8e,-,-,New Order is Placed.
-2022-03-01 14:52:00,502 New Order,8f61d9ef-6b1d-4703-aeea-f0f0026cc25a,-,-,New Order is Placed.
-2022-03-01 14:52:00,587 New Order,8849f851-88a7-4da5-9e85-4849b6b81f19,-,-,New Order is Placed.
-2022-03-01 14:52:00,664 New Order,3e75b2f1-97ab-4735-ae27-ae0e762754b2,-,-,New Order is Placed.
-2022-03-01 14:52:00,761 New Order,1c37713e-ee19-45ee-9bba-357885a9fd23,-,-,New Order is Placed.
-2022-03-01 14:52:00,869 New Order,f8910a86-ce3d-425d-ae6c-c8cd65feac3b,-,-,New Order is Placed.
-2022-03-01 14:52:00,971 New Order,c410d1d8-86d6-42ae-aad7-8ba30ae2c54f,-,-,New Order is Placed.
-2022-03-01 14:52:01,033 New Order,00cb6c41-8e99-4beb-89fe-bd3174be08dd,-,-,New Order is Placed.
-2022-03-01 14:52:01,127 New Order,e2570dc9-6b53-48c9-a762-bf1557838edb,-,-,New Order is Placed.
-2022-03-01 14:52:01,194 New Order,6f2bda01-2f1d-4c3f-9ae2-c15c3ecd3dda,-,-,New Order is Placed.
-2022-03-01 14:52:01,265 New Order,900db7af-9888-48bb-b9ae-abfcf2c7aa52,-,-,New Order is Placed.
-2022-03-01 14:52:01,402 New Order,7abc65c3-6972-4129-b37b-5f062991499e,-,-,New Order is Placed.
-2022-03-01 14:52:01,509 New Order,0b5b4a6d-5a3b-4105-a774-9763441d1040,-,-,New Order is Placed.
-2022-03-01 14:52:01,608 New Order,18eabf88-029d-4c46-90f8-972e3812497a,-,-,New Order is Placed.
-2022-03-01 14:52:01,683 New Order,2a49df4e-a1f5-4d2c-a6b7-d61112d44547,-,-,New Order is Placed.
-2022-03-01 14:52:01,764 New Order,2a108497-592c-4db6-8979-5f61f005cb35,-,-,New Order is Placed.
-2022-03-01 14:52:01,859 New Order,7994b653-2978-4b3c-9f56-06ccc4815bd5,-,-,New Order is Placed.
-2022-03-01 14:52:01,935 New Order,d5f24d6e-1bf6-4c6e-b1ed-240b23aecfb3,-,-,New Order is Placed.
-2022-03-01 14:52:03,889 Order,33c91db9-a35c-4496-886e-3fe8e2d70205,Warehouse,74,Bot Reached the Desired Rack.
-2022-03-01 14:52:04,061 Order,05456f06-addb-4eaa-8f5d-6ef88be8d9e3,Warehouse,44,Bot Reached the Rack No. 1
-2022-03-01 14:52:05,562 Order,357831c8-bd05-422d-9127-c977e47bf72b,Warehouse,13,Bot Reached the Rack No. 1
-2022-03-01 14:52:05,899 Order,83a22eee-1dae-428d-b8de-46d765b7d9c6,Warehouse,93,Bot Reached the Desired Rack.
-2022-03-01 14:52:07,710 Order,2a6d40e7-c4af-4669-a7f3-570bcde3c301,Warehouse,14,Bot Reached the Rack No. 1
-2022-03-01 14:52:08,640 Order,02f7ed7f-feab-4cc8-bc3e-62cf9b8915e1,Warehouse,54,Bot Reached the Rack No. 1
-2022-03-01 14:52:09,536 Order,52fa93f0-54df-4efc-b157-f855508987ad,Warehouse,50,Bot Reached the Desired Rack.
-2022-03-01 14:52:09,721 Order,a56e1ada-3f8e-4f17-a97d-1a38f622556a,Warehouse,83,Bot Reached the Desired Rack.
-2022-03-01 14:52:10,227 Order,4d5233e9-2f49-4422-a609-ded6f2da1284,Warehouse,92,Bot Reached the Rack No. 1
-2022-03-01 14:52:10,228 Order,399530de-ba32-45ac-939a-408c14cfec7a,Warehouse,17,Bot Reached the Desired Rack.
-2022-03-01 14:52:14,612 Order,6045b75a-cceb-468c-90d9-3e4b07f3f2a7,Warehouse,47,Bot Reached the Rack No. 1
-2022-03-01 14:52:14,811 Order,4670bc34-ac64-481a-ae09-cb7222a5b90a,Warehouse,69,Bot Reached the Rack No. 1
-2022-03-01 14:52:17,131 Order,75ec2fe7-c868-48f0-a4a1-a8d961021005,Warehouse,1,Bot Reached the Desired Rack.
-2022-03-01 14:52:19,480 Order,1a954017-c643-45d9-83c2-8087a8a00c5a,Warehouse,98,Bot Reached the Rack No. 1
-2022-03-01 14:52:19,662 Order,fdf6c207-5878-498b-9c3e-61ac1320134e,Warehouse,81,Bot Reached the Rack No. 1
-2022-03-01 14:52:21,471 Order,d508f959-fe8c-4852-944e-ab2edadd5fc7,Warehouse,53,Bot Reached the Desired Rack.
-2022-03-01 14:52:22,193 Order,8bd97954-290b-43ae-9f19-a661d06d6af7,Warehouse,94,Bot Reached the Desired Rack.
-2022-03-01 14:52:26,609 Order,d51cb1c1-f6df-433a-992a-13097f364a54,Warehouse,52,Bot Reached the Rack No. 1
-2022-03-01 14:52:30,381 Order,1656fcd5-ad18-4ab0-ae74-d712b791c5b7,Warehouse,56,Bot Reached the Desired Rack.
-2022-03-01 14:52:30,384 Order,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,Warehouse,18,Bot Reached the Desired Rack.
-2022-03-01 14:52:32,546 Order,03d2a4f1-dfbc-44b1-80c6-da1d830e184b,Warehouse,88,Bot Reached the Rack No. 1
-2022-03-01 14:52:34,523 Order,ebe3c34b-5338-4619-9cae-d77dc07d093b,Warehouse,5,Bot Reached the Rack No. 1
-2022-03-01 14:52:38,961 Order,bc58a320-fc8d-4f8c-92aa-b9a41d93a37c,Warehouse,30,Bot Reached the Rack No. 1
-2022-03-01 14:52:38,966 Order,52fef0e2-5971-4ad5-9c8e-8ae273eed5be,Warehouse,51,Bot Reached the Desired Rack.
-2022-03-01 14:52:38,968 Order,6acd9352-cb05-4528-ad71-0816b9119d93,Warehouse,35,Bot Reached the Rack No. 1
-2022-03-01 14:52:40,279 Order,2d310686-e726-4282-8cf6-2eaad10ea3d7,Warehouse,21,Bot Reached the Rack No. 1
-2022-03-01 14:52:41,712 Order,bdd9c544-0bf4-4a8e-b9e7-2dae91815c01,Warehouse,65,Bot Reached the Rack No. 1
-2022-03-01 14:52:44,134 Order,b3acbd0a-6196-4967-99e0-8a1169678892,Warehouse,33,Bot Reached the Rack No. 1
-2022-03-01 14:52:44,453 Order,e4e6e58c-9858-42e9-bddf-e093ad204549,Warehouse,0,Bot Reached the Desired Rack.
-2022-03-01 14:52:45,164 Order,f3c7b13e-8c00-42cf-8a01-2172fdb10192,Warehouse,12,Bot Reached the Desired Rack.
-2022-03-01 14:52:45,396 Order,fcd035d7-f515-4543-8254-5c916aa7cd1f,Warehouse,91,Bot Reached the Desired Rack.
-2022-03-01 14:52:48,695 Order,ad463fbd-fb8b-4f8b-b89e-0e32c0210222,Warehouse,25,Bot Reached the Rack No. 1
-2022-03-01 14:52:48,696 Order,b59721e0-a48e-4c58-a758-10618b33b761,Warehouse,66,Bot Reached the Rack No. 1
-2022-03-01 14:52:49,344 Order,aebe62b3-2439-4486-8ebe-73e890d75578,Warehouse,15,Bot Reached the Desired Rack.
-2022-03-01 14:52:49,944 Order,14d47016-b3b9-4f4c-aa93-89fb152ba38b,Warehouse,7,Bot Reached the Rack No. 1
-2022-03-01 14:52:55,438 Order,20010b42-3c93-4fd7-bc90-03d6cf7553bd,Warehouse,34,Bot Reached the Desired Rack.
-2022-03-01 14:52:56,153 Order,5efdcbb5-8646-4abd-bc2e-403737136a2d,Warehouse,26,Bot Reached the Desired Rack.
-2022-03-01 14:52:57,562 Order,eb8743aa-45d1-4730-ba57-93251f027ac7,Warehouse,36,Bot Reached the Rack No. 1
-2022-03-01 14:52:59,523 Order,8be6df59-c540-437a-a168-6d411a293a76,Warehouse,41,Bot Reached the Desired Rack.
-2022-03-01 14:52:59,524 Order,de2e65f2-c939-4852-a342-7ec34b3e1716,Warehouse,45,Bot Reached the Rack No. 1
-2022-03-01 14:52:59,724 Order,9c1f052e-323c-452f-abf7-bfb0a4896264,Warehouse,37,Bot Reached the Desired Rack.
-2022-03-01 14:53:00,005 Order,c6287814-fd33-4988-84d0-933a51144e31,Warehouse,85,Bot Reached the Desired Rack.
-2022-03-01 14:53:00,005 Order,fd7b2fb3-b5aa-4a46-a03a-0f75881beaf6,Warehouse,4,Bot Reached the Desired Rack.
-2022-03-01 14:53:01,157 Order,06495356-a2ec-4a6a-9ede-f2c2b1572e44,Warehouse,58,Bot Reached the Rack No. 1
-2022-03-01 14:53:01,157 Order,cbfb0e8e-a622-4bf7-b8a0-fe5c0884193a,Warehouse,72,Bot Reached the Desired Rack.
-2022-03-01 14:53:01,159 Order,606ec343-aa41-4eab-bfd5-91b6d344b534,Warehouse,71,Bot Reached the Rack No. 1
-2022-03-01 14:53:02,046 Order,346ab9e9-7dad-4406-9209-535b5eb40441,Warehouse,61,Bot Reached the Rack No. 1
-2022-03-01 14:53:02,046 Order,8d7afddc-f421-44d7-8278-201d9c21d01a,Warehouse,80,Bot Reached the Rack No. 1
-2022-03-01 14:53:02,502 Order,01068069-343d-4805-a346-ec7602bba75c,Warehouse,73,Bot Reached the Desired Rack.
-2022-03-01 14:53:03,256 Order,f643d151-73bc-4c95-a344-31b7f04e65ef,Warehouse,39,Bot Reached the Desired Rack.
-2022-03-01 14:53:04,005 Order,8c259e82-4780-452c-8609-456b71fb85c7,Warehouse,9,Bot Reached the Desired Rack.
-2022-03-01 14:53:04,804 Order,983d2a0e-abb0-45d3-af1e-60e964049bb6,Warehouse,62,Bot Reached the Rack No. 1
-2022-03-01 14:53:04,805 Order,4ec6999e-ab46-403f-b66a-acdb075dc426,Warehouse,63,Bot Reached the Desired Rack.
-2022-03-01 14:53:05,483 Order,30e8db2a-b11b-4206-8f57-c87754c013ea,Warehouse,75,Bot Reached the Desired Rack.
-2022-03-01 14:53:07,379 Order,336de82f-18a5-466c-ab26-88afc9fead34,Warehouse,32,Bot Reached the Rack No. 1
-2022-03-01 14:53:08,851 Order,6572b22b-9ce7-4652-9f5f-bbec01436011,Warehouse,89,Bot Reached the Desired Rack.
-2022-03-01 14:53:11,828 Order,7269171f-fea5-4abd-89f8-6301c4dc1199,Warehouse,46,Bot Reached the Rack No. 1
-2022-03-01 14:53:11,829 Order,e025e24e-0cda-45ab-8508-5701b352753b,Warehouse,90,Bot Reached the Desired Rack.
-2022-03-01 14:53:13,168 Order,440ae19c-b41d-44fe-8c33-ff0d5a00b410,Warehouse,3,Bot Reached the Rack No. 1
-2022-03-01 14:53:13,169 Order,82d11a12-cf62-4da9-bd7c-894cde5ce220,Warehouse,79,Bot Reached the Desired Rack.
-2022-03-01 14:53:13,169 Order,871cc2ff-c7d5-4e68-b174-a081f5c43065,Warehouse,60,Bot Reached the Rack No. 1
-2022-03-01 14:53:13,170 Order,6164c17e-354e-442d-a838-03c7e44bca8f,Warehouse,64,Bot Reached the Desired Rack.
-2022-03-01 14:53:13,171 Order,d831eb2c-eb1a-42d8-b803-433bdf9a99b9,Warehouse,82,Bot Reached the Rack No. 1
-2022-03-01 14:53:14,824 Order,ed1be3e5-13c9-457f-a8de-0331be6e2dc8,Warehouse,57,Bot Reached the Rack No. 1
-2022-03-01 14:53:15,142 Order,0c6f132c-94d8-49e8-852e-e6dd2b5d8dc4,Warehouse,19,Bot Reached the Desired Rack.
-2022-03-01 14:53:15,442 Order,0f956faf-e556-4707-a240-bc98bccba0c7,Warehouse,20,Bot Reached the Rack No. 1
-2022-03-01 14:53:15,816 Order,dff2ee8c-7806-41a3-912d-acd139d653d9,Warehouse,2,Bot Reached the Rack No. 1
-2022-03-01 14:53:20,337 Order,8ebb33b8-fd20-4c73-8df8-eb7cf8437c26,Warehouse,27,Bot Reached the Desired Rack.
-2022-03-01 14:53:21,820 Order,b0183156-75ff-4a7a-887c-e2e972791900,Warehouse,42,Bot Reached the Desired Rack.
-2022-03-01 14:53:26,242 Order,bcdcf63d-fff3-439c-b0b5-f0fcfb8c0f4c,Warehouse,87,Bot Reached the Desired Rack.
-2022-03-01 14:53:26,774 Order,9ba303c3-f2cc-44a5-b935-22000bbb0f3d,Warehouse,49,Bot Reached the Rack No. 1
-2022-03-01 14:53:30,045 Order,50d0f716-960c-4ec8-b80a-72be5e925166,Warehouse,67,Bot Reached the Rack No. 1
-2022-03-01 14:53:31,532 Order,27894e21-7681-48c7-8e5a-3279482f1818,Warehouse,10,Bot Reached the Desired Rack.
-2022-03-01 14:53:32,792 Order,4addeab6-2e72-4de6-8fbe-efbf601a5cfd,Warehouse,23,Bot Reached the Rack No. 1
-2022-03-01 14:53:37,640 Order,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,Warehouse,18,Bot Reached the Human Counter with few items.
-2022-03-01 14:53:37,641 Finished Order,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,Warehouse,18,Order is completed.
-2022-03-01 14:53:40,767 Order,e803acc4-9eb9-4606-b7b0-e6cab5b50937,Warehouse,86,Bot Reached the Desired Rack.
-2022-03-01 14:53:47,221 Order,9b49a1b0-c003-4760-a3d4-e741988cdc26,Warehouse,97,Bot Reached the Rack No. 1
-2022-03-01 14:53:47,228 Order,8e5e30e0-2a29-408f-820e-23cd261110fe,Warehouse,31,Bot Reached the Desired Rack.
-2022-03-01 14:53:48,867 Order,7bef93cf-8816-48f8-804f-255d1a9c6908,Warehouse,68,Bot Reached the Rack No. 1
-2022-03-01 14:53:54,873 Order,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,Warehouse,24,Bot Reached the Human Counter with few items.
-2022-03-01 14:53:54,874 Finished Order,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,Warehouse,24,Order is completed.
-2022-03-01 14:53:56,451 Conveyor Belt,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:53:56,451 Sorting Order,9aaa1829-d426-41b1-b73a-46dfcfadfc7d,Sorting Bot,152,Bot is moving order to it's dumping point.
-2022-03-01 14:53:56,968 Order,f46bdf1e-45b7-43f5-8e55-cce77594e919,Warehouse,84,Bot Reached the Desired Rack.
-2022-03-01 14:53:57,481 Order,94e6504f-3248-48d2-9c3d-ae19a12524ea,Warehouse,59,Bot Reached the Desired Rack.
-2022-03-01 14:53:57,482 Order,220e8fb7-b130-4fea-8926-f87b4f061a33,Warehouse,8,Bot Reached the Desired Rack.
-2022-03-01 14:54:00,119 Order,14d47016-b3b9-4f4c-aa93-89fb152ba38b,Warehouse,7,Bot Reached the Desired Rack.
-2022-03-01 14:54:03,407 Order,d508f959-fe8c-4852-944e-ab2edadd5fc7,Warehouse,53,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:03,408 Finished Order,d508f959-fe8c-4852-944e-ab2edadd5fc7,Warehouse,53,Order is completed.
-2022-03-01 14:54:03,534 Order,75e465b6-ec5c-40a9-bb28-73bb769cd72d,Warehouse,38,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:03,535 Finished Order,75e465b6-ec5c-40a9-bb28-73bb769cd72d,Warehouse,38,Order is completed.
-2022-03-01 14:54:06,273 Order,7956db4d-1400-4e07-92bf-8b24d60588f2,Warehouse,78,Bot Reached the Rack No. 1
-2022-03-01 14:54:06,274 Order,4d5233e9-2f49-4422-a609-ded6f2da1284,Warehouse,92,Bot Reached the Desired Rack.
-2022-03-01 14:54:07,297 Order,83a22eee-1dae-428d-b8de-46d765b7d9c6,Warehouse,93,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:07,298 Finished Order,83a22eee-1dae-428d-b8de-46d765b7d9c6,Warehouse,93,Order is completed.
-2022-03-01 14:54:07,561 Order,357831c8-bd05-422d-9127-c977e47bf72b,Warehouse,13,Bot Reached the Desired Rack.
-2022-03-01 14:54:13,655 Order,b59721e0-a48e-4c58-a758-10618b33b761,Warehouse,66,Bot Reached the Desired Rack.
-2022-03-01 14:54:15,238 Order,ed1be3e5-13c9-457f-a8de-0331be6e2dc8,Warehouse,57,Bot Reached the Rack No. 3
-2022-03-01 14:54:15,549 Conveyor Belt,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:54:15,549 Sorting Order,bbc4fbdc-846c-4fe6-88e5-5e95d870ff0d,Sorting Bot,173,Bot is moving order to it's dumping point.
-2022-03-01 14:54:17,023 Order,8bd97954-290b-43ae-9f19-a661d06d6af7,Warehouse,94,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:17,024 Finished Order,8bd97954-290b-43ae-9f19-a661d06d6af7,Warehouse,94,Order is completed.
-2022-03-01 14:54:19,220 Order,03d2a4f1-dfbc-44b1-80c6-da1d830e184b,Warehouse,88,Bot Reached the Desired Rack.
-2022-03-01 14:54:20,333 Order,a1eca9d1-7f37-40f2-99b2-8338fa5fab1f,Warehouse,95,Bot Reached the Desired Rack.
-2022-03-01 14:54:23,160 Conveyor Belt,75e465b6-ec5c-40a9-bb28-73bb769cd72d,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:54:23,160 Sorting Order,75e465b6-ec5c-40a9-bb28-73bb769cd72d,Sorting Bot,105,Bot is moving order to it's dumping point.
-2022-03-01 14:54:24,175 Order,05456f06-addb-4eaa-8f5d-6ef88be8d9e3,Warehouse,44,Bot Reached the Desired Rack.
-2022-03-01 14:54:24,654 Order,2a6d40e7-c4af-4669-a7f3-570bcde3c301,Warehouse,14,Bot Reached the Desired Rack.
-2022-03-01 14:54:26,560 Order,440ae19c-b41d-44fe-8c33-ff0d5a00b410,Warehouse,3,Bot Reached the Desired Rack.
-2022-03-01 14:54:26,841 Conveyor Belt,83a22eee-1dae-428d-b8de-46d765b7d9c6,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:54:26,841 Sorting Order,83a22eee-1dae-428d-b8de-46d765b7d9c6,Sorting Bot,131,Bot is moving order to it's dumping point.
-2022-03-01 14:54:26,869 Order,4670bc34-ac64-481a-ae09-cb7222a5b90a,Warehouse,69,Bot Reached the Desired Rack.
-2022-03-01 14:54:27,142 Conveyor Belt,d508f959-fe8c-4852-944e-ab2edadd5fc7,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:54:27,142 Sorting Order,d508f959-fe8c-4852-944e-ab2edadd5fc7,Sorting Bot,159,Bot is moving order to it's dumping point.
-2022-03-01 14:54:27,814 Order,6045b75a-cceb-468c-90d9-3e4b07f3f2a7,Warehouse,47,Bot Reached the Desired Rack.
-2022-03-01 14:54:28,870 Order,3419f2ce-6cca-4a5f-be0e-11efc6265053,Warehouse,29,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:28,872 Finished Order,3419f2ce-6cca-4a5f-be0e-11efc6265053,Warehouse,29,Order is completed.
-2022-03-01 14:54:29,172 Order,ebceaa24-af12-4deb-849d-0c30866a9b91,Warehouse,70,Bot Reached the Desired Rack.
-2022-03-01 14:54:29,879 Order,0a485bf6-8649-41e6-9946-830df50e49a4,Warehouse,40,Bot Reached the Desired Rack.
-2022-03-01 14:54:32,113 Order,52fef0e2-5971-4ad5-9c8e-8ae273eed5be,Warehouse,51,Bot Reached the Human Counter with few items.
-2022-03-01 14:54:32,114 Finished Order,52fef0e2-5971-4ad5-9c8e-8ae273eed5be,Warehouse,51,Order is completed.
-2022-03-01 14:54:34,270 Order,7269171f-fea5-4abd-89f8-6301c4dc1199,Warehouse,46,Bot Reached the Desired Rack.
-2022-03-01 14:54:35,828 Conveyor Belt,8bd97954-290b-43ae-9f19-a661d06d6af7,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-01 14:54:35,828 Sorting Order,8bd97954-290b-43ae-9f19-a661d06d6af7,Sorting Bot,174,Bot is moving order to it's dumping point.
+2022-03-01 17:12:12,123 New Order,d630ff05-8de9-4ddd-81ee-d5e0690d1be3,-,-,New Order is Placed.
+2022-03-01 17:12:12,356 New Order,53b8c6e4-95c3-44cc-be42-b73c0fc76e18,-,-,New Order is Placed.
+2022-03-01 17:12:12,385 New Order,4c7f636f-70bd-4352-be4f-4dfc778181b4,-,-,New Order is Placed.
+2022-03-01 17:12:12,400 New Order,94428a45-a2c0-46d2-a760-598a76eb4a5b,-,-,New Order is Placed.
+2022-03-01 17:12:12,409 New Order,f1c05815-8878-431a-a25c-8e9703439c41,-,-,New Order is Placed.
+2022-03-01 17:12:12,418 New Order,2c9a9ed1-4e1b-49d4-98b2-c0caa22fcff2,-,-,New Order is Placed.
+2022-03-01 17:12:12,432 New Order,2af02df6-ef0f-4605-b6b3-913d23c18ec5,-,-,New Order is Placed.
+2022-03-01 17:12:12,441 New Order,8f249606-2b0b-4315-a2dd-d642bb126627,-,-,New Order is Placed.
+2022-03-01 17:12:12,450 New Order,f35ca718-c3ac-437c-8ff1-78aaf5267863,-,-,New Order is Placed.
+2022-03-01 17:12:12,464 New Order,2f462390-84a7-4adc-92c6-94f04e04af77,-,-,New Order is Placed.
+2022-03-01 17:12:12,480 New Order,a9e2e547-7c13-40e6-9faf-962df59c8415,-,-,New Order is Placed.
+2022-03-01 17:12:12,497 New Order,981cebc9-52fc-4ade-b64c-cdb985f78f2e,-,-,New Order is Placed.
+2022-03-01 17:12:12,505 New Order,3d59ea6c-3bd2-4c09-859a-40f919ff4fa1,-,-,New Order is Placed.
+2022-03-01 17:12:12,520 New Order,218d0f78-0351-47a9-80b2-37c237761e34,-,-,New Order is Placed.
+2022-03-01 17:12:12,530 New Order,0713affc-c8d2-408e-b322-c5dee4b309f8,-,-,New Order is Placed.
+2022-03-01 17:12:12,543 New Order,e002ba6e-1eeb-4b2e-b3f3-64fd029c7034,-,-,New Order is Placed.
+2022-03-01 17:12:12,550 New Order,3fb18366-372e-43dc-b137-a341f52c7ad4,-,-,New Order is Placed.
+2022-03-01 17:12:12,559 New Order,f969cc13-16ba-4964-a806-c4c5a5ef8fdb,-,-,New Order is Placed.
+2022-03-01 17:12:12,567 New Order,9a742155-340c-42a6-855c-ed3dafc178e7,-,-,New Order is Placed.
+2022-03-01 17:12:12,576 New Order,b27c9961-6f30-4d18-b36a-60581d52a335,-,-,New Order is Placed.
+2022-03-01 17:12:12,590 New Order,e32eff5c-4152-496a-955d-72aa20e904e0,-,-,New Order is Placed.
+2022-03-01 17:12:12,605 New Order,1afb2ba1-7786-48dd-bc7d-f577da473288,-,-,New Order is Placed.
+2022-03-01 17:12:12,613 New Order,37afcee4-2475-4a47-a802-0ead0d2b9120,-,-,New Order is Placed.
+2022-03-01 17:12:12,629 New Order,64342359-6495-429f-843c-7dd0d3265d50,-,-,New Order is Placed.
+2022-03-01 17:12:12,637 New Order,e6a29b73-578a-4b37-90b8-a77ad4722e5f,-,-,New Order is Placed.
+2022-03-01 17:12:12,651 New Order,6d3c1978-01e4-4c66-936f-09cd2b384970,-,-,New Order is Placed.
+2022-03-01 17:12:12,665 New Order,066e6c16-1a7c-44c0-82c2-4da27300a5b7,-,-,New Order is Placed.
+2022-03-01 17:12:12,680 New Order,d2df8ca3-a284-40cc-91ea-de599527f4f2,-,-,New Order is Placed.
+2022-03-01 17:12:12,690 New Order,ea859e80-f4c6-4a9d-9f5a-0752322d882d,-,-,New Order is Placed.
+2022-03-01 17:12:12,698 New Order,cd074265-7a3d-4b1f-bc35-95aff31e462a,-,-,New Order is Placed.
+2022-03-01 17:12:12,707 New Order,07bb6286-3ae7-4554-98e2-010f5beb2950,-,-,New Order is Placed.
+2022-03-01 17:12:12,715 New Order,35b5c1bb-4985-4e5f-bbae-c3d0129e95a2,-,-,New Order is Placed.
+2022-03-01 17:12:12,724 New Order,bb6f00df-d58b-4289-9562-b621f3f99347,-,-,New Order is Placed.
+2022-03-01 17:12:12,739 New Order,36327304-a9fa-4925-8d8f-67eb25645411,-,-,New Order is Placed.
+2022-03-01 17:12:12,754 New Order,423ff33a-6491-46f4-ae87-71bc6b3994df,-,-,New Order is Placed.
+2022-03-01 17:12:12,772 New Order,58149bf3-60e1-4ac0-8af7-c3a7aad904f9,-,-,New Order is Placed.
+2022-03-01 17:12:12,780 New Order,2eda609f-37da-4c8f-9fa9-131027d2f49a,-,-,New Order is Placed.
+2022-03-01 17:12:12,798 New Order,542c454c-3740-41c3-a750-7d7f9b68b048,-,-,New Order is Placed.
+2022-03-01 17:12:12,814 New Order,29dc189f-b31e-43c2-ae5c-cb67f726dca1,-,-,New Order is Placed.
+2022-03-01 17:12:12,829 New Order,121c8cde-4dc1-4c65-8cab-141fd6432767,-,-,New Order is Placed.
+2022-03-01 17:12:12,838 New Order,3546190f-6bbf-415c-9df0-21b66ad8e2b9,-,-,New Order is Placed.
+2022-03-01 17:12:12,846 New Order,472a15c5-1f64-48fa-8011-5a5f3f2f8c23,-,-,New Order is Placed.
+2022-03-01 17:12:12,855 New Order,bebdf9e7-5082-4db7-b0fc-6142980da680,-,-,New Order is Placed.
+2022-03-01 17:12:12,864 New Order,4f748625-29dc-48ce-9590-9876a5caa03c,-,-,New Order is Placed.
+2022-03-01 17:12:12,873 New Order,0a344ec7-4464-43be-946a-406b62096d08,-,-,New Order is Placed.
+2022-03-01 17:12:12,881 New Order,c45c6a88-fb0f-4152-adc1-aac2c2ac24ef,-,-,New Order is Placed.
+2022-03-01 17:12:12,897 New Order,81f25dcb-8940-4f32-98ed-4f6b1c7c84bb,-,-,New Order is Placed.
+2022-03-01 17:12:12,905 New Order,b86933d1-4731-41c2-ac58-f6220740c967,-,-,New Order is Placed.
+2022-03-01 17:12:12,914 New Order,99ba78a6-41f6-46db-9057-910852b5ef80,-,-,New Order is Placed.
+2022-03-01 17:12:12,923 New Order,a9f6ed00-c5fd-421a-a4e5-8406e357204c,-,-,New Order is Placed.
+2022-03-01 17:12:12,931 New Order,a241fe25-c3fc-4e7b-83bb-2b616d9dedef,-,-,New Order is Placed.
+2022-03-01 17:12:12,940 New Order,b25c8c60-10c1-46f4-9962-827192796cd5,-,-,New Order is Placed.
+2022-03-01 17:12:12,949 New Order,a7fecf18-ecc6-4db3-a76d-48d3dea0847b,-,-,New Order is Placed.
+2022-03-01 17:12:12,959 New Order,f22fec42-f52b-4d4f-8af2-a544135a5b04,-,-,New Order is Placed.
+2022-03-01 17:12:12,967 New Order,e7ee29cb-c805-4b90-8d8a-bbf1345bdc2a,-,-,New Order is Placed.
+2022-03-01 17:12:12,979 New Order,4a84555b-316b-4751-b795-07c98b9c9130,-,-,New Order is Placed.
+2022-03-01 17:12:12,995 New Order,d0c0db55-0431-4da4-a9b0-83c5561b3ba3,-,-,New Order is Placed.
+2022-03-01 17:12:13,003 New Order,b464cc0a-1caa-478c-a4e2-bf2c700cadfb,-,-,New Order is Placed.
+2022-03-01 17:12:13,012 New Order,58171596-152b-465d-a7c9-f9b694b79f3f,-,-,New Order is Placed.
+2022-03-01 17:12:13,028 New Order,aa185697-f81d-430a-856b-9e6aa0889a04,-,-,New Order is Placed.
+2022-03-01 17:12:13,036 New Order,ea8614da-8375-4402-bd11-a114754daa1e,-,-,New Order is Placed.
+2022-03-01 17:12:13,053 New Order,e2cabf23-8d89-4317-8686-ef591b63eee1,-,-,New Order is Placed.
+2022-03-01 17:12:13,062 New Order,f3666252-1f5a-497e-880a-aa15de6cad1d,-,-,New Order is Placed.
+2022-03-01 17:12:13,079 New Order,73658097-c201-42c2-97b8-fc1fb17e6f83,-,-,New Order is Placed.
+2022-03-01 17:12:13,087 New Order,66b1214c-8b36-4ade-ad8d-047e1171a430,-,-,New Order is Placed.
+2022-03-01 17:12:13,096 New Order,b8f6e753-afdd-49ca-8112-acc313c9fe02,-,-,New Order is Placed.
+2022-03-01 17:12:13,103 New Order,170742bc-bc00-4072-a889-bd9446f6648a,-,-,New Order is Placed.
+2022-03-01 17:12:13,118 New Order,e0019930-a1ed-41dc-9006-ee87fd83098b,-,-,New Order is Placed.
+2022-03-01 17:12:13,128 New Order,f6cd32de-4c3b-40b4-ac0e-5db9074df599,-,-,New Order is Placed.
+2022-03-01 17:12:13,135 New Order,93d5aef0-6ced-4914-9242-37cee4a58fd2,-,-,New Order is Placed.
+2022-03-01 17:12:13,149 New Order,6dd4e507-e8d1-4ba9-86c8-81831d08b924,-,-,New Order is Placed.
+2022-03-01 17:12:13,158 New Order,79cb2abd-6c92-438a-8d45-bde7858e97af,-,-,New Order is Placed.
+2022-03-01 17:12:13,166 New Order,8022f287-8209-4f73-8572-70d94f519b95,-,-,New Order is Placed.
+2022-03-01 17:12:13,175 New Order,78bd8d50-7040-40ff-8f7b-9eed37405947,-,-,New Order is Placed.
+2022-03-01 17:12:13,190 New Order,2bfe171a-6f7e-488c-b401-8739b5222086,-,-,New Order is Placed.
+2022-03-01 17:12:13,205 New Order,f7ee32a2-6507-450c-b7e9-ce771d2f7198,-,-,New Order is Placed.
+2022-03-01 17:12:13,220 New Order,c490e65d-0568-4914-9ae5-f1e7e8e21eab,-,-,New Order is Placed.
+2022-03-01 17:12:13,229 New Order,8aade12e-0ded-4df0-9021-9e18977c1c29,-,-,New Order is Placed.
+2022-03-01 17:12:13,238 New Order,a05deabc-0231-42a3-bc79-8644b12cd974,-,-,New Order is Placed.
+2022-03-01 17:12:13,255 New Order,f56509a9-04d3-4993-9547-ac69491ae2d6,-,-,New Order is Placed.
+2022-03-01 17:12:13,276 New Order,940a39b3-b05d-48b5-9543-47c28734cab5,-,-,New Order is Placed.
+2022-03-01 17:12:13,300 New Order,1a1d95c4-2b7a-4632-a778-835973e8a084,-,-,New Order is Placed.
+2022-03-01 17:12:13,308 New Order,62651940-b893-4c17-a319-8894d3542f6a,-,-,New Order is Placed.
+2022-03-01 17:12:13,325 New Order,6ecd3857-03da-4eac-93f9-83c7057beec0,-,-,New Order is Placed.
+2022-03-01 17:12:13,344 New Order,a524b596-183d-47f5-bd59-d655baed7ada,-,-,New Order is Placed.
+2022-03-01 17:12:13,362 New Order,bc7d3d33-c7c1-4be0-825e-80be7a4e8453,-,-,New Order is Placed.
+2022-03-01 17:12:13,383 New Order,f1f5bb6c-ffce-42fe-b1fe-686201695fd4,-,-,New Order is Placed.
+2022-03-01 17:12:13,395 New Order,5cf3869b-34b0-48a1-bdeb-54c1b82e57d6,-,-,New Order is Placed.
+2022-03-01 17:12:13,414 New Order,cd9f2c5b-5b94-4508-9600-d096dd163d48,-,-,New Order is Placed.
+2022-03-01 17:12:13,425 New Order,e9c44384-66e4-4918-a9e8-9f695d686cbd,-,-,New Order is Placed.
+2022-03-01 17:12:13,444 New Order,b4719408-f086-4e7b-9580-f5c8f16111e0,-,-,New Order is Placed.
+2022-03-01 17:12:13,469 New Order,06b130bc-8375-447a-b1df-e96449674552,-,-,New Order is Placed.
+2022-03-01 17:12:13,477 New Order,62e20d0c-4e1f-4376-9caa-1e55e037ebb1,-,-,New Order is Placed.
+2022-03-01 17:12:13,488 New Order,0631371a-f2ba-4f54-a3f0-846008986389,-,-,New Order is Placed.
+2022-03-01 17:12:13,509 New Order,7fdb3a54-35f5-4a28-a42b-f81855253d49,-,-,New Order is Placed.
+2022-03-01 17:12:13,529 New Order,d401d50f-a255-4aa3-9158-2c5ba6902482,-,-,New Order is Placed.
+2022-03-01 17:12:13,546 New Order,52050893-86d3-45d9-b164-819105e1b575,-,-,New Order is Placed.
+2022-03-01 17:12:13,558 New Order,5ee2ffd3-0625-40e1-a128-2aa25cf16c67,-,-,New Order is Placed.
+2022-03-01 17:12:13,579 New Order,57425cd7-1c74-49b9-b84e-9379420cfc97,-,-,New Order is Placed.
+2022-03-01 17:12:13,609 New Order,69d3985a-96c9-45f5-b383-38d3581c5bf2,-,-,New Order is Placed.
+2022-03-01 17:12:13,620 New Order,72f1f8b4-b3d4-467b-8e33-0b1f50f19c4c,-,-,New Order is Placed.
+2022-03-01 17:12:13,646 New Order,b2ac72e5-168a-4455-b030-42741e006125,-,-,New Order is Placed.
+2022-03-01 17:12:13,666 New Order,ea5cf7ad-cf4c-4d44-9afe-81eb492bb373,-,-,New Order is Placed.
+2022-03-01 17:12:13,691 New Order,73e82964-0710-4ebc-b9ce-57ae8c1ec421,-,-,New Order is Placed.
+2022-03-01 17:12:13,706 New Order,14627972-a9e2-4d10-b4a2-809e1fe6ed2b,-,-,New Order is Placed.
+2022-03-01 17:12:13,714 New Order,2a0aee4c-844e-4e0b-9268-abcc33ded39f,-,-,New Order is Placed.
+2022-03-01 17:12:13,728 New Order,c2b8719d-fcea-45bf-9956-93a9f3bb5b20,-,-,New Order is Placed.
+2022-03-01 17:12:13,748 New Order,061984f4-6f77-4b42-a77c-5224aa915982,-,-,New Order is Placed.
+2022-03-01 17:12:13,761 New Order,050f4025-c85d-4dd8-b29b-a72771c0bda4,-,-,New Order is Placed.
