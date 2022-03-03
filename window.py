@@ -70,11 +70,11 @@ def handle_events():
 Total_orders=0
 Running_Finisher=0
 while running:
-    if key%order_freq==0:
-        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-        if new_orders!="Nothing": 
-            Total_orders+=1
-            orders.append(new_orders)   # To mantain FCFS Order
+    # if key%order_freq==0:
+    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    #     if new_orders!="Nothing": 
+    #         Total_orders+=1
+    #         orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
@@ -99,19 +99,19 @@ while running:
             except:
                 pass
             # Red for 1, Green for 2, Yellow for 3, Blue for 4
-            if r==1:
-                pygame.draw.circle(screen, colors.RED1, I,2)  #Up
-            elif r==2:
-                pygame.draw.circle(screen, colors.GREEN1,I,2) #Down
-            elif r==3:
-                pygame.draw.circle(screen, colors.YELLOW1,I,2)#Right
-            elif r==4:
-                pygame.draw.circle(screen, colors.BLUE,I,2) #Left
+            # if r==1:
+            #     pygame.draw.circle(screen, colors.RED1, I,2)  #Up
+            # elif r==2:
+            #     pygame.draw.circle(screen, colors.GREEN1,I,2) #Down
+            # elif r==3:
+            #     pygame.draw.circle(screen, colors.YELLOW1,I,2)#Right
+            # elif r==4:
+            #     pygame.draw.circle(screen, colors.BLUE,I,2) #Left
 
 
     if key==0:
-        # dummy_sorting(key,100)
-        Final_Finisher=212
+        dummy_sorting(key,200)
+        Final_Finisher=200
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -131,12 +131,12 @@ while running:
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
-    print(pending_orders,orders_done)
+    #print(pending_orders,orders_done)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
-    print(pending_orders,orders_done)
+   # print(pending_orders,orders_done)
     screen.blit(PBar_Orders,(racks_width+160,35))
-
+    print(Running_Finisher,Final_Finisher)
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
         print(key)

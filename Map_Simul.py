@@ -339,6 +339,7 @@ Intersection_Booking={}
 Intersection_Bot={}
 Intersection_Recal={}
 Intersection_Coming_Dir={}
+Intersection_Calculated={}
 # Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
@@ -349,7 +350,8 @@ for i,j in Intersections:
     Intersection_Bot[(i,j)]=Agent(0,n,m)
     Intersection_Bot[(i,j)].l=2
     Intersection_Bot[(i,j)].position=(i,j)
-
+    Intersection_Recal[(i,j)]=0
+    Intersection_Calculated[(i,j)]=0
 # Calculating nearest_intersection from our ambient workspace into our roadmap
 def nearest_intersection(source,rev=False):
     source=tuple(source)

@@ -368,7 +368,7 @@ def handle_rack_agents(key,coloring):
                                 if Intersection_Booking[k] in [-1,agent.ind]:
                                     Intersection_Booking[k]=agent.ind
                                     Intersection_Coming_Dir[k]=D
-                                    Intersection_Recal[k]=1
+                               #     Intersection_Recal[k]=1
                                 else:
                                     passing=False
                             if D!=r and Intersection_Booking[k]==agent.ind:
@@ -378,7 +378,7 @@ def handle_rack_agents(key,coloring):
                         if Intersection_Booking[k] in [-1,agent.ind]:
                             Intersection_Booking[k]=agent.ind
                             Intersection_Coming_Dir[k]=D
-                            Intersection_Recal[k]=1
+                         #   Intersection_Recal[k]=1
                         else:
                             passing=False
 
@@ -393,6 +393,7 @@ def handle_rack_agents(key,coloring):
                     removal.append(Road)
                     agent.position=k
                     agent.Index-=1
+                    Intersection_Recal[k]=1
 
             else:
 
@@ -407,14 +408,44 @@ def handle_rack_agents(key,coloring):
             Roads_Grid[r].remove(a)
 
     for I in Intersections:
-        if Intersection_Booking[I]==-1:
+        if Intersection_Recal[I]==0:
             continue
 
         agent=All_Agents[Intersection_Booking[I]]
         if agent.key_field==key:
             continue
-
-        nextI=intT(agent.path[agent.Index])
+        
+        if Intersection_Calculated[I]==0:
+            Intersection_Calculated[I]=1
+            # calculate again its path
+            togoal=agent.goals[agent.goalindex]
+            nearestIntersec=agent.nearestgoals[agent.goalindex]
+            nAgent = Search(I,nearestIntersec)
+            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type,Roads_Grid,agent)
+            nextIntersec_path=nAgent.getPathLong()
+            agent.path=nextIntersec_path
+            last=nearest_intersection(togoal)
+            agent.path.append(last)
+            # if agent.ind==73:
+            #     print(agent.position,agent.path,last)
+            agent.path.reverse()
+            agent.path.pop()
+            agent.Index=len(agent.path)-1
+            
+        try:
+            nextI=intT(agent.path[agent.Index])
+        except:
+            print("new_wtf")
+            # print(agent.type,agent.ind)
+            # print(agent.position,numofrack[agent.CurRack])
+            # print(agent.goals[agent.goalindex],agent.nearestgoals[agent.goalindex])
+            # togoal=agent.goals[agent.goalindex]
+            # print(nearest_intersection(togoal))
+            # print(nearest_intersection(togoal,rev=True))
+            for i in range(10000000):
+                pygame.draw.circle(screen,colors.RED1,(int(agent.position[0]),int(agent.position[1])),5)
+                pygame.display.flip()
+            input()
         Road=(I,nextI)
         if Roads_Grid[Road]==[] or ManhattanDistance(I,Roads_Grid[Road][0].position)>2.5: # TODO: can improve this 2.5 later
             D_Dash=Matrix.grid[(I[0]+nextI[0])//2][(I[1]+nextI[1])//2][1]
@@ -431,12 +462,18 @@ def handle_rack_agents(key,coloring):
             Roads_Grid[Road]=[agent]+Roads_Grid[Road]
             Intersection_Booking[I]=-1
             agent.key_field=key
+            Intersection_Recal[I]=0
+            Intersection_Calculated[I]=0
     
     for i in range(len(All_Agents)):
         
         agent=All_Agents[i]
-        
-        if agent.type==0:
+        if agent.ind==2  and agent.type==2:
+            pygame.draw.circle(screen,colors.RED1,(int(agent.position[0]),int(agent.position[1])),5)
+            # draw red circle on its path
+            for j in range(len(agent.path)):
+                pygame.draw.circle(screen,colors.RED1,(int(agent.path[j][0]),int(agent.path[j][1])),3)
+        elif agent.type==0:
             if agent.position in israck:
                 pygame.draw.circle(screen, agent.color, (agent.position[0]+10,agent.position[1]),2)
             else: 
@@ -472,7 +509,7 @@ def handle_rack_agents(key,coloring):
             agent.valet=Ghost
             nearestIntersec=agent.nearestgoals[agent.goalindex]
             nAgent = Search(Source,nearestIntersec)
-            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type)
+            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type,Roads_Grid,agent)
             nextIntersec_path=nAgent.getPathLong()
             agent.path=nextIntersec_path
             last=nearest_intersection(togoal)
