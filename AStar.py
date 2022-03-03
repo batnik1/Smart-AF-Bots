@@ -88,8 +88,7 @@ def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heur
               #  print(Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))])
                 velocities.append(agent.v)
         if len(velocities)==0:
-            velocities=[1.5]
-        
+            velocities=[1]
         # calculate avg velocity
         avg_velocity=sum(velocities)/len(velocities)
         if avg_velocity==0:

@@ -1,134 +1,47 @@
-2022-03-03 13:45:01,583 Sorting Order,Dummy 0#1,Sorting Bot,30,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,584 Sorting Order,Dummy 0#2,Sorting Bot,32,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,584 Sorting Order,Dummy 0#3,Sorting Bot,41,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,585 Sorting Order,Dummy 0#4,Sorting Bot,17,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,586 Sorting Order,Dummy 0#5,Sorting Bot,18,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,587 Sorting Order,Dummy 0#6,Sorting Bot,22,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,587 Sorting Order,Dummy 0#7,Sorting Bot,51,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,588 Sorting Order,Dummy 0#8,Sorting Bot,65,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,589 Sorting Order,Dummy 0#9,Sorting Bot,57,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,589 Sorting Order,Dummy 0#10,Sorting Bot,67,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,590 Sorting Order,Dummy 0#11,Sorting Bot,94,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,591 Sorting Order,Dummy 0#12,Sorting Bot,11,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,591 Sorting Order,Dummy 0#13,Sorting Bot,66,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,592 Sorting Order,Dummy 0#14,Sorting Bot,71,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,593 Sorting Order,Dummy 0#15,Sorting Bot,14,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,593 Sorting Order,Dummy 0#16,Sorting Bot,31,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,594 Sorting Order,Dummy 0#17,Sorting Bot,33,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,595 Sorting Order,Dummy 0#18,Sorting Bot,34,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,595 Sorting Order,Dummy 0#19,Sorting Bot,50,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,596 Sorting Order,Dummy 0#20,Sorting Bot,63,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,597 Sorting Order,Dummy 0#21,Sorting Bot,79,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,598 Sorting Order,Dummy 0#22,Sorting Bot,80,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,598 Sorting Order,Dummy 0#23,Sorting Bot,83,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,599 Sorting Order,Dummy 0#24,Sorting Bot,91,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,600 Sorting Order,Dummy 0#25,Sorting Bot,97,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,601 Sorting Order,Dummy 0#26,Sorting Bot,7,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,602 Sorting Order,Dummy 0#27,Sorting Bot,23,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,603 Sorting Order,Dummy 0#28,Sorting Bot,36,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,603 Sorting Order,Dummy 0#29,Sorting Bot,56,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,604 Sorting Order,Dummy 0#30,Sorting Bot,92,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,605 Sorting Order,Dummy 0#31,Sorting Bot,99,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,606 Sorting Order,Dummy 0#32,Sorting Bot,38,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,607 Sorting Order,Dummy 0#33,Sorting Bot,49,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,608 Sorting Order,Dummy 0#34,Sorting Bot,60,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,608 Sorting Order,Dummy 0#35,Sorting Bot,61,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,609 Sorting Order,Dummy 0#36,Sorting Bot,68,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,610 Sorting Order,Dummy 0#37,Sorting Bot,73,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,611 Sorting Order,Dummy 0#38,Sorting Bot,96,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,612 Sorting Order,Dummy 0#39,Sorting Bot,3,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,613 Sorting Order,Dummy 0#40,Sorting Bot,4,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,613 Sorting Order,Dummy 0#41,Sorting Bot,16,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,614 Sorting Order,Dummy 0#42,Sorting Bot,19,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,615 Sorting Order,Dummy 0#43,Sorting Bot,52,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,616 Sorting Order,Dummy 0#44,Sorting Bot,59,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,617 Sorting Order,Dummy 0#45,Sorting Bot,81,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,618 Sorting Order,Dummy 0#46,Sorting Bot,86,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,619 Sorting Order,Dummy 0#47,Sorting Bot,87,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,620 Sorting Order,Dummy 0#48,Sorting Bot,93,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,621 Sorting Order,Dummy 0#49,Sorting Bot,2,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,621 Sorting Order,Dummy 0#50,Sorting Bot,10,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,622 Sorting Order,Dummy 0#51,Sorting Bot,69,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,623 Sorting Order,Dummy 0#52,Sorting Bot,72,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,624 Sorting Order,Dummy 0#53,Sorting Bot,90,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,625 Sorting Order,Dummy 0#54,Sorting Bot,95,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,626 Sorting Order,Dummy 0#55,Sorting Bot,5,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,627 Sorting Order,Dummy 0#56,Sorting Bot,24,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,628 Sorting Order,Dummy 0#57,Sorting Bot,42,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,629 Sorting Order,Dummy 0#58,Sorting Bot,48,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,630 Sorting Order,Dummy 0#59,Sorting Bot,54,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,631 Sorting Order,Dummy 0#60,Sorting Bot,55,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,632 Sorting Order,Dummy 0#61,Sorting Bot,76,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,633 Sorting Order,Dummy 0#62,Sorting Bot,12,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,634 Sorting Order,Dummy 0#63,Sorting Bot,15,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,635 Sorting Order,Dummy 0#64,Sorting Bot,21,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,636 Sorting Order,Dummy 0#65,Sorting Bot,27,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,638 Sorting Order,Dummy 0#66,Sorting Bot,37,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,640 Sorting Order,Dummy 0#67,Sorting Bot,39,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,641 Sorting Order,Dummy 0#68,Sorting Bot,46,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,642 Sorting Order,Dummy 0#69,Sorting Bot,75,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,643 Sorting Order,Dummy 0#70,Sorting Bot,82,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,644 Sorting Order,Dummy 0#71,Sorting Bot,100,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,644 Sorting Order,Dummy 0#72,Sorting Bot,8,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,645 Sorting Order,Dummy 0#73,Sorting Bot,35,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,646 Sorting Order,Dummy 0#74,Sorting Bot,70,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,648 Sorting Order,Dummy 0#75,Sorting Bot,84,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,648 Sorting Order,Dummy 0#76,Sorting Bot,85,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,649 Sorting Order,Dummy 0#77,Sorting Bot,1,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,650 Sorting Order,Dummy 0#78,Sorting Bot,9,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,651 Sorting Order,Dummy 0#79,Sorting Bot,20,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,652 Sorting Order,Dummy 0#80,Sorting Bot,28,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,653 Sorting Order,Dummy 0#81,Sorting Bot,29,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,655 Sorting Order,Dummy 0#82,Sorting Bot,47,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,656 Sorting Order,Dummy 0#83,Sorting Bot,58,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,657 Sorting Order,Dummy 0#84,Sorting Bot,64,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,658 Sorting Order,Dummy 0#85,Sorting Bot,77,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,659 Sorting Order,Dummy 0#86,Sorting Bot,6,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,660 Sorting Order,Dummy 0#87,Sorting Bot,43,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,661 Sorting Order,Dummy 0#88,Sorting Bot,44,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,662 Sorting Order,Dummy 0#89,Sorting Bot,74,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,663 Sorting Order,Dummy 0#90,Sorting Bot,78,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,664 Sorting Order,Dummy 0#91,Sorting Bot,25,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,665 Sorting Order,Dummy 0#92,Sorting Bot,40,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,666 Sorting Order,Dummy 0#93,Sorting Bot,62,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,667 Sorting Order,Dummy 0#94,Sorting Bot,98,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,668 Sorting Order,Dummy 0#95,Sorting Bot,45,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,669 Sorting Order,Dummy 0#96,Sorting Bot,53,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,670 Sorting Order,Dummy 0#97,Sorting Bot,26,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,671 Sorting Order,Dummy 0#98,Sorting Bot,89,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,672 Sorting Order,Dummy 0#99,Sorting Bot,13,Bot is moving order to it's dumping point.
-2022-03-03 13:45:01,673 Sorting Order,Dummy 0#100,Sorting Bot,88,Bot is moving order to it's dumping point.
-2022-03-03 13:47:26,551 Sorting Order,Dummy 0#4,Sorting Bot,17,Bot placed the order to it's dumping point.
-2022-03-03 13:47:27,473 Sorting Order,Dummy 0#101,Sorting Bot,17,Bot is moving order to it's dumping point.
-2022-03-03 13:47:48,224 Sorting Order,Dummy 0#19,Sorting Bot,50,Bot placed the order to it's dumping point.
-2022-03-03 13:47:48,227 Sorting Order,Dummy 0#102,Sorting Bot,50,Bot is moving order to it's dumping point.
-2022-03-03 13:47:49,077 Sorting Order,Dummy 0#22,Sorting Bot,80,Bot placed the order to it's dumping point.
-2022-03-03 13:47:49,078 Sorting Order,Dummy 0#103,Sorting Bot,80,Bot is moving order to it's dumping point.
-2022-03-03 13:48:05,785 Sorting Order,Dummy 0#27,Sorting Bot,23,Bot placed the order to it's dumping point.
-2022-03-03 13:48:05,787 Sorting Order,Dummy 0#104,Sorting Bot,23,Bot is moving order to it's dumping point.
-2022-03-03 13:48:27,767 Sorting Order,Dummy 0#2,Sorting Bot,32,Bot placed the order to it's dumping point.
-2022-03-03 13:48:27,769 Sorting Order,Dummy 0#105,Sorting Bot,32,Bot is moving order to it's dumping point.
-2022-03-03 13:48:31,505 Sorting Order,Dummy 0#41,Sorting Bot,16,Bot placed the order to it's dumping point.
-2022-03-03 13:48:31,509 Sorting Order,Dummy 0#106,Sorting Bot,16,Bot is moving order to it's dumping point.
-2022-03-03 13:48:38,197 Sorting Order,Dummy 0#26,Sorting Bot,7,Bot placed the order to it's dumping point.
-2022-03-03 13:48:38,199 Sorting Order,Dummy 0#107,Sorting Bot,7,Bot is moving order to it's dumping point.
-2022-03-03 13:48:40,448 Sorting Order,Dummy 0#21,Sorting Bot,79,Bot placed the order to it's dumping point.
-2022-03-03 13:48:41,232 Sorting Order,Dummy 0#108,Sorting Bot,79,Bot is moving order to it's dumping point.
-2022-03-03 13:48:42,127 Sorting Order,Dummy 0#13,Sorting Bot,66,Bot placed the order to it's dumping point.
-2022-03-03 13:48:42,130 Sorting Order,Dummy 0#109,Sorting Bot,66,Bot is moving order to it's dumping point.
-2022-03-03 13:48:45,237 Sorting Order,Dummy 0#30,Sorting Bot,92,Bot placed the order to it's dumping point.
-2022-03-03 13:48:45,239 Sorting Order,Dummy 0#110,Sorting Bot,92,Bot is moving order to it's dumping point.
-2022-03-03 13:48:46,551 Sorting Order,Dummy 0#28,Sorting Bot,36,Bot placed the order to it's dumping point.
-2022-03-03 13:48:46,553 Sorting Order,Dummy 0#111,Sorting Bot,36,Bot is moving order to it's dumping point.
-2022-03-03 13:48:47,370 Sorting Order,Dummy 0#5,Sorting Bot,18,Bot placed the order to it's dumping point.
-2022-03-03 13:48:47,372 Sorting Order,Dummy 0#112,Sorting Bot,18,Bot is moving order to it's dumping point.
-2022-03-03 13:48:49,281 Sorting Order,Dummy 0#80,Sorting Bot,28,Bot placed the order to it's dumping point.
-2022-03-03 13:48:49,282 Sorting Order,Dummy 0#25,Sorting Bot,97,Bot placed the order to it's dumping point.
-2022-03-03 13:48:49,340 Sorting Order,Dummy 0#113,Sorting Bot,28,Bot is moving order to it's dumping point.
-2022-03-03 13:48:49,341 Sorting Order,Dummy 0#114,Sorting Bot,97,Bot is moving order to it's dumping point.
-2022-03-03 13:48:52,700 Sorting Order,Dummy 0#9,Sorting Bot,57,Bot placed the order to it's dumping point.
-2022-03-03 13:48:52,703 Sorting Order,Dummy 0#115,Sorting Bot,57,Bot is moving order to it's dumping point.
-2022-03-03 13:48:52,936 Sorting Order,Dummy 0#34,Sorting Bot,60,Bot placed the order to it's dumping point.
-2022-03-03 13:48:52,938 Sorting Order,Dummy 0#116,Sorting Bot,60,Bot is moving order to it's dumping point.
-2022-03-03 13:48:59,491 Sorting Order,Dummy 0#11,Sorting Bot,94,Bot placed the order to it's dumping point.
-2022-03-03 13:48:59,493 Sorting Order,Dummy 0#117,Sorting Bot,94,Bot is moving order to it's dumping point.
+2022-03-03 15:41:42,478 New Order,64d61f30-d7e2-4dbc-96b1-968cbb589004,-,-,New Order is Placed.
+2022-03-03 15:41:42,647 New Order,fe4b0a5b-b189-4a33-9864-dc93a689e238,-,-,New Order is Placed.
+2022-03-03 15:41:42,744 New Order,d3437aa4-4ffe-48b6-bdbc-a76da5fb4f15,-,-,New Order is Placed.
+2022-03-03 15:41:42,845 New Order,a1b7adc3-0911-4ba4-a008-73e91d6f5bfd,-,-,New Order is Placed.
+2022-03-03 15:41:42,948 New Order,4d66ed6a-d1eb-4e26-953a-0dabd342f26c,-,-,New Order is Placed.
+2022-03-03 15:41:43,052 New Order,87ad7693-22f0-4e19-9fe4-0588c60aa3e2,-,-,New Order is Placed.
+2022-03-03 15:41:43,152 New Order,3bc5051e-1551-43b4-a77b-486307995847,-,-,New Order is Placed.
+2022-03-03 15:41:43,158 Order,87ad7693-22f0-4e19-9fe4-0588c60aa3e2,Warehouse,26,Bot Reached the Rack No. 1
+2022-03-03 15:41:43,330 New Order,6771820a-f0a1-4041-9252-a6b882b89fa2,-,-,New Order is Placed.
+2022-03-03 15:41:43,353 New Order,bb055b7d-eacc-4f09-ae9d-efa36c18892b,-,-,New Order is Placed.
+2022-03-03 15:41:43,443 New Order,ec6c40f2-e8dd-4222-a945-3c235351dce4,-,-,New Order is Placed.
+2022-03-03 15:41:43,449 Order,bb055b7d-eacc-4f09-ae9d-efa36c18892b,Warehouse,29,Bot Reached the Rack No. 1
+2022-03-03 15:41:43,624 New Order,0f87c47e-1e77-48ce-a51c-9649d4ac2ce9,-,-,New Order is Placed.
+2022-03-03 15:41:43,648 New Order,135d3bec-272c-47ee-9424-93254fbb3126,-,-,New Order is Placed.
+2022-03-03 15:41:43,750 New Order,86b9da01-5daa-4e98-b438-79c5bedbba05,-,-,New Order is Placed.
+2022-03-03 15:41:43,755 Order,135d3bec-272c-47ee-9424-93254fbb3126,Warehouse,21,Bot Reached the Rack No. 1
+2022-03-03 15:41:43,935 New Order,8131aa3a-e9a7-4938-99e6-3e923824fea7,-,-,New Order is Placed.
+2022-03-03 15:41:43,940 Order,86b9da01-5daa-4e98-b438-79c5bedbba05,Warehouse,13,Bot Reached the Desired Rack.
+2022-03-03 15:41:44,111 New Order,9e7ff685-8eac-47a8-b7f1-d59012f21b40,-,-,New Order is Placed.
+2022-03-03 15:41:44,133 New Order,c692b405-8d7c-4f90-b4ef-869e725f1ad0,-,-,New Order is Placed.
+2022-03-03 15:41:44,229 New Order,664dbbf3-facd-4d0a-adbf-862ff05fd27b,-,-,New Order is Placed.
+2022-03-03 15:41:44,332 New Order,3dcb63fc-c045-4748-8281-5c1355bbccde,-,-,New Order is Placed.
+2022-03-03 15:41:44,441 New Order,19e6759b-e0e9-45eb-aad2-129694e95af7,-,-,New Order is Placed.
+2022-03-03 15:41:44,543 New Order,8b98815c-5d5a-4970-968f-f4bda21793f4,-,-,New Order is Placed.
+2022-03-03 15:41:44,640 New Order,2c8418ef-c73a-4c73-b0dc-02e5e62bddc9,-,-,New Order is Placed.
+2022-03-03 15:41:44,647 Order,8b98815c-5d5a-4970-968f-f4bda21793f4,Warehouse,35,Bot Reached the Desired Rack.
+2022-03-03 15:41:44,823 New Order,b668dbf8-f551-4052-90e6-4babb480a960,-,-,New Order is Placed.
+2022-03-03 15:41:44,923 New Order,3ce1fae1-118c-4988-9224-ac251be8c6d9,-,-,New Order is Placed.
+2022-03-03 15:41:44,941 New Order,f1c643be-60b4-4e39-aab7-f1368171cd30,-,-,New Order is Placed.
+2022-03-03 15:41:45,040 New Order,32093a10-0d3e-4870-ab94-0a026e4e93b5,-,-,New Order is Placed.
+2022-03-03 15:41:45,045 Order,f1c643be-60b4-4e39-aab7-f1368171cd30,Warehouse,10,Bot Reached the Desired Rack.
+2022-03-03 15:41:45,234 New Order,0a273f3b-30e3-449f-adc6-0954e7861423,-,-,New Order is Placed.
+2022-03-03 15:41:45,330 New Order,4be3d84b-4abf-4318-a67d-307a83b77401,-,-,New Order is Placed.
+2022-03-03 15:41:45,434 New Order,f4ea532f-c170-43f4-b50d-90cf33461b4d,-,-,New Order is Placed.
+2022-03-03 15:41:45,451 New Order,a6b21fc5-0b61-4f8f-9bb0-4961a9ea671f,-,-,New Order is Placed.
+2022-03-03 15:41:45,555 New Order,8d8e7720-1c12-4956-ba26-727a1e4128cc,-,-,New Order is Placed.
+2022-03-03 15:41:45,661 New Order,252e7b68-9665-4805-8e94-003fa1d7073f,-,-,New Order is Placed.
+2022-03-03 15:41:45,681 New Order,a4ae2b9b-4198-4dc0-a739-2506ea3a459e,-,-,New Order is Placed.
+2022-03-03 15:41:45,788 New Order,3f39c3e3-bf26-424b-9cbf-2c02896aa709,-,-,New Order is Placed.
+2022-03-03 15:41:45,896 New Order,c42e9954-ae9c-4efd-b823-c42dfea7eb5c,-,-,New Order is Placed.
+2022-03-03 15:41:45,922 New Order,82b852c3-ea62-4a5a-859d-50de036fd72d,-,-,New Order is Placed.
+2022-03-03 15:41:46,041 New Order,06f6267e-054e-4daa-94fa-b5b82951f192,-,-,New Order is Placed.
+2022-03-03 15:41:46,139 New Order,098f676f-9203-4e2a-a9b2-a2adc7cd70f9,-,-,New Order is Placed.
+2022-03-03 15:41:46,255 New Order,ae4385b3-9a36-4181-809f-93c270389603,-,-,New Order is Placed.
+2022-03-03 15:41:50,525 Order,2c8418ef-c73a-4c73-b0dc-02e5e62bddc9,Warehouse,27,Bot Reached the Desired Rack.
+2022-03-03 15:41:50,812 Order,a6b21fc5-0b61-4f8f-9bb0-4961a9ea671f,Warehouse,7,Bot Reached the Desired Rack.
+2022-03-03 15:41:52,615 Order,c42e9954-ae9c-4efd-b823-c42dfea7eb5c,Warehouse,41,Bot Reached the Rack No. 1

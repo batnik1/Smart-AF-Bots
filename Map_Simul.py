@@ -80,7 +80,7 @@ def numofdumping():
         x+=30
 
 numofdumping()
-numofdump["conveyor"]=(racks_width-40,(80+racks_height//2)//2+10)
+numofdump["conveyor"]=(racks_width-40,(95+racks_height//2)//2+30)
 
 # Human counter location
 numofhcounter={}
@@ -203,12 +203,16 @@ def waste_sorting_area():
     sorting_w=sorting_m*60+20
     sorting_h=sorting_n*60+20
 
-    add_edge((racks_width-40,(80+racks_height//2)//2-20),(racks_width+10,(80+racks_height//2)//2-20),direction["right"]) #left queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width+10,int((80+racks_height//2)//2+70)),direction["left"]) #right queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2-20)),(racks_width-40,int((80+racks_height//2)/2+70)),direction["up"]) #down queue
+    add_edge((racks_width-40,(80+racks_height//2)//2-50),(racks_width+10,(80+racks_height//2)//2-50),direction["right"]) #left queue
+    add_edge((racks_width-40,(80+racks_height//2)//2+10),(racks_width+10,(80+racks_height//2)//2+10),direction["right"]) #left queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2+100)),(racks_width+10,int((80+racks_height//2)//2+100)),direction["left"]) #right queue
+  #  add_edge((racks_width-40,int((80+racks_height//2)//2-50)),(racks_width-40,int((80+racks_height//2)/2+100)),direction["up"]) #down queue
 
-    add_edge((racks_width-40,int((80+racks_height//2)//2+130)),(racks_width+10,int((80+racks_height//2)//2+130)),direction["left"]) #right queue
-    add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
+    add_edge((racks_width-40,int((80+racks_height//2)//2+160)),(racks_width+10,int((80+racks_height//2)//2+160)),direction["left"]) #right queue
+  #  add_edge((racks_width-40,int((80+racks_height//2)//2+70)),(racks_width-40,int((80+racks_height//2)/2+130)),direction["up"])
+
+    add_edge((racks_width-40,int((80+racks_height//2)//2+220)),(racks_width+10,int((80+racks_height//2)//2+220)),direction["left"]) #right queue
+    add_edge((racks_width-40,int((80+racks_height//2)//2-50)),(racks_width-40,int((80+racks_height//2)/2+220)),direction["up"])
 
     lis_hori=[]
     x=racks_width+10

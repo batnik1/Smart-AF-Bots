@@ -24,6 +24,7 @@ order_history = db["order_history"]
 
 order_db.drop()
 collection.drop()
+order_history.drop()
 
 type_of_items = config['type_of_items']
 max_diff_item = config['max_diff_item']
