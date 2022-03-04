@@ -1,6 +1,6 @@
 import math
 import random
-random.seed(2500)
+random.seed(2000)
 import colors
 import numpy as np
 

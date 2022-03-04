@@ -1,28 +1,27 @@
 # Warehouse Parameters
-n: 3               # n*m big racks where each rack has 25 small racks
-m: 3
-sorting_m: 8           # Sorting Window size
-sorting_n: 8
+n: 6               # n*m big racks where each rack has 25 small racks
+m: 6
+sorting_m: 10           # Sorting Window size
+sorting_n: 10
 
 # For Orders
-type_of_items: 1        # Types of items in the Warehouse
+type_of_items: 2        # Types of items in the Warehouse
 max_diff_item: 2        # Max unique items that can be ordered
-max_order_limit: 3      # Max quantity that can be ordered
+max_order_limit: 2      # Max quantity that can be ordered
 order_freq: 1          # Order Frequency
 truck_freq: 50       # Truck Frequency
-initial_items: 300     # Initial Items assigned in racks
+initial_items: 500     # Initial Items assigned in racks
 
 # For Agents
-Number_of_Agents: 100     # Number of Rack Agents
+Number_of_Agents: 400     # Number of Rack Agents
 Number_of_SAgents: 100   # Number of Sorting Agents
 random_intersection_flag: 1  # 1 means Randomized Intersection Management, else Normal Intersection Management
 epsilon: 0.75       # probability of randomisation in Intersection
-congestion_flag: 1 # Congestion Flag 0 for no congestion, 1 for congestion management
+congestion_flag: 0 # Congestion Flag 0 for no congestion, 1 for congestion management
 
 # Single Bot All Items
 SBIG: 1
 
 # For Intersection
 Traffic_Flag: 1        # 1 for Traffic Lights, 0 for Booking
-
 
