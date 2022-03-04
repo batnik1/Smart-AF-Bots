@@ -1,342 +1,64 @@
-2022-03-03 15:35:22,207 New Order,aefff6a5-c380-4295-badc-debb8cc39679,-,-,New Order is Placed.
-2022-03-03 15:35:23,716 New Order,8a35543d-5f40-474e-9a81-a7f43504586f,-,-,New Order is Placed.
-2022-03-03 15:35:23,878 New Order,bff73bf9-d003-4361-a2ff-4307b50a821b,-,-,New Order is Placed.
-2022-03-03 15:35:24,078 New Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,-,-,New Order is Placed.
-2022-03-03 15:35:24,305 New Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,-,-,New Order is Placed.
-2022-03-03 15:35:24,310 Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Warehouse,29,Bot Reached the Rack No. 1
-2022-03-03 15:35:24,591 New Order,47223263-0a59-4c7d-8ec5-191c3865cb61,-,-,New Order is Placed.
-2022-03-03 15:35:25,221 New Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,-,-,New Order is Placed.
-2022-03-03 15:35:25,396 New Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,-,-,New Order is Placed.
-2022-03-03 15:35:25,526 New Order,5d0517b7-43db-4f46-a1fe-623061b94851,-,-,New Order is Placed.
-2022-03-03 15:35:25,614 New Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,-,-,New Order is Placed.
-2022-03-03 15:35:25,802 New Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,-,-,New Order is Placed.
-2022-03-03 15:35:25,978 New Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,-,-,New Order is Placed.
-2022-03-03 15:35:26,177 New Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,-,-,New Order is Placed.
-2022-03-03 15:35:26,322 New Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,-,-,New Order is Placed.
-2022-03-03 15:35:26,479 New Order,56655a19-5ed9-4637-b837-1b704a008a4a,-,-,New Order is Placed.
-2022-03-03 15:35:26,627 New Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,-,-,New Order is Placed.
-2022-03-03 15:35:26,726 Order,56655a19-5ed9-4637-b837-1b704a008a4a,Warehouse,20,Bot Reached the Desired Rack.
-2022-03-03 15:35:26,951 New Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,-,-,New Order is Placed.
-2022-03-03 15:35:26,998 Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Warehouse,21,Bot Reached the Desired Rack.
-2022-03-03 15:35:27,786 New Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,-,-,New Order is Placed.
-2022-03-03 15:35:27,964 New Order,d73838e6-c993-41da-97a5-1868d9c3f820,-,-,New Order is Placed.
-2022-03-03 15:35:28,115 New Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,-,-,New Order is Placed.
-2022-03-03 15:35:28,285 New Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,-,-,New Order is Placed.
-2022-03-03 15:35:28,352 New Order,01727f83-e85b-4698-bbe1-c7c50708d387,-,-,New Order is Placed.
-2022-03-03 15:35:28,526 New Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,-,-,New Order is Placed.
-2022-03-03 15:35:28,670 New Order,7c657343-3ed3-4547-9a52-9d24acd6986d,-,-,New Order is Placed.
-2022-03-03 15:35:28,861 New Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,-,-,New Order is Placed.
-2022-03-03 15:35:28,978 Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Warehouse,10,Bot Reached the Rack No. 1
-2022-03-03 15:35:29,091 New Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,-,-,New Order is Placed.
-2022-03-03 15:35:29,272 New Order,72c4bbb8-428f-44ce-9ec0-785970035631,-,-,New Order is Placed.
-2022-03-03 15:35:29,533 New Order,359c64be-283b-48eb-bbd1-463ac45be657,-,-,New Order is Placed.
-2022-03-03 15:35:29,730 New Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,-,-,New Order is Placed.
-2022-03-03 15:35:29,887 New Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,-,-,New Order is Placed.
-2022-03-03 15:35:30,214 New Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,-,-,New Order is Placed.
-2022-03-03 15:35:30,589 New Order,79f9b6e1-ce83-4b39-970d-85137b392f74,-,-,New Order is Placed.
-2022-03-03 15:35:30,729 New Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,-,-,New Order is Placed.
-2022-03-03 15:35:31,191 New Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,-,-,New Order is Placed.
-2022-03-03 15:35:31,445 New Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,-,-,New Order is Placed.
-2022-03-03 15:35:31,498 New Order,4298288d-f402-4ef1-9218-8e0e60555dcc,-,-,New Order is Placed.
-2022-03-03 15:35:32,067 New Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,-,-,New Order is Placed.
-2022-03-03 15:35:32,492 New Order,478ad766-1351-4806-adac-6c837955c911,-,-,New Order is Placed.
-2022-03-03 15:35:33,055 New Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,-,-,New Order is Placed.
-2022-03-03 15:35:34,989 Order,359c64be-283b-48eb-bbd1-463ac45be657,Warehouse,47,Bot Reached the Rack No. 1
-2022-03-03 15:35:36,699 Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Warehouse,33,Bot Reached the Desired Rack.
-2022-03-03 15:35:36,834 Order,d73838e6-c993-41da-97a5-1868d9c3f820,Warehouse,27,Bot Reached the Rack No. 1
-2022-03-03 15:35:37,953 Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Warehouse,41,Bot Reached the Desired Rack.
-2022-03-03 15:35:38,471 Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Warehouse,8,Bot Reached the Rack No. 1
-2022-03-03 15:35:39,482 Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Warehouse,4,Bot Reached the Rack No. 1
-2022-03-03 15:35:39,757 Order,01727f83-e85b-4698-bbe1-c7c50708d387,Warehouse,1,Bot Reached the Rack No. 1
-2022-03-03 15:35:39,891 Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Warehouse,44,Bot Reached the Rack No. 1
-2022-03-03 15:35:40,548 Order,359c64be-283b-48eb-bbd1-463ac45be657,Warehouse,47,Bot Reached the Desired Rack.
-2022-03-03 15:35:40,856 Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Warehouse,49,Bot Reached the Rack No. 1
-2022-03-03 15:35:40,858 Order,8a35543d-5f40-474e-9a81-a7f43504586f,Warehouse,16,Bot Reached the Desired Rack.
-2022-03-03 15:35:41,532 Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Warehouse,7,Bot Reached the Rack No. 1
-2022-03-03 15:35:43,502 Order,5d0517b7-43db-4f46-a1fe-623061b94851,Warehouse,32,Bot Reached the Rack No. 1
-2022-03-03 15:35:43,671 Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Warehouse,10,Bot Reached the Desired Rack.
-2022-03-03 15:35:45,189 Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Warehouse,26,Bot Reached the Desired Rack.
-2022-03-03 15:35:45,395 Order,01727f83-e85b-4698-bbe1-c7c50708d387,Warehouse,1,Bot Reached the Desired Rack.
-2022-03-03 15:35:47,920 Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Bot Reached the Rack No. 1
-2022-03-03 15:35:49,152 Order,d73838e6-c993-41da-97a5-1868d9c3f820,Warehouse,27,Bot Reached the Rack No. 3
-2022-03-03 15:35:49,589 Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,Warehouse,12,Bot Reached the Desired Rack.
-2022-03-03 15:35:50,636 Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Warehouse,29,Bot Reached the Desired Rack.
-2022-03-03 15:35:50,794 Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Warehouse,5,Bot Reached the Rack No. 1
-2022-03-03 15:35:50,942 Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,Warehouse,30,Bot Reached the Desired Rack.
-2022-03-03 15:35:51,248 Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Warehouse,24,Bot Reached the Desired Rack.
-2022-03-03 15:35:51,409 Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Warehouse,31,Bot Reached the Rack No. 1
-2022-03-03 15:35:52,209 Order,aefff6a5-c380-4295-badc-debb8cc39679,Warehouse,11,Bot Reached the Desired Rack.
-2022-03-03 15:35:52,486 Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Warehouse,13,Bot Reached the Rack No. 1
-2022-03-03 15:35:52,710 Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Warehouse,2,Bot Reached the Rack No. 1
-2022-03-03 15:35:54,135 Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Warehouse,17,Bot Reached the Rack No. 1
-2022-03-03 15:35:54,973 Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Warehouse,6,Bot Reached the Rack No. 1
-2022-03-03 15:35:55,172 Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Warehouse,22,Bot Reached the Desired Rack.
-2022-03-03 15:35:56,088 Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,Warehouse,48,Bot Reached the Desired Rack.
-2022-03-03 15:35:56,416 Order,bff73bf9-d003-4361-a2ff-4307b50a821b,Warehouse,34,Bot Reached the Desired Rack.
-2022-03-03 15:35:57,237 Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Warehouse,46,Bot Reached the Rack No. 1
-2022-03-03 15:35:57,786 Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Warehouse,42,Bot Reached the Desired Rack.
-2022-03-03 15:35:58,405 Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Bot Reached the Rack No. 3
-2022-03-03 15:35:58,593 Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Warehouse,49,Bot Reached the Rack No. 3
-2022-03-03 15:35:59,175 Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Warehouse,23,Bot Reached the Rack No. 1
-2022-03-03 15:36:00,093 Order,5d0517b7-43db-4f46-a1fe-623061b94851,Warehouse,32,Bot Reached the Desired Rack.
-2022-03-03 15:36:01,368 Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Warehouse,6,Bot Reached the Desired Rack.
-2022-03-03 15:36:02,556 Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,Warehouse,36,Bot Reached the Desired Rack.
-2022-03-03 15:36:03,997 Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Warehouse,4,Bot Reached the Desired Rack.
-2022-03-03 15:36:05,222 Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Warehouse,0,Bot Reached the Rack No. 1
-2022-03-03 15:36:05,437 Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Warehouse,13,Bot Reached the Desired Rack.
-2022-03-03 15:36:05,968 Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Bot Reached the Rack No. 5
-2022-03-03 15:36:07,893 Order,478ad766-1351-4806-adac-6c837955c911,Warehouse,40,Bot Reached the Desired Rack.
-2022-03-03 15:36:09,939 Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Warehouse,49,Bot Reached the Desired Rack.
-2022-03-03 15:36:11,472 Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Warehouse,8,Bot Reached the Desired Rack.
-2022-03-03 15:36:12,728 Order,56655a19-5ed9-4637-b837-1b704a008a4a,Warehouse,20,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:12,729 Finished Order,56655a19-5ed9-4637-b837-1b704a008a4a,Warehouse,20,Order is completed.
-2022-03-03 15:36:14,611 Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Warehouse,31,Bot Reached the Desired Rack.
-2022-03-03 15:36:16,244 Order,bff73bf9-d003-4361-a2ff-4307b50a821b,Warehouse,34,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:16,246 Finished Order,bff73bf9-d003-4361-a2ff-4307b50a821b,Warehouse,34,Order is completed.
-2022-03-03 15:36:16,599 Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Warehouse,25,Bot Reached the Rack No. 1
-2022-03-03 15:36:16,757 Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Warehouse,44,Bot Reached the Desired Rack.
-2022-03-03 15:36:17,438 Conveyor Belt,56655a19-5ed9-4637-b837-1b704a008a4a,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:17,439 Sorting Order,56655a19-5ed9-4637-b837-1b704a008a4a,Sorting Bot,88,Bot is moving order to it's dumping point.
-2022-03-03 15:36:17,718 Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Warehouse,7,Bot Reached the Desired Rack.
-2022-03-03 15:36:18,134 Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Warehouse,0,Bot Reached the Desired Rack.
-2022-03-03 15:36:18,667 Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Bot Reached the Desired Rack.
-2022-03-03 15:36:18,980 Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Warehouse,10,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:18,981 Finished Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Warehouse,10,Order is completed.
-2022-03-03 15:36:19,825 Conveyor Belt,bff73bf9-d003-4361-a2ff-4307b50a821b,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:19,825 Sorting Order,bff73bf9-d003-4361-a2ff-4307b50a821b,Sorting Bot,66,Bot is moving order to it's dumping point.
-2022-03-03 15:36:20,085 Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Warehouse,21,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:20,086 Finished Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Warehouse,21,Order is completed.
-2022-03-03 15:36:20,315 Order,72c4bbb8-428f-44ce-9ec0-785970035631,Warehouse,38,Bot Reached the Rack No. 1
-2022-03-03 15:36:20,943 Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Warehouse,23,Bot Reached the Desired Rack.
-2022-03-03 15:36:21,727 Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Warehouse,17,Bot Reached the Desired Rack.
-2022-03-03 15:36:22,245 Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Warehouse,5,Bot Reached the Desired Rack.
-2022-03-03 15:36:22,246 Order,359c64be-283b-48eb-bbd1-463ac45be657,Warehouse,47,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:22,247 Finished Order,359c64be-283b-48eb-bbd1-463ac45be657,Warehouse,47,Order is completed.
-2022-03-03 15:36:22,532 Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Warehouse,29,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:22,533 Finished Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Warehouse,29,Order is completed.
-2022-03-03 15:36:22,961 Conveyor Belt,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:22,961 Sorting Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Sorting Bot,89,Bot is moving order to it's dumping point.
-2022-03-03 15:36:23,666 Order,01727f83-e85b-4698-bbe1-c7c50708d387,Warehouse,1,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:23,667 Finished Order,01727f83-e85b-4698-bbe1-c7c50708d387,Warehouse,1,Order is completed.
-2022-03-03 15:36:23,878 Conveyor Belt,7c657343-3ed3-4547-9a52-9d24acd6986d,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:23,879 Sorting Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Sorting Bot,93,Bot is moving order to it's dumping point.
-2022-03-03 15:36:24,027 Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,Warehouse,12,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:24,197 Finished Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,Warehouse,12,Order is completed.
-2022-03-03 15:36:25,096 Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Warehouse,46,Bot Reached the Rack No. 3
-2022-03-03 15:36:26,222 Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Warehouse,22,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:26,707 Finished Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Warehouse,22,Order is completed.
-2022-03-03 15:36:26,895 Conveyor Belt,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:26,895 Sorting Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Sorting Bot,60,Bot is moving order to it's dumping point.
-2022-03-03 15:36:27,202 Conveyor Belt,01727f83-e85b-4698-bbe1-c7c50708d387,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:27,203 Sorting Order,01727f83-e85b-4698-bbe1-c7c50708d387,Sorting Bot,78,Bot is moving order to it's dumping point.
-2022-03-03 15:36:27,570 Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Warehouse,42,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:27,571 Finished Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Warehouse,42,Order is completed.
-2022-03-03 15:36:27,761 Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,Warehouse,30,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:27,763 Finished Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,Warehouse,30,Order is completed.
-2022-03-03 15:36:27,926 Order,8a35543d-5f40-474e-9a81-a7f43504586f,Warehouse,16,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:27,927 Finished Order,8a35543d-5f40-474e-9a81-a7f43504586f,Warehouse,16,Order is completed.
-2022-03-03 15:36:28,082 Conveyor Belt,359c64be-283b-48eb-bbd1-463ac45be657,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:28,083 Sorting Order,359c64be-283b-48eb-bbd1-463ac45be657,Sorting Bot,85,Bot is moving order to it's dumping point.
-2022-03-03 15:36:28,291 Order,d73838e6-c993-41da-97a5-1868d9c3f820,Warehouse,27,Bot Reached the Desired Rack.
-2022-03-03 15:36:29,315 Conveyor Belt,08a27a00-a1e8-43cd-a431-a59dc9867d05,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:29,315 Sorting Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,Sorting Bot,83,Bot is moving order to it's dumping point.
-2022-03-03 15:36:29,997 Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Warehouse,2,Bot Reached the Rack No. 3
-2022-03-03 15:36:30,411 Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Warehouse,41,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:30,412 Finished Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Warehouse,41,Order is completed.
-2022-03-03 15:36:30,414 Order,aefff6a5-c380-4295-badc-debb8cc39679,Warehouse,11,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:30,415 Finished Order,aefff6a5-c380-4295-badc-debb8cc39679,Warehouse,11,Order is completed.
-2022-03-03 15:36:30,665 Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Warehouse,49,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:30,666 Finished Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Warehouse,49,Order is completed.
-2022-03-03 15:36:30,893 Conveyor Belt,6ae66ab4-2ad3-4175-90cb-bd2952448630,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:30,893 Sorting Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,Sorting Bot,94,Bot is moving order to it's dumping point.
-2022-03-03 15:36:31,447 Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Warehouse,46,Bot Reached the Desired Rack.
-2022-03-03 15:36:31,627 Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,Warehouse,48,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:31,628 Finished Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,Warehouse,48,Order is completed.
-2022-03-03 15:36:31,729 Conveyor Belt,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:31,729 Sorting Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Sorting Bot,79,Bot is moving order to it's dumping point.
-2022-03-03 15:36:31,907 Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Warehouse,33,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:31,908 Finished Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Warehouse,33,Order is completed.
-2022-03-03 15:36:32,029 Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Warehouse,26,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:32,030 Finished Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Warehouse,26,Order is completed.
-2022-03-03 15:36:32,276 Conveyor Belt,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:32,276 Sorting Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Sorting Bot,56,Bot is moving order to it's dumping point.
-2022-03-03 15:36:32,583 Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Warehouse,13,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:32,584 Finished Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Warehouse,13,Order is completed.
-2022-03-03 15:36:33,212 Conveyor Belt,8a35543d-5f40-474e-9a81-a7f43504586f,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:33,212 Sorting Order,8a35543d-5f40-474e-9a81-a7f43504586f,Sorting Bot,87,Bot is moving order to it's dumping point.
-2022-03-03 15:36:33,821 Conveyor Belt,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:33,821 Sorting Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Sorting Bot,70,Bot is moving order to it's dumping point.
-2022-03-03 15:36:34,162 Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Warehouse,25,Bot Reached the Desired Rack.
-2022-03-03 15:36:34,777 Conveyor Belt,aefff6a5-c380-4295-badc-debb8cc39679,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:34,777 Sorting Order,aefff6a5-c380-4295-badc-debb8cc39679,Sorting Bot,90,Bot is moving order to it's dumping point.
-2022-03-03 15:36:35,111 Conveyor Belt,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:35,111 Sorting Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Sorting Bot,65,Bot is moving order to it's dumping point.
-2022-03-03 15:36:35,988 Conveyor Belt,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:35,988 Sorting Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Sorting Bot,54,Bot is moving order to it's dumping point.
-2022-03-03 15:36:36,194 Conveyor Belt,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:36,195 Sorting Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Sorting Bot,71,Bot is moving order to it's dumping point.
-2022-03-03 15:36:36,344 Conveyor Belt,d61c3307-cd3b-4ffb-90b8-430565b9463b,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:36,344 Sorting Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,Sorting Bot,75,Bot is moving order to it's dumping point.
-2022-03-03 15:36:37,566 Conveyor Belt,ce8d6fce-8073-47f7-aed6-cdd44431e827,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:37,567 Sorting Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Sorting Bot,95,Bot is moving order to it's dumping point.
-2022-03-03 15:36:41,580 Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,Warehouse,36,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:41,581 Finished Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,Warehouse,36,Order is completed.
-2022-03-03 15:36:42,539 Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Warehouse,4,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:42,541 Finished Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Warehouse,4,Order is completed.
-2022-03-03 15:36:44,487 Event,-,Warehouse,1,Kept the Rack back which it was carrying.
-2022-03-03 15:36:44,845 Event,-,Warehouse,48,Kept the Rack back which it was carrying.
-2022-03-03 15:36:45,055 Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Warehouse,0,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:45,056 Finished Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Warehouse,0,Order is completed.
-2022-03-03 15:36:45,058 Order,5d0517b7-43db-4f46-a1fe-623061b94851,Warehouse,32,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:45,060 Finished Order,5d0517b7-43db-4f46-a1fe-623061b94851,Warehouse,32,Order is completed.
-2022-03-03 15:36:45,061 Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Warehouse,6,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:45,063 Finished Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Warehouse,6,Order is completed.
-2022-03-03 15:36:45,426 Event,-,Warehouse,34,Kept the Rack back which it was carrying.
-2022-03-03 15:36:45,479 Conveyor Belt,40e7deb4-391c-43f6-9efc-30d14a4dad59,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:45,479 Sorting Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,Sorting Bot,81,Bot is moving order to it's dumping point.
-2022-03-03 15:36:45,698 Conveyor Belt,47223263-0a59-4c7d-8ec5-191c3865cb61,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:45,698 Sorting Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Sorting Bot,74,Bot is moving order to it's dumping point.
-2022-03-03 15:36:46,364 Order,478ad766-1351-4806-adac-6c837955c911,Warehouse,40,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:46,365 Finished Order,478ad766-1351-4806-adac-6c837955c911,Warehouse,40,Order is completed.
-2022-03-03 15:36:47,062 Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Warehouse,24,Bot Reached the Human Counter with few items.
-2022-03-03 15:36:47,063 Finished Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Warehouse,24,Order is completed.
-2022-03-03 15:36:47,469 Event,-,Warehouse,30,Kept the Rack back which it was carrying.
-2022-03-03 15:36:48,366 Conveyor Belt,5d0517b7-43db-4f46-a1fe-623061b94851,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:48,366 Sorting Order,5d0517b7-43db-4f46-a1fe-623061b94851,Sorting Bot,92,Bot is moving order to it's dumping point.
-2022-03-03 15:36:49,263 Conveyor Belt,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:49,264 Sorting Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Sorting Bot,98,Bot is moving order to it's dumping point.
-2022-03-03 15:36:50,245 Conveyor Belt,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:50,245 Sorting Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Sorting Bot,51,Bot is moving order to it's dumping point.
-2022-03-03 15:36:50,976 Conveyor Belt,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:50,976 Sorting Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Sorting Bot,73,Bot is moving order to it's dumping point.
-2022-03-03 15:36:51,349 Conveyor Belt,478ad766-1351-4806-adac-6c837955c911,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:36:51,349 Sorting Order,478ad766-1351-4806-adac-6c837955c911,Sorting Bot,57,Bot is moving order to it's dumping point.
-2022-03-03 15:36:52,160 Event,-,Warehouse,21,Kept the Rack back which it was carrying.
-2022-03-03 15:36:53,082 Event,-,Warehouse,12,Kept the Rack back which it was carrying.
-2022-03-03 15:36:53,659 Event,-,Warehouse,20,Kept the Rack back which it was carrying.
-2022-03-03 15:36:54,888 Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Warehouse,2,Bot Reached the Desired Rack.
-2022-03-03 15:36:55,341 Order,72c4bbb8-428f-44ce-9ec0-785970035631,Warehouse,38,Bot Reached the Rack No. 3
-2022-03-03 15:36:55,535 Event,-,Warehouse,10,Kept the Rack back which it was carrying.
-2022-03-03 15:36:56,735 Event,-,Warehouse,47,Kept the Rack back which it was carrying.
-2022-03-03 15:37:00,091 Event,-,Warehouse,4,Kept the Rack back which it was carrying.
-2022-03-03 15:37:00,423 Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Warehouse,17,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:00,424 Finished Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Warehouse,17,Order is completed.
-2022-03-03 15:37:00,917 Event,-,Warehouse,49,Kept the Rack back which it was carrying.
-2022-03-03 15:37:01,066 Event,-,Warehouse,33,Kept the Rack back which it was carrying.
-2022-03-03 15:37:01,482 Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:01,483 Finished Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Warehouse,28,Order is completed.
-2022-03-03 15:37:01,697 Event,-,Warehouse,29,Kept the Rack back which it was carrying.
-2022-03-03 15:37:02,261 Event,-,Warehouse,32,Kept the Rack back which it was carrying.
-2022-03-03 15:37:02,799 Event,-,Warehouse,22,Kept the Rack back which it was carrying.
-2022-03-03 15:37:03,513 Event,-,Warehouse,41,Kept the Rack back which it was carrying.
-2022-03-03 15:37:04,353 Sorting Order,56655a19-5ed9-4637-b837-1b704a008a4a,Sorting Bot,88,Bot placed the order to it's dumping point.
-2022-03-03 15:37:04,644 Conveyor Belt,79f9b6e1-ce83-4b39-970d-85137b392f74,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:04,644 Sorting Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Sorting Bot,88,Bot is moving order to it's dumping point.
-2022-03-03 15:37:04,789 Order,72c4bbb8-428f-44ce-9ec0-785970035631,Warehouse,38,Bot Reached the Desired Rack.
-2022-03-03 15:37:05,438 Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Warehouse,31,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:05,439 Finished Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Warehouse,31,Order is completed.
-2022-03-03 15:37:05,646 Event,-,Warehouse,42,Kept the Rack back which it was carrying.
-2022-03-03 15:37:05,655 Conveyor Belt,2c023a93-3d02-43a5-891f-6ff48f5e2756,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:05,656 Sorting Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Sorting Bot,58,Bot is moving order to it's dumping point.
-2022-03-03 15:37:07,775 Event,-,Warehouse,11,Kept the Rack back which it was carrying.
-2022-03-03 15:37:08,568 Conveyor Belt,4298288d-f402-4ef1-9218-8e0e60555dcc,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:08,569 Sorting Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Sorting Bot,64,Bot is moving order to it's dumping point.
-2022-03-03 15:37:09,959 Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Warehouse,8,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:09,962 Finished Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Warehouse,8,Order is completed.
-2022-03-03 15:37:10,742 Sorting Order,26d89643-aef2-4b0e-a51c-f0f97643e3c1,Sorting Bot,89,Bot placed the order to it's dumping point.
-2022-03-03 15:37:11,465 Event,-,Warehouse,26,Kept the Rack back which it was carrying.
-2022-03-03 15:37:13,221 Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Warehouse,5,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:13,223 Finished Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Warehouse,5,Order is completed.
-2022-03-03 15:37:14,214 Conveyor Belt,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:14,214 Sorting Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Sorting Bot,89,Bot is moving order to it's dumping point.
-2022-03-03 15:37:15,659 Event,-,Warehouse,36,Kept the Rack back which it was carrying.
-2022-03-03 15:37:15,956 Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Warehouse,44,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:15,957 Finished Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Warehouse,44,Order is completed.
-2022-03-03 15:37:15,962 Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Warehouse,25,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:15,963 Finished Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Warehouse,25,Order is completed.
-2022-03-03 15:37:16,577 Conveyor Belt,70d2fd6e-6884-4926-a79c-9339f1042e7b,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:16,855 Sorting Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Sorting Bot,86,Bot is moving order to it's dumping point.
-2022-03-03 15:37:17,398 Order,d73838e6-c993-41da-97a5-1868d9c3f820,Warehouse,27,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:17,401 Finished Order,d73838e6-c993-41da-97a5-1868d9c3f820,Warehouse,27,Order is completed.
-2022-03-03 15:37:17,631 Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Warehouse,7,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:17,632 Finished Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Warehouse,7,Order is completed.
-2022-03-03 15:37:18,191 Event,-,Warehouse,8,Kept the Rack back which it was carrying.
-2022-03-03 15:37:18,899 Event,-,Warehouse,6,Kept the Rack back which it was carrying.
-2022-03-03 15:37:20,206 Event,-,Warehouse,31,Kept the Rack back which it was carrying.
-2022-03-03 15:37:20,465 Conveyor Belt,d73838e6-c993-41da-97a5-1868d9c3f820,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:20,465 Sorting Order,d73838e6-c993-41da-97a5-1868d9c3f820,Sorting Bot,76,Bot is moving order to it's dumping point.
-2022-03-03 15:37:20,701 Conveyor Belt,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:20,701 Sorting Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Sorting Bot,84,Bot is moving order to it's dumping point.
-2022-03-03 15:37:21,593 Conveyor Belt,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:21,593 Sorting Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Sorting Bot,91,Bot is moving order to it's dumping point.
-2022-03-03 15:37:22,008 Conveyor Belt,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:22,008 Sorting Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Sorting Bot,99,Bot is moving order to it's dumping point.
-2022-03-03 15:37:22,015 Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Warehouse,23,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:22,016 Finished Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Warehouse,23,Order is completed.
-2022-03-03 15:37:22,479 Event,-,Warehouse,28,Kept the Rack back which it was carrying.
-2022-03-03 15:37:22,773 Event,-,Warehouse,24,Kept the Rack back which it was carrying.
-2022-03-03 15:37:24,319 Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Warehouse,46,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:24,321 Finished Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Warehouse,46,Order is completed.
-2022-03-03 15:37:25,070 Event,-,Warehouse,40,Kept the Rack back which it was carrying.
-2022-03-03 15:37:25,476 Sorting Order,6ae66ab4-2ad3-4175-90cb-bd2952448630,Sorting Bot,94,Bot placed the order to it's dumping point.
-2022-03-03 15:37:26,415 Event,-,Warehouse,16,Kept the Rack back which it was carrying.
-2022-03-03 15:37:26,520 Conveyor Belt,7506b35a-9502-4c52-833a-d51de0bdcbdc,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:26,521 Sorting Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Sorting Bot,94,Bot is moving order to it's dumping point.
-2022-03-03 15:37:27,185 Event,-,Warehouse,13,Kept the Rack back which it was carrying.
-2022-03-03 15:37:29,220 Event,-,Warehouse,0,Kept the Rack back which it was carrying.
-2022-03-03 15:37:29,761 Conveyor Belt,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:29,761 Sorting Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Sorting Bot,63,Bot is moving order to it's dumping point.
-2022-03-03 15:37:32,260 Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Warehouse,2,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:32,261 Finished Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Warehouse,2,Order is completed.
-2022-03-03 15:37:32,531 Sorting Order,77f8dd53-4cd7-445e-a133-c6485ea4fbfc,Sorting Bot,60,Bot placed the order to it's dumping point.
-2022-03-03 15:37:35,183 Event,-,Warehouse,5,Kept the Rack back which it was carrying.
-2022-03-03 15:37:36,688 Sorting Order,7c657343-3ed3-4547-9a52-9d24acd6986d,Sorting Bot,93,Bot placed the order to it's dumping point.
-2022-03-03 15:37:37,090 Conveyor Belt,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:37,090 Sorting Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Sorting Bot,60,Bot is moving order to it's dumping point.
-2022-03-03 15:37:38,342 Sorting Order,bff73bf9-d003-4361-a2ff-4307b50a821b,Sorting Bot,66,Bot placed the order to it's dumping point.
-2022-03-03 15:37:43,383 Order,72c4bbb8-428f-44ce-9ec0-785970035631,Warehouse,38,Bot Reached the Human Counter with few items.
-2022-03-03 15:37:43,384 Finished Order,72c4bbb8-428f-44ce-9ec0-785970035631,Warehouse,38,Order is completed.
-2022-03-03 15:37:45,199 Event,-,Warehouse,27,Kept the Rack back which it was carrying.
-2022-03-03 15:37:46,370 Conveyor Belt,72c4bbb8-428f-44ce-9ec0-785970035631,Conveyor Belt,-,Shifted Order to the Sorting Area.
-2022-03-03 15:37:46,371 Sorting Order,72c4bbb8-428f-44ce-9ec0-785970035631,Sorting Bot,66,Bot is moving order to it's dumping point.
-2022-03-03 15:37:47,559 Event,-,Warehouse,7,Kept the Rack back which it was carrying.
-2022-03-03 15:37:48,546 Event,-,Warehouse,23,Kept the Rack back which it was carrying.
-2022-03-03 15:37:48,824 Event,-,Warehouse,44,Kept the Rack back which it was carrying.
-2022-03-03 15:37:49,956 Sorting Order,929e2f00-a9a5-4a21-9e74-4ee6ce4ee932,Sorting Bot,98,Bot placed the order to it's dumping point.
-2022-03-03 15:37:50,357 Sorting Order,08a27a00-a1e8-43cd-a431-a59dc9867d05,Sorting Bot,83,Bot placed the order to it's dumping point.
-2022-03-03 15:37:51,103 Event,-,Warehouse,17,Kept the Rack back which it was carrying.
-2022-03-03 15:37:54,956 Sorting Order,aefff6a5-c380-4295-badc-debb8cc39679,Sorting Bot,90,Bot placed the order to it's dumping point.
-2022-03-03 15:37:56,326 Sorting Order,359c64be-283b-48eb-bbd1-463ac45be657,Sorting Bot,85,Bot placed the order to it's dumping point.
-2022-03-03 15:37:56,745 Sorting Order,7ea1e09e-b3e6-4e5e-a977-ac2a2ae49c71,Sorting Bot,79,Bot placed the order to it's dumping point.
-2022-03-03 15:37:59,325 Sorting Order,ce8d6fce-8073-47f7-aed6-cdd44431e827,Sorting Bot,95,Bot placed the order to it's dumping point.
-2022-03-03 15:37:59,657 Event,-,Warehouse,46,Kept the Rack back which it was carrying.
-2022-03-03 15:38:00,561 Event,-,Warehouse,25,Kept the Rack back which it was carrying.
-2022-03-03 15:38:00,958 Sorting Order,79f9b6e1-ce83-4b39-970d-85137b392f74,Sorting Bot,88,Bot placed the order to it's dumping point.
-2022-03-03 15:38:03,038 Event,-,Warehouse,38,Kept the Rack back which it was carrying.
-2022-03-03 15:38:04,423 Sorting Order,57fb00d1-43ff-4cd9-9174-e60bbdc59ec8,Sorting Bot,65,Bot placed the order to it's dumping point.
-2022-03-03 15:38:07,479 Sorting Order,8a35543d-5f40-474e-9a81-a7f43504586f,Sorting Bot,87,Bot placed the order to it's dumping point.
-2022-03-03 15:38:08,640 Event,-,Warehouse,2,Kept the Rack back which it was carrying.
-2022-03-03 15:38:08,900 Sorting Order,d61c3307-cd3b-4ffb-90b8-430565b9463b,Sorting Bot,75,Bot placed the order to it's dumping point.
-2022-03-03 15:38:10,636 Sorting Order,8b5f7c6f-e3f1-4bb5-a711-c685b7b100bc,Sorting Bot,71,Bot placed the order to it's dumping point.
-2022-03-03 15:38:13,883 Sorting Order,bbe3b781-fb0d-4ad8-b866-d8139ca83379,Sorting Bot,70,Bot placed the order to it's dumping point.
-2022-03-03 15:38:15,691 Sorting Order,478ad766-1351-4806-adac-6c837955c911,Sorting Bot,57,Bot placed the order to it's dumping point.
-2022-03-03 15:38:15,956 Sorting Order,47223263-0a59-4c7d-8ec5-191c3865cb61,Sorting Bot,74,Bot placed the order to it's dumping point.
-2022-03-03 15:38:16,021 Sorting Order,c3367186-4f2e-40a0-afc7-5c23d42dab8b,Sorting Bot,91,Bot placed the order to it's dumping point.
-2022-03-03 15:38:19,512 Sorting Order,07713c4b-f5bd-4c90-a2d6-4d349d0ff04a,Sorting Bot,89,Bot placed the order to it's dumping point.
-2022-03-03 15:38:19,513 Sorting Order,bd7c36dd-ad06-44c3-a041-8e7e513d967c,Sorting Bot,56,Bot placed the order to it's dumping point.
-2022-03-03 15:38:20,626 Sorting Order,5d0517b7-43db-4f46-a1fe-623061b94851,Sorting Bot,92,Bot placed the order to it's dumping point.
-2022-03-03 15:38:20,626 Sorting Order,6ed455e5-a9ba-4bde-a982-8a2ae87ae4e3,Sorting Bot,54,Bot placed the order to it's dumping point.
-2022-03-03 15:38:23,401 Sorting Order,01727f83-e85b-4698-bbe1-c7c50708d387,Sorting Bot,78,Bot placed the order to it's dumping point.
-2022-03-03 15:38:29,161 Sorting Order,2c023a93-3d02-43a5-891f-6ff48f5e2756,Sorting Bot,58,Bot placed the order to it's dumping point.
-2022-03-03 15:38:33,777 Sorting Order,81bc33c3-d18f-45f0-bd74-23ab7023ee98,Sorting Bot,84,Bot placed the order to it's dumping point.
-2022-03-03 15:38:35,204 Sorting Order,09c6bbb9-1fae-4d1d-97b8-bea8adefcaf0,Sorting Bot,99,Bot placed the order to it's dumping point.
-2022-03-03 15:38:35,205 Sorting Order,c76fb6f9-ff3d-4433-a0bd-b87890d90de0,Sorting Bot,60,Bot placed the order to it's dumping point.
-2022-03-03 15:38:38,718 Sorting Order,4f949337-2f8b-4200-a9e7-8521d1e60ff4,Sorting Bot,51,Bot placed the order to it's dumping point.
-2022-03-03 15:38:41,780 Sorting Order,40e7deb4-391c-43f6-9efc-30d14a4dad59,Sorting Bot,81,Bot placed the order to it's dumping point.
-2022-03-03 15:38:43,571 Sorting Order,d73838e6-c993-41da-97a5-1868d9c3f820,Sorting Bot,76,Bot placed the order to it's dumping point.
-2022-03-03 15:38:46,739 Sorting Order,f9a89e6b-5ece-4946-8553-4e5ac9aef0e0,Sorting Bot,73,Bot placed the order to it's dumping point.
-2022-03-03 15:38:59,565 Sorting Order,1b0b7937-bf8f-4f1b-8e4f-6936a8c25559,Sorting Bot,63,Bot placed the order to it's dumping point.
-2022-03-03 15:39:00,301 Sorting Order,4298288d-f402-4ef1-9218-8e0e60555dcc,Sorting Bot,64,Bot placed the order to it's dumping point.
-2022-03-03 15:39:02,262 Sorting Order,72c4bbb8-428f-44ce-9ec0-785970035631,Sorting Bot,66,Bot placed the order to it's dumping point.
-2022-03-03 15:39:02,263 Sorting Order,7506b35a-9502-4c52-833a-d51de0bdcbdc,Sorting Bot,94,Bot placed the order to it's dumping point.
-2022-03-03 15:39:14,339 Sorting Order,70d2fd6e-6884-4926-a79c-9339f1042e7b,Sorting Bot,86,Bot placed the order to it's dumping point.
+2022-03-03 19:41:24,104 New Order,739c7ff6-f0f0-4b4f-b49a-fb22ac07f5b8,-,-,New Order is Placed.
+2022-03-03 19:41:30,330 New Order,987f0566-e3cb-4843-9510-7f432b3ead12,-,-,New Order is Placed.
+2022-03-03 19:41:30,337 Order,739c7ff6-f0f0-4b4f-b49a-fb22ac07f5b8,Warehouse,139,Bot Reached the Desired Rack.
+2022-03-03 19:41:30,584 New Order,7c906536-ee82-416c-b8f0-0d54a9da3578,-,-,New Order is Placed.
+2022-03-03 19:41:30,592 Order,987f0566-e3cb-4843-9510-7f432b3ead12,Warehouse,35,Bot Reached the Rack No. 1
+2022-03-03 19:41:30,835 New Order,772f3c16-3afe-45ae-a907-c4bda46add7e,-,-,New Order is Placed.
+2022-03-03 19:41:30,973 New Order,df363253-e223-453b-951a-f733e58dc1d2,-,-,New Order is Placed.
+2022-03-03 19:41:30,994 Order,772f3c16-3afe-45ae-a907-c4bda46add7e,Warehouse,116,Bot Reached the Desired Rack.
+2022-03-03 19:41:31,237 New Order,6ec3294f-9344-4f35-8862-060ebc69443b,-,-,New Order is Placed.
+2022-03-03 19:41:31,378 New Order,9f580a02-8211-4bc2-b768-5fca96854565,-,-,New Order is Placed.
+2022-03-03 19:41:31,384 Order,6ec3294f-9344-4f35-8862-060ebc69443b,Warehouse,242,Bot Reached the Desired Rack.
+2022-03-03 19:41:31,584 New Order,40aaa895-4ebf-4f61-9eff-5c19199d57f4,-,-,New Order is Placed.
+2022-03-03 19:41:31,683 New Order,5260a1b2-e3fb-4e11-a1b3-456bed16ccea,-,-,New Order is Placed.
+2022-03-03 19:41:31,691 Order,40aaa895-4ebf-4f61-9eff-5c19199d57f4,Warehouse,304,Bot Reached the Rack No. 1
+2022-03-03 19:41:31,928 New Order,a520a452-4f9d-4810-81b9-adef7ec1de19,-,-,New Order is Placed.
+2022-03-03 19:41:31,936 Order,5260a1b2-e3fb-4e11-a1b3-456bed16ccea,Warehouse,372,Bot Reached the Desired Rack.
+2022-03-03 19:41:32,152 New Order,13e10db1-d2db-4dc7-b475-13dab68286c8,-,-,New Order is Placed.
+2022-03-03 19:41:32,272 New Order,0d59922d-a89a-4ceb-a72c-bcb4d5f2e004,-,-,New Order is Placed.
+2022-03-03 19:41:32,419 New Order,5cd958a5-a48c-49d0-b7a8-d4f5ead1ca8f,-,-,New Order is Placed.
+2022-03-03 19:41:32,563 New Order,32d13b57-7ed9-4086-9a79-2626a25d2034,-,-,New Order is Placed.
+2022-03-03 19:41:32,694 New Order,5e1f9f91-3474-41de-98ff-98f4a02fbec6,-,-,New Order is Placed.
+2022-03-03 19:41:32,701 Order,32d13b57-7ed9-4086-9a79-2626a25d2034,Warehouse,40,Bot Reached the Rack No. 1
+2022-03-03 19:41:32,923 New Order,0a578a16-bca8-411b-abbe-99b8e6845dab,-,-,New Order is Placed.
+2022-03-03 19:41:32,931 Order,5e1f9f91-3474-41de-98ff-98f4a02fbec6,Warehouse,18,Bot Reached the Rack No. 1
+2022-03-03 19:41:33,156 New Order,1d43b63b-4553-432f-b9d7-c0aebda47e8b,-,-,New Order is Placed.
+2022-03-03 19:41:33,167 Order,0a578a16-bca8-411b-abbe-99b8e6845dab,Warehouse,324,Bot Reached the Rack No. 1
+2022-03-03 19:41:33,381 New Order,9f2d2c92-22b1-4108-801a-dfd9eda6c0c6,-,-,New Order is Placed.
+2022-03-03 19:41:33,392 Order,1d43b63b-4553-432f-b9d7-c0aebda47e8b,Warehouse,362,Bot Reached the Desired Rack.
+2022-03-03 19:41:33,616 New Order,5127ac28-bd6a-47cc-8945-24d8fdb5af76,-,-,New Order is Placed.
+2022-03-03 19:41:33,745 New Order,4dc597bc-e90d-4030-a1e4-0a3bda2026e4,-,-,New Order is Placed.
+2022-03-03 19:41:33,877 New Order,b92b7bd5-44f2-4545-bf16-488dc8559654,-,-,New Order is Placed.
+2022-03-03 19:41:33,885 Order,4dc597bc-e90d-4030-a1e4-0a3bda2026e4,Warehouse,145,Bot Reached the Rack No. 1
+2022-03-03 19:41:34,103 New Order,527376e1-00bb-467d-afc9-248806be286b,-,-,New Order is Placed.
+2022-03-03 19:41:34,112 Order,b92b7bd5-44f2-4545-bf16-488dc8559654,Warehouse,33,Bot Reached the Rack No. 1
+2022-03-03 19:41:34,330 New Order,94201666-50f5-464c-b13e-9d1a224d2fcb,-,-,New Order is Placed.
+2022-03-03 19:41:34,451 New Order,f4909665-6c11-4585-93f1-d40fe6541b3d,-,-,New Order is Placed.
+2022-03-03 19:41:34,459 Order,94201666-50f5-464c-b13e-9d1a224d2fcb,Warehouse,86,Bot Reached the Rack No. 1
+2022-03-03 19:41:34,658 New Order,bcd25b0e-cd37-4ca2-9a91-d45cc490ebd7,-,-,New Order is Placed.
+2022-03-03 19:41:34,786 New Order,a5591b2d-0f70-4b4c-a401-6b5cc1ff0fc7,-,-,New Order is Placed.
+2022-03-03 19:41:34,815 New Order,940e1b9f-d85b-4282-bb2f-39e8a87b331b,-,-,New Order is Placed.
+2022-03-03 19:41:34,951 New Order,08352576-6d05-4f8a-a56f-dabf9ab1dc0e,-,-,New Order is Placed.
+2022-03-03 19:41:34,991 New Order,5c424f4c-979e-4197-bdc4-afcb6d5c8bcc,-,-,New Order is Placed.
+2022-03-03 19:41:35,114 New Order,cf8b7534-602d-467a-ab8c-a15b53a6cd5f,-,-,New Order is Placed.
+2022-03-03 19:41:35,245 New Order,4dd33592-0c30-46ce-86fc-120c1e476129,-,-,New Order is Placed.
+2022-03-03 19:41:35,252 Order,cf8b7534-602d-467a-ab8c-a15b53a6cd5f,Warehouse,106,Bot Reached the Desired Rack.
+2022-03-03 19:41:35,485 New Order,33b734e1-fb95-4631-902e-a63adcbc70a7,-,-,New Order is Placed.
+2022-03-03 19:41:35,622 New Order,c95541c4-58c1-47bb-aa9a-b13033c94848,-,-,New Order is Placed.
+2022-03-03 19:41:35,632 Order,33b734e1-fb95-4631-902e-a63adcbc70a7,Warehouse,203,Bot Reached the Rack No. 1
+2022-03-03 19:41:35,861 New Order,43704dc2-945b-413e-9276-649008794716,-,-,New Order is Placed.
+2022-03-03 19:41:35,869 Order,c95541c4-58c1-47bb-aa9a-b13033c94848,Warehouse,166,Bot Reached the Rack No. 1
+2022-03-03 19:41:36,086 New Order,51430adc-1f90-42bd-a7fc-f6b1b33e8e34,-,-,New Order is Placed.
+2022-03-03 19:41:36,096 Order,43704dc2-945b-413e-9276-649008794716,Warehouse,371,Bot Reached the Rack No. 1
+2022-03-03 19:41:36,315 New Order,ddb0df62-b04f-4cd7-a06b-22a2899da8af,-,-,New Order is Placed.
+2022-03-03 19:41:36,436 New Order,30edba6e-1572-4c9c-8ba8-fdf2fc43ba27,-,-,New Order is Placed.
+2022-03-03 19:41:36,582 New Order,df126b4f-4927-4b05-b462-2a9db4aa34b6,-,-,New Order is Placed.
+2022-03-03 19:41:36,754 New Order,d37c6e65-a990-4cf4-baf4-ca7344a86f0f,-,-,New Order is Placed.
+2022-03-03 19:41:36,767 Order,df126b4f-4927-4b05-b462-2a9db4aa34b6,Warehouse,294,Bot Reached the Rack No. 1
+2022-03-03 19:41:37,027 New Order,3df02a9a-b7fd-42f9-b899-af3c338f00c8,-,-,New Order is Placed.
+2022-03-03 19:41:37,036 Order,d37c6e65-a990-4cf4-baf4-ca7344a86f0f,Warehouse,315,Bot Reached the Rack No. 1
+2022-03-03 19:41:37,286 New Order,1b6e762c-5582-447d-aeb4-138c56f2a6b8,-,-,New Order is Placed.
+2022-03-03 19:41:37,300 Order,3df02a9a-b7fd-42f9-b899-af3c338f00c8,Warehouse,323,Bot Reached the Desired Rack.
+2022-03-03 19:41:37,542 New Order,9da7e6b8-650a-4476-b252-b20b5dbbfb77,-,-,New Order is Placed.
+2022-03-03 19:41:37,578 New Order,55cb043c-4452-48aa-850f-9c37e8ff638f,-,-,New Order is Placed.
+2022-03-03 19:41:37,724 New Order,5c49e7f2-b3f5-47af-92ab-5231e15a3575,-,-,New Order is Placed.

@@ -109,10 +109,8 @@ while running:
             # elif r==4:
             #     pygame.draw.circle(screen, colors.BLUE,I,2) #Left
 
-
-    if key==0:
-        # dummy_sorting(key,200)
-        Final_Finisher=39
+    # get the length of orders_db 
+    Final_Finisher=order_db.count_documents({})
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -132,7 +130,7 @@ while running:
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
-    print(pending_orders,orders_done)
+    print(pending_orders,orders_done,Final_Finisher,Running_Finisher)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
    # print(pending_orders,orders_done)

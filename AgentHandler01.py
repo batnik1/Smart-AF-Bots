@@ -415,23 +415,23 @@ def handle_rack_agents(key,coloring):
         agent=All_Agents[Intersection_Booking[I]]
         if agent.key_field==key:
             continue
-        
-        if Intersection_Calculated[I]==0 and congestion_flag:
-            Intersection_Calculated[I]=1
-            # calculate again its path
-            togoal=agent.goals[agent.goalindex]
-            nearestIntersec=agent.nearestgoals[agent.goalindex]
-            nAgent = Search(I,nearestIntersec)
-            nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type,Roads_Grid,agent)
-            nextIntersec_path=nAgent.getPathLong()
-            agent.path=nextIntersec_path
-            last=nearest_intersection(togoal)
-            agent.path.append(last)
-            # if agent.ind==73:
-            #     print(agent.position,agent.path,last)
-            agent.path.reverse()
-            agent.path.pop()
-            agent.Index=len(agent.path)-1
+        if congestion_flag==1:
+            if Intersection_Calculated[I]==0:
+                Intersection_Calculated[I]=1
+                # calculate again its path
+                togoal=agent.goals[agent.goalindex]
+                nearestIntersec=agent.nearestgoals[agent.goalindex]
+                nAgent = Search(I,nearestIntersec)
+                nAgent.AStar(agent.theta,Agents,Truck_Agents,Sorting_Agents,agent.type,Roads_Grid,agent)
+                nextIntersec_path=nAgent.getPathLong()
+                agent.path=nextIntersec_path
+                last=nearest_intersection(togoal)
+                agent.path.append(last)
+                # if agent.ind==73:
+                #     print(agent.position,agent.path,last)
+                agent.path.reverse()
+                agent.path.pop()
+                agent.Index=len(agent.path)-1
             
         try:
             nextI=intT(agent.path[agent.Index])
@@ -469,8 +469,11 @@ def handle_rack_agents(key,coloring):
     for i in range(len(All_Agents)):
         
         agent=All_Agents[i]
-        if agent.ind==2  and agent.type==2:
+        if agent.ind==1  and agent.type==2:
             pygame.draw.circle(screen,colors.RED1,(int(agent.position[0]),int(agent.position[1])),5)
+            #print(agent.v,end=",")
+            # if agent.v==0.1:
+            #     print()
             # draw red circle on its path
             for j in range(len(agent.path)):
                 pygame.draw.circle(screen,colors.RED1,(int(agent.path[j][0]),int(agent.path[j][1])),3)

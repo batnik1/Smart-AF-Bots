@@ -22,7 +22,7 @@ def ManhattanDistance(start, end):
 
 
 dx4 = [(-1, 0), (0, -1), (1, 0), (0, 1)]
-INF = int(100000)
+INF = math.inf
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
@@ -92,7 +92,7 @@ def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heur
         # calculate avg velocity
         avg_velocity=sum(velocities)/len(velocities)
         if avg_velocity==0:
-            avg_velocity=0.001
+            avg_velocity=0.0000001
         time=ManhattanDistance(Point,Goal)/avg_velocity
         return time
         

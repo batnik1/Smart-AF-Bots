@@ -24,6 +24,7 @@ order_history = db["order_history"]
 
 order_db.drop()
 collection.drop()
+order_history.drop()
 
 type_of_items = config['type_of_items']
 max_diff_item = config['max_diff_item']
@@ -34,7 +35,7 @@ logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s', f
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-
+# check length of order_db
 # After we get the list of Orders which is of form (Item,Quantity) , here the function returns the list of racks on which those items lie.
 def assign_rack(orders):    
   racks_dict={}
@@ -146,6 +147,4 @@ total_items=0
 for obj in collection.find():
   total_items+=obj["quantity"]
 print("Total Items in Warehouse:",total_items)
-# for i in range(5):
-#   # print(random.randint(1,100000),gen_a_order())
-#   print(gen_a_order())
+# input()
