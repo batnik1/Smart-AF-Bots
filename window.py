@@ -107,12 +107,12 @@ velocity,density
 Total_orders=0
 Running_Finisher=0
 while running:
-    # if key%order_freq==0:
-    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-    #  #   print(new_orders)
-    #     if new_orders!="Nothing": 
-    #         Total_orders+=1
-    #         orders.append(new_orders)   # To mantain FCFS Order
+    if key%order_freq==0:
+        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+     #   print(new_orders)
+        if new_orders!="Nothing": 
+            Total_orders+=1
+            orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
