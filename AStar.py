@@ -6,6 +6,7 @@ import collections
 from Grid import Grid
 import time
 import yaml
+from avg_values import *
 
 ks=0
 Golden_Grid={}
@@ -22,9 +23,36 @@ def ManhattanDistance(start, end):
 
 
 dx4 = [(-1, 0), (0, -1), (1, 0), (0, 1)]
-INF = int(100000)
+INF = math.inf
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
+
+# density_dic={}
+# density_dic[0.04]=0.8849388764779784
+# density_dic[0.05]=0.8422870938888083
+# density_dic[0.1]=0.6598127291564279
+# density_dic[0.08]=0.7908560072151424
+# density_dic[0.12]=0.6316617300675831
+# density_dic[0.15]=0.491562152469726
+# density_dic[0.03]=0.8799984059669639
+# density_dic[0.2]=0.3999772068236708
+# density_dic[0.16]=0.4935203863876017
+# density_dic[0.01]=1.1849992315902942
+# density_dic[0.25]=0.18067947929292297
+# density_dic[0.3]=0.19653789061143037
+# density_dic[0.24]=0.35449773005951474
+# density_dic[0.07]=0.800190339844804
+# density_dic[0.02]=1.0702664571213356
+# density_dic[0.06]=0.962159466366327
+# density_dic[0.09]=0.8318022972901102
+# density_dic[0.13]=0.566065271223799
+# density_dic[0.17]=0.47711237571118814
+# density_dic[0.11]=0.78492482407427
+# density_dic[0.14]=0.3751944014274457
+# density_dic[0.18]=0.41059596785296576
+# density_dic[0.19]=0.39169760953750776
+# density_dic[0.21]=0.34688303277550997
+
 
 
 N = 1500
@@ -80,19 +108,22 @@ Matrix = Grid(N, N)
 
 def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heuristic Function
     if congestion_flag:
-       
         velocities=[]
         for agent in Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))]:
             if agent.ind!=original.ind: 
               #  print(agent.ind,original.ind,(Point,Goal),agent.position,original.position)
               #  print(Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))])
                 velocities.append(agent.v)
+        len_vel=len(velocities)+1 #1
+        if round(len_vel/ManhattanDistance(Point,Goal),2) in density_dic:
+            return ManhattanDistance(Point,Goal)/density_dic[round(len_vel/ManhattanDistance(Point,Goal),2)]
+     #   print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
         if len(velocities)==0:
             velocities=[1]
         # calculate avg velocity
         avg_velocity=sum(velocities)/len(velocities)
         if avg_velocity==0:
-            avg_velocity=0.001
+            avg_velocity=0.0000001
         time=ManhattanDistance(Point,Goal)/avg_velocity
         return time
         

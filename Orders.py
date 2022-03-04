@@ -22,6 +22,8 @@ collection = db["big_database"]
 order_db = db["order_db"]
 order_history = db["order_history"]
 
+Density_vs_Velocity = db["Density_vs_Velocity"]
+
 order_db.drop()
 collection.drop()
 order_history.drop()
@@ -35,7 +37,7 @@ logging.basicConfig(filename="Warehouse.log",format='%(asctime)s %(message)s', f
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-
+# check length of order_db
 # After we get the list of Orders which is of form (Item,Quantity) , here the function returns the list of racks on which those items lie.
 def assign_rack(orders):    
   racks_dict={}
