@@ -217,6 +217,26 @@ def handle_rack_agents(key,coloring):
         if Roads_lr[Road]==-1:      #Road in Reverse Direction
             continue
         removal,remover=[],[]
+        # velocities=[]
+        # for agent in Roads_Grid[(Road)]:
+        #     velocities.append(agent.v)
+        # if len(velocities)!=0:
+        #     # calculate avg velocity
+        #     avg_velocity=sum(velocities)/len(velocities)
+        #     # See if entry of avg_velocity/ManhattanDistance(Point,Goal) is in the mongodb database Density_vs_Velocity
+        #     x=len(velocities)/ManhattanDistance(Road[0],Road[1])
+        #     # round it to 2 decimal places
+        #     x=round(x,2)
+        #     y=Density_vs_Velocity.find_one({'density':x})
+        #     if y==None:
+        #         # insert into database
+        #         Density_vs_Velocity.insert_one({'density':x,'number':1,'avg_velocity':avg_velocity})
+        #     else:
+        #         # see the number with density x
+        #         number=y['number']
+        #         avg_velocity=(y['avg_velocity']*number+avg_velocity)/(number+1)
+        #         # update the database
+        #         Density_vs_Velocity.update_one({'density':x},{'$set':{'avg_velocity':avg_velocity,'number':number+1}})
         for i in range(len(Roads_Grid[Road])): 
             agent=Roads_Grid[Road][i]
             if agent.human_delay>0:
@@ -437,12 +457,12 @@ def handle_rack_agents(key,coloring):
             nextI=intT(agent.path[agent.Index])
         except:
             print("new_wtf")
-            # print(agent.type,agent.ind)
-            # print(agent.position,numofrack[agent.CurRack])
-            # print(agent.goals[agent.goalindex],agent.nearestgoals[agent.goalindex])
-            # togoal=agent.goals[agent.goalindex]
-            # print(nearest_intersection(togoal))
-            # print(nearest_intersection(togoal,rev=True))
+            print(agent.type,agent.ind)
+            print(agent.position,numofrack[agent.CurRack])
+            print(agent.goals[agent.goalindex],agent.nearestgoals[agent.goalindex])
+            togoal=agent.goals[agent.goalindex]
+            print(nearest_intersection(togoal))
+            print(nearest_intersection(togoal,rev=True))
             for i in range(10000000):
                 pygame.draw.circle(screen,colors.RED1,(int(agent.position[0]),int(agent.position[1])),5)
                 pygame.display.flip()

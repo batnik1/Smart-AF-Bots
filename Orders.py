@@ -7,7 +7,7 @@ This file contains functions to do the following tasks:
 import uuid
 from Map_Simul import *
 import random
-random.seed(2400)
+random.seed(1000)
 import numpy as np
 import logging
 
@@ -21,6 +21,8 @@ db = connection['Warehouse']
 collection = db["big_database"]
 order_db = db["order_db"]
 order_history = db["order_history"]
+
+Density_vs_Velocity = db["Density_vs_Velocity"]
 
 order_db.drop()
 collection.drop()

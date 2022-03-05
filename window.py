@@ -1,4 +1,5 @@
 import argparse
+from enum import Flag
 from re import L
 import numpy as np
 
@@ -67,6 +68,41 @@ def handle_events():
                         break
 
 # https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
+"""
+velocity,density
+0.8849388764779784,0.04
+0.8422870938888083,0.05
+0.6598127291564279,0.1
+0.7908560072151424,0.08
+0.6316617300675831,0.12
+0.491562152469726,0.15
+0.8799984059669639,0.03
+0.3999772068236708,0.2
+0.4935203863876017,0.16
+1.1849992315902942,0.01
+0.18067947929292297,0.25
+0.19653789061143037,0.3
+0.35449773005951474,0.24
+0.800190339844804,0.07
+1.0702664571213356,0.02
+0.962159466366327,0.06
+0.8318022972901102,0.09
+0.566065271223799,0.13
+0.47711237571118814,0.17
+0.78492482407427,0.11
+0.3751944014274457,0.14
+0.41059596785296576,0.18
+0.39169760953750776,0.19
+0.34688303277550997,0.21
+"""
+
+
+
+
+
+
+
+
 Total_orders=0
 Running_Finisher=0
 while running:
@@ -88,6 +124,8 @@ while running:
         handle_orders()
     
     handle_events()
+    # if key==0:
+    #     dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
     Running_Finisher+=Running_Fin
     if Traffic_Flag:
@@ -109,8 +147,9 @@ while running:
             # elif r==4:
             #     pygame.draw.circle(screen, colors.BLUE,I,2) #Left
 
-    # get the length of orders_db 
+
     Final_Finisher=order_db.count_documents({})
+   # Final_Finisher=100
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
