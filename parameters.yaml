@@ -1,6 +1,6 @@
 # Warehouse Parameters
-n: 3               # n*m big racks where each rack has 25 small racks
-m: 3
+n: 4               # n*m big racks where each rack has 25 small racks
+m: 4
 sorting_m: 10           # Sorting Window size
 sorting_n: 10
 
