@@ -117,7 +117,7 @@ def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heur
         len_vel=len(velocities)+1 #1
         if round(len_vel/ManhattanDistance(Point,Goal),2) in density_dic:
             return ManhattanDistance(Point,Goal)/density_dic[round(len_vel/ManhattanDistance(Point,Goal),2)]
-     #   print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
+        print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
         if len(velocities)==0:
             velocities=[1]
         # calculate avg velocity

@@ -49,19 +49,6 @@ def make_sorting_area():
     pygame.draw.line(screen, colors.BLUE, (racks_width+10, 300), (racks_width-40, 300), width=2)
     pygame.draw.line(screen, colors.BLUE, (racks_width-40, 90), (racks_width-40, 300), width=2)
     
-    
-
-    # pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2-50),(racks_width-40,(80+racks_height//2)/2-50),width=2)    # Left
-    # pygame.draw.line(screen,colors.BLUE,(racks_width+10,(80+racks_height//2)/2+10),(racks_width-40,(80+racks_height//2)/2+10),width=2)    # Left
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+100),(racks_width+10,(80+racks_height//2)/2+100),width=2)    # Right
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2-50),(racks_width-40,(80+racks_height//2)/2+100),width=2)    # Down
-    
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+160),(racks_width+10,(80+racks_height//2)/2+160),width=2)
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+70),(racks_width-40,(80+racks_height//2)/2+160),width=2)
-
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+220),(racks_width+10,(80+racks_height//2)/2+220),width=2)
-    # pygame.draw.line(screen,colors.BLUE,(racks_width-40,(80+racks_height//2)/2+130),(racks_width-40,(80+racks_height//2)/2+220),width=2)
-
 
     x=racks_width+20
 

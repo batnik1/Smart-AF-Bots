@@ -124,8 +124,8 @@ while running:
         handle_orders()
     
     handle_events()
-    if key==0:
-        dummy_sorting(key,100)
+    # if key==0:
+    #     dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
     Running_Finisher+=Running_Fin
     if Traffic_Flag:
@@ -169,7 +169,7 @@ while running:
     if pending_orders==0:
         pending_orders=1000
     orders_done+=orders_completed_now
-    print(pending_orders,orders_done)
+  #  print(pending_orders,orders_done)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,100,10),1)
     pygame.draw.rect(screen, colors.INDIANRED1, pygame.Rect(racks_width+50,40,orders_done/pending_orders*100,10),0)
    # print(pending_orders,orders_done)

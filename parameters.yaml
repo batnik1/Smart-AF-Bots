@@ -5,15 +5,15 @@ sorting_m: 6         # Sorting Window size
 sorting_n: 6
 
 # For Orders
-type_of_items: 6        # Types of items in the Warehouse
-max_diff_item: 6        # Max unique items that can be ordered
-max_order_limit: 6      # Max quantity that can be ordered
-order_freq: 50          # Order Frequency
+type_of_items: 1        # Types of items in the Warehouse
+max_diff_item: 1        # Max unique items that can be ordered
+max_order_limit: 1      # Max quantity that can be ordered
+order_freq: 1          # Order Frequency
 truck_freq: 50       # Truck Frequency
-initial_items: 1000     # Initial Items assigned in racks
+initial_items: 800     # Initial Items assigned in racks
 
 # For Agents
-Number_of_Agents: 400     # Number of Rack Agents
+Number_of_Agents: 500     # Number of Rack Agents
 Number_of_SAgents: 100   # Number of Sorting Agents
 random_intersection_flag: 1  # 1 means Randomized Intersection Management, else Normal Intersection Management
 epsilon: 0.75       # probability of randomisation in Intersection
