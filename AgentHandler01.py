@@ -22,6 +22,7 @@ def init_agents():
         nAgent=Agent(0,n,m)
         nAgent.CurRack=str((random.randint(0,m-1), random.randint(0,n-1), random.randint(0, 4), random.randint(0, 4)))
         nAgent.position=numofrack[nAgent.CurRack]
+        print(nAgent.position)
         nAgent.ind=i
         Agents.append(nAgent)
         All_Agents.append(nAgent)
