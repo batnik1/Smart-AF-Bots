@@ -124,8 +124,8 @@ while running:
         handle_orders()
     
     handle_events()
-    # if key==0:
-    #     dummy_sorting(key,100)
+    if key==0:
+        dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
     Running_Finisher+=Running_Fin
     if Traffic_Flag:
