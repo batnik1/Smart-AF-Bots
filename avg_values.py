@@ -8,4 +8,4 @@ with open('Density_vs_Velocity','r') as f:
         #print(line)
         density_dic[float(line[1])]=float(line[0])
 
-print(density_dic)
+# print(density_dic)
