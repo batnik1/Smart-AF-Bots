@@ -18,8 +18,10 @@ density.sort()
 X_Y=[(density[i],density_dic[density[i]]) for i in range(len(density))]
 for i in density:
     print(i,density_dic[i])
+ 
  # draw a graph for the same with mathplotlib
-# import matplotlib.pyplot as plt
+
+import matplotlib.pyplot as plt
 # X=[i[0] for i in X_Y]
 # Y=[i[1] for i in X_Y]
 # plt.plot(X,Y)
@@ -27,3 +29,25 @@ for i in density:
 # plt.ylabel('Average Velocity')
 # plt.title('Density vs Average Velocity')
 # plt.show()
+
+# density_vs_flow_dic={}
+# new_X_Y=[(density[i],density[i]*density_dic[density[i]]) for i in range(len(density))]
+# X=[i[0] for i in new_X_Y]
+# Y=[i[1] for i in new_X_Y]
+# plt.plot(X,Y)
+# plt.xlabel('Density')
+# plt.ylabel('Flow')
+# plt.title('Density vs Flow')
+# plt.show()
+
+velocity_vs_flow_dic={}
+new_X_Y=[(density_dic[density[i]],density[i]*density_dic[density[i]]) for i in range(len(density))]
+# sort them in ascending order
+new_X_Y.sort()
+X=[i[0] for i in new_X_Y]
+Y=[i[1] for i in new_X_Y]
+plt.plot(X,Y)
+plt.xlabel('Velocity')
+plt.ylabel('Flow')
+plt.title('Velocity vs Flow')
+plt.show()

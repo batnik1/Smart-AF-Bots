@@ -10,10 +10,10 @@ max_diff_item: 1        # Max unique items that can be ordered
 max_order_limit: 1      # Max quantity that can be ordered
 order_freq: 1          # Order Frequency
 truck_freq: 50       # Truck Frequency
-initial_items: 800     # Initial Items assigned in racks
+initial_items: 200     # Initial Items assigned in racks
 
 # For Agents
-Number_of_Agents: 500     # Number of Rack Agents
+Number_of_Agents: 100     # Number of Rack Agents
 Number_of_SAgents: 100   # Number of Sorting Agents
 random_intersection_flag: 1  # 1 means Randomized Intersection Management, else Normal Intersection Management
 epsilon: 0.75       # probability of randomisation in Intersection
@@ -24,3 +24,8 @@ SBIG: 1
 
 # For Intersection
 Traffic_Flag: 1        # 1 for Traffic Lights, 0 for Booking
+
+# For data collection
+Density_vs_Velocity: 0
+Flow_vs_Velocity: 1
+Flow_vs_Density: 1

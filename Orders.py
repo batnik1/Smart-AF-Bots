@@ -23,6 +23,9 @@ order_db = db["order_db"]
 order_history = db["order_history"]
 
 Density_vs_Velocity = db["Density_vs_Velocity"]
+Flow_vs_Velocity = db["Flow_vs_Velocity"]
+Flow_vs_Density = db["Flow_vs_Density"]
+
 
 order_db.drop()
 collection.drop()
