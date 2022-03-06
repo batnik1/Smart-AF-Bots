@@ -1,3 +1,8 @@
-    # if key%truck_freq==0:
-    #     new_items=truck_orders()
-    #     Torders+=new_items
+print(new_X_Y)
+X=[i[0] for i in new_X_Y]
+Y=[i[1] for i in new_X_Y]
+plt.plot(X,Y)
+plt.xlabel('Velocity')
+plt.ylabel('Flow')
+plt.title('Velocity vs Flow')
+plt.show()

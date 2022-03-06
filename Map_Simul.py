@@ -80,7 +80,7 @@ def numofdumping():
         x+=30
 
 numofdumping()
-numofdump["conveyor"]=(racks_width-40,(95+racks_height//2)//2+30)
+numofdump["conveyor"]=(racks_width-40,200)
 
 # Human counter location
 numofhcounter={}
@@ -416,6 +416,7 @@ def nearest_intersection_path(source,destination):
 
 Roads_Grid=defaultdict(list)
 Roads_lr=defaultdict(int)
+Roads_Timestamp=defaultdict(list)
 
 def divide_roads():
     for i,j in Intersections:
@@ -426,3 +427,6 @@ def divide_roads():
 
 
 divide_roads()
+
+
+    

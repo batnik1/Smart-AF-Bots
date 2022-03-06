@@ -2,7 +2,7 @@ import argparse
 from enum import Flag
 from re import L
 import numpy as np
-
+import matplotlib.pyplot as plt
 from window_OrderHandler import *
 
 
@@ -11,7 +11,7 @@ myfont = pygame.font.SysFont('Comic Sans MS', 15)
 PBar_Items = myfont.render('Progress Bar for Remaining Items', False, (255, 255, 255))
 PBar_Orders=myfont.render('Progress Bar for Remaining Orders', False, (255, 255, 255))
 Traffic_Flag=config['Traffic_Flag']
-running = 1
+running = 1              
 key=0  
 paused=0  
 items_done=0
@@ -38,6 +38,8 @@ def init_screen():
 
 init_agents()
 
+Predicted_Density=[]
+Current_Density=[]
 
 def handle_events():
     global paused,running
@@ -52,6 +54,18 @@ def handle_events():
                     paused=0
                 else:
                     paused=1
+                    # draw a graph with time with Observed and Predicted
+                    Y1=Current_Density
+                    Y2=Predicted_Density
+                    X=range(len(Y1))
+                    # plot them
+                    plt.plot(X,Y1,label='Observed')
+                    plt.plot(X,Y2,label='Predicted')
+                    plt.xlabel('Time')
+                    plt.ylabel('Density')
+                    plt.title('Density vs Time')
+                    plt.legend()
+                    plt.show()                                                                  
                     break
     while paused:
         events = pygame.event.get()
@@ -67,44 +81,12 @@ def handle_events():
                         paused=1
                         break
 
-# https://<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>@github.com/<lordgavy01>/<Smart-AF-Bots>.git
-"""
-velocity,density
-0.8849388764779784,0.04
-0.8422870938888083,0.05
-0.6598127291564279,0.1
-0.7908560072151424,0.08
-0.6316617300675831,0.12
-0.491562152469726,0.15
-0.8799984059669639,0.03
-0.3999772068236708,0.2
-0.4935203863876017,0.16
-1.1849992315902942,0.01
-0.18067947929292297,0.25
-0.19653789061143037,0.3
-0.35449773005951474,0.24
-0.800190339844804,0.07
-1.0702664571213356,0.02
-0.962159466366327,0.06
-0.8318022972901102,0.09
-0.566065271223799,0.13
-0.47711237571118814,0.17
-0.78492482407427,0.11
-0.3751944014274457,0.14
-0.41059596785296576,0.18
-0.39169760953750776,0.19
-0.34688303277550997,0.21
-"""
-
-
-
-
-
-
-
 
 Total_orders=0
 Running_Finisher=0
+
+
+
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
@@ -149,7 +131,6 @@ while running:
 
 
     Final_Finisher=order_db.count_documents({})
-   # Final_Finisher=100
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
     # handle_truck_agents(key)
@@ -175,10 +156,38 @@ while running:
    # print(pending_orders,orders_done)
     screen.blit(PBar_Orders,(racks_width+160,35))
    # print(Running_Finisher,Final_Finisher)
+    for Road in Roads_Timestamp:
+        for i,j in Roads_Timestamp[Road]:
+            if i<=key<=j:
+                # draw line from Road[0] to Road[1]
+                pygame.draw.line(screen, colors.BLACK, Road[0], Road[1], 1)
+                break
+    
+    if key%100==0:
+        remove_timestamps(key)
+   # print(key,Agents[0].position,Agents[0].v)
+
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
         print(key)
-        break
+        break  
+    
+    reagent=Agents[0]
+    if reagent.position in Intersections:
+        continue
+    src=nearest_intersection(intT(reagent.position),rev=True)
+    nxt=nearest_intersection(intT(reagent.position))
+    road=(src,nxt)
+    observed_density=len(Roads_Grid[road])/ManhattanDistance(src,nxt)
+    Predicted_Number=0
+    for i,j in Roads_Timestamp[road]:
+        if i<=key<=j:
+            Predicted_Number+=1
+    Predicted_Number/=ManhattanDistance(src,nxt)
+    Predicted_Density.append(Predicted_Number)
+    Current_Density.append(observed_density)
+    
+    
 print("DONE",pending_orders,orders_done)
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    

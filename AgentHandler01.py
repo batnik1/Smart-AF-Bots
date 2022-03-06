@@ -13,8 +13,7 @@ epsilon = config['epsilon']
 Traffic_Flag = config['Traffic_Flag']
 SBIG = config['SBIG']
 Density_vs_Velocity_flag = config['Density_vs_Velocity']
-Flow_vs_Velocity_flag = config['Flow_vs_Velocity']
-Flow_vs_Density_flag = config['Flow_vs_Density']
+
 
 
 # Used for Initialising our agents of rack/truck/sorting
@@ -127,7 +126,7 @@ def robo_rack_entry(agent_id):
                 break
 
         index += 1
-
+    #Agents[agent_id].v=1.5
     Roads_Grid[(Sec, First)].insert(index, All_Agents[agent_id])
     return 1, First
 
@@ -194,7 +193,7 @@ def change_signal():
         nxtD = Matrix.grid[I[0]][I[1]][index+1]
         Intersection_Gateway[I] = [0]*5
         Intersection_Gateway[I][nxtD] = 1
-        Intersection_Timeout[I] = 200
+        Intersection_Timeout[I] = 20
 
 
 def traffic_intersection(P, D):
@@ -225,6 +224,46 @@ def get_subgoals(agent):
         nearestIntersec = nearest_intersection(togoal, rev=True)
         agent.nearestgoals.append(nearestIntersec)
 
+def query_time(Road,Time):
+    lst=Roads_Timestamp[tuple(Road)]
+    count=1
+    for i in range(len(lst)):
+        if Time>=lst[i][0] and Time<=lst[i][1]:
+            count+=1
+    if count>1:
+        print(count)
+    dense= round(count/ManhattanDistance(Road[0],Road[1]),2)
+    vel=density_dic[dense]
+   
+    return vel
+
+
+
+def put_timestamps(agent,key):
+    future_time=[key,key]
+    path=agent.path
+    if agent.position in israck or (agent.position in isdump and agent.position != numofdump["conveyor"]) :
+        Sorce=nearest_intersection(agent.position,rev=True)
+        Road=(Sorce,agent.path[0])
+        timez=ManhattanDistance(agent.position,agent.path[0])/query_time(Road,key)
+        future_time[0]=key
+        future_time[1]=key+timez
+        Roads_Timestamp[(tuple(Sorce),tuple(path[0]))].append(tuple(future_time))
+    for i in range(len(path)-1):
+        timez=ManhattanDistance(path[i],path[i+1])/query_time((tuple(path[i]),tuple(path[i+1])),future_time[0])
+        future_time[0]=future_time[1]
+        future_time[1]+=(timez)
+        Roads_Timestamp[(tuple(path[i]),tuple(path[i+1]))].append(tuple(future_time))
+        
+def remove_timestamps(key):
+    for Road in Roads_Timestamp:
+        removed=[]
+        for i,j in Roads_Timestamp[Road]:
+            if key>j:
+                removed.append((i,j))
+        for r in removed:
+            Roads_Timestamp[Road].remove(r)
+        
 
 def handle_rack_agents(key, coloring):
     current_items = 0
@@ -259,73 +298,7 @@ def handle_rack_agents(key, coloring):
                     Density_vs_Velocity.update_one(
                         {'density': x}, {'$set': {'avg_velocity': avg_velocity, 'number': number+1}})
 
-        if Flow_vs_Density_flag:
-            Flow = 0
-
-            position = []
-            for agent in Roads_Grid[(Road)]:
-                position.append(agent)
-            if len(position) != 0:
-                # calculate flow
-                total_time = 0
-                for i in range(len(position)):
-                    if position[i].v == 0:
-                        total_time += ManhattanDistance(
-                            position[i].position, Road[1])/0.1
-                    else:
-                        total_time += ManhattanDistance(
-                            position[i].position, Road[1])/position[i].v
-                Flow = len(position)/total_time
-                Density = round(len(position)/ManhattanDistance(
-                    Road[0], Road[1])/len(position), 2)
-                y = Flow_vs_Density.find_one({'density': Density})
-                if y == None:
-                    # insert into database
-                    Flow_vs_Density.insert_one(
-                        {'density': Density, 'flow': Flow, 'number': 1})
-                else:
-                    # see the number with density x
-                    number = y['number']
-                    Flow = (y['flow'] * number+Flow)/(number+1)
-                    # update the database
-                    Flow_vs_Density.update_one(
-                        {'density': Density}, {'$set': {'flow': Flow, 'number': number+1}})
-            #    print("LOadaad")
-
-        if Flow_vs_Velocity_flag:
-            Flow = 0
-
-            position = []
-            for agent in Roads_Grid[(Road)]:
-                position.append(agent)
-            if len(position) != 0:
-                # calculate flow
-                total_time = 0
-                for i in range(len(position)):
-                    if position[i].v == 0:
-                        total_time += ManhattanDistance(
-                            position[i].position, Road[1])/0.1
-                    else:
-                        total_time += ManhattanDistance(
-                            position[i].position, Road[1])/position[i].v
-                Flow = round(len(position)/total_time, 2)
-                velocities = [position[i].v for i in range(len(position))]
-                avg_velocity = sum(velocities)/len(velocities)
-                avg_velocity = round(avg_velocity, 2)
-                y = Flow_vs_Velocity.find_one({'flow': Flow})
-                if y == None:
-                    # insert into database
-                    Flow_vs_Velocity.insert_one(
-                        {'flow': Flow, 'avg_velocity': avg_velocity, 'number': 1})
-                else:
-                    # see the number with density x
-                    number = y['number']
-                    avg_velocity = (y['avg_velocity'] *
-                                    number+avg_velocity)/(number+1)
-                    # update the database
-                    Flow_vs_Velocity.update_one(
-                        {'flow': Flow}, {'$set': {'avg_velocity': avg_velocity, 'number': number+1}})
-
+       
         for i in range(len(Roads_Grid[Road])):
             agent = Roads_Grid[Road][i]
             if agent.human_delay > 0:
@@ -550,7 +523,7 @@ def handle_rack_agents(key, coloring):
                 nearestIntersec = agent.nearestgoals[agent.goalindex]
                 nAgent = Search(I, nearestIntersec)
                 nAgent.AStar(agent.theta, Agents, Truck_Agents,
-                             Sorting_Agents, agent.type, Roads_Grid, agent)
+                             Sorting_Agents, agent.type, Roads_Grid, agent,key)
                 nextIntersec_path = nAgent.getPathLong()
                 agent.path = nextIntersec_path
                 last = nearest_intersection(togoal)
@@ -648,8 +621,7 @@ def handle_rack_agents(key, coloring):
             agent.valet = Ghost
             nearestIntersec = agent.nearestgoals[agent.goalindex]
             nAgent = Search(Source, nearestIntersec)
-            nAgent.AStar(agent.theta, Agents, Truck_Agents,
-                         Sorting_Agents, agent.type, Roads_Grid, agent)
+            nAgent.AStar(Roads_Grid, agent,Roads_Timestamp,query_time,key)
             nextIntersec_path = nAgent.getPathLong()
             agent.path = nextIntersec_path
             last = nearest_intersection(togoal)
@@ -657,6 +629,7 @@ def handle_rack_agents(key, coloring):
                 agent.path = [Source]
             else:
                 agent.path.append(last)
+            put_timestamps(agent,key)
             agent.path.reverse()
             agent.Index = len(agent.path)-1
 

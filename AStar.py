@@ -106,18 +106,16 @@ def heat_value(Point,z,Agents,Truck_Agents,Sorting_Agents):         # To get Hea
 
 Matrix = Grid(N, N)
 
-def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heuristic Function
-    if congestion_flag:
+def get_heuristic(Point,Goal,Roads_Grid=None,original=None,Roads_Timestamp=None,querytime=None,key=None):              # Heuristic Function
+    if congestion_flag==1:
         velocities=[]
         for agent in Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))]:
             if agent.ind!=original.ind: 
-              #  print(agent.ind,original.ind,(Point,Goal),agent.position,original.position)
-              #  print(Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))])
                 velocities.append(agent.v)
         len_vel=len(velocities)+1 #1
         if round(len_vel/ManhattanDistance(Point,Goal),2) in density_dic:
             return ManhattanDistance(Point,Goal)/density_dic[round(len_vel/ManhattanDistance(Point,Goal),2)]
-        print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
+    #    print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
         if len(velocities)==0:
             velocities=[1]
         # calculate avg velocity
@@ -126,8 +124,11 @@ def get_heuristic(Point,Goal,Roads_Grid=None,original=None):              # Heur
             avg_velocity=0.0000001
         time=ManhattanDistance(Point,Goal)/avg_velocity
         return time
-        
-        return ManhattanDistance(Point,Goal)
+    elif congestion_flag==2:
+        v=querytime(((Point[0],Point[1]),(Goal[0],Goal[1])),key)
+       # print(v)
+        time=ManhattanDistance(Point,Goal)/v
+        return time
     else:
         return ManhattanDistance(Point,Goal)
 
@@ -161,10 +162,10 @@ class Search():
         self.dist=[x[:] for x in diss]
         self.prev=[x[:] for x in press]
 
-    def AStar(self,theta,Agents,Truck_Agents,Sorting_Agents,flag,Roads_Grid,agent):    # Main Path Planning Function for all type of Agents
+    def AStar(self,Roads_Grid,agent,Roads_Timestamp,querytime,key):    # Main Path Planning Function for all type of Agents
        # print(self.source,self.dest)
         if congestion_flag==0:
-            heapq.heappush(self.heap, (get_heuristic(self.source, self.dest),0,theta, self.source)) 
+            heapq.heappush(self.heap, (get_heuristic(self.source, self.dest),0, self.source)) 
             self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest)
             while len(self.heap) > 0:
                 (cumltv,g,curTheta,cState) = heapq.heappop(self.heap)      
@@ -178,18 +179,17 @@ class Search():
                         continue
                     (nextX,nextY)=nextZ
                     if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                        nextTheta,turnTime=turning_time(cState,nextZ,curTheta)
                         newDist=g+get_heuristic(cState,[nextX,nextY])+get_heuristic([nextX,nextY],self.dest)
                         if self.dist[nextX][nextY] > newDist:
                             self.dist[nextX][nextY] = newDist
                             self.prev[nextX][nextY] = cState
-                            heapq.heappush(self.heap, (self.dist[nextX][nextY],g+get_heuristic(cState,[nextX,nextY]),nextTheta, [nextX, nextY]))
+                            heapq.heappush(self.heap, (self.dist[nextX][nextY],g+get_heuristic(cState,[nextX,nextY]),[nextX, nextY]))
         else:
             # UCS
-            heapq.heappush(self.heap,(0,theta,self.source))
-            self.dist[self.source[0]][self.source[1]] = 0
+            heapq.heappush(self.heap,(key,self.source))
+            self.dist[self.source[0]][self.source[1]] = key
             while len(self.heap) > 0:
-                (g,curTheta,cState) = heapq.heappop(self.heap)
+                (g,cState) = heapq.heappop(self.heap)
                 if cState == self.dest:
                     break
                 for nextZ in Golden_Grid[(cState[0],cState[1])]:
@@ -197,12 +197,11 @@ class Search():
                         continue
                     (nextX,nextY)=nextZ
                     if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                        nextTheta,turnTime=turning_time(cState,nextZ,curTheta)
-                        newDist=g+get_heuristic(cState,[nextX,nextY],Roads_Grid=Roads_Grid,original=agent)
+                        newDist=g+get_heuristic(cState,[nextX,nextY],Roads_Grid=Roads_Grid,original=agent,Roads_Timestamp=Roads_Timestamp,querytime=querytime,key=g)
                         if self.dist[nextX][nextY] > newDist:
                             self.dist[nextX][nextY] = newDist
                             self.prev[nextX][nextY] = cState
-                            heapq.heappush(self.heap, (self.dist[nextX][nextY],nextTheta,[nextX, nextY]))
+                            heapq.heappush(self.heap, (self.dist[nextX][nextY],[nextX, nextY]))
     def BFS(self, rev=False):
         queue = collections.deque([self.source])
         self.dist[self.source[0]][self.source[1]] = 0

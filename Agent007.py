@@ -37,9 +37,10 @@ class Agent():
         self.valet=None
         self.temp_valet=None
         self.onroad=False
+        
         # Vehicle's Fields
         self.l = 0.5
-        self.dt=0.1
+        self.dt=1
         self.s0 = 3
         self.T = 0.1
         self.v_max = 1.5
