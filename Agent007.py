@@ -37,7 +37,7 @@ class Agent():
         self.valet=None
         self.temp_valet=None
         self.onroad=False
-        
+        self.timestamps=[]
         # Vehicle's Fields
         self.l = 0.5
         self.dt=1

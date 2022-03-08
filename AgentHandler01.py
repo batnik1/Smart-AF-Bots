@@ -24,7 +24,7 @@ def init_agents():
         nAgent.CurRack = str((random.randint(
             0, m-1), random.randint(0, n-1), random.randint(0, 4), random.randint(0, 4)))
         nAgent.position = numofrack[nAgent.CurRack]
-        print(nAgent.position)
+      #  print(nAgent.position)
         nAgent.ind = i
         Agents.append(nAgent)
         All_Agents.append(nAgent)
@@ -156,6 +156,7 @@ def motion_to_rest(agent):
     agent.path = []
 
 
+
 def get_direction(a, b):
     x1, y1 = a
     x2, y2 = b
@@ -230,11 +231,9 @@ def query_time(Road,Time):
     for i in range(len(lst)):
         if Time>=lst[i][0] and Time<=lst[i][1]:
             count+=1
-    if count>1:
-        print(count)
-    dense= round(count/ManhattanDistance(Road[0],Road[1]),2)
-    vel=density_dic[dense]
-   
+    dense= count/ManhattanDistance(Road[0],Road[1])
+    # vel=density_dic[dense]
+    vel=get_velocity(dense)
     return vel
 
 
@@ -242,18 +241,22 @@ def query_time(Road,Time):
 def put_timestamps(agent,key):
     future_time=[key,key]
     path=agent.path
-    if agent.position in israck or (agent.position in isdump and agent.position != numofdump["conveyor"]) :
+    buffer=9
+    if agent.position in israck or (agent.position in isdump and agent.position != numofdump["conveyor"]) or agent.position in numofhcounter.values():
         Sorce=nearest_intersection(agent.position,rev=True)
         Road=(Sorce,agent.path[0])
         timez=ManhattanDistance(agent.position,agent.path[0])/query_time(Road,key)
+        timez*=3
         future_time[0]=key
         future_time[1]=key+timez
-        Roads_Timestamp[(tuple(Sorce),tuple(path[0]))].append(tuple(future_time))
+        Roads_Timestamp[(tuple(Sorce),tuple(path[0]))].append(tuple((future_time[0],future_time[1]+buffer)))
+        agent.timestamps.append([(tuple(Sorce),tuple(path[0])),tuple((future_time[0],future_time[1]+buffer))])
     for i in range(len(path)-1):
         timez=ManhattanDistance(path[i],path[i+1])/query_time((tuple(path[i]),tuple(path[i+1])),future_time[0])
         future_time[0]=future_time[1]
         future_time[1]+=(timez)
-        Roads_Timestamp[(tuple(path[i]),tuple(path[i+1]))].append(tuple(future_time))
+        Roads_Timestamp[(tuple(path[i]),tuple(path[i+1]))].append(tuple((future_time[0]-buffer,future_time[1]+buffer)))
+        agent.timestamps.append([(tuple(path[i]),tuple(path[i+1])),tuple((future_time[0]-buffer,future_time[1]+buffer))])
         
 def remove_timestamps(key):
     for Road in Roads_Timestamp:
@@ -264,6 +267,15 @@ def remove_timestamps(key):
         for r in removed:
             Roads_Timestamp[Road].remove(r)
         
+def remove_agent_timestamps(agent):
+    for i in agent.timestamps:
+        try:
+            Roads_Timestamp[i[0]].remove(i[1])
+        except:
+            pass
+    agent.timestamps=[]
+
+
 
 def handle_rack_agents(key, coloring):
     current_items = 0
@@ -407,6 +419,7 @@ def handle_rack_agents(key, coloring):
                                 logger.info('Event'+','+'-'+','+'Warehouse'+','+str(
                                     agent.ind)+','+'Kept the Rack back which it was carrying.')
                                 motion_to_rest(agent)
+                                # remove_timestamps(key)
                                 rack_available[agent.CurRack] = 1
                                 agent.color = colors.YELLOW1
                                 remove = []
@@ -420,6 +433,7 @@ def handle_rack_agents(key, coloring):
                                 logger.info('Charging'+','+'-'+','+'Warehouse'+',' +
                                             str(agent.ind)+','+'Bot Reached the Charging Station.')
                                 motion_to_rest(agent)
+                                # remove_timestamps(key)
                                 agent.Wait = False
                                 remover.append((Road, agent))
 
@@ -427,14 +441,14 @@ def handle_rack_agents(key, coloring):
                                 logger.info('Charging'+','+'-'+','+'Warehouse'+','+str(
                                     agent.ind)+','+'Bot Reached back to its Rack with full Charge.')
                                 motion_to_rest(agent)
+                                # remove_timestamps(key)
                                 agent.color = colors.YELLOW1
                                 remover.append((Road, agent))
 
                         elif agent.type == 1:
                             if agent.goals[agent.goalindex] == [-7, -7]:
                                 agent.goalindex += 1
-                                add_item(
-                                    agent.items_carrying[0], agent.items_carrying[1], agent.CurRack)
+                                add_item(agent.items_carrying[0], agent.items_carrying[1], agent.CurRack)
                                 remover.append((Road, agent))
                                 logger.info('Trucks in Warehouse'+','+'-'+','+'Truck Bot'+',' +
                                             '-'+','+"Reached the Desired Rack with some new item type.")
@@ -442,6 +456,7 @@ def handle_rack_agents(key, coloring):
                             elif agent.goals[agent.goalindex] == [-14, -14]:
                                 rack_available[agent.CurRack] = 1
                                 motion_to_rest(agent)
+                                # remove_timestamps(key)
                                 remover.append((Road, agent))
 
                         elif agent.type == 2:
@@ -452,6 +467,7 @@ def handle_rack_agents(key, coloring):
                                 logger.info('Sorting Order'+','+str(agent.order_id)+','+'Sorting Bot'+','+str(
                                     agent.ind)+','+"Bot placed the order to it's dumping point.")
                                 motion_to_rest(agent)
+                                # remove_timestamps(key)
                                 remover.append((Road, agent))
 
             elif i == len(Roads_Grid[Road])-1:
@@ -492,6 +508,7 @@ def handle_rack_agents(key, coloring):
                 # TODO : Try to adjust speed as bots enter intersection
                 if dist_r <= 1.6 and passing:
                     removal.append(Road)
+                    #print("passed")
                     agent.position = k
                     agent.Index -= 1
                     Intersection_Recal[k] = 1
@@ -515,19 +532,21 @@ def handle_rack_agents(key, coloring):
         agent = All_Agents[Intersection_Booking[I]]
         if agent.key_field == key:
             continue
-        if congestion_flag == 1:
+        if congestion_flag !=0:
             if Intersection_Calculated[I] == 0:
                 Intersection_Calculated[I] = 1
                 # calculate again its path
                 togoal = agent.goals[agent.goalindex]
                 nearestIntersec = agent.nearestgoals[agent.goalindex]
                 nAgent = Search(I, nearestIntersec)
-                nAgent.AStar(agent.theta, Agents, Truck_Agents,
-                             Sorting_Agents, agent.type, Roads_Grid, agent,key)
+                nAgent.AStar(Roads_Grid,agent,Roads_Timestamp,query_time,key)
                 nextIntersec_path = nAgent.getPathLong()
                 agent.path = nextIntersec_path
                 last = nearest_intersection(togoal)
                 agent.path.append(last)
+                if congestion_flag==2:
+                    remove_agent_timestamps(agent)
+                    put_timestamps(agent,key)
                 # if agent.ind==73:
                 #     print(agent.position,agent.path,last)
                 agent.path.reverse()
@@ -629,7 +648,9 @@ def handle_rack_agents(key, coloring):
                 agent.path = [Source]
             else:
                 agent.path.append(last)
-            put_timestamps(agent,key)
+            if congestion_flag==2:
+                remove_agent_timestamps(agent)
+                put_timestamps(agent,key)
             agent.path.reverse()
             agent.Index = len(agent.path)-1
 

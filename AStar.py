@@ -115,7 +115,6 @@ def get_heuristic(Point,Goal,Roads_Grid=None,original=None,Roads_Timestamp=None,
         len_vel=len(velocities)+1 #1
         if round(len_vel/ManhattanDistance(Point,Goal),2) in density_dic:
             return ManhattanDistance(Point,Goal)/density_dic[round(len_vel/ManhattanDistance(Point,Goal),2)]
-    #    print('other one',round(len_vel/ManhattanDistance(Point,Goal),2))
         if len(velocities)==0:
             velocities=[1]
         # calculate avg velocity
@@ -168,7 +167,7 @@ class Search():
             heapq.heappush(self.heap, (get_heuristic(self.source, self.dest),0, self.source)) 
             self.dist[self.source[0]][self.source[1]] = get_heuristic(self.source, self.dest)
             while len(self.heap) > 0:
-                (cumltv,g,curTheta,cState) = heapq.heappop(self.heap)      
+                (cumltv,g,cState) = heapq.heappop(self.heap)      
                 if cumltv > self.dist[cState[0]][cState[1]]:
                     continue
                 if cState == self.dest:
@@ -186,8 +185,9 @@ class Search():
                             heapq.heappush(self.heap, (self.dist[nextX][nextY],g+get_heuristic(cState,[nextX,nextY]),[nextX, nextY]))
         else:
             # UCS
-            heapq.heappush(self.heap,(key,self.source))
-            self.dist[self.source[0]][self.source[1]] = key
+            heapq.heappush(self.heap,(0,self.source))
+           # print("KEYS",key)
+            self.dist[self.source[0]][self.source[1]] = 0
             while len(self.heap) > 0:
                 (g,cState) = heapq.heappop(self.heap)
                 if cState == self.dest:
@@ -197,7 +197,8 @@ class Search():
                         continue
                     (nextX,nextY)=nextZ
                     if nextX >= 0 and nextY >= 0 and nextX < Matrix.height and nextY < Matrix.width:
-                        newDist=g+get_heuristic(cState,[nextX,nextY],Roads_Grid=Roads_Grid,original=agent,Roads_Timestamp=Roads_Timestamp,querytime=querytime,key=g)
+                        newDist=g+get_heuristic(cState,[nextX,nextY],Roads_Grid=Roads_Grid,original=agent,Roads_Timestamp=Roads_Timestamp,querytime=querytime,key=g+key)
+                     #   print(newDist,g,key)
                         if self.dist[nextX][nextY] > newDist:
                             self.dist[nextX][nextY] = newDist
                             self.prev[nextX][nextY] = cState

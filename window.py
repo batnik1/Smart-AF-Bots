@@ -165,29 +165,47 @@ while running:
     
     if key%100==0:
         remove_timestamps(key)
-   # print(key,Agents[0].position,Agents[0].v)
 
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
         print(key)
         break  
-    
-    reagent=Agents[0]
-    if reagent.position in Intersections:
-        continue
-    src=nearest_intersection(intT(reagent.position),rev=True)
-    nxt=nearest_intersection(intT(reagent.position))
-    road=(src,nxt)
-    observed_density=len(Roads_Grid[road])/ManhattanDistance(src,nxt)
     Predicted_Number=0
-    for i,j in Roads_Timestamp[road]:
-        if i<=key<=j:
-            Predicted_Number+=1
-    Predicted_Number/=ManhattanDistance(src,nxt)
+    observed_density=0
+    total_in_place=0
+    for reagent in Agents:
+        # if reagent.ind>5:
+        #     continue
+        if reagent.position in Intersections or reagent.direction=="rest":
+            continue  
+        total_in_place+=1
+        src=nearest_intersection(intT(reagent.position),rev=True)
+        nxt=nearest_intersection(intT(reagent.position))
+        road=(src,nxt)
+        observed_density_o=len(Roads_Grid[road])/ManhattanDistance(src,nxt)
+        Predicted_Number_o=0
+        for i,j in Roads_Timestamp[road]:
+            if i<=key<=j:
+                Predicted_Number_o+=1
+        Predicted_Number_o/=ManhattanDistance(src,nxt)
+        Predicted_Number+=Predicted_Number_o
+        observed_density+=observed_density_o
+    if total_in_place!=0:
+        Predicted_Number/=total_in_place
+        observed_density/=total_in_place
     Predicted_Density.append(Predicted_Number)
     Current_Density.append(observed_density)
-    
-    
+    if key%200==0:
+        plt.plot(Predicted_Density,color="red")
+        plt.plot(Current_Density,color="blue")
+        plt.ylabel('Density')
+        plt.title('Density vs Time')
+        # save the figure
+        plt.savefig("./New/"+str(key)+'Density_vs_Time.png')
+        plt.close()
+        Predicted_Density=[]
+        Current_Density=[]
+  #  print(key)
 print("DONE",pending_orders,orders_done)
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    
