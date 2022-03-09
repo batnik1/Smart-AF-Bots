@@ -1,0 +1,10 @@
+Results with CFG: 0
+Total_orders: 2
+Total_items: 3
+Total_time: 3133
+
+Results with CFG: 0
+Total_orders: 2
+Total_items: 3
+Total_time: 3133
+

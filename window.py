@@ -85,15 +85,22 @@ def handle_events():
 Total_orders=0
 Running_Finisher=0
 
+for _ in  range(initial_items+10):
+    new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    if new_orders!="Nothing": 
+        Total_orders+=1
+        orders.append(new_orders)
 
+# print(len(orders))
+# print(orders[0:20])
 
 while running:
-    if key%order_freq==0:
-        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-     #   print(new_orders)
-        if new_orders!="Nothing": 
-            Total_orders+=1
-            orders.append(new_orders)   # To mantain FCFS Order
+    # if key%order_freq==0:
+    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    #  #   print(new_orders)
+    #     if new_orders!="Nothing": 
+    #         Total_orders+=1
+    #         orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
@@ -106,6 +113,7 @@ while running:
         handle_orders()
     
     handle_events()
+    
     # if key==0:
     #     dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
@@ -207,5 +215,14 @@ while running:
         Current_Density=[]
   #  print(key)
 print("DONE",pending_orders,orders_done)
- #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
+# write at output.txt
+with open("output.txt", "a+") as f:
+    f.write("Results with CFG: "+str(congestion_flag)+"\n")
+    f.write("Total_orders: "+str(Total_orders)+"\n")
+    f.write("Total_items: "+str(total_items)+"\n")
+    f.write("Total_time: "+str(key)+"\n\n")
+
+pygame.quit()
+
+#   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
    
