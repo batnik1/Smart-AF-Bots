@@ -20,6 +20,8 @@ order_freq=config['order_freq']
 truck_freq=config['truck_freq']
 sbig_flag=config['SBIG']
 
+all_orders=[]
+
 initHCtoConveyor()
 def init_screen():
   #  pass
@@ -65,7 +67,8 @@ def handle_events():
                     plt.ylabel('Density')
                     plt.title('Density vs Time')
                     plt.legend()
-                    plt.show()                                                                  
+                    plt.show()
+                    print(all_orders)                                                                  
                     break
     while paused:
         events = pygame.event.get()
@@ -86,13 +89,13 @@ Total_orders=0
 Running_Finisher=0
 
 
-
 while running:
     if key%order_freq==0:
         new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
      #   print(new_orders)
         if new_orders!="Nothing": 
             Total_orders+=1
+            all_orders.append(new_orders)
             orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
@@ -205,7 +208,7 @@ while running:
         plt.close()
         Predicted_Density=[]
         Current_Density=[]
-  #  print(key)
+    print(Total_orders)
+
 print("DONE",pending_orders,orders_done)
  #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
-   
