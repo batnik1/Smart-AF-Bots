@@ -57,18 +57,18 @@ def handle_events():
                 else:
                     paused=1
                     # draw a graph with time with Observed and Predicted
-                    Y1=Current_Density
-                    Y2=Predicted_Density
-                    X=range(len(Y1))
-                    # plot them
-                    plt.plot(X,Y1,label='Observed')
-                    plt.plot(X,Y2,label='Predicted')
-                    plt.xlabel('Time')
-                    plt.ylabel('Density')
-                    plt.title('Density vs Time')
-                    plt.legend()
-                    plt.show()
-                    print(all_orders)                                                                  
+                    # Y1=Current_Density
+                    # Y2=Predicted_Density
+                    # X=range(len(Y1))
+                    # # plot them
+                    # plt.plot(X,Y1,label='Observed')
+                    # plt.plot(X,Y2,label='Predicted')
+                    # plt.xlabel('Time')
+                    # plt.ylabel('Density')
+                    # plt.title('Density vs Time')
+                    # plt.legend()
+                    # plt.show()
+                    # print(all_orders)                                                                  
                     break
     while paused:
         events = pygame.event.get()
@@ -88,15 +88,22 @@ def handle_events():
 Total_orders=0
 Running_Finisher=0
 
+for _ in  range(initial_items+10):
+    new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    if new_orders!="Nothing": 
+        Total_orders+=1
+        orders.append(new_orders)
+
+# print(len(orders))
+# print(orders[0:20])
 
 while running:
-    if key%order_freq==0:
-        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-     #   print(new_orders)
-        if new_orders!="Nothing": 
-            Total_orders+=1
-            all_orders.append(new_orders)
-            orders.append(new_orders)   # To mantain FCFS Order
+    # if key%order_freq==0:
+    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+    #  #   print(new_orders)
+    #     if new_orders!="Nothing": 
+    #         Total_orders+=1
+    #         orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
@@ -109,6 +116,7 @@ while running:
         handle_orders()
     
     handle_events()
+    
     # if key==0:
     #     dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
@@ -166,8 +174,8 @@ while running:
                 pygame.draw.line(screen, colors.BLACK, Road[0], Road[1], 1)
                 break
     
-    if key%100==0:
-        remove_timestamps(key)
+    # if key%100==0:
+    #     remove_timestamps(key)
 
     pygame.display.update()
     if Running_Finisher==Final_Finisher:
@@ -211,4 +219,14 @@ while running:
     print(Total_orders)
 
 print("DONE",pending_orders,orders_done)
- #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
+# write at output.txt
+with open("output.txt", "a+") as f:
+    f.write("Results with CFG: "+str(congestion_flag)+"\n")
+    f.write("Total_orders: "+str(Total_orders)+"\n")
+    f.write("Total_items: "+str(total_items)+"\n")
+    f.write("Total_time: "+str(key)+"\n\n")
+
+pygame.quit()
+
+#   pygame.image.save(screen,"./New/image"+str(key)+".jpg")
+   

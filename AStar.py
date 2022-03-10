@@ -27,31 +27,7 @@ INF = math.inf
 dir = [(-1, -1), (0, -1), (0, 1), (1, 0), (-1, 0)]      # (-1,-1) is just pushed to make it 1 based indexing
 revdir = [(-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
 
-# density_dic={}
-# density_dic[0.04]=0.8849388764779784
-# density_dic[0.05]=0.8422870938888083
-# density_dic[0.1]=0.6598127291564279
-# density_dic[0.08]=0.7908560072151424
-# density_dic[0.12]=0.6316617300675831
-# density_dic[0.15]=0.491562152469726
-# density_dic[0.03]=0.8799984059669639
-# density_dic[0.2]=0.3999772068236708
-# density_dic[0.16]=0.4935203863876017
-# density_dic[0.01]=1.1849992315902942
-# density_dic[0.25]=0.18067947929292297
-# density_dic[0.3]=0.19653789061143037
-# density_dic[0.24]=0.35449773005951474
-# density_dic[0.07]=0.800190339844804
-# density_dic[0.02]=1.0702664571213356
-# density_dic[0.06]=0.962159466366327
-# density_dic[0.09]=0.8318022972901102
-# density_dic[0.13]=0.566065271223799
-# density_dic[0.17]=0.47711237571118814
-# density_dic[0.11]=0.78492482407427
-# density_dic[0.14]=0.3751944014274457
-# density_dic[0.18]=0.41059596785296576
-# density_dic[0.19]=0.39169760953750776
-# density_dic[0.21]=0.34688303277550997
+
 
 
 
@@ -109,23 +85,37 @@ Matrix = Grid(N, N)
 def get_heuristic(Point,Goal,Roads_Grid=None,original=None,Roads_Timestamp=None,querytime=None,key=None):              # Heuristic Function
     if congestion_flag==1:
         velocities=[]
+        full_dist=ManhattanDistance(Point,Goal)
+        vel1,vel2=[],[]
         for agent in Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))]:
-            if agent.ind!=original.ind: 
-                velocities.append(agent.v)
-        len_vel=len(velocities)+1 #1
-        if round(len_vel/ManhattanDistance(Point,Goal),2) in density_dic:
-            return ManhattanDistance(Point,Goal)/density_dic[round(len_vel/ManhattanDistance(Point,Goal),2)]
-        if len(velocities)==0:
-            velocities=[1]
-        # calculate avg velocity
-        avg_velocity=sum(velocities)/len(velocities)
-        if avg_velocity==0:
-            avg_velocity=0.0000001
-        time=ManhattanDistance(Point,Goal)/avg_velocity
-        return time
+            dist=ManhattanDistance(agent.position,Point)
+            if dist<full_dist/2:
+                if agent.ind!=original.ind: 
+                    vel1.append(agent.v)
+            else:
+                if agent.ind!=original.ind:
+                    vel2.append(agent.v)
+        len_vel1=len(vel1)+1
+        len_vel2=len(vel2)
+        if len_vel2==0:
+           vel2=[1]
+        dens1=2*len_vel1/full_dist
+        dens2=2*len_vel2/full_dist        
+        v1=get_velocity(dens1)
+        v2=get_velocity(dens2)
+        # if round(dens1,2) in density_dic:
+        #     t1= dens1/density_dic[round(dens1,2)]
+        # else:
+        t1=dens1/v1
+        # if round(dens2,2) in density_dic:
+        #     t2= dens2/density_dic[round(dens2,2)]
+        # else:
+        t2=dens2/v2
+        return t1+t2
+
+        
     elif congestion_flag==2:
         v=querytime(((Point[0],Point[1]),(Goal[0],Goal[1])),key)
-       # print(v)
         time=ManhattanDistance(Point,Goal)/v
         return time
     else:
@@ -190,6 +180,8 @@ class Search():
             self.dist[self.source[0]][self.source[1]] = 0
             while len(self.heap) > 0:
                 (g,cState) = heapq.heappop(self.heap)
+                if g>self.dist[cState[0]][cState[1]]:
+                    continue
                 if cState == self.dest:
                     break
                 for nextZ in Golden_Grid[(cState[0],cState[1])]:

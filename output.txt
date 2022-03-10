@@ -1,0 +1,98 @@
+Results with CFG: 0
+Total_orders: 174
+Total_items: 983
+Total_time: 6801
+
+Results with CFG: 1
+Total_orders: 174
+Total_items: 983
+Total_time: 6475
+
+Results with CFG: 2
+Total_orders: 174  # r1
+Total_items: 983
+Total_time: 6654
+
+Results with CFG: 2
+Total_orders: 174   # f1
+Total_items: 983
+Total_time: 7013
+
+Results with CFG: 2
+Total_orders: 174
+Total_items: 983   # f2
+Total_time: 6955
+
+Results with CFG: 0
+Total_orders: 139
+Total_items: 291
+Total_time: 4454
+
+Results with CFG: 1
+Total_orders: 139
+Total_items: 291
+Total_time: 4293
+
+Results with CFG: 2
+Total_orders: 139
+Total_items: 291      # with buffer 10
+Total_time: 4555
+
+Results with CFG: 2
+Total_orders: 139
+Total_items: 291        # without using out curve smoothening
+Total_time: 4435
+
+Results with CFG: 2
+Total_orders: 139    # with using buffer 1
+Total_items: 291
+Total_time: 4333
+
+
+Results with CFG: 0 
+Total_orders: 139
+Total_items: 209
+Total_time: 4361
+
+Results with CFG: 1
+Total_orders: 139
+Total_items: 209
+Total_time: 4355
+
+Results with CFG: 2
+Total_orders: 139
+Total_items: 209   # with buffer 1
+Total_time: 4188
+
+
+Results with CFG: 2
+Total_orders: 139
+Total_items: 209   # with buffer 9
+Total_time: 3955
+
+Results with CFG: 0
+Total_orders: 129
+Total_items: 1020
+Total_time: 5213
+
+Results with CFG: 1
+Total_orders: 129    # with half velocites
+Total_items: 1020
+Total_time: 5933
+
+Results with CFG: 1
+Total_orders: 129
+Total_items: 1020   # with full velocities
+Total_time: 5693
+
+
+Results with CFG: 2
+Total_orders: 129    
+Total_items: 1020
+Total_time: 5715
+
+Results with CFG: 2
+Total_orders: 129
+Total_items: 1020
+Total_time: 5413
+

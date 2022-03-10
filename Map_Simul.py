@@ -416,13 +416,14 @@ def nearest_intersection_path(source,destination):
 
 Roads_Grid=defaultdict(list)
 Roads_lr=defaultdict(int)
-Roads_Timestamp=defaultdict(list)
+Roads_Timestamp={}
 
 def divide_roads():
     for i,j in Intersections:
         for nebr in Golden_Grid[(i,j)]:
             if ((i,j),nebr) not in Roads_lr:
                 Roads_lr[((i,j),nebr)]=1
+                Roads_Timestamp[((i,j),nebr)]=[]
                 Roads_lr[(nebr,(i,j))]=-1
 
 

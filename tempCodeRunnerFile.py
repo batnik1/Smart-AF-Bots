@@ -1,2 +1,2 @@
- # if Predicted_Number==0:
-    #     Predicted_Number=1
+import os
+    os.system("python3 window.py")

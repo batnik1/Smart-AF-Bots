@@ -231,9 +231,10 @@ def query_time(Road,Time):
     for i in range(len(lst)):
         if Time>=lst[i][0] and Time<=lst[i][1]:
             count+=1
+
     dense= count/ManhattanDistance(Road[0],Road[1])
-    # vel=density_dic[dense]
     vel=get_velocity(dense)
+        # print("F")
     return vel
 
 
@@ -268,11 +269,8 @@ def remove_timestamps(key):
             Roads_Timestamp[Road].remove(r)
         
 def remove_agent_timestamps(agent):
-    for i in agent.timestamps:
-        try:
-            Roads_Timestamp[i[0]].remove(i[1])
-        except:
-            pass
+    for i in agent.timestamps:        
+        Roads_Timestamp[i[0]].remove(i[1])
     agent.timestamps=[]
 
 
@@ -536,6 +534,8 @@ def handle_rack_agents(key, coloring):
             if Intersection_Calculated[I] == 0:
                 Intersection_Calculated[I] = 1
                 # calculate again its path
+                if congestion_flag==2:
+                    remove_agent_timestamps(agent)
                 togoal = agent.goals[agent.goalindex]
                 nearestIntersec = agent.nearestgoals[agent.goalindex]
                 nAgent = Search(I, nearestIntersec)
@@ -545,7 +545,7 @@ def handle_rack_agents(key, coloring):
                 last = nearest_intersection(togoal)
                 agent.path.append(last)
                 if congestion_flag==2:
-                    remove_agent_timestamps(agent)
+                 #   remove_agent_timestamps(agent)
                     put_timestamps(agent,key)
                 # if agent.ind==73:
                 #     print(agent.position,agent.path,last)
@@ -592,7 +592,7 @@ def handle_rack_agents(key, coloring):
     for i in range(len(All_Agents)):
 
         agent = All_Agents[i]
-        if agent.ind == 1 and agent.type == 2:
+        if agent.ind == -1 and agent.type == 0:
             pygame.draw.circle(screen, colors.RED1, (int(
                 agent.position[0]), int(agent.position[1])), 5)
             # print(agent.v,end=",")
@@ -602,6 +602,36 @@ def handle_rack_agents(key, coloring):
             for j in range(len(agent.path)):
                 pygame.draw.circle(screen, colors.RED1, (int(
                     agent.path[j][0]), int(agent.path[j][1])), 3)
+        # elif agent.ind == 1 and agent.type == 0:
+        #     pygame.draw.circle(screen, colors.GREEN1, (int(
+        #         agent.position[0]), int(agent.position[1])), 5)
+        #     # print(agent.v,end=",")
+        #     # if agent.v==0.1:
+        #     #     print()
+        #     # draw red circle on its path
+        #     for j in range(len(agent.path)):
+        #         pygame.draw.circle(screen, colors.GREEN1, (int(
+        #             agent.path[j][0]), int(agent.path[j][1])), 3)
+        # elif agent.ind == 2 and agent.type == 0:
+        #     pygame.draw.circle(screen, colors.YELLOW1, (int(
+        #         agent.position[0]), int(agent.position[1])), 5)
+        #     # print(agent.v,end=",")
+        #     # if agent.v==0.1:
+        #     #     print()
+        #     # draw red circle on its path
+        #     for j in range(len(agent.path)):
+        #         pygame.draw.circle(screen, colors.YELLOW1, (int(
+        #             agent.path[j][0]), int(agent.path[j][1])), 3)
+        # elif agent.ind == 3 and agent.type == 0:
+        #     pygame.draw.circle(screen, colors.CADETBLUE1, (int(
+        #         agent.position[0]), int(agent.position[1])), 5)
+        #     # print(agent.v,end=",")
+        #     # if agent.v==0.1:
+        #     #     print()
+        #     # draw red circle on its path
+        #     for j in range(len(agent.path)):
+        #         pygame.draw.circle(screen, colors.CADETBLUE1, (int(
+        #             agent.path[j][0]), int(agent.path[j][1])), 3)
         elif agent.type == 0:
             if agent.position in israck:
                 pygame.draw.circle(screen, agent.color,
@@ -638,6 +668,8 @@ def handle_rack_agents(key, coloring):
             Ghost = Agent(0, n, m)
             Ghost.position = togoal
             agent.valet = Ghost
+            if congestion_flag==2:
+                remove_agent_timestamps(agent)
             nearestIntersec = agent.nearestgoals[agent.goalindex]
             nAgent = Search(Source, nearestIntersec)
             nAgent.AStar(Roads_Grid, agent,Roads_Timestamp,query_time,key)
@@ -649,7 +681,7 @@ def handle_rack_agents(key, coloring):
             else:
                 agent.path.append(last)
             if congestion_flag==2:
-                remove_agent_timestamps(agent)
+                #remove_agent_timestamps(agent)
                 put_timestamps(agent,key)
             agent.path.reverse()
             agent.Index = len(agent.path)-1
