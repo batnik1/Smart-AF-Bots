@@ -242,7 +242,7 @@ def query_time(Road,Time):
 def put_timestamps(agent,key):
     future_time=[key,key]
     path=agent.path
-    buffer=9
+    buffer=8
     if agent.position in israck or (agent.position in isdump and agent.position != numofdump["conveyor"]) or agent.position in numofhcounter.values():
         Sorce=nearest_intersection(agent.position,rev=True)
         Road=(Sorce,agent.path[0])

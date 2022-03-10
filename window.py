@@ -206,17 +206,17 @@ while running:
         observed_density/=total_in_place
     Predicted_Density.append(Predicted_Number)
     Current_Density.append(observed_density)
-    if key%200==0:
-        plt.plot(Predicted_Density,color="red")
-        plt.plot(Current_Density,color="blue")
-        plt.ylabel('Density')
-        plt.title('Density vs Time')
-        # save the figure
-        plt.savefig("./New/"+str(key)+'Density_vs_Time.png')
-        plt.close()
-        Predicted_Density=[]
-        Current_Density=[]
-    print(Total_orders)
+    # if key%200==0:
+    #     plt.plot(Predicted_Density,color="red")
+    #     plt.plot(Current_Density,color="blue")
+    #     plt.ylabel('Density')
+    #     plt.title('Density vs Time')
+    #     # save the figure
+    #     plt.savefig("./New/"+str(key)+'Density_vs_Time.png')
+    #     plt.close()
+    #     Predicted_Density=[]
+    #     Current_Density=[]
+    # print(Total_orders)
 
 print("DONE",pending_orders,orders_done)
 # write at output.txt

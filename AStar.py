@@ -85,34 +85,12 @@ Matrix = Grid(N, N)
 def get_heuristic(Point,Goal,Roads_Grid=None,original=None,Roads_Timestamp=None,querytime=None,key=None):              # Heuristic Function
     if congestion_flag==1:
         velocities=[]
-        full_dist=ManhattanDistance(Point,Goal)
-        vel1,vel2=[],[]
         for agent in Roads_Grid[((Point[0],Point[1]),(Goal[0],Goal[1]))]:
-            dist=ManhattanDistance(agent.position,Point)
-            if dist<full_dist/2:
-                if agent.ind!=original.ind: 
-                    vel1.append(agent.v)
-            else:
-                if agent.ind!=original.ind:
-                    vel2.append(agent.v)
-        len_vel1=len(vel1)+1
-        len_vel2=len(vel2)
-        if len_vel2==0:
-           vel2=[1]
-        dens1=2*len_vel1/full_dist
-        dens2=2*len_vel2/full_dist        
-        v1=get_velocity(dens1)
-        v2=get_velocity(dens2)
-        # if round(dens1,2) in density_dic:
-        #     t1= dens1/density_dic[round(dens1,2)]
-        # else:
-        t1=dens1/v1
-        # if round(dens2,2) in density_dic:
-        #     t2= dens2/density_dic[round(dens2,2)]
-        # else:
-        t2=dens2/v2
-        return t1+t2
-
+            if agent.ind!=original.ind: 
+                velocities.append(agent.v)
+        len_vel=len(velocities)+1 #1
+        density=len_vel/ManhattanDistance(Point,Goal)
+        return ManhattanDistance(Point,Goal)/get_velocity(density)
         
     elif congestion_flag==2:
         v=querytime(((Point[0],Point[1]),(Goal[0],Goal[1])),key)
