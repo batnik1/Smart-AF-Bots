@@ -1,0 +1,509 @@
+Results with CFG: 0
+Total_orders: 297
+Total_items: 1170
+Total_time: 8469
+
+Results with CFG: 1
+Total_orders: 297
+Total_items: 1170
+Total_time: 7893
+
+Results with CFG: 2
+Total_orders: 297
+Total_items: 1170
+Total_time: 8315
+
+Results with CFG: 0
+Total_orders: 271
+Total_items: 1244
+Total_time: 7573
+
+Results with CFG: 1
+Total_orders: 271
+Total_items: 1244
+Total_time: 6693
+
+Results with CFG: 2
+Total_orders: 271
+Total_items: 1244
+Total_time: 6955
+
+Results with CFG: 0
+Total_orders: 363
+Total_items: 746
+Total_time: 9293
+
+Results with CFG: 1
+Total_orders: 363
+Total_items: 746
+Total_time: 8482
+
+Results with CFG: 2
+Total_orders: 363
+Total_items: 746
+Total_time: 8534
+
+Results with CFG: 0
+Total_orders: 200
+Total_items: 3937
+Total_time: 14374
+
+Results with CFG: 1
+Total_orders: 200
+Total_items: 3937
+Total_time: 14534
+
+Results with CFG: 2
+Total_orders: 200
+Total_items: 3937
+Total_time: 14854
+
+
+Results with CFG: 0
+Total_orders: 72
+Total_items: 143
+Total_time: 5041
+
+Results with CFG: 1
+Total_orders: 72
+Total_items: 143
+Total_time: 4795
+
+Results with CFG: 2
+Total_orders: 72
+Total_items: 143
+Total_time: 5035
+
+Results with CFG: 0
+Total_orders: 85
+Total_items: 183
+Total_time: 4074
+
+Results with CFG: 1
+Total_orders: 85
+Total_items: 183
+Total_time: 3954
+
+Results with CFG: 2
+Total_orders: 85
+Total_items: 183
+Total_time: 3954
+
+Results with CFG: 0
+Total_orders: 148
+Total_items: 399
+Total_time: 5534
+
+Results with CFG: 1
+Total_orders: 148
+Total_items: 399
+Total_time: 5555
+
+Results with CFG: 2
+Total_orders: 148
+Total_items: 399
+Total_time: 5675
+
+Results with CFG: 0
+Total_orders: 340
+Total_items: 1480
+Total_time: 1001
+Total Pickups: 480
+
+Results with CFG: 1
+Total_orders: 340
+Total_items: 1480
+Total_time: 1001
+Total Pickups: 487
+
+Results with CFG: 2
+Total_orders: 340
+Total_items: 1480
+Total_time: 1001
+Total Pickups: 464
+
+Results with CFG: 0
+Total_orders: 226
+Total_items: 1773
+Total_time: 2001
+Total Pickups: 813
+
+Results with CFG: 1
+Total_orders: 226
+Total_items: 1773
+Total_time: 2001
+Total Pickups: 825
+
+Results with CFG: 2
+Total_orders: 226
+Total_items: 1773
+Total_time: 2001
+Total Pickups: 807
+
+Results with CFG: 0
+Total_orders: 198
+Total_items: 3172
+Total_time: 2001
+Total Pickups: 753
+
+Results with CFG: 1
+Total_orders: 198
+Total_items: 3172
+Total_time: 2001
+Total Pickups: 760
+
+Results with CFG: 2
+Total_orders: 198
+Total_items: 3172
+Total_time: 2001
+Total Pickups: 756
+
+Results with CFG: 0
+Total_orders: 202
+Total_items: 3130
+Total_time: 2001
+Total Pickups: 555
+
+Results with CFG: 1
+Total_orders: 202
+Total_items: 3130
+Total_time: 2001
+Total Pickups: 556
+
+Results with CFG: 2
+Total_orders: 202
+Total_items: 3130
+Total_time: 2001
+Total Pickups: 553
+
+Results with CFG: 0
+Total_orders: 191
+Total_items: 3130
+Total_time: 1001
+Total Pickups: 483
+
+Results with CFG: 1
+Total_orders: 191
+Total_items: 3130
+Total_time: 1001
+Total Pickups: 519
+
+Results with CFG: 2
+Total_orders: 191
+Total_items: 3130
+Total_time: 1001
+Total Pickups: 504
+
+Results with CFG: 0
+Total_orders: 675
+Total_items: 5581
+Total_time: 1001
+Total Pickups: 207
+
+Results with CFG: 1
+Total_orders: 675
+Total_items: 5581
+Total_time: 1001
+Total Pickups: 204
+
+Results with CFG: 2
+Total_orders: 675
+Total_items: 5581
+Total_time: 1001
+Total Pickups: 205
+
+Results with CFG: 0
+Total_orders: 175
+Total_items: 2361
+Total_time: 1001
+Total Pickups: 178
+
+Results with CFG: 1
+Total_orders: 175
+Total_items: 2361
+Total_time: 1001
+Total Pickups: 235
+
+Results with CFG: 2
+Total_orders: 175
+Total_items: 2361
+Total_time: 1001
+Total Pickups: 236
+
+Results with CFG: 0
+Total_orders: 153
+Total_items: 2897
+Total_time: 1001
+Total Pickups: 425
+
+Results with CFG: 1
+Total_orders: 153
+Total_items: 2897
+Total_time: 1001
+Total Pickups: 436
+
+Results with CFG: 2
+Total_orders: 153
+Total_items: 2897
+Total_time: 1001
+Total Pickups: 425
+
+Results with CFG: 0
+Total_orders: 161
+Total_items: 3001
+Total_time: 1001
+Total Pickups: 408
+
+Results with CFG: 1
+Total_orders: 161
+Total_items: 3001
+Total_time: 1001
+Total Pickups: 413
+
+Results with CFG: 2
+Total_orders: 161
+Total_items: 3001
+Total_time: 1001
+Total Pickups: 406
+
+Results with CFG: 0
+Total_orders: 145
+Total_items: 2989
+Total_time: 1001
+Total Pickups: 356
+
+Results with CFG: 1
+Total_orders: 145
+Total_items: 2989
+Total_time: 1001
+Total Pickups: 356
+
+Results with CFG: 2
+Total_orders: 145
+Total_items: 2989
+Total_time: 1001
+Total Pickups: 354
+
+Results with CFG: 0
+Total_orders: 326
+Total_items: 2675
+Total_time: 1001
+Total Pickups: 773
+
+Results with CFG: 1
+Total_orders: 326
+Total_items: 2675
+Total_time: 1001
+Total Pickups: 785
+
+Results with CFG: 2
+Total_orders: 326
+Total_items: 2675
+Total_time: 1001
+Total Pickups: 769
+
+Results with CFG: 0
+Total_orders: 240
+Total_items: 3518
+Total_time: 1001
+Total Pickups: 568
+
+Results with CFG: 1
+Total_orders: 240
+Total_items: 3518
+Total_time: 1001
+Total Pickups: 573
+
+Results with CFG: 2
+Total_orders: 240
+Total_items: 3518
+Total_time: 1001
+Total Pickups: 566
+
+Results with CFG: 0
+Total_orders: 162
+Total_items: 3115
+Total_time: 1001
+Total Pickups: 472
+
+Results with CFG: 1
+Total_orders: 162
+Total_items: 3115
+Total_time: 1001
+Total Pickups: 476
+
+Results with CFG: 2
+Total_orders: 162
+Total_items: 3115
+Total_time: 1001
+Total Pickups: 473
+
+Results with CFG: 0
+Total_orders: 195
+Total_items: 3222
+Total_time: 1001
+Total Pickups: 499
+
+Results with CFG: 1
+Total_orders: 195
+Total_items: 3222
+Total_time: 1001
+Total Pickups: 533
+
+Results with CFG: 2
+Total_orders: 195
+Total_items: 3222
+Total_time: 1001
+Total Pickups: 522
+
+
+Results with CFG: 0
+Total_orders: 323
+Total_items: 1235
+Total_time: 8721
+Total Pickups: 1165
+
+Results with CFG: 1
+Total_orders: 323
+Total_items: 1235
+Total_time: 8035
+Total Pickups: 1165
+
+Results with CFG: 2
+Total_orders: 323
+Total_items: 1235
+Total_time: 8053
+Total Pickups: 1165
+
+Results with CFG: 0
+Total_orders: 154
+Total_items: 613
+Total_time: 5361
+Total Pickups: 566
+
+Results with CFG: 1
+Total_orders: 154
+Total_items: 613
+Total_time: 5275
+Total Pickups: 566
+
+Results with CFG: 2
+Total_orders: 154
+Total_items: 613
+Total_time: 4989
+Total Pickups: 566
+
+Results with CFG: 0
+Total_orders: 115
+Total_items: 393
+Total_time: 4773
+Total Pickups: 395
+
+Results with CFG: 1
+Total_orders: 115
+Total_items: 393
+Total_time: 4853
+Total Pickups: 395
+
+Results with CFG: 2
+Total_orders: 115
+Total_items: 393
+Total_time: 4914
+Total Pickups: 395
+
+Results with CFG: 0
+Total_orders: 112
+Total_items: 495
+Total_time: 6321
+Total Pickups: 415
+
+Results with CFG: 1
+Total_orders: 112
+Total_items: 495
+Total_time: 6395
+Total Pickups: 415
+
+Results with CFG: 2
+Total_orders: 112
+Total_items: 495
+Total_time: 6155
+Total Pickups: 415
+
+Results with CFG: 0
+Total_orders: 316
+Total_items: 1524
+Total_time: 9534
+Total Pickups: 1164
+
+Results with CFG: 1
+Total_orders: 316
+Total_items: 1524
+Total_time: 9614
+Total Pickups: 1164
+
+Results with CFG: 2
+Total_orders: 316
+Total_items: 1524
+Total_time: 9554
+Total Pickups: 1164
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 80
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 79
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 76
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 78
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 77
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 78
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 79
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 79
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 78
+
+Results with CFG: 2
+Total_orders: 315
+Total_items: 1524
+Total_time: 421
+Total Pickups: 80
+

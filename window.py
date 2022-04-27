@@ -62,7 +62,7 @@ def handle_events():
                     # X=range(len(Y1))
                     # # plot them
                     # plt.plot(X,Y1,label='Observed')
-                    # plt.plot(X,Y2,label='Predicted')
+                    # plt.plot(X,Y2,label='Expected')
                     # plt.xlabel('Time')
                     # plt.ylabel('Density')
                     # plt.title('Density vs Time')
@@ -96,14 +96,14 @@ for _ in  range(initial_items+10):
 
 # print(len(orders))
 # print(orders[0:20])
-
+picks=0
 while running:
-    # if key%order_freq==0:
-    #     new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
-    #  #   print(new_orders)
-    #     if new_orders!="Nothing": 
-    #         Total_orders+=1
-    #         orders.append(new_orders)   # To mantain FCFS Order
+    if key%order_freq==0:
+        new_orders=gen_a_order()    # new_orders= (racks,human_counter,order_id)    
+     #   print(new_orders)
+        if new_orders!="Nothing": 
+            Total_orders+=1
+            orders.append(new_orders)   # To mantain FCFS Order
 
     # if key%truck_freq==0:
     #     new_items=truck_orders()
@@ -119,7 +119,7 @@ while running:
     
     # if key==0:
     #     dummy_sorting(key,100)
-    current_items,orders_completed_now,Running_Fin=handle_rack_agents(key,coloring)
+    current_items,orders_completed_now,Running_Fin,picks=handle_rack_agents(key,coloring,picks)
     Running_Finisher+=Running_Fin
     if Traffic_Flag:
         update_intersection()
@@ -144,7 +144,7 @@ while running:
     Final_Finisher=order_db.count_documents({})
     handle_conveyor_belt(sorting_orders)
     handle_sorting_agents(sorting_orders)
-    # handle_truck_agents(key)
+    # handle_Torders(Torders)
     key+=1
 
     pygame.draw.circle(screen,(255,0,0),numofdump["conveyor"],3)
@@ -184,35 +184,40 @@ while running:
     Predicted_Number=0
     observed_density=0
     total_in_place=0
-    for reagent in Agents:
-        # if reagent.ind>5:
-        #     continue
-        if reagent.position in Intersections or reagent.direction=="rest":
-            continue  
-        total_in_place+=1
-        src=nearest_intersection(intT(reagent.position),rev=True)
-        nxt=nearest_intersection(intT(reagent.position))
-        road=(src,nxt)
-        observed_density_o=len(Roads_Grid[road])/ManhattanDistance(src,nxt)
-        Predicted_Number_o=0
-        for i,j in Roads_Timestamp[road]:
-            if i<=key<=j:
-                Predicted_Number_o+=1
-        Predicted_Number_o/=ManhattanDistance(src,nxt)
-        Predicted_Number+=Predicted_Number_o
-        observed_density+=observed_density_o
-    if total_in_place!=0:
-        Predicted_Number/=total_in_place
-        observed_density/=total_in_place
-    Predicted_Density.append(Predicted_Number)
-    Current_Density.append(observed_density)
+    # for reagent in Agents:
+    #     # if reagent.ind>5:
+    #     #     continue
+    #     if reagent.position in Intersections or reagent.direction=="rest":
+    #         continue  
+    #     total_in_place+=1
+    #     src=nearest_intersection(intT(reagent.position),rev=True)
+    #     nxt=nearest_intersection(intT(reagent.position))
+    #     road=(src,nxt)
+    #     observed_density_o=len(Roads_Grid[road])/ManhattanDistance(src,nxt)
+    #     Predicted_Number_o=0
+    #     if queryFlag==0:
+    #         for i,j in Roads_Timestamp[road]:
+    #             if i<=key<=j:
+    #                 Predicted_Number_o+=1
+    #     else:
+    #         for i,j in Original_Timestamp[road]:
+    #             Predicted_Number_o+=getFunc(key,i,j)
+    #     Predicted_Number_o/=ManhattanDistance(src,nxt)
+    #     Predicted_Number+=Predicted_Number_o
+    #     observed_density+=observed_density_o
+    # if total_in_place!=0:
+    #     Predicted_Number/=total_in_place
+    #     observed_density/=total_in_place
+    # Predicted_Density.append(Predicted_Number)
+    # Current_Density.append(observed_density)
     # if key%200==0:
     #     plt.plot(Predicted_Density,color="red")
     #     plt.plot(Current_Density,color="blue")
     #     plt.ylabel('Density')
     #     plt.title('Density vs Time')
     #     # save the figure
-    #     plt.savefig("./New/"+str(key)+'Density_vs_Time.png')
+    #     plt.legend(['Predicted','Observed'])
+    #     plt.savefig("./New/"+str(buffer)+'#'+str(key)+'Density_vs_Time.png')
     #     plt.close()
     #     Predicted_Density=[]
     #     Current_Density=[]
@@ -222,10 +227,12 @@ print("DONE",pending_orders,orders_done)
 # write at output.txt
 with open("output.txt", "a+") as f:
     f.write("Results with CFG: "+str(congestion_flag)+"\n")
+    if congestion_flag==2:
+        f.write("Congestion Version: "+str(queryFlag)+"\n")
     f.write("Total_orders: "+str(Total_orders)+"\n")
     f.write("Total_items: "+str(total_items)+"\n")
-    f.write("Total_time: "+str(key)+"\n\n")
-
+    f.write("Total_time: "+str(key)+"\n")
+    f.write('Total Pickups: '+str(picks)+"\n\n")
 pygame.quit()
 
 #   pygame.image.save(screen,"./New/image"+str(key)+".jpg")

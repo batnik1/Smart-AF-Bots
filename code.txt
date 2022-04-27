@@ -1,0 +1,22 @@
+Density_vs_Velocity: Curve whose X axis is Density and Y axis is the average velocity
+Roads_Timestamp: To store timestamps for all the agents for each Road
+Length(Road): Returns the total length of the road
+
+function get_velocity(density):
+    return Density_vs_Velocity.getY(density)
+
+function query_time(Road, Time):
+    count<-0
+    for each interval in Roads_Timestamp[Road]
+        if Time >= interval.start and Time <=interval.end
+            count<-count+1
+
+    density=count/Length(Road)
+    velocity=get_velocity(density)
+    return velocity
+
+function EdgeCost(Road, Time):
+    vel=query_time(Road,Time)
+    time=Length(Road)/vel
+    return time
+

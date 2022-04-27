@@ -13,7 +13,7 @@ epsilon = config['epsilon']
 Traffic_Flag = config['Traffic_Flag']
 SBIG = config['SBIG']
 Density_vs_Velocity_flag = config['Density_vs_Velocity']
-
+queryFlag=config['queryFlag']
 
 
 # Used for Initialising our agents of rack/truck/sorting
@@ -41,7 +41,9 @@ def init_agents():
     for i in range(Number_of_TAgents):
         nAgent = Agent(1, n, m)
         nAgent.truck_rest = i
+        nAgent.color=colors.PINK1
         nAgent.position = truck_resting[i]
+        nAgent.size=5
         All_Agents.append(nAgent)
         Truck_Agents.append(nAgent)
 
@@ -225,16 +227,33 @@ def get_subgoals(agent):
         nearestIntersec = nearest_intersection(togoal, rev=True)
         agent.nearestgoals.append(nearestIntersec)
 
-def query_time(Road,Time):
-    lst=Roads_Timestamp[tuple(Road)]
-    count=1
-    for i in range(len(lst)):
-        if Time>=lst[i][0] and Time<=lst[i][1]:
-            count+=1
+buffer=config['buffer']
+def getFunc(t,T1,T2):
+    if t<T1-buffer or t>T2+buffer:
+        return 0
+    if t>=T1-buffer and t<T1:
+        return np.exp(-(t-T1)**2/buffer**2)
+    if t>=T1 and t<=T2:
+        return 1
+    if t>T2 and t<=T2+buffer:
+        return np.exp(-(t-T2)**2/buffer**2)
 
-    dense= count/ManhattanDistance(Road[0],Road[1])
+def query_time(Road,Time):
+    count=1
+    if queryFlag!=2:
+        lst=Roads_Timestamp[tuple(Road)]
+        for i in range(len(lst)):
+            if Time>=lst[i][0] and Time<=lst[i][1]:
+                if queryFlag==1:
+                    count+=(lst[i][1]-Time)/(lst[i][1]-lst[i][0])
+                else:
+                    count+=1
+    else:
+        lst=Original_Timestamp[tuple(Road)]
+        for i in range(len(lst)):
+                count+=getFunc(Time,lst[i][0],lst[i][1])
+    dense=count/ManhattanDistance(Road[0],Road[1])
     vel=get_velocity(dense)
-        # print("F")
     return vel
 
 
@@ -242,7 +261,6 @@ def query_time(Road,Time):
 def put_timestamps(agent,key):
     future_time=[key,key]
     path=agent.path
-    buffer=8
     if agent.position in israck or (agent.position in isdump and agent.position != numofdump["conveyor"]) or agent.position in numofhcounter.values():
         Sorce=nearest_intersection(agent.position,rev=True)
         Road=(Sorce,agent.path[0])
@@ -250,12 +268,16 @@ def put_timestamps(agent,key):
         timez*=3
         future_time[0]=key
         future_time[1]=key+timez
+        Original_Timestamp[(tuple(Sorce),tuple(path[0]))].append(tuple((future_time[0],future_time[1])))
+        agent.Originaltimestamps.append([(tuple(Sorce),tuple(path[0])),tuple((future_time[0],future_time[1]))])
         Roads_Timestamp[(tuple(Sorce),tuple(path[0]))].append(tuple((future_time[0],future_time[1]+buffer)))
         agent.timestamps.append([(tuple(Sorce),tuple(path[0])),tuple((future_time[0],future_time[1]+buffer))])
     for i in range(len(path)-1):
         timez=ManhattanDistance(path[i],path[i+1])/query_time((tuple(path[i]),tuple(path[i+1])),future_time[0])
         future_time[0]=future_time[1]
         future_time[1]+=(timez)
+        Original_Timestamp[(tuple(path[i]),tuple(path[i+1]))].append(tuple((future_time[0],future_time[1])))
+        agent.Originaltimestamps.append([(tuple(path[i]),tuple(path[i+1])),tuple((future_time[0],future_time[1]))])
         Roads_Timestamp[(tuple(path[i]),tuple(path[i+1]))].append(tuple((future_time[0]-buffer,future_time[1]+buffer)))
         agent.timestamps.append([(tuple(path[i]),tuple(path[i+1])),tuple((future_time[0]-buffer,future_time[1]+buffer))])
         
@@ -266,16 +288,26 @@ def remove_timestamps(key):
             if key>j:
                 removed.append((i,j))
         for r in removed:
-            Roads_Timestamp[Road].remove(r)
-        
+           Roads_Timestamp[Road].remove(r)
+
+    for Road in Original_Timestamp:
+        removed=[]
+        for i,j in Original_Timestamp[Road]:
+            if key>j+10:
+                removed.append((i,j))
+        for r in removed:
+           Original_Timestamp[Road].remove(r)
+    
 def remove_agent_timestamps(agent):
     for i in agent.timestamps:        
         Roads_Timestamp[i[0]].remove(i[1])
     agent.timestamps=[]
+    for i in agent.Originaltimestamps:
+        Original_Timestamp[i[0]].remove(i[1])
+    agent.Originaltimestamps=[]
 
 
-
-def handle_rack_agents(key, coloring):
+def handle_rack_agents(key, coloring,picks):
     current_items = 0
     orders_completed_now = 0
     Running_Finisher = 0
@@ -342,7 +374,7 @@ def handle_rack_agents(key, coloring):
             if agent.key_field == key:
                 continue
             agent.key_field = key
-
+            
             if agent.Index == 0:
                 flag = 0
                 if next_agent == agent or (abs(agent.position[0]-next_agent.position[0])+abs(agent.position[1]-next_agent.position[1])) > abs(agent.position[0]-agent.valet.position[0])+abs(agent.position[1]-agent.valet.position[1]):
@@ -363,6 +395,7 @@ def handle_rack_agents(key, coloring):
                                     remover.append((Road, agent))
                                 logger.info('Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(
                                     agent.ind)+','+'Bot Reached the Rack No. '+str(agent.goalindex))
+                                picks+=1
                                 agent.goalindex += 1
                             elif agent.goals[agent.goalindex] == [-7, -7]:
                                 if agent.position in israck:
@@ -370,7 +403,7 @@ def handle_rack_agents(key, coloring):
                                 logger.info('Order'+','+str(agent.order_id)+','+'Warehouse' +
                                             ','+str(agent.ind)+','+'Bot Reached the Desired Rack.')
                                 agent.goalindex += 1
-
+                                picks+=1
                             elif agent.goals[agent.goalindex] == [-14, -14]:
                                 agent.human_delay = 25
                                 logger.info('Order'+','+str(agent.order_id)+','+'Warehouse'+','+str(
@@ -460,6 +493,7 @@ def handle_rack_agents(key, coloring):
                         elif agent.type == 2:
                             if agent.goals[agent.goalindex] == [-7, -7]:
                                 agent.goalindex += 1
+                                picks+=1
                             elif agent.goals[agent.goalindex] == [-14, -14]:
                                 Running_Finisher += 1
                                 logger.info('Sorting Order'+','+str(agent.order_id)+','+'Sorting Bot'+','+str(
@@ -703,4 +737,4 @@ def handle_rack_agents(key, coloring):
                 agent.goals = [charge_box, [-11, -11]]
                 get_subgoals(agent)
                 agent.Wait = False
-    return current_items, orders_completed_now, Running_Finisher
+    return current_items, orders_completed_now, Running_Finisher,picks

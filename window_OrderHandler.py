@@ -118,7 +118,7 @@ def dummy_sorting(key,count):
         sorting_orders.append('Dummy '+str(key)+'#'+str(i))
 
 # Very Similar to handle_orders() function, this time we are setting the goals for Truck Bots
-def handle_Torders():
+def handle_Torders(Torders):
     Tfinished=[]
     for i in range(len(Torders)):
         type = Torders[i][0]
@@ -155,7 +155,7 @@ def handle_Torders():
         
         agent.Wait = False
         agent.color = colors.PINK1
-        agent.size = 3
+        # agent.size = 3
         agent.items_carrying=(type,quantity)
         agent.CurRack=rack
         # print(agent.direction,agent.ind)
@@ -222,3 +222,4 @@ def handle_conveyor_belt(sorting_orders):
     for ind in removing_conveyor:
         Conveyor_Agents.remove(ind)
     removing_conveyor.clear()
+

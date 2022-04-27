@@ -17,7 +17,7 @@ class Agent():
         self.order_id=0
         self.items_carrying=[]
         self.ind=0        
-        self.charge=1000000000   # Initial Charge
+        self.charge=50   # Initial Charge
         self.needcharge=False  # If Agent is Assisgned to a Chargin Station
         self.charging=False    # If Agent is Charging
         self.cStation=-1       # Current Charging Station
@@ -38,6 +38,7 @@ class Agent():
         self.temp_valet=None
         self.onroad=False
         self.timestamps=[]
+        self.Originaltimestamps=[]
         # Vehicle's Fields
         self.l = 0.5
         self.dt=1

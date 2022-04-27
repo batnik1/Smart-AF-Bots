@@ -1,98 +1,91 @@
-Results with CFG: 0
-Total_orders: 174
-Total_items: 983
-Total_time: 6801
-
-Results with CFG: 1
-Total_orders: 174
-Total_items: 983
-Total_time: 6475
+Results with CFG: 2
+Congestion Version: 0
+Total_orders: 272
+Total_items: 1524
+Total_time: 8515
+Total Pickups: 1119
 
 Results with CFG: 2
-Total_orders: 174  # r1
-Total_items: 983
-Total_time: 6654
+Congestion Version: 2
+Total_orders: 272
+Total_items: 1524
+Total_time: 8395
+Total Pickups: 1119
 
 Results with CFG: 2
-Total_orders: 174   # f1
-Total_items: 983
-Total_time: 7013
+Congestion Version: 0
+Total_orders: 287
+Total_items: 1523
+Total_time: 8035
+Total Pickups: 1155
 
 Results with CFG: 2
-Total_orders: 174
-Total_items: 983   # f2
-Total_time: 6955
-
-Results with CFG: 0
-Total_orders: 139
-Total_items: 291
-Total_time: 4454
-
-Results with CFG: 1
-Total_orders: 139
-Total_items: 291
-Total_time: 4293
+Congestion Version: 2
+Total_orders: 287
+Total_items: 1523
+Total_time: 7214
+Total Pickups: 1155
 
 Results with CFG: 2
-Total_orders: 139
-Total_items: 291      # with buffer 10
-Total_time: 4555
+Congestion Version: 0
+Total_orders: 181
+Total_items: 869
+Total_time: 7081
+Total Pickups: 672
 
 Results with CFG: 2
-Total_orders: 139
-Total_items: 291        # without using out curve smoothening
-Total_time: 4435
+Congestion Version: Old1
+Total_orders: 181
+Total_items: 869
+Total_time: 7081
+Total Pickups: 672
 
 Results with CFG: 2
-Total_orders: 139    # with using buffer 1
-Total_items: 291
-Total_time: 4333
-
-
-Results with CFG: 0 
-Total_orders: 139
-Total_items: 209
-Total_time: 4361
-
-Results with CFG: 1
-Total_orders: 139
-Total_items: 209
-Total_time: 4355
+Congestion Version: 2
+Total_orders: 181
+Total_items: 869
+Total_time: 6774
+Total Pickups: 672
 
 Results with CFG: 2
-Total_orders: 139
-Total_items: 209   # with buffer 1
-Total_time: 4188
-
-
-Results with CFG: 2
-Total_orders: 139
-Total_items: 209   # with buffer 9
-Total_time: 3955
-
-Results with CFG: 0
-Total_orders: 129
-Total_items: 1020
-Total_time: 5213
-
-Results with CFG: 1
-Total_orders: 129    # with half velocites
-Total_items: 1020
-Total_time: 5933
-
-Results with CFG: 1
-Total_orders: 129
-Total_items: 1020   # with full velocities
-Total_time: 5693
-
+Congestion Version: 0
+Total_orders: 90
+Total_items: 150
+Total_time: 3282
+Total Pickups: 238
 
 Results with CFG: 2
-Total_orders: 129    
-Total_items: 1020
-Total_time: 5715
+Congestion Version: Old1
+Total_orders: 90
+Total_items: 150
+Total_time: 3521
+Total Pickups: 238
 
 Results with CFG: 2
-Total_orders: 129
-Total_items: 1020
-Total_time: 5413
+Congestion Version: 2
+Total_orders: 90
+Total_items: 150
+Total_time: 3214
+Total Pickups: 238
+
+Results with CFG: 2
+Congestion Version: 0
+Total_orders: 141
+Total_items: 282
+Total_time: 4234
+Total Pickups: 375
+
+Results with CFG: 2
+Congestion Version: 1
+Total_orders: 141
+Total_items: 282
+Total_time: 4214
+Total Pickups: 375
+
+Results with CFG: 2
+Congestion Version: 2
+Total_orders: 141
+Total_items: 282
+Total_time: 4634
+Total Pickups: 375
 
