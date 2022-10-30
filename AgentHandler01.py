@@ -14,15 +14,14 @@ Traffic_Flag = config['Traffic_Flag']
 SBIG = config['SBIG']
 Density_vs_Velocity_flag = config['Density_vs_Velocity']
 queryFlag=config['queryFlag']
-
-
+intersecFlag=config['intersecFlag']
+similarityFlag=config['similarityFlag']
 # Used for Initialising our agents of rack/truck/sorting
 def init_agents():
 
     for i in range(Number_of_Agents):
         nAgent = Agent(0, n, m)
-        nAgent.CurRack = str((random.randint(
-            0, m-1), random.randint(0, n-1), random.randint(0, 4), random.randint(0, 4)))
+        nAgent.CurRack = str((random.randint(0, m-1), random.randint(0, n-1), random.randint(0, 4), random.randint(0, 4)))
         nAgent.position = numofrack[nAgent.CurRack]
       #  print(nAgent.position)
         nAgent.ind = i
@@ -179,26 +178,121 @@ def intT(A):
     B = (int(A[0]), int(A[1]))
     return B
 
+def jaccard(A,B):
+    Uni=[]
+    And=[]
+    for a in A:
+        if a[0]<0:
+            continue
+        if a not in Uni:
+            Uni.append(a)
+        if (a not in And) and (a in B):
+            And.append(a)
+    for b in B:
+        if b[0]<0:
+            continue
+        if b not in Uni:
+            Uni.append(b)
+    numerator=1.0*len(And)
+    denominator=len(Uni)
+    return numerator/denominator
 
+def similarity(A,B):
+    if similarityFlag==0:
+        return min(0.99,jaccard(A,B))
+    
+
+def corelate(Agent1,Agent2):
+    if Agent1.path==[] or Agent2.path==[]:
+        return 0
+
+    return similarity(Agent1.path,Agent2.path)
+
+def computePriority():
+    TrafficPriorityOld={}
+    TrafficPriorityNew={}
+    for i in range(len(All_Agents)):
+        TrafficPriorityOld[i]=1.0/len(All_Agents)
+    max_iterations=100
+    errorThresh=0.001
+    cache={}
+    while max_iterations:
+        # print("Iterations Left",iterations,":",TrafficPriority[0],TrafficPriority[1],TrafficPriority[2],TrafficPriority[3],TrafficPriority[4])
+        for i in range(len(All_Agents)):
+            damping=0.9
+            currentPriority=0
+            for j in range(len(All_Agents)):
+                if j==i:
+                    continue
+                if (i,j) not in cache:
+                    cache[(min(i,j),max(i,j))]=corelate(All_Agents[i],All_Agents[j])
+                relate=cache[(min(i,j),max(i,j))]
+                currentPriority+=relate*TrafficPriorityOld[j]
+            TrafficPriorityNew[i]=(1-damping)+damping*currentPriority  
+            TrafficPriorityNew[i]=min(0.99,TrafficPriorityNew[i])          
+        error=sum([abs(a-TrafficPriorityOld[i]) for i,a in TrafficPriorityNew.items()])
+        if error<errorThresh*len(All_Agents):
+            break
+        TrafficPriorityOld=TrafficPriorityNew.copy()
+        max_iterations-=1
+    v=[r for _,r in TrafficPriorityNew.items()]
+    for e in v:
+        assert(e<=2)
+    # print(v)
+    return TrafficPriorityNew
 def change_signal():
-    for I in Intersections:
-        index = 0
-        for j in range(1, len(Matrix.grid[I[0]][I[1]])):
-            if j == 0:
-                continue
-            D = Matrix.grid[I[0]][I[1]][j]
-            if Intersection_Gateway[I][D] == 1:
-                index = j
-                break
-        if index == len(Matrix.grid[I[0]][I[1]])-1:
+    if intersecFlag==0:
+        for I in Intersections:
             index = 0
+            for j in range(1, len(Matrix.grid[I[0]][I[1]])):
+                if j == 0:
+                    continue
+                D = Matrix.grid[I[0]][I[1]][j]
+                if Intersection_Gateway[I][D] == 1:
+                    index = j
+                    break
+            if index == len(Matrix.grid[I[0]][I[1]])-1:
+                index = 0
 
-        nxtD = Matrix.grid[I[0]][I[1]][index+1]
-        Intersection_Gateway[I] = [0]*5
-        Intersection_Gateway[I][nxtD] = 1
-        Intersection_Timeout[I] = 20
+            nxtD = Matrix.grid[I[0]][I[1]][index+1]
+            Intersection_Gateway[I] = [0]*5
+            Intersection_Gateway[I][nxtD] = 1
+            Intersection_Timeout[I] = 25
+    else:
+        TrafficPrioirity=computePriority()
+        for I in Intersections:
+            maxPriority=-inf
+            bestDir=-1
+            D=0
+            scores=[-1]*5
+            for nebrI in Golden_Grid[(I[0],I[1])]:
+                D+=1
+                if nebrI==():
+                    continue
+                curPriority=0
+                for bot in Roads_Grid[((I[0],I[1]),nebrI)]:
+                    curPriority+=TrafficPrioirity[All_Agents.index(bot)]
+
+                totalPriority=curPriority*0.5+0.5*StarvingD[I][D]
+                scores[D]=totalPriority
+            for j in range(1, len(Matrix.grid[I[0]][I[1]])):
+                D = Matrix.grid[I[0]][I[1]][j]
+                if scores[D]==-1:
+                    scores[D]=StarvingD[I][D] 
+            for r in range(1,5):
+                if scores[r]>maxPriority:
+                    maxPriority=scores[r]
+                    bestDir=r            
+            Intersection_Gateway[I] = [0]*5
+            Intersection_Gateway[I][bestDir] = 1
+            Intersection_Timeout[I] = 25
+            for j in range(1, len(Matrix.grid[I[0]][I[1]])):
+                StarvingD[I][Matrix.grid[I[0]][I[1]][j]]+=0.5
+            StarvingD[I][bestDir]=0
 
 
+    
+                
 def traffic_intersection(P, D):
     Pos = intT(P)
     if Intersection_Gateway[Pos][D] == 1:

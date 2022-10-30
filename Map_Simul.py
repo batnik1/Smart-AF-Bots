@@ -311,16 +311,14 @@ while len(stack):
     for pops in range(1,5):
 
         if (pops in Matrix.grid[x][y]):
-            
             i,j=x,y
             eligible=1
 
             while i >= 0 and j >= 0 and i < Matrix.height and j < Matrix.width:
-                if pops not in Matrix.grid[i][j]:
-                    # print("Fucked",(i,j))
-                    eligible=0
-                    break
                 if (i,j)!=(x,y) and (i,j) in Intersections:
+                    break
+                if pops not in Matrix.grid[i][j]:
+                    eligible=0
                     break
                 i+=dir[pops][0]
                 j+=dir[pops][1]
@@ -352,12 +350,14 @@ Intersection_Bot={}
 Intersection_Recal={}
 Intersection_Coming_Dir={}
 Intersection_Calculated={}
+StarvingD={}
 # Assigning default directions to all intersections
 for i,j in Intersections:
     # if ged(len(Golden_Grid[i,j][0]))+ged(len(Golden_Grid[i,j][1]))+ged(len(Golden_Grid[i,j][2]))+ged(len(Golden_Grid[i,j][3]))==4:
     Intersec_dic[(i,j)]=1
     Intersection_Gateway[(i,j)]=[0]*5
     Intersection_Timeout[(i,j)]=0
+    StarvingD[(i,j)]=[0]*5
     Intersection_Booking[(i,j)]=-1
     Intersection_Bot[(i,j)]=Agent(0,n,m)
     Intersection_Bot[(i,j)].l=2

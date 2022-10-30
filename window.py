@@ -116,7 +116,7 @@ while running:
         handle_orders()
     
     handle_events()
-    
+    # print(key)
     # if key==0:
     #     dummy_sorting(key,100)
     current_items,orders_completed_now,Running_Fin,picks=handle_rack_agents(key,coloring,picks)
@@ -131,14 +131,14 @@ while running:
             except:
                 pass
             # Red for 1, Green for 2, Yellow for 3, Blue for 4
-            # if r==1:
-            #     pygame.draw.circle(screen, colors.RED1, I,2)  #Up
-            # elif r==2:
-            #     pygame.draw.circle(screen, colors.GREEN1,I,2) #Down
-            # elif r==3:
-            #     pygame.draw.circle(screen, colors.YELLOW1,I,2)#Right
-            # elif r==4:
-            #     pygame.draw.circle(screen, colors.BLUE,I,2) #Left
+            if r==1:
+                pygame.draw.circle(screen, colors.RED1, I,2)  #Up
+            elif r==2:
+                pygame.draw.circle(screen, colors.GREEN1,I,2) #Down
+            elif r==3:
+                pygame.draw.circle(screen, colors.YELLOW1,I,2)#Right
+            elif r==4:
+                pygame.draw.circle(screen, colors.BLUE,I,2) #Left
 
 
     Final_Finisher=order_db.count_documents({})
@@ -146,8 +146,15 @@ while running:
     handle_sorting_agents(sorting_orders)
     # handle_Torders(Torders)
     key+=1
-
     pygame.draw.circle(screen,(255,0,0),numofdump["conveyor"],3)
+
+    pygame.draw.circle(screen,colors.WHITE,(500,90),3)
+    for I in Intersections:
+        for d in StarvingD[I]:
+            if d>10:
+                print('wtf bro')
+                # print(Golden_Grid[I],Matrix.grid[I[0]][I[1]])
+                pygame.draw.circle(screen,colors.WHITE,I,4)
 
     for colo in range(len(coloring)):
         pygame.draw.rect(screen, (0, 255, 0), pygame.Rect(coloring[colo][0][0]+coloring[colo][1],coloring[colo][0][1]-5, 10, 10),1)
@@ -167,12 +174,12 @@ while running:
    # print(pending_orders,orders_done)
     screen.blit(PBar_Orders,(racks_width+160,35))
    # print(Running_Finisher,Final_Finisher)
-    for Road in Roads_Timestamp:
-        for i,j in Roads_Timestamp[Road]:
-            if i<=key<=j:
-                # draw line from Road[0] to Road[1]
-                pygame.draw.line(screen, colors.BLACK, Road[0], Road[1], 1)
-                break
+    # for Road in Roads_Timestamp:
+    #     for i,j in Roads_Timestamp[Road]:
+    #         if i<=key<=j:
+    #             # draw line from Road[0] to Road[1]
+    #             pygame.draw.line(screen, colors.BLACK, Road[0], Road[1], 1)
+    #             break
     
     # if key%100==0:
     #     remove_timestamps(key)
@@ -197,7 +204,7 @@ while running:
     #     Predicted_Number_o=0
     #     if queryFlag==0:
     #         for i,j in Roads_Timestamp[road]:
-    #             if i<=key<=j:
+    #             if i<=key<=j: 
     #                 Predicted_Number_o+=1
     #     else:
     #         for i,j in Original_Timestamp[road]:
